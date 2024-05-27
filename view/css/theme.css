@@ -1,0 +1,1231 @@
+/* 
+
+THEME CSS
+
+DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
+
+*/
+
+
+/* Screen Readers only */
+
+.sr-only { /* From https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices/how-to-hide-visual-content?autoSkip=true&autoplay=true&resume=false&u=92735081 */
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+}
+
+
+/* Other elements */
+
+section.kokako .col-xs-12 > :is(h1, h2):first-child {
+	margin-top: 0;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+wbr:before { /* IE 8–11 (old) and Prince page pdf creator don’t recognize the "wbr" element, but a pseudo-element can achieve the same effect with IE 9+ and Prince (from https://css-tricks.com/better-line-breaks-for-long-urls/ ) */
+	content: "200B";  /* Unicode zero width space */
+	white-space: normal;
+}
+
+
+/* List items */
+
+ul.no-bullets li {
+	list-style-type: none;
+	margin: 0 0 10px 0;
+}
+
+:is(ul.tick, ul.ticks, section.kokako.ul-ticks ul) li {
+	list-style-type: none;
+	position: relative;
+	margin: 0 0 10px 35px;
+}
+
+:is(ul.tick, ul.ticks, section.kokako.ul-ticks ul) li:before {
+	position: absolute;
+	left: -35px;
+	font-family: "fa-select";
+	content: '2713';
+	color: #fff;
+	background: #333;
+	border-radius: 50%;
+	padding: 0 3px;
+	margin-right: 10px;
+}
+
+
+/* Blockquotes */
+
+blockquote h3 {
+	font-size: 2rem;
+	line-height: 1.5;
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+
+blockquote h3 + p {
+	margin-top: 0;
+}
+
+
+/* Small */
+
+small {
+	display: inline-block;
+	font-size: 0.923075rem; /* This works out to 16px (min for accessibility) at a base size of 13pt */
+	line-height: 1.2;
+}
+
+
+/* Extra text classes */
+
+p.extra-margin-top {
+	margin-top: 0;
+}
+
+p.extra-margin-bottom {
+	margin-bottom: 0;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+/* Social Media links (and additional icons) */
+
+ul.social-media-links {
+	display: flex;
+	grid-gap:[text-margin];
+	list-style-type: none;
+}
+
+ul.social-media-links, /* Default */
+ul.social-media-links.align-centre,
+ul.social-media-links.align-center {
+	justify-content: center;
+}
+
+ul.social-media-links.align-left {
+	justify-content: left;
+}
+
+ul.social-media-links.align-right {
+	justify-content: right;
+}
+
+ul.social-media-links li {
+	margin-left: 0;
+}
+
+a.social-media-link,
+a.social-media-link:link,
+a.social-media-link:visited {
+	color: #fff;
+	background: #333;
+	font-size: 1.4rem;
+	width: 35px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+a.social-media-link:last-of-type,
+a.social-media-link:link:last-of-type,
+a.social-media-link:visited:last-of-type {
+	margin-right: 0;
+}
+
+a.social-media-link:hover {
+	color: #e6e6e6;
+	background: #4c4c4c;
+}
+
+a.social-media-link:active {
+	color: #d2d2d2;
+	background: #606060;
+}
+
+a.social-media-link i {
+	position: relative;
+	top: 1px;
+}
+
+.icon-deezer:before {
+	content: '20';
+	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/deezer-black.svg);
+	background-size: 100% 100%;
+	white-space: pre;
+}
+
+.icon-kofi:before {
+	content: '20';
+	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/kofi-black.svg);
+	background-size: 130% 130%;
+	background-position: -1px -2px;
+	white-space: pre;
+}
+
+.icon-tiktok:before {
+	content: '20';
+	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/tiktok-white.svg);
+	background-size: 100% 100%;
+	white-space: pre;
+}
+
+.icon-amazon {
+	font-size: 90%;
+}
+
+.icon-soundcloud {
+	 font-size: 90%;
+	position: relative;
+	left: -2px;
+}
+
+
+/* New hover - adapted from https://codepen.io/Kseso/pen/bfzjC */
+
+*:after, *:before {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+a[anchor-underline-exclusions] {
+	position: relative;
+	outline: none;
+	text-decoration: none;
+	z-index: 1;
+}
+
+a[anchor-underline-exclusions]:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 3px;
+	bottom: -3px;
+	left: 50%;
+	background: #1a1a1a;
+	visibility: hidden;
+	-webkit-transform: translate3d(0,0,0); /* Fix for Google Chrome flickers on subsequent anchor elements - see https://maximelafarie.com/avoid-css-flickering */
+	transition: [anchor-transition];
+}
+
+a[anchor-underline-exclusions]:hover:before {
+	visibility: visible;
+	-webkit-transform: translate3d(0,0,0);
+	width: 100%;
+	left: 0;
+	transition: [anchor-transition];
+}
+
+
+/* Miscellaneous anchors (named anchors etc) */
+
+a[name] {
+	position: relative;
+	top: -[header-height-scrolled];
+}
+
+a:is(.no-border, .no-underline) {
+	border-bottom: none !important;
+}
+
+
+/* Disabled Anchors - only use this for WordPress menus, not recommended for other use. See https://css-tricks.com/how-to-disable-links/ */
+
+a.disabled,
+li.disabled > a:first-child {
+	cursor: default;
+	pointer-events: none;
+}
+
+.cta-buttons :is(button, input[type="submit"], a.button, a.btn):first-child {
+	margin-left: 0;
+}
+
+.cta-buttons :is(button, input[type="submit"], a.button, a.btn):last-child {
+	margin-right: 0;
+}
+
+input[type=checkbox] {
+	width: auto;
+}
+
+.wpcf7 input:not[type="submit"],
+.wpcf7 textarea {
+	margin-top: 0.5rem;
+}
+
+.wpcf7 form.wpcf7-form p:last-of-type {
+	margin-top: 20px;
+}
+
+input[type=checkbox] {
+	width: auto;
+	margin-right: [text-margin];
+}
+
+.wpcf7-checkbox .wpcf7-list-item {
+	display: block;
+}
+
+.wpcf7-checkbox .wpcf7-list-item.first {
+	margin-top: 10px;
+}
+
+input[type=date] {
+	max-width: 250px;
+}
+
+.wpcf7-checkbox .wpcf7-list-item {
+	margin-left: 0;
+}
+
+.wpcf7-checkbox .wpcf7-list-item-label {
+	display: inline-block;
+	padding-left: 30px;
+	margin-top: -25px;
+}
+
+.wpcf7-response-output {
+	padding: [text-margin] !important;
+	border-radius: 0;
+}
+
+
+/* Search Form */
+
+form.searchform label {
+	display: none;
+}
+
+iframe:not([title=reCAPTCHA]) {
+	max-width: 100%;
+	margin-bottom: [text-margin];
+}
+
+header .logo {
+	height: [header-height]; /* For positioning drop down menu correctly */
+	width: 185px; /* 166px is width of logo at normal size (logo will resize to this) */
+	display: flex;
+	align-items: center; /* Centres logo vertically */
+	z-index: 100;
+	transition: [header-transition];
+}
+
+header nav.flex-row-reverse .logo {
+	justify-content: right;
+}
+
+header.scrolled .logo {
+	height: [header-height-scrolled];
+	transition: [header-transition];
+}
+
+header .logo a.navbar-brand {
+	position: relative;
+	top: 0;
+	/* margin: 20px 0 0 0; */
+	width: 185px;
+	border-bottom: none !important;
+	transition: [header-transition];
+}
+
+header.scrolled .logo a.navbar-brand {
+	width: [header-logo-width-scrolled];
+	transition: [header-transition];
+}
+
+/* Skip link */
+
+.skip-link {
+	position: absolute;
+	left: 0%;
+	color: #fff;
+	background: #333;
+	padding:0 [text-margin];
+	border: 1px #fff solid;
+	border-radius: [button-border-radius];
+	transform: translateY(-100%);
+	transition: [anchor-transition];
+}
+
+.skip-link:focus-within {
+	z-index: 10001; /* Must be able to sit above logo */
+	transform: translateY(0%);
+}
+
+.skip-link :is(a, a:link, a:visited) {
+	color: #fff;
+}
+
+.skip-link a:hover {
+	color: #e6e6e6;
+}
+
+.skip-link a:active {
+	color: #d2d2d2;
+}
+
+
+/* FOR NAV TESTING *
+
+header nav.navbar {
+	border: 1px #00f solid;
+}
+
+header .logo {
+	border: 1px #f00 solid;
+}
+
+header .header-widget {
+	border: 1px #0f0 solid;
+}
+
+* END: FOR NAV TESTING */
+
+
+/* Logged in */
+
+body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative */
+	top: 32px;
+}
+
+Nav Expand {
+    -lg
+}
+
+Hamburger Animation {
+    none
+}
+
+
+/* ---- Nav ---- *
+
+.hamburger {
+	padding: 15px; /* Was 15px 15px 5px 15px; */
+	display: flex;
+	align-items: center;
+ 	cursor: pointer;
+ 	transition-property: opacity, filter;
+ 	transition-duration: 0.15s;
+	transition-timing-function: linear;
+ 	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+}
+
+button.hamburger:focus {
+	outline: none;
+}
+
+button.hamburger:active {
+	background: transparent;
+}
+
+.hamburger:hover {
+	opacity: 0.7;
+}
+
+.hamburger:not(.collapsed):hover {
+	opacity: 0.7;
+}
+
+.hamburger:not(.collapsed) .hamburger-inner,
+.hamburger:not(.collapsed) .hamburger-inner::before,
+.hamburger:not(.collapsed) .hamburger-inner::after {
+	background-color: #fff;
+}
+
+.hamburger-box {
+	width: 40px;
+	height: 24px;
+	display: inline-block;
+	position: relative;
+}
+
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+	width: 40px;
+	height: 4px;
+	background-color: #fff;
+	/* border-radius: 4px; */
+	position: absolute;
+	transition-property: transform;
+	transition-duration: 0.15s;
+	transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+	content: "";
+	display: block;
+}
+
+.hamburger-inner::before {
+	top: -10px;
+}
+
+.hamburger-inner::after {
+	bottom: -10px;
+}
+
+header nav.navbar {
+	padding-top: 0;
+	padding-bottom: 0;
+	height: [header-height];
+	transition: [header-transition];
+}
+
+header nav.navbar #main-nav { /* Push nav menu up (is positioned flex) */
+	/* margin-bottom: 30px; */
+	transition: [header-transition];
+}
+
+header .navbar-collapse {
+	margin-top: 70px;
+	transition: [header-transition];
+}
+
+header.scrolled .navbar-collapse {
+	margin-top: 0;
+	transition: [header-transition];
+}
+
+nav ul {
+	margin: 0;
+}
+
+nav ul li {
+	margin: 0;
+	white-space: nowrap; /* Prevent line breaks between words */
+	color: #fff;
+}
+
+.navbar-expand-lg .navbar-nav a.nav-link {
+	padding: 0 0;
+}
+
+nav ul li :is(a, a:link, a:visited) {
+	font-family: [font-family];
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+	color: #fff;
+	border-bottom: 2px transparent solid;
+	transition: [anchor-transition];
+}
+
+nav ul li a:hover,
+nav ul li.dropdown.show > a {
+	color: #e6e6e6;
+	transition: [anchor-transition];
+}
+
+nav ul li a:active {
+	color: #d2d2d2;
+	/* border-bottom: 2px #d2d2d2 solid; */
+	transition: [anchor-transition];
+}
+
+nav a.nav-link:before {
+	background: #e6e6e6;
+}
+
+.navbar-nav .dropdown-menu {
+	background: #333; /* Fall back */
+	background: rgba(51,51,51,1);
+	border: none;
+	border-radius: 0;
+	padding: 0;
+}
+
+nav ul.dropdown-menu li:not(:last-child):after {
+	content: "";
+}
+
+.navbar-nav .dropdown-menu li a {
+	color: #fff;
+	display: block;
+	text-transform: capitalize;
+	font-weight: normal;
+	text-align: left;
+}
+
+.navbar-nav .dropdown-menu li a:hover {
+	color: #e6e6e6;
+	background: #4c4c4c; /* Fall back */
+	background: rgba(51,51,51,1);
+	/* border-bottom: none; */
+}
+
+.navbar-nav .dropdown-menu li a:active {
+	color: #d2d2d2;
+	background: #606060;
+}
+
+.dropdown-toggle::after {
+	display: none !important;
+}
+
+nav a.dropdown-item:before {
+	background: transparent;
+}
+
+section.kokako .cta-buttons {
+	display: flex;
+	width: 100%;
+	grid-gap: [text-margin];
+	justify-content: left; /* Default, also for .align-left */
+	align-items: center;
+	min-height: 52px;
+}
+
+section.kokako:not(.multipleRows) .cta-buttons {
+	margin-top: 0;
+}
+
+section.kokako .cta-buttons.buttons-align-centre,
+section.kokako.text-align-centre .cta-buttons,
+section.kokako:is(.text-align-centre, .text-align-right) .cta-buttons.buttons-align-left { /* Button alignment has a higher priority than section text alignment */
+	justify-content: center;
+}
+
+section.kokako .cta-buttons.buttons-align-right,
+section.kokako.text-align-right .cta-buttons,
+section.kokako:is(.text-align-left, .text-align-centre) .cta-buttons.buttons-align-right {
+	justify-content: right;
+}
+
+section.kokako .cta-buttons a {
+	margin: 0 !Important;
+}
+
+section.kokako .cta-buttons p.centre {
+	display: inline;
+	text-align: center; /* This will align the multiple buttons */
+}
+
+/* Spacing */
+
+/* section.kokako .col > :is(h1, h2, h3, h4, h5, h6, p, img, ul, ol):first-child,
+section.kokako .col > p:first-child > img:first-child  {
+	margin-top: 0;
+}
+
+section.kokako .col > :is(h1, h2, h3, h4, h5, h6, p, img, ul, ol):last-child,
+section.kokako .col > p:last-child > img:last-child {
+	margin-bottom: 0;
+} */
+
+section.kokako :is(.col, .internalWrap) > *:first-child,
+section.kokako :is(.col, .internalWrap) > *.hide:first-child + *,
+section.kokako :is(.col, .internalWrap) > p:first-child > img:first-child { /* First child, or second child if the first is hidden, or img within first child p tag */
+	margin-top: 0;
+}
+
+section.kokako .internalWrap > *:last-child {
+	margin-bottom: 0;
+}
+
+section.kokako:is(.padding-top-none, .padding-none) {
+	padding-top: 0 !important;
+}
+
+section.kokako:is(.padding-bottom-none, .padding-none) {
+	padding-bottom: 0 !important;
+}
+
+section.kokako:is(.padding-top-small, .padding-small) {
+	padding-top: 0 !important;
+}
+
+section.kokako:is(.padding-bottom-small, .padding-small) {
+	padding-bottom: 0 !important;
+}
+
+section.kokako:is(.padding-top-reduced, .padding-reduced) {
+	padding-top: 0 !important;
+}
+
+section.kokako:is(.padding-bottom-reduced, .padding-reduced) {
+	padding-bottom: 0 !important;
+}
+
+section.kokako:is(.padding-top-standard, .padding-standard) {
+	padding-top: [section-padding-vertical] !important;
+}
+
+section.kokako:is(.padding-bottom-standard, .padding-standard) {
+	padding-bottom: [section-padding-vertical] !important;
+}
+
+section.kokako:is(.padding-top-large, .padding-large) {
+	padding-top: 0 !important;
+}
+
+section.kokako:is(.padding-bottom-large, .padding-large) {
+	padding-bottom: 0 !important;
+}
+
+section.kokako:is(.padding-top-extra-large, .padding-extra-large) {
+	padding-top: 0 !important;
+}
+
+section.kokako:is(.padding-bottom-extra-large, .padding-extra-large) {
+	padding-bottom: 0 !important;
+}
+
+section.kokako:is(.margin-top-none, .margin-none) {
+	margin-top: 0 !important;
+}
+
+section.kokako:is(.margin-bottom-none, .margin-none) {
+	margin-bottom: 0 !important;
+}
+
+section.kokako:is(.margin-top-small, .margin-small) {
+	margin-top: 0 !important;
+}
+
+section.kokako:is(.margin-bottom-small, .margin-small) {
+	margin-bottom: 0 !important;
+}
+
+section.kokako:is(.margin-top-reduced, .margin-reduced) {
+	margin-top: 0 !important;
+}
+
+section.kokako:is(.margin-bottom-reduced, .margin-reduced) {
+	margin-bottom: 0 !important;
+}
+
+section.kokako:is(.margin-top-standard, .margin-standard) {
+	margin-top: [section-padding-vertical] !important;
+}
+
+section.kokako:is(.margin-bottom-standard, .margin-standard) {
+	margin-bottom: [section-padding-vertical] !important;
+}
+
+section.kokako:is(.margin-top-large, .margin-large) {
+	margin-top: 0 !important;
+}
+
+section.kokako:is(.margin-bottom-large, .margin-large) {
+	margin-bottom: 0 !important;
+}
+
+section.kokako:is(.margin-top-extra-large, .margin-extra-large) {
+	margin-top: 0 !important;
+}
+
+section.kokako:is(.margin-bottom-extra-large, .margin-extra-large) {
+	margin-bottom: 0 !important;
+}
+
+
+/* Width Max Limit */
+
+.kokako.width-max-limit .row {
+	max-width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* Other Section CSS */
+
+section.kokako:not(.colour-scheme) :is(.container, .container-fluid) .row:not(.no-background) {
+	background: #fff;
+}
+
+ section.kokako:not(.no-padding) .container .row.extra-top-padding:first-of-type {
+	padding-top: 0;
+}
+
+section.kokako:not(.no-padding) .container .row.extra-bottom-padding:last-of-type {
+	padding-bottom: 0;
+}
+
+
+/* section.kokako.no-padding .internalWrap {
+	padding-top: [section-padding-vertical];
+	padding-bottom: [section-padding-vertical];
+}
+
+section.kokako .row:first-child.extra-row-padding,
+section.kokako .row.extra-row-padding-top {
+	padding-top: 0;
+}
+
+section.kokako .row:last-child.extra-row-padding,
+section.kokako .row.extra-row-padding-bottom {
+	padding-bottom: 0;
+} */
+
+/* .center-block, .centre-block {
+	display: block;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footnote {
+	font-size: 80%;
+	font-style: italic;
+} */
+
+
+/* HIde section - NB: this is a fallback, as the section should actually not be added to the code via loop_acf.php */
+
+section.kokako.hide-section {
+	display: none !important;
+}
+
+
+/* ---- Colour Schemes ---- *
+
+/* Image overlays base */
+
+section.kokako.background-overlay .image-overlay { /* Note that the background colour classes themselves are created dynamically by ticking the "Add Image Overlay Colours" option under Elements CSS > Colours, and are added automatically to the CSS at the start of the Colour Schemes section */
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #333; /* Default, will be overridden by colour scheme */
+	opacity: 0.5; /* Default, opacity can be overridden on a per section basis */
+}
+
+
+/* Remove background if section already has a background image (otherwise interferes with background blend modes) */
+
+section.kokako.colour-scheme.has-background-image {
+	background: none;
+}
+
+
+/* ---- Blog ---- *
+
+body:is(.blog, .archive, .single) {
+	background: #fff;
+}
+
+body:is(.blog, .archive) section.kokako.pageBanner.section1 {
+	min-height: 450px;
+}
+
+body:is(.blog, .archive) .blog-grid h4.breadcrumbs {
+	margin: 15px 0 0;
+}
+
+body:is(.blog, .archive) .blog-grid h2 {
+	margin: 5px 0 15px;
+	font-size: 2.2rem;
+}
+
+body.archive h1 {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+body.archive h1 + h4.breadcrumbs {
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+/* body.blog .row.extra-row-padding-top {
+	padding-top: 0;
+} */
+
+body.blog section.kokako.latestPosts .row .blog-grid.post:first-of-type h3 {
+	margin-top: 0;
+}
+
+body.blog section.pageHeading {
+	padding-bottom: 0;
+}
+
+body.blog section.pageHeading + section.latestPosts {
+	padding-top: 0;
+}
+
+body#blog-posts-page section.pageHeading h1 {
+	margin-top: 0;
+}
+
+body.blog section.latestPosts .row.row-content .col-xs-12 {
+	margin-bottom: 0;
+}
+
+a.read-more-link { /* Fix for hover not appearing when the link is on it's own line */
+	display: inline-block;
+}
+
+body.single :is(h1, h2, h3, h4, h5, h6) {
+	clear: both;
+}
+
+:is(.post-meta h4, h4.breadcrumbs) {
+	font-weight: normal;
+	font-size: 1rem;
+}
+
+.post-meta h4 {
+	margin-bottom: 50px;
+	font-style: italic;
+}
+
+h4.breadcrumbs {
+	margin: 0 0 30px;
+	text-transform: uppercase;
+}
+
+body.single .post-meta + img {
+	margin-bottom: 0;
+}
+
+
+/* ---- Shop ---- *
+
+
+/* ---- Custom ---- *
+
+/* Update 20240523 9.19am */
+
+
+/* ---- Animations ---- *
+
+section.kokako :is(h1, h2),
+section.kokako.textWithPhoto .row .image,
+section.kokako.multipleColumns .multiple-columns-col,
+section.kokako.multipleRows .multiple-rows-row,
+section.kokako.latestPosts .blog-grid.post {
+	opacity: [animation-start-opacity];
+	transform: scale([animation-start-scale]);
+}
+
+section.kokako:not(.textWithPhoto) :is(h1, h2) {
+	transform: translateY(-[animation-start-translate-y]) scale([animation-start-scale]);
+}
+
+section.kokako.textWithPhoto .row .text :is(h1,  h2) {
+	transform: translateX([animation-start-translate-x]) scale([animation-start-scale]);
+}
+
+section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2) {
+	transform: translateX(-[animation-start-translate-x]) scale([animation-start-scale]);
+}
+
+section.kokako.textWithPhoto .row .image {
+	transform: translateX(-[animation-start-translate-x]);
+}
+
+section.kokako.textWithPhoto .row.flex-row-reverse .image {
+	transform: translateX([animation-start-translate-x]);
+}
+
+section.kokako:not(.textWithPhoto) :is(h1, h2).appear,
+section.kokako.multipleColumns .col-xs-12.appear :is(h1, h2) {
+	transform: translateY(-[animation-start-translate-y]) scale([animation-start-scale]);
+	animation: slideDownScale [animation-duration] [animation-transition] forwards;
+}
+
+section.kokako.textWithPhoto .row .text :is(h1, h2).appear {
+	transform: translateX([animation-start-translate-x]) scale([animation-start-scale]);
+	animation: slideLeftScale [animation-duration] [animation-transition] forwards;
+}
+
+section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2).appear {
+	transform: translateX(-[animation-start-translate-x]) scale([animation-start-scale]);
+	animation: slideRightScale [animation-duration] [animation-transition] forwards;
+}
+
+section.kokako.textWithPhoto .row .image.appear {
+	transform: translateX(-[animation-start-translate-x]);
+	animation: slideRight [animation-duration] [animation-transition] forwards;
+}
+
+section.kokako.textWithPhoto .row.flex-row-reverse .image.appear {
+	transform: translateX([animation-start-translate-x]);
+	animation: slideLeft [animation-duration] [animation-transition] forwards;
+}
+
+section.kokako.multipleColumns .multiple-columns-col.appear,
+section.kokako.multipleRows .multiple-rows-row.appear,
+section.kokako.latestPosts .blog-grid.post.appear {
+	transform: scale([animation-start-scale]);
+	animation: scale [animation-duration] [animation-transition] forwards;
+}
+
+@keyframes slideUpScale {
+	from {
+		transform: translateY([animation-start-translate-y]) scale([animation-start-scale]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateY(0) scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes slideRightScale {
+	from {
+		transform: translateX(-[animation-start-translate-x]) scale([animation-start-scale]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateX(0) scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes slideDownScale {
+	from {
+		transform: translateY(-[animation-start-translate-y]) scale([animation-start-scale]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateY(0) scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes slideLeftScale {
+	from {
+		transform: translateX([animation-start-translate-x]) scale([animation-start-scale]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateX(0) scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		transform: translateY([animation-start-translate-y]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideRight {
+	from {
+		transform: translateX(-[animation-start-translate-x]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideDown {
+	from {
+		transform: translateY(-[animation-start-translate-y]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideLeft {
+	from {
+		transform: translateX([animation-start-translate-x]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes scale {
+	from {
+		transform: scale([animation-start-scale]);
+		opacity: [animation-start-opacity];
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes clear {
+	to {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+
+/* ---- Miscellaneous ---- *
+
+.clear {
+	clear: both;
+}
+
+.non-breaking-spaces {
+	white-space: nowrap;
+}
+
+
+/* Video Containers */
+
+.video-container { /* see https://stackoverflow.com/questions/35814653/automatic-height-when-embedding-a-youtube-video */
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+}
+
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+/* Lightbox Gallery overrides */
+
+body .fbx-rounded .fbx-inner {
+	border: none;
+	border-radius: 0;
+}
+
+body .fbx-rounded :is(.fbx-item-current, .fbx-item-image, .fbx-prev, .fbx-item-next) {
+	border-radius: 0;
+}
+
+body a.fbx-close {
+	z-index: 1000000; /* Yes, really! It needs to be this high */
+}
+
+.tsp {
+	color: #f00 !important;
+}
+
+#bootstrap-test {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background: #fff;
+	border: 2px #1a1a1a solid;
+	padding: 0px 10px;
+	width: auto;
+	z-index: 10;
+}
+
+#bootstrap-test p {
+	font-weight: bold;
+	text-align: center;
+	color: #1a1a1a;
+}
+
+#js-loaded {
+	display: none !important;
+}
+
+
+/* Development Mode notices */
+
+/* Kokako Development Mode Activation Notice */
+
+#wpadminbar .kdman :is(a, a:link, a:visited) {
+	background: #d08; /* #f0a - 34 */
+	margin-left: 10px;
+}
+
+#wpadminbar .kdman a:hover {
+	background: #e09 !important; /* #d08 + 17 */
+}
+
+#wpadminbar .kdman a:active {
+	background: #f0a !important;
+}
+
+/* Kokako "No JavaScript" Test Mode Active Notice */
+
+#wpadminbar .knjstan :is(a, a:link, a:visited) {
+	background: #e52b2e;
+	margin-left: 10px;
+}
+
+#wpadminbar .knjstan a:hover {
+	background: #f63c3f !important; /* #e52b2e + 17 */
+}
+
+#wpadminbar .knjstan a:active {
+	background: #ff4d50 !important; /* #e52b2e + 34 */
+}
+
+
+
+/* SM and above */
+@media (min-width: 577px) {
+
+
+}
+
+/* MD and above */
+@media (min-width: 768px) {
+
+
+}
+
+/* LG and above */
+@media (min-width: 992px) {
+
+    /* Custom CSS responsivity for LG & Above 20240523 9.23am */
+    
+}
+
+/* XL and above */
+@media (min-width: 1200px) {
+
+
+}
+
+/* XXL only */
+@media (min-width: 1400px) {
+
+
+}
