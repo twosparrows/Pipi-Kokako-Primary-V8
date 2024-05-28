@@ -1,11 +1,25 @@
 CSS Options Fields
 
-Updated at 27/05/2024 4:06.37am UTC
+Updated at 28/05/2024 2:10.00am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
 Shortcodes:
 
+[anchor-transition] => 0.3s ease all
+[anchor-underline-exclusions] => :not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow)
+[animation-duration] => 1s
+[animation-start-opacity] => 0.5
+[animation-start-scale] => 0.95
+[animation-start-translate-x] => 20px
+[animation-start-translate-y] => 20px
+[animation-transition] => ease-out
+[button-border-radius] => 25px
+[button-padding-horizontal] => 25px
+[button-padding-vertical] => 10px
+[button-selectors] => button, input[type="submit"], a.button
+[button-swell] => scale(1.05)
+[button-transition] => 0.3s ease all
 [color-anchor-underline-active-rgba => 71,71,71
 [color-anchor-underline-active] => #474747
 [color-anchor-underline-hover-rgba => 51,51,51
@@ -15,20 +29,20 @@ Shortcodes:
 [color-anchor-underline] => #1a1a1a
 [color-background-active-rgba => 210,210,210
 [color-background-active] => #d2d2d2
-[color-background-alt-active-rgba => 96,96,96
-[color-background-alt-active] => #606060
-[color-background-alt-hover-rgba => 76,76,76
-[color-background-alt-hover] => #4c4c4c
-[color-background-alt-rgba => 51,51,51
-[color-background-alt-variation => 51,51,51
-[color-background-alt] => #333
-[color-background-dark-active-rgba => 96,96,96
-[color-background-dark-active] => #606060
-[color-background-dark-hover-rgba => 76,76,76
-[color-background-dark-hover] => #4c4c4c
-[color-background-dark-rgba => 51,51,51
-[color-background-dark-variation => 51,51,51
-[color-background-dark] => #333
+[color-background-alt-active-rgba => 45,45,45
+[color-background-alt-active] => #2d2d2d
+[color-background-alt-hover-rgba => 25,25,25
+[color-background-alt-hover] => #191919
+[color-background-alt-rgba => 0,0,0
+[color-background-alt-variation => 0,0,0
+[color-background-alt] => #000
+[color-background-dark-active-rgba => 45,45,45
+[color-background-dark-active] => #2d2d2d
+[color-background-dark-hover-rgba => 25,25,25
+[color-background-dark-hover] => #191919
+[color-background-dark-rgba => 0,0,0
+[color-background-dark-variation => 0,0,0
+[color-background-dark] => #000
 [color-background-hover-rgba => 230,230,230
 [color-background-hover] => #e6e6e6
 [color-background-light-active-rgba => 210,210,210
@@ -41,14 +55,16 @@ Shortcodes:
 [color-background-rgba => 255,255,255
 [color-background-variation => 255,255,255
 [color-background] => #fff
-[color-brand-1] => #1a1a1a
-[color-footer-background-active-rgba => 96,96,96
-[color-footer-background-active] => #606060
-[color-footer-background-hover-rgba => 76,76,76
-[color-footer-background-hover] => #4c4c4c
-[color-footer-background-rgba => 51,51,51
-[color-footer-background-variation => 51,51,51
-[color-footer-background] => #333
+[color-brand-1] => #000
+[color-button-background] => #fff
+[color-button-text] => #1a1a1a
+[color-footer-background-active-rgba => 71,71,71
+[color-footer-background-active] => #474747
+[color-footer-background-hover-rgba => 51,51,51
+[color-footer-background-hover] => #333
+[color-footer-background-rgba => 26,26,26
+[color-footer-background-variation => 26,26,26
+[color-footer-background] => #1a1a1a
 [color-footer-text-active-rgba => 210,210,210
 [color-footer-text-active] => #d2d2d2
 [color-footer-text-hover-rgba => 230,230,230
@@ -56,20 +72,20 @@ Shortcodes:
 [color-footer-text-rgba => 255,255,255
 [color-footer-text-variation => 255,255,255
 [color-footer-text] => #fff
-[color-header-background-active-rgba => 96,96,96
-[color-header-background-active] => #606060
-[color-header-background-hover-rgba => 76,76,76
-[color-header-background-hover] => #4c4c4c
-[color-header-background-rgba => 51,51,51
-[color-header-background-variation => 51,51,51
-[color-header-background] => #333
-[color-nav-dropdown-background-active-rgba => 96,96,96
-[color-nav-dropdown-background-active] => #606060
-[color-nav-dropdown-background-hover-rgba => 76,76,76
-[color-nav-dropdown-background-hover] => #4c4c4c
-[color-nav-dropdown-background-rgba => 51,51,51
-[color-nav-dropdown-background-variation => 51,51,51
-[color-nav-dropdown-background] => #333
+[color-header-background-active-rgba => 71,71,71
+[color-header-background-active] => #474747
+[color-header-background-hover-rgba => 51,51,51
+[color-header-background-hover] => #333
+[color-header-background-rgba => 26,26,26
+[color-header-background-variation => 26,26,26
+[color-header-background] => #1a1a1a
+[color-nav-dropdown-background-active-rgba => 71,71,71
+[color-nav-dropdown-background-active] => #474747
+[color-nav-dropdown-background-hover-rgba => 51,51,51
+[color-nav-dropdown-background-hover] => #333
+[color-nav-dropdown-background-rgba => 26,26,26
+[color-nav-dropdown-background-variation => 26,26,26
+[color-nav-dropdown-background] => #1a1a1a
 [color-nav-dropdown-text-active-rgba => 210,210,210
 [color-nav-dropdown-text-active] => #d2d2d2
 [color-nav-dropdown-text-hover-rgba => 230,230,230
@@ -91,8 +107,9 @@ Shortcodes:
 [color-nav-text-rgba => 255,255,255
 [color-nav-text-variation => 255,255,255
 [color-nav-text] => #fff
-[color-text-active-rgba => 71,71,71
-[color-text-active] => #474747
+[color-scheme-default] => textDarkBackgroundLight
+[color-text-active-rgba => 45,45,45
+[color-text-active] => #2d2d2d
 [color-text-alt-active-rgba => 210,210,210
 [color-text-alt-active] => #d2d2d2
 [color-text-alt-hover-rgba => 230,230,230
@@ -100,15 +117,15 @@ Shortcodes:
 [color-text-alt-rgba => 255,255,255
 [color-text-alt-variation => 255,255,255
 [color-text-alt] => #fff
-[color-text-dark-active-rgba => 71,71,71
-[color-text-dark-active] => #474747
-[color-text-dark-hover-rgba => 51,51,51
-[color-text-dark-hover] => #333
-[color-text-dark-rgba => 26,26,26
-[color-text-dark-variation => 26,26,26
-[color-text-dark] => #1a1a1a
-[color-text-hover-rgba => 51,51,51
-[color-text-hover] => #333
+[color-text-dark-active-rgba => 45,45,45
+[color-text-dark-active] => #2d2d2d
+[color-text-dark-hover-rgba => 25,25,25
+[color-text-dark-hover] => #191919
+[color-text-dark-rgba => 0,0,0
+[color-text-dark-variation => 0,0,0
+[color-text-dark] => #000
+[color-text-hover-rgba => 25,25,25
+[color-text-hover] => #191919
 [color-text-light-active-rgba => 210,210,210
 [color-text-light-active] => #d2d2d2
 [color-text-light-hover-rgba => 230,230,230
@@ -116,9 +133,9 @@ Shortcodes:
 [color-text-light-rgba => 255,255,255
 [color-text-light-variation => 255,255,255
 [color-text-light] => #fff
-[color-text-rgba => 26,26,26
-[color-text-variation => 26,26,26
-[color-text] => #1a1a1a
+[color-text-rgba => 0,0,0
+[color-text-variation => 0,0,0
+[color-text] => #000
 [colors-brand] => 
 [colour-anchor-underline-active-rgba => 71,71,71
 [colour-anchor-underline-active] => #474747
@@ -129,20 +146,20 @@ Shortcodes:
 [colour-anchor-underline] => #1a1a1a
 [colour-background-active-rgba => 210,210,210
 [colour-background-active] => #d2d2d2
-[colour-background-alt-active-rgba => 96,96,96
-[colour-background-alt-active] => #606060
-[colour-background-alt-hover-rgba => 76,76,76
-[colour-background-alt-hover] => #4c4c4c
-[colour-background-alt-rgba => 51,51,51
-[colour-background-alt-variation => 51,51,51
-[colour-background-alt] => #333
-[colour-background-dark-active-rgba => 96,96,96
-[colour-background-dark-active] => #606060
-[colour-background-dark-hover-rgba => 76,76,76
-[colour-background-dark-hover] => #4c4c4c
-[colour-background-dark-rgba => 51,51,51
-[colour-background-dark-variation => 51,51,51
-[colour-background-dark] => #333
+[colour-background-alt-active-rgba => 45,45,45
+[colour-background-alt-active] => #2d2d2d
+[colour-background-alt-hover-rgba => 25,25,25
+[colour-background-alt-hover] => #191919
+[colour-background-alt-rgba => 0,0,0
+[colour-background-alt-variation => 0,0,0
+[colour-background-alt] => #000
+[colour-background-dark-active-rgba => 45,45,45
+[colour-background-dark-active] => #2d2d2d
+[colour-background-dark-hover-rgba => 25,25,25
+[colour-background-dark-hover] => #191919
+[colour-background-dark-rgba => 0,0,0
+[colour-background-dark-variation => 0,0,0
+[colour-background-dark] => #000
 [colour-background-hover-rgba => 230,230,230
 [colour-background-hover] => #e6e6e6
 [colour-background-light-active-rgba => 210,210,210
@@ -155,14 +172,16 @@ Shortcodes:
 [colour-background-rgba => 255,255,255
 [colour-background-variation => 255,255,255
 [colour-background] => #fff
-[colour-brand-1] => #1a1a1a
-[colour-footer-background-active-rgba => 96,96,96
-[colour-footer-background-active] => #606060
-[colour-footer-background-hover-rgba => 76,76,76
-[colour-footer-background-hover] => #4c4c4c
-[colour-footer-background-rgba => 51,51,51
-[colour-footer-background-variation => 51,51,51
-[colour-footer-background] => #333
+[colour-brand-1] => #000
+[colour-button-background] => #fff
+[colour-button-text] => #1a1a1a
+[colour-footer-background-active-rgba => 71,71,71
+[colour-footer-background-active] => #474747
+[colour-footer-background-hover-rgba => 51,51,51
+[colour-footer-background-hover] => #333
+[colour-footer-background-rgba => 26,26,26
+[colour-footer-background-variation => 26,26,26
+[colour-footer-background] => #1a1a1a
 [colour-footer-text-active-rgba => 210,210,210
 [colour-footer-text-active] => #d2d2d2
 [colour-footer-text-hover-rgba => 230,230,230
@@ -170,20 +189,20 @@ Shortcodes:
 [colour-footer-text-rgba => 255,255,255
 [colour-footer-text-variation => 255,255,255
 [colour-footer-text] => #fff
-[colour-header-background-active-rgba => 96,96,96
-[colour-header-background-active] => #606060
-[colour-header-background-hover-rgba => 76,76,76
-[colour-header-background-hover] => #4c4c4c
-[colour-header-background-rgba => 51,51,51
-[colour-header-background-variation => 51,51,51
-[colour-header-background] => #333
-[colour-nav-dropdown-background-active-rgba => 96,96,96
-[colour-nav-dropdown-background-active] => #606060
-[colour-nav-dropdown-background-hover-rgba => 76,76,76
-[colour-nav-dropdown-background-hover] => #4c4c4c
-[colour-nav-dropdown-background-rgba => 51,51,51
-[colour-nav-dropdown-background-variation => 51,51,51
-[colour-nav-dropdown-background] => #333
+[colour-header-background-active-rgba => 71,71,71
+[colour-header-background-active] => #474747
+[colour-header-background-hover-rgba => 51,51,51
+[colour-header-background-hover] => #333
+[colour-header-background-rgba => 26,26,26
+[colour-header-background-variation => 26,26,26
+[colour-header-background] => #1a1a1a
+[colour-nav-dropdown-background-active-rgba => 71,71,71
+[colour-nav-dropdown-background-active] => #474747
+[colour-nav-dropdown-background-hover-rgba => 51,51,51
+[colour-nav-dropdown-background-hover] => #333
+[colour-nav-dropdown-background-rgba => 26,26,26
+[colour-nav-dropdown-background-variation => 26,26,26
+[colour-nav-dropdown-background] => #1a1a1a
 [colour-nav-dropdown-text-active-rgba => 210,210,210
 [colour-nav-dropdown-text-active] => #d2d2d2
 [colour-nav-dropdown-text-hover-rgba => 230,230,230
@@ -205,8 +224,8 @@ Shortcodes:
 [colour-nav-text-rgba => 255,255,255
 [colour-nav-text-variation => 255,255,255
 [colour-nav-text] => #fff
-[colour-text-active-rgba => 71,71,71
-[colour-text-active] => #474747
+[colour-text-active-rgba => 45,45,45
+[colour-text-active] => #2d2d2d
 [colour-text-alt-active-rgba => 210,210,210
 [colour-text-alt-active] => #d2d2d2
 [colour-text-alt-hover-rgba => 230,230,230
@@ -214,15 +233,15 @@ Shortcodes:
 [colour-text-alt-rgba => 255,255,255
 [colour-text-alt-variation => 255,255,255
 [colour-text-alt] => #fff
-[colour-text-dark-active-rgba => 71,71,71
-[colour-text-dark-active] => #474747
-[colour-text-dark-hover-rgba => 51,51,51
-[colour-text-dark-hover] => #333
-[colour-text-dark-rgba => 26,26,26
-[colour-text-dark-variation => 26,26,26
-[colour-text-dark] => #1a1a1a
-[colour-text-hover-rgba => 51,51,51
-[colour-text-hover] => #333
+[colour-text-dark-active-rgba => 45,45,45
+[colour-text-dark-active] => #2d2d2d
+[colour-text-dark-hover-rgba => 25,25,25
+[colour-text-dark-hover] => #191919
+[colour-text-dark-rgba => 0,0,0
+[colour-text-dark-variation => 0,0,0
+[colour-text-dark] => #000
+[colour-text-hover-rgba => 25,25,25
+[colour-text-hover] => #191919
 [colour-text-light-active-rgba => 210,210,210
 [colour-text-light-active] => #d2d2d2
 [colour-text-light-hover-rgba => 230,230,230
@@ -230,14 +249,40 @@ Shortcodes:
 [colour-text-light-rgba => 255,255,255
 [colour-text-light-variation => 255,255,255
 [colour-text-light] => #fff
-[colour-text-rgba => 26,26,26
-[colour-text-variation => 26,26,26
-[colour-text] => #1a1a1a
+[colour-text-rgba => 0,0,0
+[colour-text-variation => 0,0,0
+[colour-text] => #000
+[content-width-max] => 1400px
+[edge-padding] => 30px
+[font-family-heading] => Arial, sans-serif
+[font-family] => Arial, sans-serif
+[font-size] => 13pt
 [footer-logo-width] => 255px
 [golden-ratio-inverse] => 0.6180339888
 [golden-ratio] => 1.6180339887
+[grid-gap-horizontal] => 45px
+[grid-gap-vertical] => 0
+[header-height-scrolled] => 70px
+[header-height] => 140px
+[header-logo-width-scrolled] => 110px
 [header-logo-width] => 185px
+[header-mobile-opacity] => 0.8
+[header-position] => fixed
+[header-transition] => 1s ease all
+[image-margin-horizontal] => 45px
+[image-margin-vertical] => 15px
+[line-height-headings] => 1.25
+[line-height] => 1.7
+[min-width-lg] => 992
+[min-width-md] => 768
+[min-width-sm] => 577
+[min-width-xl] => 1200
+[min-width-xxl] => 1400
+[nav-dropdown-menu-opacity] => 0.8
 [pi] => 3.1415926536
+[section-padding-vertical] => 90px
+[social-media-icon-dimension] => 40px
+[text-margin] => 15px
 [tsp-calc => 
 [tsp-calculate => 
 [tsp-sum => 
@@ -250,8 +295,8 @@ CSS:
 array (
   'ID' => 0,
   'key' => 'field_6632d474da558_field_6632d32027db6',
-  'label' => 'Colours',
-  'name' => 'colours',
+  'label' => 'Colours Colours',
+  'name' => 'colours_colours',
   'aria-label' => '',
   'prefix' => 'acf[field_6632d474da558]',
   'type' => 'group',
@@ -270,7 +315,7 @@ array (
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'colours',
+  '_name' => 'colours_colours',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -1037,7 +1082,7 @@ Colour ranges will stay within 0 to 255.',
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'true_false',
-      'value' => false,
+      'value' => true,
       'menu_order' => 21,
       'instructions' => '',
       'required' => 0,
@@ -1068,7 +1113,7 @@ Colour ranges will stay within 0 to 255.',
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'true_false',
-      'value' => false,
+      'value' => true,
       'menu_order' => 22,
       'instructions' => '',
       'required' => 0,
@@ -1479,8 +1524,8 @@ This is the default button background colour when used in a section with a light
 )array (
   'ID' => 0,
   'key' => 'field_6632c94ad4c0a_field_6632be1cfac83',
-  'label' => 'Custom Shortcodes & Properties',
-  'name' => 'custom_shortcodes_and_properties',
+  'label' => 'Custom Shortcodes & Properties Custom Shortcodes & Properties',
+  'name' => 'custom_shortcodes_and_properties_custom_shortcodes_and_properties',
   'aria-label' => '',
   'prefix' => 'acf[field_6632c94ad4c0a]',
   'type' => 'group',
@@ -1499,7 +1544,7 @@ This is the default button background colour when used in a section with a light
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'custom_shortcodes_and_properties',
+  '_name' => 'custom_shortcodes_and_properties_custom_shortcodes_and_properties',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -1698,7 +1743,9 @@ This is the default button background colour when used in a section with a light
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '',
+      'value' => ':root {
+	--edge-padding: [edge-padding]; /* This is a CSS property as it is updated dynamically at different screen sizes */
+}',
       'menu_order' => 4,
       'instructions' => 'Use this area to set CSS properties (variables) via the :root element<br /><br />
 
@@ -1878,8 +1925,8 @@ As a general rule, use Two Sparrows custom shortcodes to set values, as these ar
 )array (
   'ID' => 0,
   'key' => 'field_6632d0f5f9474_field_6632cf6369f60',
-  'label' => 'Elements',
-  'name' => 'elements',
+  'label' => 'Elements Elements',
+  'name' => 'elements_elements',
   'aria-label' => '',
   'prefix' => 'acf[field_6632d0f5f9474]',
   'type' => 'group',
@@ -1898,7 +1945,7 @@ As a general rule, use Two Sparrows custom shortcodes to set values, as these ar
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'elements',
+  '_name' => 'elements_elements',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -1971,7 +2018,7 @@ As this page will be output as CSS, correctly syntaxed CSS should be written in 
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'text',
-      'value' => '14pt',
+      'value' => '13pt',
       'menu_order' => 2,
       'instructions' => 'Shortcode: <code>[font-size]</code><br />
 This is the base font size (in px) that all other font sizes are referenced to (using rem units). This will be the paragraph font size.',
@@ -2035,7 +2082,7 @@ The standard margin, particularly used vertically around p and li elements. It i
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'number',
-      'value' => '1.4',
+      'value' => '1.7',
       'menu_order' => 4,
       'instructions' => 'Shortcode: <code>[line-height]</code><br />
 This is the default line height used for all elements.',
@@ -2224,7 +2271,24 @@ CSS for importing fonts should be added to the top of Fundamental Elements CSS b
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '',
+      'value' => '* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: [font-size]; /* rem units are relative to the font size of the HTML element - see https://www.digitalocean.com/community/tutorials/css-rem-vs-em-units */
+}
+
+body {
+	background: [colour-background];
+	color: [colour-text];
+	font-family: [font-family];
+	font-size: 1rem;
+	line-height: [line-height];
+	-webkit-font-smoothing: antialiased; /* Fix for Google Chrome issue where a slider change can cause text to flicker */
+}',
       'menu_order' => 10,
       'instructions' => 'Add any imported fonts to the top of this section (wrapped in @font-face or @import).',
       'required' => 0,
@@ -2432,7 +2496,65 @@ CSS for importing fonts should be added to the top of Fundamental Elements CSS b
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '',
+      'value' => 'p, li, td {
+	font-family: [font-family];
+	font-size: 1rem;
+	line-height: [line-height];
+	margin-bottom: [text-margin];
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: [font-family-heading];
+	font-weight: bold;
+	color: [colour-text];
+	line-height: [line-height-headings];
+	padding: 0;
+	font-size: 1rem;
+	margin: [tsp-calc tm *2] 0 [text-margin];
+}
+
+:is(h1, h2, h3, h4, h5, h6):first-child {
+	margin-top: 0;
+}
+
+h1, h2 {
+	font-size: 2.5rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+ol, ul {
+	margin-bottom: [text-margin];
+}
+
+li {
+	margin: [tsp-calc tm /3, round] 0 [tsp-calc tm /3, round] [tsp-calc tm *2];
+}
+
+blockquote {
+	margin: [tsp-calc tm *2];
+}
+
+blockquote h3 {
+	font-size: 2rem;
+	line-height: 1.5;
+	margin-top: [text-margin];
+	margin-bottom: 0;
+}
+
+blockquote h3 + p {
+	margin-top: 0;
+}
+
+blockquote :is(p, li) {
+	font-family: [font-family];
+	font-weight: bold;
+	font-size: 1.4rem;
+	line-height: [line-height];
+}',
       'menu_order' => 14,
       'instructions' => '',
       'required' => 0,
@@ -2640,7 +2762,22 @@ CSS for importing fonts should be added to the top of Fundamental Elements CSS b
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '/* Screen Readers only */
+      'value' => '/* Text Alignment classes */
+
+.text-align-centre {
+	text-align: center;
+}
+
+.text-align-left {
+	text-align: left;
+}
+
+.text-align-right {
+	text-align: right;
+}
+
+
+/* Screen Readers only */
 
 .sr-only { /* From https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices/how-to-hide-visual-content?autoSkip=true&autoplay=true&resume=false&u=92735081 */
 	position: absolute;
@@ -2665,7 +2802,7 @@ ul {
 }
 
 wbr:before { /* IE 8–11 (old) and Prince page pdf creator don’t recognize the "wbr" element, but a pseudo-element can achieve the same effect with IE 9+ and Prince (from https://css-tricks.com/better-line-breaks-for-long-urls/ ) */
-	content: "200B";  /* Unicode zero width space */
+	content: "\\200B";  /* Unicode zero width space */
 	white-space: normal;
 }
 
@@ -2687,28 +2824,13 @@ ul.no-bullets li {
 	position: absolute;
 	left: -35px;
 	font-family: "fa-select";
-	content: \'2713\';
+	content: \'\\2713\';
 	color: [colour-text-light];
 	background: [colour-background-dark];
 	border-radius: 50%;
 	padding: 0 3px;
 	margin-right: 10px;
 }
-
-
-/* Blockquotes */
-
-blockquote h3 {
-	font-size: 2rem;
-	line-height: 1.5;
-	margin-top: 15px;
-	margin-bottom: 0;
-}
-
-blockquote h3 + p {
-	margin-top: 0;
-}
-
 
 /* Small */
 
@@ -3008,8 +3130,8 @@ p.extra-margin-bottom {
 )array (
   'ID' => 0,
   'key' => 'field_6632cd1c412ae_field_6632c9b157051',
-  'label' => 'Anchors & Buttons',
-  'name' => 'anchors_and_buttons',
+  'label' => 'Anchors & Buttons Anchors & Buttons',
+  'name' => 'anchors_and_buttons_anchors_and_buttons',
   'aria-label' => '',
   'prefix' => 'acf[field_6632cd1c412ae]',
   'type' => 'group',
@@ -3028,7 +3150,7 @@ p.extra-margin-bottom {
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'anchors_and_buttons',
+  '_name' => 'anchors_and_buttons_anchors_and_buttons',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -3577,7 +3699,41 @@ This is used for both the width and height, to make a round icon.',
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '',
+      'value' => 'a {
+	text-decoration: none;
+	border-bottom: 2px solid [colour-text];
+	-webkit-transform:translate3d(0,0,0); /* Fix for Google Chrome flickers on subsequent anchor elements - see https://maximelafarie.com/avoid-css-flickering */
+	transition: [anchor-transition];
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+	color: [colour-text];
+	border-bottom: 2px solid [colour-text];
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	color: [colour-text-hover];
+	border-bottom: [tsp-calc tm /5, round] solid [colour-anchor-underline];
+	transition: [anchor-transition];
+}
+
+a:active {
+	color: [colour-text-active];
+	transition: [anchor-transition];
+}
+
+a:focus {
+	outline: solid [colour-brand-1] 1px !important;
+}
+
+:is(h1, h2, h3, h4, h5, h6) a {
+	text-decoration: none;
+	border-bottom: none !important;
+}',
       'menu_order' => 15,
       'instructions' => '',
       'required' => 0,
@@ -3608,7 +3764,12 @@ This is used for both the width and height, to make a round icon.',
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '/* Social Media links (and additional icons) */
+      'value' => 'a.section-named-anchor {
+	border: none !important;
+	transition: none !important;
+}
+
+/* Social Media links (and additional icons) */
 
 ul.social-media-links {
 	display: flex;
@@ -3632,6 +3793,8 @@ ul.social-media-links.align-right {
 
 ul.social-media-links li {
 	margin-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 a.social-media-link,
@@ -3640,14 +3803,17 @@ a.social-media-link:visited {
 	color: [colour-text-light];
 	background: [colour-background-dark];
 	font-size: 1.4rem;
-	width: 35px;
-	height: 35px;
+	width: [social-media-icon-dimension];
+	height: [social-media-icon-dimension];
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 0;
 	border-radius: 50%;
 	margin-right: 10px;
+	border-bottom: none !important;
+	transform: scale(1);
+	transition: [button-transition];
 }
 
 a.social-media-link:last-of-type,
@@ -3656,9 +3822,11 @@ a.social-media-link:visited:last-of-type {
 	margin-right: 0;
 }
 
-a.social-media-link:hover {
+a.social-media-link:hover,
+a.social-media-link:focus {
 	color: [colour-text-light-hover];
 	background: [colour-background-dark-hover];
+	transform: [button-swell];
 }
 
 a.social-media-link:active {
@@ -3667,19 +3835,29 @@ a.social-media-link:active {
 }
 
 a.social-media-link i {
-	position: relative;
-	top: 1px;
+	/* position: relative;
+	top: 1px; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: scale(1);
+	transition: [button-transition];
+}
+
+a.social-media-link:hover i,
+a.social-media-link:focus i {
+	transform: [button-swell];
 }
 
 .icon-deezer:before {
-	content: \'20\';
+	content: \'\\20\';
 	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/deezer-black.svg);
 	background-size: 100% 100%;
 	white-space: pre;
 }
 
 .icon-kofi:before {
-	content: \'20\';
+	content: \'\\20\';
 	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/kofi-black.svg);
 	background-size: 130% 130%;
 	background-position: -1px -2px;
@@ -3687,7 +3865,7 @@ a.social-media-link i {
 }
 
 .icon-tiktok:before {
-	content: \'20\';
+	content: \'\\20\';
 	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/tiktok-white.svg);
 	background-size: 100% 100%;
 	white-space: pre;
@@ -3731,7 +3909,8 @@ a[anchor-underline-exclusions]:before {
 	transition: [anchor-transition];
 }
 
-a[anchor-underline-exclusions]:hover:before {
+a[anchor-underline-exclusions]:hover:before,
+a[anchor-underline-exclusions]:focus:before {
 	visibility: visible;
 	-webkit-transform: translate3d(0,0,0);
 	width: 100%;
@@ -4116,7 +4295,44 @@ li.disabled > a:first-child {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '',
+      'value' => '[button-selectors] {
+	cursor: pointer;
+	display: inline-block;
+	background: [colour-background-dark];
+	color: [colour-text-light];
+	font-family: [font-family];
+	font-size: 1rem;
+	font-weight: normal;
+	text-transform: uppercase;
+	text-align: left;
+	text-decoration: none;
+	border-bottom: none !important;
+	margin: [text-margin] 0;
+	padding: [button-padding-vertical] [button-padding-horizontal];
+	border: none;
+	border-radius: [button-border-radius];
+	white-space: normal; /* or nowrap */
+	transform: scale(1);
+	transition: [button-transition];
+}
+
+:is([button-selectors]):hover
+:is([button-selectors]):focus {
+	color: [colour-text-light];
+	background: [colour-background-dark-hover];
+	transform: [button-swell];
+}
+
+:is([button-selectors]):active {
+	background: [colour-background-dark-active];
+}
+
+:is([button-selectors]):focus {
+	box-shadow: none;
+	color: [colour-text-light];
+	background: [colour-background-dark-hover];
+	transform: [button-swell];
+}',
       'menu_order' => 20,
       'instructions' => '',
       'required' => 0,
@@ -4147,7 +4363,35 @@ li.disabled > a:first-child {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'repeater',
-      'value' => false,
+      'value' => 
+      array (
+        0 => 
+        array (
+          'button_class_name' => 'alt',
+          'button_class_css' => 'color: [colour-text];
+background: [colour-background];
+border: 1px [colour-text-dark] solid;
+border-bottom: 1px [colour-text-dark] solid !important;
+padding: [tsp-calc {button-padding-vertical} - 1] [tsp-calc {button-padding-horizontal} -1]; /* To account for border */',
+          'button_class_hover_css' => 'color: [colour-text];
+background: [colour-background-rgba 0.8];',
+          'button_class_active_css' => 'color: [colour-text];
+background: [colour-background-rgba 0.7];',
+        ),
+        1 => 
+        array (
+          'button_class_name' => 'transparent',
+          'button_class_css' => 'color: [colour-text];
+background: none;
+border: 1px [colour-text] solid;
+border-bottom: 1px [colour-text-dark] solid !important;
+padding: [tsp-calc {button-padding-vertical} - 1] [tsp-calc {button-padding-horizontal} -1]; /* To account for border */',
+          'button_class_hover_css' => 'color: [colour-text];
+background: [colour-background-light-rgba 0.2];',
+          'button_class_active_css' => 'color: [colour-text];
+background: [colour-background-light-rgba 0.3];',
+        ),
+      ),
       'menu_order' => 21,
       'instructions' => 'Button classes will be applied to each of the button selectors in the shortcode above for each pseudo-class.',
       'required' => 0,
@@ -4311,11 +4555,11 @@ li.disabled > a:first-child {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '.cta-buttons :is(button, input[type="submit"], a.button, a.btn):first-child {
+      'value' => '.cta-buttons :is([button-selectors]):first-child {
 	margin-left: 0;
 }
 
-.cta-buttons :is(button, input[type="submit"], a.button, a.btn):last-child {
+.cta-buttons :is([button-selectors]):last-child {
 	margin-right: 0;
 }',
       'menu_order' => 22,
@@ -4354,7 +4598,16 @@ li.disabled > a:first-child {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'repeater',
-      'value' => false,
+      'value' => 
+      array (
+        0 => 
+        array (
+          'screen_size' => 'sm',
+          'screen_size_css' => '[button-selectors] {
+	margin-right: [text-margin];
+}',
+        ),
+      ),
       'menu_order' => 23,
       'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
       'required' => 0,
@@ -4501,8 +4754,8 @@ li.disabled > a:first-child {
 )array (
   'ID' => 0,
   'key' => 'field_6632bd931625f_field_6632bd11db3c0',
-  'label' => 'Forms',
-  'name' => 'forms',
+  'label' => 'Forms Forms',
+  'name' => 'forms_forms',
   'aria-label' => '',
   'prefix' => 'acf[field_6632bd931625f]',
   'type' => 'group',
@@ -4521,7 +4774,7 @@ li.disabled > a:first-child {
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'forms',
+  '_name' => 'forms_forms',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -4592,7 +4845,39 @@ li.disabled > a:first-child {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '',
+      'value' => 'label {
+	font-family: [font-family];
+	font-weight: bold;
+	width: 100%;
+}
+
+input, textarea {
+	font-family: [font-family];
+	font-size: 1rem;
+	border: 1px solid [colour-text-dark-rgba 0.2];
+	width: 100%;
+	max-width: 600px; /* Was 450px */
+	padding: 6px;
+}
+
+textarea {
+	min-height: 40px;
+	height: 120px;
+}
+
+input[type="submit"] {
+	width: initial;
+}
+
+:is(input, textarea):focus {
+	border: 1px solid [colour-background];
+	box-shadow: 0 0 4px [colour-text-dark-rgba 0.2];
+	outline: none;
+}
+
+input[type=checkbox] {
+	width: auto;
+}',
       'menu_order' => 2,
       'instructions' => '',
       'required' => 0,
@@ -4623,11 +4908,7 @@ li.disabled > a:first-child {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => 'input[type=checkbox] {
-	width: auto;
-}
-
-.wpcf7 input:not[type="submit"],
+      'value' => '.wpcf7 input:not[type="submit"],
 .wpcf7 textarea {
 	margin-top: 0.5rem;
 }
@@ -4754,7 +5035,16 @@ form.searchform label {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'repeater',
-      'value' => false,
+      'value' => 
+      array (
+        0 => 
+        array (
+          'screen_size' => 'lg',
+          'screen_size_css' => '.kokako div:not(.col-lg-12, .col-xl-12) :is(input, textarea) {
+	max-width: calc(100% - [text-margin]);
+}',
+        ),
+      ),
       'menu_order' => 4,
       'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
       'required' => 0,
@@ -4901,8 +5191,8 @@ form.searchform label {
 )array (
   'ID' => 0,
   'key' => 'field_6632bc1fe0209_field_6632b1ade64a5',
-  'label' => 'Images, Iframes & Videos',
-  'name' => 'images_iframes_and_videos',
+  'label' => 'Images, Iframes & Videos Images, Iframes & Videos',
+  'name' => 'images_iframes_and_videos_images_iframes_and_videos',
   'aria-label' => '',
   'prefix' => 'acf[field_6632bc1fe0209]',
   'type' => 'group',
@@ -4921,7 +5211,7 @@ form.searchform label {
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'images_iframes_and_videos',
+  '_name' => 'images_iframes_and_videos_images_iframes_and_videos',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -5711,9 +6001,1168 @@ form.searchform label {
   '__label' => 'Images, Iframes & Videos',
 )array (
   'ID' => 0,
+  'key' => 'field_6631c6a8921d7_field_6631c57d65a84',
+  'label' => 'Structure & Framework Structure & Framework',
+  'name' => 'structure_and_framework_structure_and_framework',
+  'aria-label' => '',
+  'prefix' => 'acf[field_6631c6a8921d7]',
+  'type' => 'group',
+  'value' => NULL,
+  'menu_order' => 0,
+  'instructions' => '',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'group_654c4df65922e',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'css',
+    'id' => '',
+  ),
+  'layout' => 'block',
+  '_name' => 'structure_and_framework_structure_and_framework',
+  '_valid' => 1,
+  'sub_fields' => 
+  array (
+    0 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ad00b02d6c',
+      'label' => 'Structure & Framework',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'message',
+      'value' => false,
+      'menu_order' => 0,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'message' => 'This is the core structure that creates the framework for the website.<br /><br />
+
+Kōkako is <strong>mobile first</strong>, so the site default is mobile sizing (XS). Breakpoints are supplied at SM, MD, LG, XL, and XXL sizes (which can be customised below).<br /><br />
+
+This area provides the core structure and framework for both the website and Kōkako sections, which are built upon in following areas of the CSS.',
+      'new_lines' => 'wpautop',
+      'esc_html' => 0,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    1 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654acf7ab2169',
+      'label' => 'Structure Setup',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 1,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 1,
+      'endpoint' => 0,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    2 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_6567bd2b59938',
+      'label' => 'Content Width Max',
+      'name' => 'content_width_max',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'text',
+      'value' => '1400px',
+      'menu_order' => 2,
+      'instructions' => 'Shortcode: <code>[content-width-max]</code><br />
+This is the maximum width that content is restrained to (unless a section is full width). This value is inclusive of the edge padding (which also means it can be set to 100vw to create a website that is always full width).',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css shortcode',
+        'id' => '',
+      ),
+      'default_value' => '1400px',
+      'maxlength' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      '_name' => 'content_width_max',
+      '_valid' => 1,
+    ),
+    3 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ad20b02d6d',
+      'label' => 'Edge Padding',
+      'name' => 'edge_padding',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'text',
+      'value' => '[tsp-calc tm *2]',
+      'menu_order' => 3,
+      'instructions' => 'Shortcode: <code>[edge-padding]</code><br />
+This is the base inner horizontal padding for the website (ie. the minimum distance from website content to the horizontal edge of the browser). It is used to set up the CSS property <code>var(--edge-padding)</code>, which is updated proportionally for different screen sizes. Please use <code>var(--edge-padding)</code> to get the correct value at any screen size.',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css shortcode',
+        'id' => '',
+      ),
+      'default_value' => '[tsp-calc tm *2]',
+      'maxlength' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      '_name' => 'edge_padding',
+      '_valid' => 1,
+    ),
+    4 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_656ea28386af7',
+      'label' => 'Grid Gap - Horizontal',
+      'name' => 'grid_gap_horizontal',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'text',
+      'value' => '[tsp-calc {edge-padding} *1.5, round]',
+      'menu_order' => 4,
+      'instructions' => 'Shortcode: <code>[grid-gap-horizontal]</code>',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css shortcode',
+        'id' => '',
+      ),
+      'default_value' => '[tsp-calc {edge-padding} *1.5, round]',
+      'maxlength' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      '_name' => 'grid_gap_horizontal',
+      '_valid' => 1,
+    ),
+    5 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_656ea2b686af8',
+      'label' => 'Grid Gap - Vertical',
+      'name' => 'grid_gap_vertical',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'text',
+      'value' => '[tsp-calc {horizontal-padding} *1.5, round]',
+      'menu_order' => 5,
+      'instructions' => 'Shortcode: <code>[grid-gap-vertical]</code>',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css shortcode',
+        'id' => '',
+      ),
+      'default_value' => '[tsp-calc {horizontal-padding} *1.5, round]',
+      'maxlength' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      '_name' => 'grid_gap_vertical',
+      '_valid' => 1,
+    ),
+    6 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_653f2df3a6731',
+      'label' => 'Screen Breakpoints',
+      'name' => 'screen_breakpoints',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'group',
+      'value' => 
+      array (
+        'min_width_sm' => '577',
+        'min_width_md' => '768',
+        'min_width_lg' => '992',
+        'min_width_xl' => '1200',
+        'min_width_xxl' => '1400',
+      ),
+      'menu_order' => 6,
+      'instructions' => 'As the theme is mobile first, XS is simply the default size. LG should be considered the default point for switching from mobile to desktop layout - MD will be used mostly for mobile / tablet in landscape.<br /><br />
+
+<strong>Do NOT change these sizes on a live site</strong>. These settings are set to match  the <a href="https://getbootstrap.com/docs/5.0/layout/breakpoints/" target="_blank">Bootstrap screen breakpoints</a> and in general should not need to be updated on any site.<br /><br />
+
+All sizes are in px (pixels), and measure the minimum viewable width of the website at each breakpoint.',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css shortcode process',
+        'id' => '',
+      ),
+      'layout' => 'row',
+      '_name' => 'screen_breakpoints',
+      '_valid' => 1,
+      'sub_fields' => 
+      array (
+        0 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_653f2caaa69cc',
+          'label' => 'SM',
+          'name' => 'min_width_sm',
+          'aria-label' => '',
+          'prefix' => 'acf',
+          'type' => 'range',
+          'value' => NULL,
+          'menu_order' => 0,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_653f2df3a6731',
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 577,
+          'min' => 0,
+          'max' => 2000,
+          'step' => '',
+          'prepend' => '',
+          'append' => '',
+          '_name' => 'min_width_sm',
+          '_valid' => 1,
+        ),
+        1 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_653f2e2aa6732',
+          'label' => 'MD',
+          'name' => 'min_width_md',
+          'aria-label' => '',
+          'prefix' => 'acf',
+          'type' => 'range',
+          'value' => NULL,
+          'menu_order' => 1,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_653f2df3a6731',
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 768,
+          'min' => '',
+          'max' => 2000,
+          'step' => '',
+          'prepend' => '',
+          'append' => '',
+          '_name' => 'min_width_md',
+          '_valid' => 1,
+        ),
+        2 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_653f2e43a6733',
+          'label' => 'LG',
+          'name' => 'min_width_lg',
+          'aria-label' => '',
+          'prefix' => 'acf',
+          'type' => 'range',
+          'value' => NULL,
+          'menu_order' => 2,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_653f2df3a6731',
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 992,
+          'min' => '',
+          'max' => 2000,
+          'step' => '',
+          'prepend' => '',
+          'append' => '',
+          '_name' => 'min_width_lg',
+          '_valid' => 1,
+        ),
+        3 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_653f2e8ca6734',
+          'label' => 'XL',
+          'name' => 'min_width_xl',
+          'aria-label' => '',
+          'prefix' => 'acf',
+          'type' => 'range',
+          'value' => NULL,
+          'menu_order' => 3,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_653f2df3a6731',
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 1200,
+          'min' => '',
+          'max' => 2000,
+          'step' => '',
+          'prepend' => '',
+          'append' => '',
+          '_name' => 'min_width_xl',
+          '_valid' => 1,
+        ),
+        4 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_653f2ea0a6735',
+          'label' => 'XXL',
+          'name' => 'min_width_xxl',
+          'aria-label' => '',
+          'prefix' => 'acf',
+          'type' => 'range',
+          'value' => NULL,
+          'menu_order' => 4,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_653f2df3a6731',
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 1400,
+          'min' => '',
+          'max' => 2000,
+          'step' => '',
+          'prepend' => '',
+          'append' => '',
+          '_name' => 'min_width_xxl',
+          '_valid' => 1,
+        ),
+      ),
+    ),
+    7 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_6539e9a30ce0c',
+      'label' => 'Display screen size for testing',
+      'name' => 'display_screen_size_for_testing',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'true_false',
+      'value' => false,
+      'menu_order' => 7,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'other',
+        'id' => '',
+      ),
+      'message' => 'Display the Bootstrap grid size while Two Sparrows are logged in (for testing, disable if not required).',
+      'default_value' => 0,
+      'ui_on_text' => 'On',
+      'ui_off_text' => 'Off',
+      'ui' => 1,
+      '_name' => 'display_screen_size_for_testing',
+      '_valid' => 1,
+    ),
+    8 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654acf96b216a',
+      'label' => 'Structure Setup End',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 8,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 0,
+      'endpoint' => 1,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    9 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ad3d63f326',
+      'label' => 'Core Framework',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 9,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 1,
+      'endpoint' => 0,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    10 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ad3fe3f328',
+      'label' => 'Core Framework CSS',
+      'name' => 'core_framework_css',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'textarea',
+      'value' => '@supports (grid-area: auto) { /* Check this statement against the course */
+
+	body {
+		display: grid;
+		grid-template-columns: auto;
+		grid-auto-rows: minmax(200px, auto);
+		grid-template-areas: 
+			"header"
+			"main"
+			"footer";
+	}
+
+	header {
+		grid-area: header;
+	}
+
+	main {
+		grid-area: main;
+		display: grid;
+		grid-template-columns: auto;
+		grid-auto-rows: auto;
+	}
+
+	footer {
+		grid-area: footer;
+	}
+
+}',
+      'menu_order' => 10,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css full',
+        'id' => '070010',
+      ),
+      'default_value' => '@supports (grid-area: auto) { /* Check this statement against the course */
+
+	body {
+		display: grid;
+		grid-template-columns: auto;
+		grid-auto-rows: minmax(200px, auto);
+		grid-template-areas: 
+			"header"
+			"main"
+			"footer";
+	}
+
+	header {
+		grid-area: header;
+	}
+
+	main {
+		grid-area: main;
+		display: grid;
+		grid-template-columns: auto;
+		grid-auto-rows: auto;
+	}
+
+	footer {
+		grid-area: footer;
+	}
+
+}',
+      'maxlength' => '',
+      'rows' => 24,
+      'placeholder' => '',
+      'new_lines' => '',
+      '_name' => 'core_framework_css',
+      '_valid' => 1,
+    ),
+    11 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ad4e63f329',
+      'label' => 'Core Framework Responsivity',
+      'name' => 'core_framework_responsivity',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'repeater',
+      'value' => false,
+      'menu_order' => 11,
+      'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css responsivity',
+        'id' => '070020',
+      ),
+      'layout' => 'table',
+      'pagination' => 0,
+      'min' => 0,
+      'max' => 6,
+      'collapsed' => 'field_654ad5123f32a',
+      'button_label' => 'Add Screen Size CSS',
+      'rows_per_page' => 20,
+      '_name' => 'core_framework_responsivity',
+      '_valid' => 1,
+      'sub_fields' => 
+      array (
+        0 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_654ad5123f32a_field_6631992626553',
+          'label' => 'Screen Size',
+          'name' => 'screen_size',
+          'aria-label' => '',
+          'prefix' => 'acf[field_654ad5123f32a]',
+          'type' => 'select',
+          'value' => NULL,
+          'menu_order' => 0,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_654ad4e63f329',
+          'wrapper' => 
+          array (
+            'width' => '20',
+            'class' => '',
+            'id' => '',
+          ),
+          'choices' => 
+          array (
+            'sm' => 'SM & Above',
+            'md' => 'MD & Above',
+            'lg' => 'LG & Above',
+            'xl' => 'XL & Above',
+            'xxl' => 'XXL',
+            'nav-expanded' => 'Nav Expanded',
+          ),
+          'default_value' => 'lg',
+          'return_format' => 'value',
+          'multiple' => 0,
+          'allow_null' => 0,
+          'ui' => 0,
+          'ajax' => 0,
+          'placeholder' => '',
+          'parent_repeater' => 'field_654ad4e63f329',
+          '_name' => 'screen_size',
+          '_valid' => 1,
+          '_clone' => 'field_654ad5123f32a',
+          '__key' => 'field_6631992626553',
+          '__name' => 'screen_size',
+          '__label' => 'Screen Size',
+        ),
+        1 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_654ad75b3f32b_field_6631995026554',
+          'label' => 'Screen Size CSS',
+          'name' => 'screen_size_css',
+          'aria-label' => '',
+          'prefix' => 'acf[field_654ad75b3f32b]',
+          'type' => 'textarea',
+          'value' => NULL,
+          'menu_order' => 1,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_654ad4e63f329',
+          'wrapper' => 
+          array (
+            'width' => '80',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'maxlength' => '',
+          'rows' => '',
+          'placeholder' => '',
+          'new_lines' => '',
+          'parent_repeater' => 'field_654ad4e63f329',
+          '_name' => 'screen_size_css',
+          '_valid' => 1,
+          '_clone' => 'field_654ad75b3f32b',
+          '__key' => 'field_6631995026554',
+          '__name' => 'screen_size_css',
+          '__label' => 'Screen Size CSS',
+        ),
+      ),
+    ),
+    12 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ae2fc93109',
+      'label' => 'Core Framework End',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 12,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 0,
+      'endpoint' => 1,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    13 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ae2da93107',
+      'label' => 'Kōkako Framework',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 13,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 1,
+      'endpoint' => 0,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    14 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ad8b52f5ac',
+      'label' => 'Kōkako Framework CSS',
+      'name' => 'kokako_framework_css',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'textarea',
+      'value' => '',
+      'menu_order' => 14,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css full',
+        'id' => '070030',
+      ),
+      'default_value' => '',
+      'maxlength' => '',
+      'rows' => 24,
+      'placeholder' => '',
+      'new_lines' => '',
+      '_name' => 'kokako_framework_css',
+      '_valid' => 1,
+    ),
+    15 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ad8dd2f5ad',
+      'label' => 'Kōkako Framework Responsivity',
+      'name' => 'kokako_framework_responsivity',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'repeater',
+      'value' => false,
+      'menu_order' => 15,
+      'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css responsivity',
+        'id' => '070040',
+      ),
+      'layout' => 'table',
+      'pagination' => 0,
+      'min' => 0,
+      'max' => 6,
+      'collapsed' => 'field_654ad8dd2f5ae',
+      'button_label' => 'Add Screen Size CSS',
+      'rows_per_page' => 20,
+      '_name' => 'kokako_framework_responsivity',
+      '_valid' => 1,
+      'sub_fields' => 
+      array (
+        0 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_654ad8dd2f5ae_field_6631992626553',
+          'label' => 'Screen Size',
+          'name' => 'screen_size',
+          'aria-label' => '',
+          'prefix' => 'acf[field_654ad8dd2f5ae]',
+          'type' => 'select',
+          'value' => NULL,
+          'menu_order' => 0,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_654ad8dd2f5ad',
+          'wrapper' => 
+          array (
+            'width' => '20',
+            'class' => '',
+            'id' => '',
+          ),
+          'choices' => 
+          array (
+            'sm' => 'SM & Above',
+            'md' => 'MD & Above',
+            'lg' => 'LG & Above',
+            'xl' => 'XL & Above',
+            'xxl' => 'XXL',
+            'nav-expanded' => 'Nav Expanded',
+          ),
+          'default_value' => 'lg',
+          'return_format' => 'value',
+          'multiple' => 0,
+          'allow_null' => 0,
+          'ui' => 0,
+          'ajax' => 0,
+          'placeholder' => '',
+          'parent_repeater' => 'field_654ad8dd2f5ad',
+          '_name' => 'screen_size',
+          '_valid' => 1,
+          '_clone' => 'field_654ad8dd2f5ae',
+          '__key' => 'field_6631992626553',
+          '__name' => 'screen_size',
+          '__label' => 'Screen Size',
+        ),
+        1 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_654ad8dd2f5af_field_6631995026554',
+          'label' => 'Screen Size CSS',
+          'name' => 'screen_size_css',
+          'aria-label' => '',
+          'prefix' => 'acf[field_654ad8dd2f5af]',
+          'type' => 'textarea',
+          'value' => NULL,
+          'menu_order' => 1,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_654ad8dd2f5ad',
+          'wrapper' => 
+          array (
+            'width' => '80',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'maxlength' => '',
+          'rows' => '',
+          'placeholder' => '',
+          'new_lines' => '',
+          'parent_repeater' => 'field_654ad8dd2f5ad',
+          '_name' => 'screen_size_css',
+          '_valid' => 1,
+          '_clone' => 'field_654ad8dd2f5af',
+          '__key' => 'field_6631995026554',
+          '__name' => 'screen_size_css',
+          '__label' => 'Screen Size CSS',
+        ),
+      ),
+    ),
+    16 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ae32c9310a',
+      'label' => 'Kōkako Framework End',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 16,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 0,
+      'endpoint' => 1,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    17 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ae2ef93108',
+      'label' => 'Other Framework CSS',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 17,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 1,
+      'endpoint' => 0,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    18 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ad90e2f5b0',
+      'label' => 'Other Framework CSS',
+      'name' => 'other_framework_css',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'textarea',
+      'value' => '',
+      'menu_order' => 18,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css full',
+        'id' => '070050',
+      ),
+      'default_value' => '',
+      'maxlength' => '',
+      'rows' => 24,
+      'placeholder' => '',
+      'new_lines' => '',
+      '_name' => 'other_framework_css',
+      '_valid' => 1,
+    ),
+    19 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ad9242f5b1',
+      'label' => 'Other Framework CSS Responsivity',
+      'name' => 'other_framework_css_responsivity',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'repeater',
+      'value' => false,
+      'menu_order' => 19,
+      'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css responsivity',
+        'id' => '070060',
+      ),
+      'layout' => 'table',
+      'pagination' => 0,
+      'min' => 0,
+      'max' => 6,
+      'collapsed' => 'field_654ad9242f5b2',
+      'button_label' => 'Add Screen Size CSS',
+      'rows_per_page' => 20,
+      '_name' => 'other_framework_css_responsivity',
+      '_valid' => 1,
+      'sub_fields' => 
+      array (
+        0 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_654ad9242f5b2_field_6631992626553',
+          'label' => 'Screen Size',
+          'name' => 'screen_size',
+          'aria-label' => '',
+          'prefix' => 'acf[field_654ad9242f5b2]',
+          'type' => 'select',
+          'value' => NULL,
+          'menu_order' => 0,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_654ad9242f5b1',
+          'wrapper' => 
+          array (
+            'width' => '20',
+            'class' => '',
+            'id' => '',
+          ),
+          'choices' => 
+          array (
+            'sm' => 'SM & Above',
+            'md' => 'MD & Above',
+            'lg' => 'LG & Above',
+            'xl' => 'XL & Above',
+            'xxl' => 'XXL',
+            'nav-expanded' => 'Nav Expanded',
+          ),
+          'default_value' => 'lg',
+          'return_format' => 'value',
+          'multiple' => 0,
+          'allow_null' => 0,
+          'ui' => 0,
+          'ajax' => 0,
+          'placeholder' => '',
+          'parent_repeater' => 'field_654ad9242f5b1',
+          '_name' => 'screen_size',
+          '_valid' => 1,
+          '_clone' => 'field_654ad9242f5b2',
+          '__key' => 'field_6631992626553',
+          '__name' => 'screen_size',
+          '__label' => 'Screen Size',
+        ),
+        1 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_654ad9242f5b3_field_6631995026554',
+          'label' => 'Screen Size CSS',
+          'name' => 'screen_size_css',
+          'aria-label' => '',
+          'prefix' => 'acf[field_654ad9242f5b3]',
+          'type' => 'textarea',
+          'value' => NULL,
+          'menu_order' => 1,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_654ad9242f5b1',
+          'wrapper' => 
+          array (
+            'width' => '80',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'maxlength' => '',
+          'rows' => '',
+          'placeholder' => '',
+          'new_lines' => '',
+          'parent_repeater' => 'field_654ad9242f5b1',
+          '_name' => 'screen_size_css',
+          '_valid' => 1,
+          '_clone' => 'field_654ad9242f5b3',
+          '__key' => 'field_6631995026554',
+          '__name' => 'screen_size_css',
+          '__label' => 'Screen Size CSS',
+        ),
+      ),
+    ),
+    20 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654ad3e73f327',
+      'label' => 'Other Framework CSS End',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 20,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 0,
+      'endpoint' => 1,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+  ),
+  '_clone' => 'field_6631c6a8921d7',
+  '__key' => 'field_6631c57d65a84',
+  '__name' => 'structure_and_framework',
+  '__label' => 'Structure & Framework',
+)array (
+  'ID' => 0,
   'key' => 'field_6631c4f2f72ad_field_6631c4649c6e0',
-  'label' => 'Header',
-  'name' => 'header',
+  'label' => 'Header Header',
+  'name' => 'header_header',
   'aria-label' => '',
   'prefix' => 'acf[field_6631c4f2f72ad]',
   'type' => 'group',
@@ -5732,7 +7181,7 @@ form.searchform label {
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'header',
+  '_name' => 'header_header',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -6529,8 +7978,8 @@ body.header-fixed.logged-in.admin-bar header { /* Not required when header is po
 )array (
   'ID' => 0,
   'key' => 'field_6631c1b08890b_field_6631bf76b1da3',
-  'label' => 'Nav',
-  'name' => 'nav',
+  'label' => 'Nav Nav',
+  'name' => 'nav_nav',
   'aria-label' => '',
   'prefix' => 'acf[field_6631c1b08890b]',
   'type' => 'group',
@@ -6549,7 +7998,7 @@ body.header-fixed.logged-in.admin-bar header { /* Not required when header is po
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'nav',
+  '_name' => 'nav_nav',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -10315,8 +11764,8 @@ nav a.dropdown-item:before {
 )array (
   'ID' => 0,
   'key' => 'field_6631c1e98890c_field_6631ab1807db5',
-  'label' => 'Footer',
-  'name' => 'footer',
+  'label' => 'Footer Footer',
+  'name' => 'footer_footer',
   'aria-label' => '',
   'prefix' => 'acf[field_6631c1e98890c]',
   'type' => 'group',
@@ -10335,7 +11784,7 @@ nav a.dropdown-item:before {
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'footer',
+  '_name' => 'footer_footer',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -10647,8 +12096,8 @@ Please note: After updating this value, you may need to <a href="tools.php?page=
 )array (
   'ID' => 0,
   'key' => 'field_6631c2e39980f_field_6631a9f0754c6',
-  'label' => 'Kōkako Sections',
-  'name' => 'kokako_sections',
+  'label' => 'Kõkako Sections Kōkako Sections',
+  'name' => 'kokako_sections_kokako_sections',
   'aria-label' => '',
   'prefix' => 'acf[field_6631c2e39980f]',
   'type' => 'group',
@@ -10667,7 +12116,7 @@ Please note: After updating this value, you may need to <a href="tools.php?page=
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'kokako_sections',
+  '_name' => 'kokako_sections_kokako_sections',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -11818,8 +13267,8 @@ section.kokako.hide-section {
 )array (
   'ID' => 0,
   'key' => 'field_6631c30e99810_field_6631a88f9cde6',
-  'label' => 'Colour Schemes',
-  'name' => 'colour_schemes',
+  'label' => 'Colour Schemes Colour Schemes',
+  'name' => 'colour_schemes_colour_schemes',
   'aria-label' => '',
   'prefix' => 'acf[field_6631c30e99810]',
   'type' => 'group',
@@ -11838,7 +13287,7 @@ section.kokako.hide-section {
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'colour_schemes',
+  '_name' => 'colour_schemes_colour_schemes',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -12814,8 +14263,8 @@ section.kokako.background-overlay.background-overlay-light .image-overlay {
 )array (
   'ID' => 0,
   'key' => 'field_6631c32e99811_field_6631a791dede7',
-  'label' => 'Blog',
-  'name' => 'blog',
+  'label' => 'Blog Blog',
+  'name' => 'blog_blog',
   'aria-label' => '',
   'prefix' => 'acf[field_6631c32e99811]',
   'type' => 'group',
@@ -12834,7 +14283,7 @@ section.kokako.background-overlay.background-overlay-light .image-overlay {
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'blog',
+  '_name' => 'blog_blog',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -13410,8 +14859,8 @@ body.single .post-meta + img {
 )array (
   'ID' => 0,
   'key' => 'field_6631c34399812_field_6631a6f2a77e4',
-  'label' => 'Shop',
-  'name' => 'shop',
+  'label' => 'Shop Shop',
+  'name' => 'shop_shop',
   'aria-label' => '',
   'prefix' => 'acf[field_6631c34399812]',
   'type' => 'group',
@@ -13430,7 +14879,7 @@ body.single .post-meta + img {
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'shop',
+  '_name' => 'shop_shop',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -14210,8 +15659,8 @@ i.icon-basket + span.cart-count {
 )array (
   'ID' => 0,
   'key' => 'field_6631c37c99814_field_6631a4b341547',
-  'label' => 'Animations',
-  'name' => 'animations',
+  'label' => 'Animations Animations',
+  'name' => 'animations_animations',
   'aria-label' => '',
   'prefix' => 'acf[field_6631c37c99814]',
   'type' => 'group',
@@ -14230,7 +15679,7 @@ i.icon-basket + span.cart-count {
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'animations',
+  '_name' => 'animations_animations',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -15109,8 +16558,8 @@ section.kokako.latestPosts .blog-grid.post.appear {
 )array (
   'ID' => 0,
   'key' => 'field_6631c38f99815_field_6631a20b1baf9',
-  'label' => 'Miscellaneous',
-  'name' => 'miscellaneous',
+  'label' => 'Miscellaneous Miscellaneous',
+  'name' => 'miscellaneous_miscellaneous',
   'aria-label' => '',
   'prefix' => 'acf[field_6631c38f99815]',
   'type' => 'group',
@@ -15129,7 +16578,7 @@ section.kokako.latestPosts .blog-grid.post.appear {
     'id' => '',
   ),
   'layout' => 'block',
-  '_name' => 'miscellaneous',
+  '_name' => 'miscellaneous_miscellaneous',
   '_valid' => 1,
   'sub_fields' => 
   array (
