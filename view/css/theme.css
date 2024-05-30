@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 30/05/2024 12:08.43am UTC
+Updated at 30/05/2024 3:46.28am UTC
 
 
 FILE STRUCTURE:
@@ -2966,6 +2966,55 @@ section.kokako.background-overlay.background-overlay-dark .image-overlay {
 	border-top: 60px #fff solid;
 	border-bottom: 60px #fff solid;
 } */
+
+/* Colour Scheme Foo */
+
+section.kokako.colour-scheme-foo,
+section.kokako.colour-scheme-foo :is(.container, .container-fluid) .row.text-row-background {
+    color: #fff;
+    background-color: [colour-brand-foo];
+}
+
+section.kokako.colour-scheme-foo :is(h1, h2, h3, h4, h5, h6) {
+    color: #fff;
+}
+
+section.kokako.colour-scheme-foo :is(p, li, td) {
+    color: #fff;
+}
+
+section.kokako.colour-scheme-foo :is(a, a:link, a:visited):not(.button, .btn) {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+section.kokako.colour-scheme-foo a:hover:not(.button, .btn) {
+    color: #e6e6e6;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+section.kokako.colour-scheme-foo a:active:not(.button, .btn) {
+    color: #d2d2d2;
+    border-bottom: 2px solid #d2d2d2;
+}
+
+section.kokako.colour-scheme-foo a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+    background-color: #e6e6e6;
+}
+
+section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button) {
+    color: #fff;
+    background-color: #1a1a1a;
+}
+
+section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):hover,
+section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):focus {
+    background-color: #333;
+}
+
+section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):active {
+    background-color: #474747;
+}
 
 
 /* ---- 13. Blog ---- */

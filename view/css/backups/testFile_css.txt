@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 30/05/2024 12:08.43am UTC
+Updated at 30/05/2024 3:46.29am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -921,7 +921,7 @@ Colour ranges will stay within 0 to 255.',
         array (
           'name' => 'Foo',
           'colour' => '#ff0000',
-          'add_colour_scheme' => true,
+          'add_colour_scheme' => false,
         ),
       ),
       'menu_order' => 18,
@@ -16394,6 +16394,39 @@ section.kokako.background-overlay.background-overlay-dark .image-overlay {
 	border-bottom: [tsp-calc tm*4] [colour-background] solid;
 } */',
           'colour_scheme_responsivity' => false,
+        ),
+        2 => 
+        array (
+          'colour_scheme_name' => 'Foo',
+          'colour_scheme_description' => 'Foo Colour Scheme (Foo background, light text)',
+          'general' => 
+          array (
+            'colour_scheme_class_css' => 'color: [colour-text-light];
+background-color: [colour-brand-foo];',
+            'colour_scheme_headings_css' => 'color: [colour-text-light];',
+            'colour_scheme_text_css' => 'color: [colour-text-light];',
+          ),
+          'anchors' => 
+          array (
+            'colour_scheme_anchor_css' => 'color: [colour-text-light];
+border-bottom: 2px solid [colour-text-light];',
+            'colour_scheme_anchor_hover_css' => 'color: [colour-text-light-hover];
+border-bottom: 2px solid [colour-text-light-hover];',
+            'colour_scheme_anchor_active_css' => 'color: [colour-text-light-active];
+border-bottom: 2px solid [colour-text-light-active];',
+            'colour_scheme_anchor_underline_css' => 'background-color: [colour-text-light-hover];',
+          ),
+          'buttons' => 
+          array (
+            'colour_scheme_button_css' => 'color: [colour-button-background];
+background-color: [colour-button-text];',
+            'colour_scheme_button_hover_css' => 'background-color: [colour-button-text-hover];',
+            'colour_scheme_button_active_css' => 'background-color: [colour-button-text-active];',
+          ),
+          'other_colour_scheme_css' => '',
+          'colour_scheme_responsivity' => 
+          array (
+          ),
         ),
       ),
       'menu_order' => 5,
