@@ -4,14 +4,14 @@
 
 THEME SETUP
 
-Updated at 30/05/2024 3:46.29am UTC
+Updated at 31/05/2024 4:29.28am UTC
 
 Included via functions/site.php
 
 */
 
 
-$GLOBALS['updatedTimeStamp'] = 1717040788;
+$GLOBALS['updatedTimeStamp'] = 1717129768;
 
 // Development Modes
 $GLOBALS['kokakoDevelopmentMode'] = false;
@@ -58,7 +58,11 @@ $GLOBALS['colourSchemes'] = array(
      ),
      "colour-scheme-foo" => array(
           "description" => "Foo Colour Scheme (Foo background, light text)",
-          "background"  => "[colour-brand-foo]",
+          "background"  => "#f00",
+     ),
+     "colour-scheme-green" => array(
+          "description" => "Green Colour Scheme (Green background, dark text)",
+          "background"  => "#81d742",
      ),
 );
 
@@ -71,7 +75,7 @@ $GLOBALS['footerLogoWidthRetina'] = 510;
 // Functions
 
 function tsp_updated_timeStamp() { // Can also be called as a function if required, although higher overhead than a variable
-     return 1717040788;
+     return 1717129768;
 }
 
 ?>

@@ -1,12 +1,11 @@
 CSS Options Fields
 
-Updated at 30/05/2024 3:46.29am UTC
+Updated at 31/05/2024 4:29.28am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
 Shortcodes:
 
-[0] => 
 [anchor-transition] => 0.3s ease all
 [anchor-underline-exclusions] => :not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow)
 [animation-duration] => 1s
@@ -56,7 +55,34 @@ Shortcodes:
 [color-background-rgba => 255,255,255
 [color-background-variation => 255,255,255
 [color-background] => #fff
-[color-brand-1] => #1a1a1a
+[color-brand-1-active-rgba => 255,45,45
+[color-brand-1-active] => #ff2d2d
+[color-brand-1-hover-rgba => 255,25,25
+[color-brand-1-hover] => #ff1919
+[color-brand-1-rgba => 255,0,0
+[color-brand-1-variation => 255,0,0
+[color-brand-1] => #f00
+[color-brand-2-active-rgba => 174,255,111
+[color-brand-2-active] => #aeff6f
+[color-brand-2-hover-rgba => 154,240,91
+[color-brand-2-hover] => #9af05b
+[color-brand-2-rgba => 129,215,66
+[color-brand-2-variation => 129,215,66
+[color-brand-2] => #81d742
+[color-brand-foo-active-rgba => 255,45,45
+[color-brand-foo-active] => #ff2d2d
+[color-brand-foo-hover-rgba => 255,25,25
+[color-brand-foo-hover] => #ff1919
+[color-brand-foo-rgba => 255,0,0
+[color-brand-foo-variation => 255,0,0
+[color-brand-foo] => #f00
+[color-brand-green-active-rgba => 174,255,111
+[color-brand-green-active] => #aeff6f
+[color-brand-green-hover-rgba => 154,240,91
+[color-brand-green-hover] => #9af05b
+[color-brand-green-rgba => 129,215,66
+[color-brand-green-variation => 129,215,66
+[color-brand-green] => #81d742
 [color-button-background-active-rgba => 210,210,210
 [color-button-background-active] => #d2d2d2
 [color-button-background-hover-rgba => 230,230,230
@@ -149,7 +175,6 @@ Shortcodes:
 [color-text-rgba => 26,26,26
 [color-text-variation => 26,26,26
 [color-text] => #1a1a1a
-[colors-brand] => 
 [colour-anchor-underline-active-rgba => 71,71,71
 [colour-anchor-underline-active] => #474747
 [colour-anchor-underline-hover-rgba => 51,51,51
@@ -185,7 +210,34 @@ Shortcodes:
 [colour-background-rgba => 255,255,255
 [colour-background-variation => 255,255,255
 [colour-background] => #fff
-[colour-brand-1] => #1a1a1a
+[colour-brand-1-active-rgba => 255,45,45
+[colour-brand-1-active] => #ff2d2d
+[colour-brand-1-hover-rgba => 255,25,25
+[colour-brand-1-hover] => #ff1919
+[colour-brand-1-rgba => 255,0,0
+[colour-brand-1-variation => 255,0,0
+[colour-brand-1] => #f00
+[colour-brand-2-active-rgba => 174,255,111
+[colour-brand-2-active] => #aeff6f
+[colour-brand-2-hover-rgba => 154,240,91
+[colour-brand-2-hover] => #9af05b
+[colour-brand-2-rgba => 129,215,66
+[colour-brand-2-variation => 129,215,66
+[colour-brand-2] => #81d742
+[colour-brand-foo-active-rgba => 255,45,45
+[colour-brand-foo-active] => #ff2d2d
+[colour-brand-foo-hover-rgba => 255,25,25
+[colour-brand-foo-hover] => #ff1919
+[colour-brand-foo-rgba => 255,0,0
+[colour-brand-foo-variation => 255,0,0
+[colour-brand-foo] => #f00
+[colour-brand-green-active-rgba => 174,255,111
+[colour-brand-green-active] => #aeff6f
+[colour-brand-green-hover-rgba => 154,240,91
+[colour-brand-green-hover] => #9af05b
+[colour-brand-green-rgba => 129,215,66
+[colour-brand-green-variation => 129,215,66
+[colour-brand-green] => #81d742
 [colour-button-background-active-rgba => 210,210,210
 [colour-button-background-active] => #d2d2d2
 [colour-button-background-hover-rgba => 230,230,230
@@ -311,8 +363,10 @@ Shortcodes:
 [tsp-calc => 
 [tsp-calculate => 
 [tsp-sum => 
-colors-brand-key => 
-colours-brand-key => 
+colors-brand-key => 18
+colors-key => 0
+colours-brand-key => 18
+colours-key => 0
 
 
 CSS:
@@ -921,6 +975,12 @@ Colour ranges will stay within 0 to 255.',
         array (
           'name' => 'Foo',
           'colour' => '#ff0000',
+          'add_colour_scheme' => false,
+        ),
+        1 => 
+        array (
+          'name' => 'Green',
+          'colour' => '#81d742',
           'add_colour_scheme' => false,
         ),
       ),
@@ -16428,6 +16488,39 @@ background-color: [colour-button-text];',
           array (
           ),
         ),
+        3 => 
+        array (
+          'colour_scheme_name' => 'Green',
+          'colour_scheme_description' => 'Green Colour Scheme (Green background, dark text)',
+          'general' => 
+          array (
+            'colour_scheme_class_css' => 'color: [colour-text-dark];
+background-color: [colour-brand-green];',
+            'colour_scheme_headings_css' => 'color: [colour-text-dark];',
+            'colour_scheme_text_css' => 'color: [colour-text-dark];',
+          ),
+          'anchors' => 
+          array (
+            'colour_scheme_anchor_css' => 'color: [colour-text-dark];
+border-bottom: 2px solid [colour-text-dark];',
+            'colour_scheme_anchor_hover_css' => 'color: [colour-text-dark-hover];
+border-bottom: 2px solid [colour-text-dark-hover];',
+            'colour_scheme_anchor_active_css' => 'color: [colour-text-dark-active];
+border-bottom: 2px solid [colour-text-dark-active];',
+            'colour_scheme_anchor_underline_css' => 'background-color: [colour-text-dark-hover];',
+          ),
+          'buttons' => 
+          array (
+            'colour_scheme_button_css' => 'color: [colour-button-text];
+background-color: [colour-button-background];',
+            'colour_scheme_button_hover_css' => 'background-color: [colour-button-background-hover];',
+            'colour_scheme_button_active_css' => 'background-color: [colour-button-background-active];',
+          ),
+          'other_colour_scheme_css' => '',
+          'colour_scheme_responsivity' => 
+          array (
+          ),
+        ),
       ),
       'menu_order' => 5,
       'instructions' => 'Enter details for Colour Schemes classes below. The CSS will be applied to any sections with the Colour Scheme name (in lower case, with hyphens instead of spaces): .colour-scheme-[colour-scheme-class-name]<br /><br />
@@ -20089,4 +20182,186 @@ Enter full CSS below.',
   '__key' => 'field_6631a20b1baf9',
   '__name' => 'miscellaneous',
   '__label' => 'Miscellaneous',
+)array (
+  'ID' => 0,
+  'key' => 'field_6631c3a599816_field_6631a0a5fbbdd',
+  'label' => 'Accessibility',
+  'name' => 'accessibility_accessibility',
+  'aria-label' => '',
+  'prefix' => 'acf[field_6631c3a599816]',
+  'type' => 'group',
+  'value' => NULL,
+  'menu_order' => 0,
+  'instructions' => '',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'group_654c4df65922e',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'css no-js',
+    'id' => '',
+  ),
+  'layout' => 'block',
+  '_name' => 'accessibility_accessibility',
+  '_valid' => 1,
+  'sub_fields' => 
+  array (
+    0 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654c17cd781c9',
+      'label' => 'Accessibility CSS',
+      'name' => 'accessibility_css',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'textarea',
+      'value' => '',
+      'menu_order' => 2,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631a0a5fbbdd',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css full',
+        'id' => '180010',
+      ),
+      'default_value' => '',
+      'maxlength' => '',
+      'rows' => 16,
+      'placeholder' => '',
+      'new_lines' => '',
+      '_name' => 'accessibility_css',
+      '_valid' => 1,
+    ),
+    1 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_6631a1420d3e8',
+      'label' => 'Accessibility Responsivity',
+      'name' => 'accessibility_responsivity',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'repeater',
+      'value' => false,
+      'menu_order' => 3,
+      'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631a0a5fbbdd',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css responsivity',
+        'id' => '180020',
+      ),
+      'layout' => 'table',
+      'pagination' => 0,
+      'min' => 0,
+      'max' => 0,
+      'collapsed' => 'field_663308f9da6b6',
+      'button_label' => 'Add Screen Size CSS',
+      'rows_per_page' => 20,
+      '_name' => 'accessibility_responsivity',
+      '_valid' => 1,
+      'sub_fields' => 
+      array (
+        0 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_663308f9da6b6_field_6631992626553',
+          'label' => 'Screen Size',
+          'name' => 'screen_size',
+          'aria-label' => '',
+          'prefix' => 'acf[field_663308f9da6b6]',
+          'type' => 'select',
+          'value' => NULL,
+          'menu_order' => 0,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_6631a1420d3e8',
+          'wrapper' => 
+          array (
+            'width' => '20',
+            'class' => '',
+            'id' => '',
+          ),
+          'choices' => 
+          array (
+            'sm' => 'SM & Above',
+            'md' => 'MD & Above',
+            'lg' => 'LG & Above',
+            'xl' => 'XL & Above',
+            'xxl' => 'XXL',
+            'nav-expanded' => 'Nav Expanded',
+          ),
+          'default_value' => 'lg',
+          'return_format' => 'value',
+          'multiple' => 0,
+          'allow_null' => 0,
+          'ui' => 0,
+          'ajax' => 0,
+          'placeholder' => '',
+          'parent_repeater' => 'field_6631a1420d3e8',
+          '_name' => 'screen_size',
+          '_valid' => 1,
+          '_clone' => 'field_663308f9da6b6',
+          '__key' => 'field_6631992626553',
+          '__name' => 'screen_size',
+          '__label' => 'Screen Size',
+        ),
+        1 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_66330914da6b7_field_6631995026554',
+          'label' => 'Screen Size CSS',
+          'name' => 'screen_size_css',
+          'aria-label' => '',
+          'prefix' => 'acf[field_66330914da6b7]',
+          'type' => 'textarea',
+          'value' => NULL,
+          'menu_order' => 1,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_6631a1420d3e8',
+          'wrapper' => 
+          array (
+            'width' => '80',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'maxlength' => '',
+          'rows' => '',
+          'placeholder' => '',
+          'new_lines' => '',
+          'parent_repeater' => 'field_6631a1420d3e8',
+          '_name' => 'screen_size_css',
+          '_valid' => 1,
+          '_clone' => 'field_66330914da6b7',
+          '__key' => 'field_6631995026554',
+          '__name' => 'screen_size_css',
+          '__label' => 'Screen Size CSS',
+        ),
+      ),
+    ),
+  ),
+  '_clone' => 'field_6631c3a599816',
+  '__key' => 'field_6631a0a5fbbdd',
+  '__name' => 'accessibility',
+  '__label' => 'Accessibility',
 )

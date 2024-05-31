@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 30/05/2024 3:46.28am UTC
+Updated at 31/05/2024 4:29.28am UTC
 
 
 FILE STRUCTURE:
@@ -249,7 +249,7 @@ a:active {
 }
 
 a:focus {
-	outline: solid #1a1a1a 1px !important;
+	outline: solid #f00 1px !important;
 }
 
 :is(h1, h2, h3, h4, h5, h6) a {
@@ -2500,11 +2500,11 @@ section.kokako.slider .carousel-item-overlay {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: [colour-brand-1-rgba 0.53];
+	background: rgba(255,0,0,0.53);
 }
 
 section.kokako.slider .carousel-caption {
-	background: [colour-brand-1-rgba 0.8];
+	background: rgba(255,0,0,0.8);
 	bottom: 0;
 	width: 950px;
 	left: calc(50% - 475px);
@@ -2972,7 +2972,7 @@ section.kokako.background-overlay.background-overlay-dark .image-overlay {
 section.kokako.colour-scheme-foo,
 section.kokako.colour-scheme-foo :is(.container, .container-fluid) .row.text-row-background {
     color: #fff;
-    background-color: [colour-brand-foo];
+    background-color: #f00;
 }
 
 section.kokako.colour-scheme-foo :is(h1, h2, h3, h4, h5, h6) {
@@ -3014,6 +3014,55 @@ section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):foc
 
 section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):active {
     background-color: #474747;
+}
+
+/* Colour Scheme Green */
+
+section.kokako.colour-scheme-green,
+section.kokako.colour-scheme-green :is(.container, .container-fluid) .row.text-row-background {
+    color: #1a1a1a;
+    background-color: #81d742;
+}
+
+section.kokako.colour-scheme-green :is(h1, h2, h3, h4, h5, h6) {
+    color: #1a1a1a;
+}
+
+section.kokako.colour-scheme-green :is(p, li, td) {
+    color: #1a1a1a;
+}
+
+section.kokako.colour-scheme-green :is(a, a:link, a:visited):not(.button, .btn) {
+    color: #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+}
+
+section.kokako.colour-scheme-green a:hover:not(.button, .btn) {
+    color: #333;
+    border-bottom: 2px solid #333;
+}
+
+section.kokako.colour-scheme-green a:active:not(.button, .btn) {
+    color: #474747;
+    border-bottom: 2px solid #474747;
+}
+
+section.kokako.colour-scheme-green a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+    background-color: #333;
+}
+
+section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button) {
+    color: #1a1a1a;
+    background-color: #fff;
+}
+
+section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):hover,
+section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):focus {
+    background-color: #e6e6e6;
+}
+
+section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):active {
+    background-color: #d2d2d2;
 }
 
 
