@@ -1,7 +1,7 @@
 NO-JSCSS Options Fields
 
-Updated at 31/05/2024 4:29.28am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-css-editor
+Updated at 04/06/2024 4:19.30am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-developer-options
 array (
   'ID' => 0,
   'key' => 'field_6631c3a599816_field_6631a0a5fbbdd',
@@ -85,7 +85,19 @@ section.kokako.latestPosts .blog-grid.post {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'repeater',
-      'value' => false,
+      'value' => 
+      array (
+        0 => 
+        array (
+          'screen_size' => 'lg',
+          'screen_size_css' => '/* No JS - LG & Above NOT YET COMPILING */',
+        ),
+        1 => 
+        array (
+          'screen_size' => 'xl',
+          'screen_size_css' => '/* No JS - XL & Above NOT YET COMPILING */',
+        ),
+      ),
       'menu_order' => 7,
       'instructions' => 'All responsivity CSS will be added to the end of the <strong>No JavaScript</strong> CSS file.',
       'required' => 0,
