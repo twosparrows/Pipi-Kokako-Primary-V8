@@ -1,7 +1,7 @@
 CSS Options Fields
 
-Updated at 04/06/2024 4:19.30am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-developer-options
+Updated at 05/06/2024 1:59.15am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
 Shortcodes:
@@ -16064,6 +16064,1152 @@ section.kokako.textWithPhoto .col-lg-6.text {
   '__key' => 'field_6631a9f0754c6',
   '__name' => 'kokako_sections',
   '__label' => 'Kōkako Sections',
+)array (
+  'ID' => 0,
+  'key' => 'field_6631c30e99810_field_6631a88f9cde6',
+  'label' => 'Colour Schemes',
+  'name' => 'colour_schemes_colour_schemes',
+  'aria-label' => '',
+  'prefix' => 'acf[field_6631c30e99810]',
+  'type' => 'group',
+  'value' => NULL,
+  'menu_order' => 0,
+  'instructions' => '',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'group_654c4df65922e',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'css',
+    'id' => '',
+  ),
+  'layout' => 'block',
+  '_name' => 'colour_schemes_colour_schemes',
+  '_valid' => 1,
+  'sub_fields' => 
+  array (
+    0 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654c388bb6887',
+      'label' => 'Colour Schemes - All',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 0,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631a88f9cde6',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 1,
+      'endpoint' => 0,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    1 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_6539e9a30cbe4',
+      'label' => 'Colour Scheme CSS',
+      'name' => 'colour_scheme_css',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'textarea',
+      'value' => 'section.kokako.colour-scheme :is(.container, .container-fluid) .row {
+	background: none;
+}
+
+
+/* Image overlays base */
+
+section.kokako.background-overlay .image-overlay { /* Note that the background colour classes themselves are created dynamically by ticking the "Add Image Overlay Colours" option under Elements CSS > Colours, and are added automatically to the CSS at the start of the Colour Schemes section */
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: [colour-background-dark]; /* Default, will be overridden by colour scheme */
+	opacity: 0.5; /* Default, opacity can be overridden on a per section basis */
+}
+
+
+/* Remove background if section already has a background image (otherwise interferes with background blend modes) */
+
+section.kokako.colour-scheme.has-background-image {
+	background: none;
+}',
+      'menu_order' => 1,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631a88f9cde6',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css full',
+        'id' => '120010',
+      ),
+      'default_value' => '/* Image overlays base */
+
+section.kokako.background-overlay .image-overlay { /* Note that the background colour classes themselves are created dynamically by ticking the "Add Image Overlay Colours" option under Elements CSS > Colours, and are added automatically to the CSS at the start of the Colour Schemes section */
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: [colour-background-dark]; /* Default, will be overridden by colour scheme */
+	opacity: 0.5; /* Default, opacity can be overridden on a per section basis */
+}
+
+
+/* Remove background if section already has a background image (otherwise interferes with background blend modes) */
+
+section.kokako.colour-scheme.has-background-image {
+	background: none;
+}',
+      'maxlength' => '',
+      'rows' => 16,
+      'placeholder' => '',
+      'new_lines' => '',
+      '_name' => 'colour_scheme_css',
+      '_valid' => 1,
+    ),
+    2 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654c0e0b5438d',
+      'label' => 'Colour Schemes Responsivity',
+      'name' => 'colour_schemes_responsivity',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'repeater',
+      'value' => false,
+      'menu_order' => 2,
+      'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631a88f9cde6',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css responsivity',
+        'id' => '120020',
+      ),
+      'layout' => 'table',
+      'pagination' => 0,
+      'min' => 0,
+      'max' => 0,
+      'collapsed' => 'field_654c0e0b5438e',
+      'button_label' => 'Add Screen Size CSS',
+      'rows_per_page' => 20,
+      '_name' => 'colour_schemes_responsivity',
+      '_valid' => 1,
+      'sub_fields' => 
+      array (
+        0 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_654c0e0b5438e_field_6631992626553',
+          'label' => 'Screen Size',
+          'name' => 'screen_size',
+          'aria-label' => '',
+          'prefix' => 'acf[field_654c0e0b5438e]',
+          'type' => 'select',
+          'value' => NULL,
+          'menu_order' => 0,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_654c0e0b5438d',
+          'wrapper' => 
+          array (
+            'width' => '20',
+            'class' => '',
+            'id' => '',
+          ),
+          'choices' => 
+          array (
+            'sm' => 'SM & Above',
+            'md' => 'MD & Above',
+            'lg' => 'LG & Above',
+            'xl' => 'XL & Above',
+            'xxl' => 'XXL',
+            'nav-expanded' => 'Nav Expanded',
+          ),
+          'default_value' => 'lg',
+          'return_format' => 'value',
+          'multiple' => 0,
+          'allow_null' => 0,
+          'ui' => 0,
+          'ajax' => 0,
+          'placeholder' => '',
+          'parent_repeater' => 'field_654c0e0b5438d',
+          '_name' => 'screen_size',
+          '_valid' => 1,
+          '_clone' => 'field_654c0e0b5438e',
+          '__key' => 'field_6631992626553',
+          '__name' => 'screen_size',
+          '__label' => 'Screen Size',
+        ),
+        1 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_654c0e0b5438f_field_6631995026554',
+          'label' => 'Screen Size CSS',
+          'name' => 'screen_size_css',
+          'aria-label' => '',
+          'prefix' => 'acf[field_654c0e0b5438f]',
+          'type' => 'textarea',
+          'value' => NULL,
+          'menu_order' => 1,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_654c0e0b5438d',
+          'wrapper' => 
+          array (
+            'width' => '80',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'maxlength' => '',
+          'rows' => '',
+          'placeholder' => '',
+          'new_lines' => '',
+          'parent_repeater' => 'field_654c0e0b5438d',
+          '_name' => 'screen_size_css',
+          '_valid' => 1,
+          '_clone' => 'field_654c0e0b5438f',
+          '__key' => 'field_6631995026554',
+          '__name' => 'screen_size_css',
+          '__label' => 'Screen Size CSS',
+        ),
+      ),
+    ),
+    3 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654c0cefe24e5',
+      'label' => 'Colour Schemes - All End',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 3,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631a88f9cde6',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 0,
+      'endpoint' => 1,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    4 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654c0d1de24e6',
+      'label' => 'Colour Schemes - Individual',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 4,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631a88f9cde6',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 1,
+      'endpoint' => 0,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    5 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_6539e9a30cbec',
+      'label' => 'Colour Schemes Classes',
+      'name' => 'colour_schemes',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'repeater',
+      'value' => 
+      array (
+        0 => 
+        array (
+          'colour_scheme_name' => 'Light',
+          'colour_scheme_description' => 'Light Colour Scheme (Light background, dark text)',
+          'general' => 
+          array (
+            'colour_scheme_class_css' => 'color: [colour-text-dark];
+background-color: [colour-background-light];',
+            'colour_scheme_headings_css' => 'color: [colour-text-dark];',
+            'colour_scheme_text_css' => 'color: [colour-text-dark];',
+          ),
+          'anchors' => 
+          array (
+            'colour_scheme_anchor_css' => 'color: [colour-text-dark];
+border-bottom: 2px solid [colour-text-dark];',
+            'colour_scheme_anchor_hover_css' => 'color: [colour-text-dark-hover];
+border-bottom: 2px solid [colour-text-dark-hover];',
+            'colour_scheme_anchor_active_css' => 'color: [colour-text-dark-active];
+border-bottom: 2px solid [colour-text-dark-active];',
+            'colour_scheme_anchor_underline_css' => 'background-color: [colour-text-dark-hover];',
+          ),
+          'buttons' => 
+          array (
+            'colour_scheme_button_css' => 'color: [colour-button-text];
+background-color: [colour-button-background];',
+            'colour_scheme_button_hover_css' => 'color: [colour-button-text];
+background-color: [colour-button-background-hover];',
+            'colour_scheme_button_active_css' => 'color: [colour-button-text];
+background-color: [colour-button-background-active];',
+          ),
+          'other_colour_scheme_css' => '/* Light Image Overlay (option always available) */
+section.kokako.background-overlay.background-overlay-light .image-overlay {
+	background: [colour-background-light];
+}',
+          'colour_scheme_responsivity' => false,
+        ),
+        1 => 
+        array (
+          'colour_scheme_name' => 'Dark',
+          'colour_scheme_description' => 'Dark Colour Scheme (dark background, light text)',
+          'general' => 
+          array (
+            'colour_scheme_class_css' => 'color: [colour-text-light];
+background-color: [colour-background-dark];',
+            'colour_scheme_headings_css' => 'color: [colour-text-light];',
+            'colour_scheme_text_css' => 'color: [colour-text-light];',
+          ),
+          'anchors' => 
+          array (
+            'colour_scheme_anchor_css' => 'color: [colour-text-light];
+border-bottom: 2px solid [colour-text-light];',
+            'colour_scheme_anchor_hover_css' => 'color: [colour-text-light-hover];
+border-bottom: 2px solid [colour-text-light-hover];',
+            'colour_scheme_anchor_active_css' => 'color: [colour-text-light-active];
+border-bottom: 2px solid [colour-text-light-active];',
+            'colour_scheme_anchor_underline_css' => 'background-color: [colour-text-light-hover];',
+          ),
+          'buttons' => 
+          array (
+            'colour_scheme_button_css' => 'color: [colour-button-background];
+background: [colour-button-text];',
+            'colour_scheme_button_hover_css' => 'color: [colour-button-background];
+background: [colour-button-text-hover];',
+            'colour_scheme_button_active_css' => 'color: [colour-button-background];
+background: [colour-button-text-active];',
+          ),
+          'other_colour_scheme_css' => '/* Dark Image Overlay (option always available) */
+section.kokako.background-overlay.background-overlay-dark .image-overlay {
+	background: [colour-background-dark];
+}
+
+/* section.kokako.colour-scheme-dark .container-fluid {
+	border-top: [tsp-calc tm*4] [colour-background] solid;
+	border-bottom: [tsp-calc tm*4] [colour-background] solid;
+} */',
+          'colour_scheme_responsivity' => false,
+        ),
+        2 => 
+        array (
+          'colour_scheme_name' => 'Foo',
+          'colour_scheme_description' => 'Foo Colour Scheme (Foo background, light text)',
+          'general' => 
+          array (
+            'colour_scheme_class_css' => 'color: [colour-text-light];
+background-color: [colour-brand-foo];',
+            'colour_scheme_headings_css' => 'color: [colour-text-light];',
+            'colour_scheme_text_css' => 'color: [colour-text-light];',
+          ),
+          'anchors' => 
+          array (
+            'colour_scheme_anchor_css' => 'color: [colour-text-light];
+border-bottom: 2px solid [colour-text-light];',
+            'colour_scheme_anchor_hover_css' => 'color: [colour-text-light-hover];
+border-bottom: 2px solid [colour-text-light-hover];',
+            'colour_scheme_anchor_active_css' => 'color: [colour-text-light-active];
+border-bottom: 2px solid [colour-text-light-active];',
+            'colour_scheme_anchor_underline_css' => 'background-color: [colour-text-light-hover];',
+          ),
+          'buttons' => 
+          array (
+            'colour_scheme_button_css' => 'color: [colour-button-background];
+background-color: [colour-button-text];',
+            'colour_scheme_button_hover_css' => 'background-color: [colour-button-text-hover];',
+            'colour_scheme_button_active_css' => 'background-color: [colour-button-text-active];',
+          ),
+          'other_colour_scheme_css' => '',
+          'colour_scheme_responsivity' => 
+          array (
+          ),
+        ),
+        3 => 
+        array (
+          'colour_scheme_name' => 'Green',
+          'colour_scheme_description' => 'Green Colour Scheme (Green background, dark text)',
+          'general' => 
+          array (
+            'colour_scheme_class_css' => 'color: [colour-text-dark];
+background-color: [colour-brand-green];',
+            'colour_scheme_headings_css' => 'color: [colour-text-dark];',
+            'colour_scheme_text_css' => 'color: [colour-text-dark];',
+          ),
+          'anchors' => 
+          array (
+            'colour_scheme_anchor_css' => 'color: [colour-text-dark];
+border-bottom: 2px solid [colour-text-dark];',
+            'colour_scheme_anchor_hover_css' => 'color: [colour-text-dark-hover];
+border-bottom: 2px solid [colour-text-dark-hover];',
+            'colour_scheme_anchor_active_css' => 'color: [colour-text-dark-active];
+border-bottom: 2px solid [colour-text-dark-active];',
+            'colour_scheme_anchor_underline_css' => 'background-color: [colour-text-dark-hover];',
+          ),
+          'buttons' => 
+          array (
+            'colour_scheme_button_css' => 'color: [colour-button-text];
+background-color: [colour-button-background];',
+            'colour_scheme_button_hover_css' => 'background-color: [colour-button-background-hover];',
+            'colour_scheme_button_active_css' => 'background-color: [colour-button-background-active];',
+          ),
+          'other_colour_scheme_css' => '',
+          'colour_scheme_responsivity' => 
+          array (
+          ),
+        ),
+      ),
+      'menu_order' => 5,
+      'instructions' => 'Enter details for Colour Schemes classes below. The CSS will be applied to any sections with the Colour Scheme name (in lower case, with hyphens instead of spaces): .colour-scheme-[colour-scheme-class-name]<br /><br />
+
+Any Colour Schemes entered below will automatically populate any Colour Scheme drop downs available to the user.',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631a88f9cde6',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css colourSchemes',
+        'id' => '120030',
+      ),
+      'layout' => 'block',
+      'pagination' => 0,
+      'min' => 0,
+      'max' => 0,
+      'collapsed' => 'field_6539e9a3693b2',
+      'button_label' => 'Add Colour Scheme',
+      'rows_per_page' => 20,
+      '_name' => 'colour_schemes',
+      '_valid' => 1,
+      'sub_fields' => 
+      array (
+        0 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_6539e9a3693b2',
+          'label' => 'Colour Scheme Name',
+          'name' => 'colour_scheme_name',
+          'aria-label' => '',
+          'prefix' => 'acf',
+          'type' => 'text',
+          'value' => NULL,
+          'menu_order' => 0,
+          'instructions' => '',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_6539e9a30cbec',
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => 40,
+          'parent_repeater' => 'field_6539e9a30cbec',
+          '_name' => 'colour_scheme_name',
+          '_valid' => 1,
+        ),
+        1 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_6539e9a3693be',
+          'label' => 'Colour Scheme Description',
+          'name' => 'colour_scheme_description',
+          'aria-label' => '',
+          'prefix' => 'acf',
+          'type' => 'text',
+          'value' => NULL,
+          'menu_order' => 1,
+          'instructions' => 'This is the description that the user will see in the dropdown box.',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_6539e9a30cbec',
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => 'Light Colour Scheme (Light background, dark text)',
+          'placeholder' => '',
+          'prepend' => '',
+          'append' => '',
+          'maxlength' => '',
+          'parent_repeater' => 'field_6539e9a30cbec',
+          '_name' => 'colour_scheme_description',
+          '_valid' => 1,
+        ),
+        2 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_6539e9a3693c9',
+          'label' => 'General',
+          'name' => 'general',
+          'aria-label' => '',
+          'prefix' => 'acf',
+          'type' => 'group',
+          'value' => NULL,
+          'menu_order' => 2,
+          'instructions' => 'CSS selectors are already specified - only declarations are required.',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_6539e9a30cbec',
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'layout' => 'row',
+          'parent_repeater' => 'field_6539e9a30cbec',
+          '_name' => 'general',
+          '_valid' => 1,
+          'sub_fields' => 
+          array (
+            0 => 
+            array (
+              'ID' => 0,
+              'key' => 'field_6539e9a36c074',
+              'label' => 'Colour Scheme Class CSS',
+              'name' => 'colour_scheme_class_css',
+              'aria-label' => '',
+              'prefix' => 'acf',
+              'type' => 'textarea',
+              'value' => NULL,
+              'menu_order' => 0,
+              'instructions' => '',
+              'required' => 0,
+              'id' => '',
+              'class' => '',
+              'conditional_logic' => 0,
+              'parent' => 'field_6539e9a3693c9',
+              'wrapper' => 
+              array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => 'color: [colour-text-dark];
+background-color: [colour-background-light];',
+              'maxlength' => '',
+              'rows' => 3,
+              'placeholder' => '',
+              'new_lines' => '',
+              '_name' => 'colour_scheme_class_css',
+              '_valid' => 1,
+            ),
+            1 => 
+            array (
+              'ID' => 0,
+              'key' => 'field_6539e9a36c07e',
+              'label' => 'Colour Scheme Headings CSS',
+              'name' => 'colour_scheme_headings_css',
+              'aria-label' => '',
+              'prefix' => 'acf',
+              'type' => 'textarea',
+              'value' => NULL,
+              'menu_order' => 1,
+              'instructions' => 'h1, h2, h3, h4, h5, h6',
+              'required' => 0,
+              'id' => '',
+              'class' => '',
+              'conditional_logic' => 0,
+              'parent' => 'field_6539e9a3693c9',
+              'wrapper' => 
+              array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => 'color: [colour-text-dark];',
+              'maxlength' => '',
+              'rows' => 3,
+              'placeholder' => '',
+              'new_lines' => '',
+              '_name' => 'colour_scheme_headings_css',
+              '_valid' => 1,
+            ),
+            2 => 
+            array (
+              'ID' => 0,
+              'key' => 'field_6539e9a36c087',
+              'label' => 'Colour Scheme Text CSS',
+              'name' => 'colour_scheme_text_css',
+              'aria-label' => '',
+              'prefix' => 'acf',
+              'type' => 'textarea',
+              'value' => NULL,
+              'menu_order' => 2,
+              'instructions' => 'p, li, td',
+              'required' => 0,
+              'id' => '',
+              'class' => '',
+              'conditional_logic' => 0,
+              'parent' => 'field_6539e9a3693c9',
+              'wrapper' => 
+              array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => 'color: [colour-text-dark];',
+              'maxlength' => '',
+              'rows' => 3,
+              'placeholder' => '',
+              'new_lines' => '',
+              '_name' => 'colour_scheme_text_css',
+              '_valid' => 1,
+            ),
+          ),
+        ),
+        3 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_6539e9a3693d1',
+          'label' => 'Anchors',
+          'name' => 'anchors',
+          'aria-label' => '',
+          'prefix' => 'acf',
+          'type' => 'group',
+          'value' => NULL,
+          'menu_order' => 3,
+          'instructions' => 'CSS selectors are already specified - only declarations are required.',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_6539e9a30cbec',
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'layout' => 'row',
+          'parent_repeater' => 'field_6539e9a30cbec',
+          '_name' => 'anchors',
+          '_valid' => 1,
+          'sub_fields' => 
+          array (
+            0 => 
+            array (
+              'ID' => 0,
+              'key' => 'field_6539e9a3709ed',
+              'label' => 'Colour Scheme Anchor CSS',
+              'name' => 'colour_scheme_anchor_css',
+              'aria-label' => '',
+              'prefix' => 'acf',
+              'type' => 'textarea',
+              'value' => NULL,
+              'menu_order' => 0,
+              'instructions' => 'a, a:link, a:visited',
+              'required' => 0,
+              'id' => '',
+              'class' => '',
+              'conditional_logic' => 0,
+              'parent' => 'field_6539e9a3693d1',
+              'wrapper' => 
+              array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => 'color: [colour-text-dark];
+border-bottom: 2px solid [colour-text-dark];',
+              'maxlength' => '',
+              'rows' => 3,
+              'placeholder' => '',
+              'new_lines' => '',
+              '_name' => 'colour_scheme_anchor_css',
+              '_valid' => 1,
+            ),
+            1 => 
+            array (
+              'ID' => 0,
+              'key' => 'field_6539e9a3709f7',
+              'label' => 'Colour Scheme Anchor Hover CSS',
+              'name' => 'colour_scheme_anchor_hover_css',
+              'aria-label' => '',
+              'prefix' => 'acf',
+              'type' => 'textarea',
+              'value' => NULL,
+              'menu_order' => 1,
+              'instructions' => 'a:hover',
+              'required' => 0,
+              'id' => '',
+              'class' => '',
+              'conditional_logic' => 0,
+              'parent' => 'field_6539e9a3693d1',
+              'wrapper' => 
+              array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => 'color: [colour-text-dark-hover];
+border-bottom: 2px solid [colour-text-dark-hover];',
+              'maxlength' => '',
+              'rows' => 3,
+              'placeholder' => '',
+              'new_lines' => '',
+              '_name' => 'colour_scheme_anchor_hover_css',
+              '_valid' => 1,
+            ),
+            2 => 
+            array (
+              'ID' => 0,
+              'key' => 'field_6539e9a370a01',
+              'label' => 'Colour Scheme Anchor Active CSS',
+              'name' => 'colour_scheme_anchor_active_css',
+              'aria-label' => '',
+              'prefix' => 'acf',
+              'type' => 'textarea',
+              'value' => NULL,
+              'menu_order' => 2,
+              'instructions' => 'a:active',
+              'required' => 0,
+              'id' => '',
+              'class' => '',
+              'conditional_logic' => 0,
+              'parent' => 'field_6539e9a3693d1',
+              'wrapper' => 
+              array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => 'color: [colour-text-dark-active];
+border-bottom: 2px solid [colour-text-dark-active];',
+              'maxlength' => '',
+              'rows' => 3,
+              'placeholder' => '',
+              'new_lines' => '',
+              '_name' => 'colour_scheme_anchor_active_css',
+              '_valid' => 1,
+            ),
+            3 => 
+            array (
+              'ID' => 0,
+              'key' => 'field_6539e9a370a0b',
+              'label' => 'Colour Scheme Anchor Underline CSS',
+              'name' => 'colour_scheme_anchor_underline_css',
+              'aria-label' => '',
+              'prefix' => 'acf',
+              'type' => 'textarea',
+              'value' => NULL,
+              'menu_order' => 3,
+              'instructions' => 'a[anchor-underline-exclusions]:before',
+              'required' => 0,
+              'id' => '',
+              'class' => '',
+              'conditional_logic' => 0,
+              'parent' => 'field_6539e9a3693d1',
+              'wrapper' => 
+              array (
+                'width' => '100',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => 'background-color: [colour-text-dark-hover];',
+              'maxlength' => '',
+              'rows' => 3,
+              'placeholder' => '',
+              'new_lines' => '',
+              '_name' => 'colour_scheme_anchor_underline_css',
+              '_valid' => 1,
+            ),
+          ),
+        ),
+        4 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_6539e9a3693da',
+          'label' => 'Buttons',
+          'name' => 'buttons',
+          'aria-label' => '',
+          'prefix' => 'acf',
+          'type' => 'group',
+          'value' => NULL,
+          'menu_order' => 4,
+          'instructions' => 'CSS selectors are already specified - only declarations are required. Styles will be applied to all buttons in this colour scheme via the [button-selectors] shortcode (defined under "Anchors & Buttons").',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_6539e9a30cbec',
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'layout' => 'row',
+          'parent_repeater' => 'field_6539e9a30cbec',
+          '_name' => 'buttons',
+          '_valid' => 1,
+          'sub_fields' => 
+          array (
+            0 => 
+            array (
+              'ID' => 0,
+              'key' => 'field_6539e9a3766a2',
+              'label' => 'Colour Scheme Button CSS',
+              'name' => 'colour_scheme_button_css',
+              'aria-label' => '',
+              'prefix' => 'acf',
+              'type' => 'textarea',
+              'value' => NULL,
+              'menu_order' => 0,
+              'instructions' => ':is( [button-selectors] )',
+              'required' => 0,
+              'id' => '',
+              'class' => '',
+              'conditional_logic' => 0,
+              'parent' => 'field_6539e9a3693da',
+              'wrapper' => 
+              array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => 'color: [colour-button-text];
+background-color: [colour-button-background];',
+              'maxlength' => '',
+              'rows' => 3,
+              'placeholder' => '',
+              'new_lines' => '',
+              '_name' => 'colour_scheme_button_css',
+              '_valid' => 1,
+            ),
+            1 => 
+            array (
+              'ID' => 0,
+              'key' => 'field_6539e9a3766ab',
+              'label' => 'Colour Scheme Button Hover CSS',
+              'name' => 'colour_scheme_button_hover_css',
+              'aria-label' => '',
+              'prefix' => 'acf',
+              'type' => 'textarea',
+              'value' => NULL,
+              'menu_order' => 1,
+              'instructions' => ':is( [button-selectors] ):hover',
+              'required' => 0,
+              'id' => '',
+              'class' => '',
+              'conditional_logic' => 0,
+              'parent' => 'field_6539e9a3693da',
+              'wrapper' => 
+              array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => 'background-color: [colour-button-background-hover];',
+              'maxlength' => '',
+              'rows' => 3,
+              'placeholder' => '',
+              'new_lines' => '',
+              '_name' => 'colour_scheme_button_hover_css',
+              '_valid' => 1,
+            ),
+            2 => 
+            array (
+              'ID' => 0,
+              'key' => 'field_6539e9a3766b5',
+              'label' => 'Colour Scheme Button Active CSS',
+              'name' => 'colour_scheme_button_active_css',
+              'aria-label' => '',
+              'prefix' => 'acf',
+              'type' => 'textarea',
+              'value' => NULL,
+              'menu_order' => 2,
+              'instructions' => ':is( [button-selectors] ):active',
+              'required' => 0,
+              'id' => '',
+              'class' => '',
+              'conditional_logic' => 0,
+              'parent' => 'field_6539e9a3693da',
+              'wrapper' => 
+              array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => 'background-color: [colour-button-background-active];',
+              'maxlength' => '',
+              'rows' => 3,
+              'placeholder' => '',
+              'new_lines' => '',
+              '_name' => 'colour_scheme_button_active_css',
+              '_valid' => 1,
+            ),
+          ),
+        ),
+        5 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_6539e9a3693e5',
+          'label' => 'Other Colour Scheme CSS',
+          'name' => 'other_colour_scheme_css',
+          'aria-label' => '',
+          'prefix' => 'acf',
+          'type' => 'textarea',
+          'value' => NULL,
+          'menu_order' => 5,
+          'instructions' => 'Use full CSS.',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_6539e9a30cbec',
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '/* Light Image Overlay (option always available) */
+section.kokako.background-overlay.background-overlay-light .image-overlay {
+	background: [colour-background-light];
+}',
+          'maxlength' => '',
+          'rows' => 6,
+          'placeholder' => '',
+          'new_lines' => '',
+          'parent_repeater' => 'field_6539e9a30cbec',
+          '_name' => 'other_colour_scheme_css',
+          '_valid' => 1,
+        ),
+        6 => 
+        array (
+          'ID' => 0,
+          'key' => 'field_654c0e5554390',
+          'label' => 'Colour Scheme Responsivity',
+          'name' => 'colour_scheme_responsivity',
+          'aria-label' => '',
+          'prefix' => 'acf',
+          'type' => 'repeater',
+          'value' => NULL,
+          'menu_order' => 6,
+          'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
+          'required' => 0,
+          'id' => '',
+          'class' => '',
+          'conditional_logic' => 0,
+          'parent' => 'field_6539e9a30cbec',
+          'wrapper' => 
+          array (
+            'width' => '',
+            'class' => 'css full',
+            'id' => '',
+          ),
+          'layout' => 'table',
+          'min' => 0,
+          'max' => 0,
+          'collapsed' => 'field_654c0e5654391',
+          'button_label' => 'Add Screen Size CSS',
+          'rows_per_page' => 20,
+          'parent_repeater' => 'field_6539e9a30cbec',
+          '_name' => 'colour_scheme_responsivity',
+          '_valid' => 1,
+          'sub_fields' => 
+          array (
+            0 => 
+            array (
+              'ID' => 0,
+              'key' => 'field_654c0e5654391_field_6631992626553',
+              'label' => 'Screen Size',
+              'name' => 'screen_size',
+              'aria-label' => '',
+              'prefix' => 'acf[field_654c0e5654391]',
+              'type' => 'select',
+              'value' => NULL,
+              'menu_order' => 0,
+              'instructions' => '',
+              'required' => 0,
+              'id' => '',
+              'class' => '',
+              'conditional_logic' => 0,
+              'parent' => 'field_654c0e5554390',
+              'wrapper' => 
+              array (
+                'width' => '20',
+                'class' => '',
+                'id' => '',
+              ),
+              'choices' => 
+              array (
+                'sm' => 'SM & Above',
+                'md' => 'MD & Above',
+                'lg' => 'LG & Above',
+                'xl' => 'XL & Above',
+                'xxl' => 'XXL',
+                'nav-expanded' => 'Nav Expanded',
+              ),
+              'default_value' => 'lg',
+              'return_format' => 'value',
+              'multiple' => 0,
+              'allow_null' => 0,
+              'ui' => 0,
+              'ajax' => 0,
+              'placeholder' => '',
+              'parent_repeater' => 'field_654c0e5554390',
+              '_name' => 'screen_size',
+              '_valid' => 1,
+              '_clone' => 'field_654c0e5654391',
+              '__key' => 'field_6631992626553',
+              '__name' => 'screen_size',
+              '__label' => 'Screen Size',
+            ),
+            1 => 
+            array (
+              'ID' => 0,
+              'key' => 'field_654c0e5654392_field_6631995026554',
+              'label' => 'Screen Size CSS',
+              'name' => 'screen_size_css',
+              'aria-label' => '',
+              'prefix' => 'acf[field_654c0e5654392]',
+              'type' => 'textarea',
+              'value' => NULL,
+              'menu_order' => 1,
+              'instructions' => '',
+              'required' => 0,
+              'id' => '',
+              'class' => '',
+              'conditional_logic' => 0,
+              'parent' => 'field_654c0e5554390',
+              'wrapper' => 
+              array (
+                'width' => '80',
+                'class' => '',
+                'id' => '',
+              ),
+              'default_value' => '',
+              'maxlength' => '',
+              'rows' => '',
+              'placeholder' => '',
+              'new_lines' => '',
+              'parent_repeater' => 'field_654c0e5554390',
+              '_name' => 'screen_size_css',
+              '_valid' => 1,
+              '_clone' => 'field_654c0e5654392',
+              '__key' => 'field_6631995026554',
+              '__name' => 'screen_size_css',
+              '__label' => 'Screen Size CSS',
+            ),
+          ),
+        ),
+      ),
+    ),
+    6 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654c0d90e24e7',
+      'label' => 'Colour Schemes - Individual End',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 6,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631a88f9cde6',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 0,
+      'endpoint' => 1,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+  ),
+  '_clone' => 'field_6631c30e99810',
+  '__key' => 'field_6631a88f9cde6',
+  '__name' => 'colour_schemes',
+  '__label' => 'Colour Schemes',
 )array (
   'ID' => 0,
   'key' => 'field_6631c32e99811_field_6631a791dede7',

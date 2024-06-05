@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 04/06/2024 4:19.30am UTC
+Updated at 05/06/2024 1:59.15am UTC
 
 
 FILE STRUCTURE:
@@ -1881,724 +1881,6 @@ section.kokako.hide-section {
 }
 
 
-/* Call To Action */
-
-
-
-
-/* Centred Images */
-
-.kokako.centredImages {
-	padding: 0;
-	margin: 90px 0;
-	overflow: hidden;
-}
-
-.kokako.centredImages + footer {
-	margin-top: -90px;
-}
-
-.kokako.centredImages :is(h1, h2) {
-	text-align: center;
-}
-
-/*
-.kokako.centredImages .row.extra-row-padding:first-child {
-	padding-top: 40px;
-}
-
-.kokako.centredImages .row.extra-row-padding:last-child {
-	padding-bottom: 40px;
-}
-*/
-
-.kokako.centredImages :is(img, img.alignnone) {
-	margin: 0;
-}
-
-.kokako.centredImages .centredImagesCol {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-}
-
-.kokako.centredImages .col-md-12.centre-images-across-width {
-	padding: 0;
-}
-
-.kokako.centredImages .col-md-12.centre-images-across-width.image-count-1 img {
-	width: 100%;
-}
-
-
-/* Default State */
-
-section.kokako.centredImages .container-fluid {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-
-/* Image Grid */
-
-.kokako.imageGrid .image-grid {
-	display: grid;
-	grid-template-columns: 1fr; /* Default - XS */
-	grid-gap: 30px;
-	grid-auto-flow: dense;
-}
-
-.kokako.imageGrid .image-grid-item {
-	position: relative;
-	/* aspect-ratio: 1 / 1; */
-	height: 350px;
-}
-
-.kokako.imageGrid .image-grid-item img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	border-radius: 20px;
-}
-
-.kokako.imageGrid .image-grid-item .image-grid-item-heading {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background: rgba(255,255,255,0.7);
-	padding: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	grid-gap: 15px;
-	border-radius: 0 0 20px 20px;
-	box-sizing: border-box;
-}
-
-.kokako.imageGrid .image-grid-item .image-grid-item-heading * {
-	margin: 0;
-}
-
-.kokako.imageGrid .image-grid-item .image-grid-item-heading :is(h3, h3 a) {
-	font-family: Arial, sans-serif;
-	color: #828282;
-	font-size: 1.3rem;
-	/* font-size: 1.81818rem; */
-	/* opacity: 0.5; */
-}
-
-.kokako.imageGrid .image-grid-item .image-grid-item-heading h3 :is(a:hover, a:active) {
-	color: #999;
-}
-
-.kokako.imageGrid .image-grid-item :is(button, a.button, input[type=submit]) {
-	display: none;
-}
-
-
-/* Latest Posts */
-
-.kokako.latestPosts h4.breadcrumbs {
-	margin-top: 30px;
-}
-
-.kokako.latestPosts .row.row-content .col-xs-12 {
-	margin-bottom: 60px;
-}
-
-
-/* Multiple Columns */
-
-.kokako.multipleColumns .contain { /* Default, also for .cols-1 */
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-gap: 0 45px;
-}
-
-.kokako:is(.multipleColumns, .multipleRows) .content h2 { /* Make it appear as an h3, and override animations (as the columns are already animated ) */
-	font-size: 1.5rem;
-	transform: translateY(0) scale(1) !important;
-	opacity: 1 !important;
-}
-
-.kokako:is(.multipleColumns, .multipleRows) .contain .heading {
-	margin-bottom: 60px;
-}
-
-section.kokako:is(.multipleColumns, .multipleRows) .contain .heading :is(h1, h2) + p {
-	margin-top: 30px;
-}
-
-section.kokako.multipleColumns.images-circle .contain .image {
-	border-radius: 50%;
-}
-
-section.kokako.multipleColumns .content.cta-buttons-wrapper {
-	margin-top: 50px;
-}
-
-
-/* Multiple Rows */
-
-/* NB: Some shared CSS under Multiple Columns section */
-
-section.kokako.multipleRows .row:not(.row-heading, .cta-buttons-wrapper) {
-	margin-bottom: 30px;
-}
-
-section.kokako.multipleRows .row:not(.row-heading, .quick-links, .cta-buttons-wrapper) {
-	background-color: rgba(26,26,26,0.3);
-}
-
-/* section.kokako.multipleRows .row:not(.row-heading) {
-	margin-left: 0;
-	margin-right: 0;
-} */
-
-section.kokako.multipleRows .col-md-4 {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-section.kokako.multipleRows .row:not(.cta-buttons-wrapper) :is(.col-md-8, .col-md-12) {
-	padding-bottom: 15px;
-}
-
-section.kokako.multipleRows .row:not(.row-heading) :is(.col-md-8, .col-md-12) {
-	padding-left: 30px;
-	padding-right: 30px;
-}
-
-section.kokako.multipleRows .col-md-4.image-display-logo {
-	background-color: #fff;
-	padding: 10px 15px;
-	border-top: 1px solid rgba(26,26,26,0.2);
-	border-left: 1px solid rgba(26,26,26,0.2);
-	border-bottom: 1px solid rgba(26,26,26,0.2);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-}
-
-section.kokako.multipleRows a[name] {
-	top: -150px;
-}
-
-
-/* Page Banner */
-
-section.kokako.pageBanner {
-	position: relative;
-	padding: 0;
-	/* margin: 90px 0; */
-	margin: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center; /* Use flex-end if need to align items at the end */
-	/* background-image: url(data:image/png;base64,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); /* Noise placeholder - see http://jsfiddle.net/osserpse/6SZQY/ *
-	background-size: 10px 10px; /* Increase size to make it grainier *
-	background-repeat: repeat;
-	background-color: rgba(26,26,26,0.2); */
-	min-height: 550px;
-}
-
-section.kokako.pageBanner.section1 {
-	margin-top: 0;
-}
-
-section.kokako.pageBanner + a + section.kokako.colour-scheme {
-	margin-top: -90px;
-}
-
-/* section.kokako.pageBanner .banner-overlay {
-	position: absolute;
-	left: 0;
-	width: 50%;
-	height: 70%;
-	background-size: 100% 100%;
-	background-position: left bottom;
-	z-index: 1;
-} */
-
-section.kokako.pageBanner .container-fluid {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-section.kokako.pageBanner .container-fluid img {
-	width: 100%;
-	height: auto;
-}
-
-section.kokako.pageBanner .container-fluid .row img {
-	width: auto;
-}
-
-section.kokako.pageBanner .container-fluid .row {
-	background: none !important;
-	margin-left: 0;
-	margin-right: 0;
-}
-
-section.kokako.pageBanner .container-fluid .row :is(.col-xs-12, .col-sm-12) {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-section.kokako.pageBanner .overlay {
-	/* position: absolute;
-	top: 27%;
-	left: 10%; */
-	width: 40%;
-	min-width: 500px;
-	max-width: 80%;
-	background: rgba(26,26,26,0.7);
-	/* padding: 21px 42px; */
-	padding:30px 15px;
-}
-
-section.kokako.pageBanner .text-box {
-	width: 100%; /* Default, max widths set for all sizes below */
-	max-width: [width-xl];
-	margin-left: auto;
-	margin-right: auto;
-	/* padding: 21px 42px; */
-	padding:30px 15px;
-}
-
-section.kokako.pageBanner :is(h1, h2, h3, h4, h5, h6, p, li) {
-	color: #fff;
-	/* text-align: center; */
-	/* text-shadow: 0 2px 4px rgba(26,26,26,0.8); */
-	text-shadow: 0 0 30px rgba(26,26,26,0.3); /* Subtler option */
-}
-
-section.kokako.pageBanner.colour-scheme-light :is(h1, h2, h3, h4, h5, h6, p, li) {
-	text-shadow: 0 0 30px rgba(255,255,255,0.3); /* Subtler option */
-}
-
-section.kokako.pageBanner .overlay :is(h1, h2) {
-	text-transform: uppercase;
-}
-
-section.kokako.pageBanner p {
-	font-size: 1.2rem;
-}
-
-section.kokako.pageBanner .cta-buttons {
-	text-align: left;
-}
-
-
-section.kokako.pageBanner :is(button, a.button, a.btn) {
-	text-shadow: none;
-}
-
-/* section.kokako.pageBanner a:is(.button, .button:link, .button:visited) { /* Force alt colours *
-	background: #fff;
-	color: #1a1a1a;
-	/* box-shadow: 0 2px 4px rgba(26,26,26,0.8); *
-	box-shadow: 0 0 30px rgba(26,26,26,0.3); /* Subtler option *
-}
-
-section.kokako.pageBanner a.button:hover {
-	background: #e6e6e6;
-}
-
-section.kokako.pageBanner a.button:active {
-	background: #d2d2d2;
-} */
-
-
-/* Page Banner - Vertical Height */
-
-section.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
-	/* overflow: hidden; */
-	max-height: fit-content; /* min-height takes precedence over max-height - see https://ishadeed.com/article/min-max-css/ */
-}
-
-section.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) :is(.container-fluid, .container) { /* Works with max-height:fit-content to ensure spacing */
-	padding-top: 90px;
-	padding-bottom: 90px;
-}
-
-section.kokako.vh-100 {
-	min-height: 100vh;
-}
-
-section.kokako.vh-95 {
-	min-height: 95vh;
-}
-
-section.kokako.vh-90 {
-	min-height: 90vh;
-}
-
-section.kokako.vh-85 {
-	min-height: 85vh;
-}
-
-section.kokako.vh-80 {
-	min-height: 80vh;
-}
-
-section.kokako.vh-70 {
-	min-height: 70vh;
-}
-
-section.kokako.vh-60 {
-	min-height: 60vh;
-}
-
-section.kokako.vh-50 {
-	min-height: 50vh;
-}
-
-section.kokako.vh-40 {
-	min-height: 40vh;
-}
-
-section.kokako.vh-30 {
-	min-height: 30vh;
-}
-
-/* section.kokako:is(.px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
-	overflow: hidden;
-	height: calc(100vh - 140px); /* default height, max height set below 
-} */
-
-section.kokako.px-700 {
-	min-height: 700px;
-}
-
-section.kokako.px-600 {
-	min-height: 600px;
-}
-
-section.kokako.px-500 {
-	min-height: 500px;
-}
-
-section.kokako.px-400 {
-	min-height: 400px;
-}
-
-section.kokako.px-300 {
-	min-height: 300px;
-}
-
-section.kokako.px-200 {
-	min-height: 200px;
-}
-
-
-/* Default - XS */
-
-section.kokako.pageBanner {
-	max-height: none;
-}
-
-section.kokako.pageBanner.backgroundImage.max-vh-100 {
-	min-height: 600px;
-}
-
-section.kokako.pageBanner :is(.overlay, .text-box) {
-	width: [width-xs-max];
-	min-width: 0;
-	max-width: 100%;
-}
-
-/* section.kokako.pageBanner .text-box {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-} */
-
-section.kokako.pageBanner :is(h1, h2) {
-	font-size: 3rem;
-}
-
-section.kokako.pageBanner :is(p:not(:has(img)), p.small-print) { /* Don't hide p tags that are wrapping images */
-	display: none;
-}
-
-
-/* Default - SM */
-
-section.kokako.pageBanner .overlay {
-	position: relative;
-	top: 30px;
-	left: 0;
-	background: #1a1a1a;
-	min-width: 0;
-	max-width: 100%;
-	padding: 40px 15px;
-}
-
-section.kokako.pageBanner .text-box {
-	max-width: [width-sm];
-}
-
-
-/* Default - MD */
-
-section.kokako.pageBanner.section1 {
-	position: relative;
-	top: -70px;
-	margin-bottom: -70px;
-	/* border-top: 70px transparent solid; */
-	border-top: 0;
-}
-
-section.kokako.pageBanner .text-box {
-	max-width: [width-md];
-}
-
-section.kokako.pageBanner .overlay {
-	width: 100%;
-	top: 140px;
-}
-
-/* section.kokako.pageBanner.backgroundImage.max-vh-100 {
-	min-height: 700px;
-} */
-
-section.kokako.pageBanner :is(h1, h2) {
-	font-size: 3.5rem;
-	margin-bottom: 15px;
-}
-
-
-/* Default - LG */
-
-section.kokako.pageBanner .overlay {
-	position: relative;
-	top: 30px;
-	left: 0;
-	background: #1a1a1a;
-	min-width: 0;
-	max-width: 100%;
-	padding: 40px 15px;
-}
-
-section.kokako.pageBanner .text-box {
-	max-width: [width-lg];
-}
-
-
-/* Page Heading */
-
-section.kokako.pageHeading {
-	position: relative;
-	padding: 90px 0 0; /* No bottom padding by default */
-	display: flex;
-	justify-content: center;
-	align-items: center; /* Use flex-end if need to align items at the end */
-	background: #fff;
-}
-
-section.kokako.pageHeading :is(h1, h2) {
-	color: #1a1a1a;
-}
-
-section.kokako.pageHeading.section1 {
-	margin-top: 0;
-}
-
-section.kokako.pageHeading .container-fluid {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-section.kokako.pageHeading .container-fluid .row {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-section.kokako.pageHeading .container-fluid .row :is(.col-xs-12, .col-sm-12) {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-/* section.kokako.pageHeading .text-box { /* Uncomment if background colour is required for text box *
-	padding: 21px 42px; *
-} */
-
-section.kokako.pageHeading .cta-buttons {
-	text-align: left;
-}
-
-section.kokako.pageHeading :is(button, a.button, a.btn) {
-	text-shadow: none;
-}
-
-section.kokako.pageHeading a:is(.button, .button:link, .button:visited) { /* Force alt colours */
-	background: #1a1a1a;
-	color: #fff;
-	font-weight: bold;
-}
-
-section.kokako.pageHeading a.button:hover {
-	background: #333;
-}
-
-section.kokako.pageHeading a.button:active {
-	background: #474747;
-}
-
-
-/* Default - XS */
-
-section.kokako.pageHeading :is(h1, h2) {
-	font-size: 3rem;
-}
-
-section.kokako.pageHeading :is(p, p.small-print) {
-	display: none;
-}
-
-
-/* Default - MD */
-
-section.kokako.pageHeading :is(h1, h2) {
-	font-size: 3.5rem;
-	margin-bottom: 15px;
-}
-
-
-/* Slider */
-
-section.kokako.slider {
-	position: relative;
-	padding: 0;
-}
-
-section.kokako.slider .carousel.slide {
-	height: 500px;
-	overflow: hidden;
-	background: rgba(26,26,26,0.1);
-}
-
-section.kokako.slider .carousel-inner {
-	height: 100%;
-	display: flex;
-	align-items: center;
-}
-
-section.kokako.slider :is(.carousel-item-next, .carousel-item-prev, .carousel-item.active) {
-	display: flex;
-}
-
-section.kokako.slider .carousel-mobile-placeholder {
-	display: none;
-}
-
-section.kokako.slider .carousel-item-overlay {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: rgba(255,0,0,0.53);
-}
-
-section.kokako.slider .carousel-caption {
-	background: rgba(255,0,0,0.8);
-	bottom: 0;
-	width: 950px;
-	left: calc(50% - 475px);
-	text-align: left;
-	padding: 35px 42px 50px;
-}
-
-section.kokako.slider .carousel-indicators {
-	margin-bottom: 5px;
-}
-
-section.kokako.slider p {
-	font-size: 1.3rem;
-}
-
-section.kokako.slider h2 + p {
-	margin-top: -5px;
-}
-
-section.kokako.slider .cta-buttons {
-	text-align: left;
-}
-
-section.kokako.slider h3 {
-	font-weight: normal;
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 1.1rem;
-	margin: 0;
-}
-
-
-/* Default - XS */
-
-section.kokako.slider .carousel.slide {
-	height: 350px;
-}
-
-section.kokako.slider .carousel-caption {
-	padding: 5vh 15px 0;
-}
-
-section.kokako.slider .carousel-caption :is(h3, img) {
-	display: none;
-}
-
-section.kokako.slider .carousel-caption h2 {
-	font-size: 2rem;
-}
-
-
-/* Default - MD */
-
-section.kokako.slider .carousel-indicators {
-	margin-bottom: 5px;
-}
-
-section.kokako.slider .carousel-indicators li {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-section.kokako.slider .carousel-caption {
-	width: 100%;
-	left: 0;
-	padding: 15px 50px 25px;
-}
-
-section.kokako.slider .carousel-caption {
-	height: 100%;
-	padding-top: 10vh;
-}
-
-section.kokako.slider .carousel-caption h2 {
-	font-size: 3rem;
-	line-height: 1;
-}
-
-section.kokako.slider .carousel-caption :is(h3, p) {
-	font-size: 1rem;
-}
-
-section.kokako.slider .cta-buttons {
-	margin-top: 10px;
-}
-
-
-/* Default - LG */
-
-section.kokako.slider .carousel-caption img {
-	max-width: 22px;
-}
-
-
 /* Text */
 
 section.kokako.text :is(h1, h2) { /* in case of floated images */
@@ -2606,51 +1888,246 @@ section.kokako.text :is(h1, h2) { /* in case of floated images */
 }
 
 
-/* Text With Photo */
-
-section.kokako.textWithPhoto.no-margin-bottom.no-padding .container-fluid .internalWrap {
-	padding-top: 60px;
-	padding-bottom: 60px;
-}
-
-
-/* Default - SM */
-
-section.kokako.textWithPhoto .container-fluid .internalWrap {
-	max-width: [width-sm];
-}
-
-
-/* Default - MD */
-
-section.kokako.textWithPhoto .internalWrap {
-	padding: 45px 0 0;
-}
-
-section.kokako.textWithPhoto.mobile-column-reverse .internalWrap {
-	padding: 0 0 45px;
-}
-
-section.kokako.textWithPhoto.padding-none .internalWrap {
-	padding: 60px 0;
-}
-
-section.kokako.textWithPhoto .container-fluid .internalWrap {
-	max-width: [width-md];
-	margin-left: auto;
-	margin-right: auto;
-}
-
-section.kokako.textWithPhoto .internalWrap :is(h1, h2) {
-	margin-top: 0;
-}
-
-section.kokako.textWithPhoto.mobile-column-reverse .row { /* Reverse display of columns on mobile if required */
-	flex-direction: column-reverse !important;
-}
-
-
 /* ---- 12. Colour Schemes ---- */
+
+section.kokako.colour-scheme :is(.container, .container-fluid) .row {
+	background: none;
+}
+
+
+/* Image overlays base */
+
+section.kokako.background-overlay .image-overlay { /* Note that the background colour classes themselves are created dynamically by ticking the "Add Image Overlay Colours" option under Elements CSS > Colours, and are added automatically to the CSS at the start of the Colour Schemes section */
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #1a1a1a; /* Default, will be overridden by colour scheme */
+	opacity: 0.5; /* Default, opacity can be overridden on a per section basis */
+}
+
+
+/* Remove background if section already has a background image (otherwise interferes with background blend modes) */
+
+section.kokako.colour-scheme.has-background-image {
+	background: none;
+}
+
+/* Colour Scheme Light */
+
+section.kokako.colour-scheme-light,
+section.kokako.colour-scheme-light :is(.container, .container-fluid) .row.text-row-background {
+    color: #1a1a1a;
+    background-color: #fff;
+}
+
+section.kokako.colour-scheme-light :is(h1, h2, h3, h4, h5, h6) {
+    color: #1a1a1a;
+}
+
+section.kokako.colour-scheme-light :is(p, li, td) {
+    color: #1a1a1a;
+}
+
+section.kokako.colour-scheme-light :is(a, a:link, a:visited):not(.button, .btn) {
+    color: #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+}
+
+section.kokako.colour-scheme-light a:hover:not(.button, .btn) {
+    color: #333;
+    border-bottom: 2px solid #333;
+}
+
+section.kokako.colour-scheme-light a:active:not(.button, .btn) {
+    color: #474747;
+    border-bottom: 2px solid #474747;
+}
+
+section.kokako.colour-scheme-light a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+    background-color: #333;
+}
+
+section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button) {
+    color: #1a1a1a;
+    background-color: #fff;
+}
+
+section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button):hover,
+section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button):focus {
+    color: #1a1a1a;
+    background-color: #e6e6e6;
+}
+
+section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button):active {
+    color: #1a1a1a;
+    background-color: #d2d2d2;
+}
+
+/* Light Image Overlay (option always available) */
+section.kokako.background-overlay.background-overlay-light .image-overlay {
+	background: #fff;
+}
+
+/* Colour Scheme Dark */
+
+section.kokako.colour-scheme-dark,
+section.kokako.colour-scheme-dark :is(.container, .container-fluid) .row.text-row-background {
+    color: #fff;
+    background-color: #1a1a1a;
+}
+
+section.kokako.colour-scheme-dark :is(h1, h2, h3, h4, h5, h6) {
+    color: #fff;
+}
+
+section.kokako.colour-scheme-dark :is(p, li, td) {
+    color: #fff;
+}
+
+section.kokako.colour-scheme-dark :is(a, a:link, a:visited):not(.button, .btn) {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+section.kokako.colour-scheme-dark a:hover:not(.button, .btn) {
+    color: #e6e6e6;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+section.kokako.colour-scheme-dark a:active:not(.button, .btn) {
+    color: #d2d2d2;
+    border-bottom: 2px solid #d2d2d2;
+}
+
+section.kokako.colour-scheme-dark a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+    background-color: #e6e6e6;
+}
+
+section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button) {
+    color: #fff;
+    background: #1a1a1a;
+}
+
+section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button):hover,
+section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button):focus {
+    color: #fff;
+    background: #333;
+}
+
+section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button):active {
+    color: #fff;
+    background: #474747;
+}
+
+/* Dark Image Overlay (option always available) */
+section.kokako.background-overlay.background-overlay-dark .image-overlay {
+	background: #1a1a1a;
+}
+
+/* section.kokako.colour-scheme-dark .container-fluid {
+	border-top: 60px #fff solid;
+	border-bottom: 60px #fff solid;
+} */
+
+/* Colour Scheme Foo */
+
+section.kokako.colour-scheme-foo,
+section.kokako.colour-scheme-foo :is(.container, .container-fluid) .row.text-row-background {
+    color: #fff;
+    background-color: #f00;
+}
+
+section.kokako.colour-scheme-foo :is(h1, h2, h3, h4, h5, h6) {
+    color: #fff;
+}
+
+section.kokako.colour-scheme-foo :is(p, li, td) {
+    color: #fff;
+}
+
+section.kokako.colour-scheme-foo :is(a, a:link, a:visited):not(.button, .btn) {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+section.kokako.colour-scheme-foo a:hover:not(.button, .btn) {
+    color: #e6e6e6;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+section.kokako.colour-scheme-foo a:active:not(.button, .btn) {
+    color: #d2d2d2;
+    border-bottom: 2px solid #d2d2d2;
+}
+
+section.kokako.colour-scheme-foo a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+    background-color: #e6e6e6;
+}
+
+section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button) {
+    color: #fff;
+    background-color: #1a1a1a;
+}
+
+section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):hover,
+section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):focus {
+    background-color: #333;
+}
+
+section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):active {
+    background-color: #474747;
+}
+
+/* Colour Scheme Green */
+
+section.kokako.colour-scheme-green,
+section.kokako.colour-scheme-green :is(.container, .container-fluid) .row.text-row-background {
+    color: #1a1a1a;
+    background-color: #81d742;
+}
+
+section.kokako.colour-scheme-green :is(h1, h2, h3, h4, h5, h6) {
+    color: #1a1a1a;
+}
+
+section.kokako.colour-scheme-green :is(p, li, td) {
+    color: #1a1a1a;
+}
+
+section.kokako.colour-scheme-green :is(a, a:link, a:visited):not(.button, .btn) {
+    color: #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+}
+
+section.kokako.colour-scheme-green a:hover:not(.button, .btn) {
+    color: #333;
+    border-bottom: 2px solid #333;
+}
+
+section.kokako.colour-scheme-green a:active:not(.button, .btn) {
+    color: #474747;
+    border-bottom: 2px solid #474747;
+}
+
+section.kokako.colour-scheme-green a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+    background-color: #333;
+}
+
+section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button) {
+    color: #1a1a1a;
+    background-color: #fff;
+}
+
+section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):hover,
+section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):focus {
+    background-color: #e6e6e6;
+}
+
+section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):active {
+    background-color: #d2d2d2;
+}
 
 
 /* ---- 13. Blog ---- */
@@ -3060,49 +2537,6 @@ div.accordion-content + a.button {
     .hide-sm {
     	display: none;
     }
-        
-    /* Centred Images */
-        
-    section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img {
-    	width: 50%;
-    }
-        
-    /* section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img:nth-of-type(n+3) { /* Hide all but first 2 images *
-    	display: none;
-    } */
-        
-    /* Image Grid */
-        
-    .kokako.imageGrid .image-grid-item .image-grid-item-heading {
-    	justify-content: space-between;
-    }
-        
-    .kokako.imageGrid .image-grid-item :is(button, a.button, input[type=submit]) {
-    	display: inline-block;
-    	padding-left: 30px;
-    	padding-right: 30px;
-    	color: #1a1a1a;
-    	background: #fff;
-    }
-        
-    .kokako.imageGrid .image-grid-item :is(button, a.button, input[type=submit]):hover {
-    	color: #1a1a1a;
-    	background: #e6e6e6;
-    }
-        
-    .kokako.imageGrid .image-grid-item :is(button, a.button, input[type=submit]):active {
-    	color: #1a1a1a;
-    	background: #d2d2d2;
-    }
-        
-    /* Page Banner */
-        
-    section.kokako.pageBanner.section1 {
-    	position: relative;
-    	top: -140px;
-    	margin-bottom: -140px;
-    	border-top: 0;
-    }
     
 }
 
@@ -3138,46 +2572,6 @@ div.accordion-content + a.button {
         
     .hide-md {
     	display: none;
-    }
-        
-    /* Centred Images */
-        
-    section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img {
-    	width: 50%;
-    }
-        
-    section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img:nth-of-type(n+3) { /* Hide all but first 2 images */
-    	display: none;
-    }
-        
-    /* Image Grid */
-        
-    .kokako.imageGrid .image-grid {
-    	grid-template-columns: repeat(2, 1fr);
-    }
-        
-    .kokako.imageGrid .image-grid-item.aspect-ratio-landscape {
-    	grid-column: span 2;
-    	/* aspect-ratio: 2 / 1; */
-    }
-        
-    .kokako.imageGrid .image-grid-item.aspect-ratio-portrait {
-    	grid-row: span 2;
-    	/* aspect-ratio: 1 / 2; */
-    	height: 730px;
-    }
-        
-    .kokako.imageGrid .image-grid-item.aspect-ratio-featured {
-    	grid-column: span 2;
-    	grid-row: span 2;
-    	/* aspect-ratio: 1 / 2; */
-    	height: 730px;
-    }
-        
-    /* Multiple Columns */
-        
-    .kokako.multipleColumns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
-    	grid-template-columns: repeat(2, 1fr);
     }
     
 }
@@ -3372,142 +2766,10 @@ div.accordion-content + a.button {
     	padding-right: 0;
     }
         
-    /* Centred Images */
-        
-    section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4) img {
-    	width: 33.33%;
-    }
-        
-    section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4) img:nth-of-type(n+4) { /* Hide all but first 3 images */
-    	display: none;
-    }
-        
-    /* Image Grid */
-        
-    body .kokako.imageGrid .image-grid { /* Body is required because of the way the CSS responsivity cascades */
-    	grid-template-columns: repeat(3, 1fr);
-    }
-        
-    /* Latest Posts */
-        
-    section.kokako.latestPosts .row .col-lg-6:nth-of-type(odd) {
-    	padding-right: 45px;
-    }
-        
-    section.kokako.latestPosts .row .col-lg-6:nth-of-type(even) {
-    	padding-left: 45px;
-    }
-        
-    /* Multiple Columns */
-        
-    .kokako.multipleColumns .contain.cols-2 {
-    	grid-template-columns: repeat(2, 1fr);
-    }
-        
-    .kokako.multipleColumns .contain:is(.cols-3, .cols-4, .cols-5, .cols-6) {
-    	grid-template-columns: repeat(3, 1fr);
-    }
-        
-    /* Page Banner */
-        
-    section.kokako.pageBanner.section1 {
-    	top: 0;
-    	margin-bottom: 0;
-    }
-        
-    section.kokako.pageBanner {
-    	min-height: 700px;
-    }
-        
-    section.kokako.pageBanner .overlay {
-    	width: 100%;
-    	top: 140px;
-    }
-        
-    /* Slider */
-        
-    section.kokako.slider .carousel-indicators {
-    	margin-bottom: 5px;
-    }
-        
-    section.kokako.slider .carousel-indicators li {
-    	margin-top: 0;
-    	margin-bottom: 0;
-    }
-        
-    section.kokako.slider .carousel-caption {
-    	width: 100%;
-    	left: 0;
-    	padding: 15px 50px 25px;
-    }
-        
-    section.kokako.slider .carousel-caption {
-    	height: 100%;
-    	padding-top: 10vh;
-    }
-        
-    section.kokako.slider .carousel-caption h2 {
-    	font-size: 3rem;
-    	line-height: 1;
-    }
-        
-    section.kokako.slider .carousel-caption :is(h3, p) {
-    	font-size: 1rem;
-    }
-        
-    section.kokako.slider .cta-buttons {
-    	margin-top: 10px;
-    }
-        
     /* Text */
         
     section.kokako.text :is(h1, h2) { /* Do not clear any floated images */
     	clear: none;
-    }
-        
-    /* Text With Photo */
-        
-    section.kokako.textWithPhoto .row .col-lg-6.text .internalWrap {
-    	padding-left: 45px;
-    	padding-right: 0;
-    }
-        
-    section.kokako.textWithPhoto .row.flex-row-reverse .col-lg-6.text .internalWrap {
-    	padding-left: 0;
-    	padding-right: 45px;
-    }
-        
-    section.kokako.textWithPhoto.padding-none .col-lg-6.text .internalWrap {
-    	padding-top: 90px;
-    	padding-bottom: 90px;
-    }
-        
-        
-    /* Sticky Images */
-        
-    section.kokako.textWithPhoto.image-sticky {
-    	overflow: visible; /* Required for sticky elements to work - won't work when overflow is set to hidden */
-    }
-        
-    section.kokako.textWithPhoto.image-sticky div.image .sticky-image {
-    	width: 100%;
-    	aspect-ratio: 1/1;
-    	position: -webkit-sticky; /* Safari */
-    	position: sticky;
-    	top: 130px;
-    	max-height: calc(100vh - 190px);
-    }
-        
-    section.kokako.textWithPhoto.image-sticky .internalWrap {
-    	padding-top: 0;
-    	padding-bottom: 0;
-    }
-        
-        
-    /* LG only */
-        
-    section.kokako.textWithPhoto .col-lg-6.text { /* Set max width on Text with Photo section */
-    	max-width: 480px;
     }
         
     body.blog section.kokako.latestPosts .row .blog-grid.post:nth-of-type(2) h3 {
@@ -3563,56 +2825,6 @@ div.accordion-content + a.button {
     	transition: all 1s ease;
     }
         
-    /* Centred Images */
-        
-    section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5) img {
-    	width: 25%;
-    }
-        
-    section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5) img:nth-of-type(n+5) { /* Hide all but first 4 images */
-    	display: none;
-    }
-        
-    /* Image Grid */
-        
-    .kokako.imageGrid .image-grid-item {
-    	height: 350px;
-    }
-        
-    .kokako.imageGrid .image-grid-item:is(.aspect-ratio-portrait, .aspect-ratio-featured) {
-    	height: 730px;
-    }
-        
-    /* Multiple Columns */
-        
-    .kokako.multipleColumns .contain:is(.cols-4, .cols-6) {
-    	grid-template-columns: repeat(4, 1fr);
-    }
-        
-    .kokako.multipleColumns .contain.cols-5 {
-    	grid-template-columns: repeat(5, 1fr);
-    }
-        
-    /* Text With Photo */
-        
-    /* Set max width on Text with Photo section */
-        
-    section.kokako.textWithPhoto .col-lg-6.text {
-    	max-width: 570px; 
-    }
-        
-    @media (min-width: 2100px) {
-    	section.kokako.textWithPhoto .container-fluid .col-lg-6.image {
-    		max-width: 30%;
-    		margin-left: 20%;
-    	}
-        
-    	section.kokako.textWithPhoto .container-fluid .row.flex-row-reverse .col-lg-6.image {
-    		margin-right: 20%;
-    		margin-left: 0;
-    	}
-    }
-        
     body.blog section.kokako.latestPosts .row .col-xl-4.blog-grid.post:nth-of-type(3) h3 {
     	margin-top: 30px;
     }
@@ -3632,12 +2844,6 @@ div.accordion-content + a.button {
         
     .hide-xxl {
     	display: none;
-    }
-        
-    /* Multiple Columns */
-        
-    .kokako.multipleColumns .contain.cols-6 {
-    	grid-template-columns: repeat(6, 1fr);
     }
     
 }
