@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 06/06/2024 2:46.57am UTC
+Updated at 06/06/2024 4:45.19am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -359,6 +359,7 @@ Shortcodes:
 [pi] => 3.1415926536
 [section-padding-vertical] => 90px
 [social-media-icon-dimension] => 40px
+[text-content-width-max] => 950px
 [text-margin] => 15px
 [tsp-calc => 
 [tsp-calculate => 
@@ -6334,6 +6335,80 @@ This is the maximum width that content is restrained to (unless a section is ful
     3 => 
     array (
       'ID' => 0,
+      'key' => 'field_66612c4041321',
+      'label' => 'Max width for Text content',
+      'name' => 'max_width_for_text_content',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'true_false',
+      'value' => true,
+      'menu_order' => 3,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'other globalSetting',
+        'id' => '',
+      ),
+      'message' => 'Set a smaller max content width for Text',
+      'default_value' => 0,
+      'ui_on_text' => 'On',
+      'ui_off_text' => 'Off',
+      'ui' => 1,
+      '_name' => 'max_width_for_text_content',
+      '_valid' => 1,
+    ),
+    4 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_66612722a3e50',
+      'label' => 'Text Content Width Max',
+      'name' => 'text_content_width_max',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'text',
+      'value' => '950px',
+      'menu_order' => 4,
+      'instructions' => 'Shortcode: <code>[text-content-width-max]</code><br />
+This is the maximum width that text content (headings, text, buttons etc) will be contained to. It will not exceed the Content Width Max.',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            'field' => 'field_66612c4041321',
+            'operator' => '==',
+            'value' => '1',
+          ),
+        ),
+      ),
+      'parent' => 'field_6631c57d65a84',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css shortcode',
+        'id' => '',
+      ),
+      'default_value' => '1000px',
+      'maxlength' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      '_name' => 'text_content_width_max',
+      '_valid' => 1,
+    ),
+    5 => 
+    array (
+      'ID' => 0,
       'key' => 'field_654ad20b02d6d',
       'label' => 'Edge Padding',
       'name' => 'edge_padding',
@@ -6341,7 +6416,7 @@ This is the maximum width that content is restrained to (unless a section is ful
       'prefix' => 'acf',
       'type' => 'text',
       'value' => '[tsp-calc tm *2]',
-      'menu_order' => 3,
+      'menu_order' => 5,
       'instructions' => 'Shortcode: <code>[edge-padding]</code><br />
 This is the base inner horizontal padding for the website (ie. the minimum distance from website content to the horizontal edge of the browser). It is used to set up the CSS property <code>var(--edge-padding)</code>, which is updated proportionally for different screen sizes. Please use <code>var(--edge-padding)</code> to get the correct value at any screen size.',
       'required' => 0,
@@ -6363,7 +6438,7 @@ This is the base inner horizontal padding for the website (ie. the minimum dista
       '_name' => 'edge_padding',
       '_valid' => 1,
     ),
-    4 => 
+    6 => 
     array (
       'ID' => 0,
       'key' => 'field_656ea28386af7',
@@ -6373,7 +6448,7 @@ This is the base inner horizontal padding for the website (ie. the minimum dista
       'prefix' => 'acf',
       'type' => 'text',
       'value' => '[tsp-calc {edge-padding} *1.5, round]',
-      'menu_order' => 4,
+      'menu_order' => 6,
       'instructions' => 'Shortcode: <code>[grid-gap-horizontal]</code>',
       'required' => 0,
       'id' => '',
@@ -6394,7 +6469,7 @@ This is the base inner horizontal padding for the website (ie. the minimum dista
       '_name' => 'grid_gap_horizontal',
       '_valid' => 1,
     ),
-    5 => 
+    7 => 
     array (
       'ID' => 0,
       'key' => 'field_656ea2b686af8',
@@ -6404,7 +6479,7 @@ This is the base inner horizontal padding for the website (ie. the minimum dista
       'prefix' => 'acf',
       'type' => 'text',
       'value' => '[tsp-calc {horizontal-padding} *5 /6, round]',
-      'menu_order' => 5,
+      'menu_order' => 7,
       'instructions' => 'Shortcode: <code>[grid-gap-vertical]</code>',
       'required' => 0,
       'id' => '',
@@ -6425,7 +6500,7 @@ This is the base inner horizontal padding for the website (ie. the minimum dista
       '_name' => 'grid_gap_vertical',
       '_valid' => 1,
     ),
-    6 => 
+    8 => 
     array (
       'ID' => 0,
       'key' => 'field_653f2df3a6731',
@@ -6442,7 +6517,7 @@ This is the base inner horizontal padding for the website (ie. the minimum dista
         'min_width_xl' => '1200',
         'min_width_xxl' => '1400',
       ),
-      'menu_order' => 6,
+      'menu_order' => 8,
       'instructions' => 'As the theme is mobile first, XS is simply the default size. LG should be considered the default point for switching from mobile to desktop layout - MD will be used mostly for mobile / tablet in landscape.<br /><br />
 
 <strong>Do NOT change these sizes on a live site</strong>. These settings are set to match  the <a href="https://getbootstrap.com/docs/5.0/layout/breakpoints/" target="_blank">Bootstrap screen breakpoints</a> and in general should not need to be updated on any site.<br /><br />
@@ -6626,7 +6701,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
         ),
       ),
     ),
-    7 => 
+    9 => 
     array (
       'ID' => 0,
       'key' => 'field_6539e9a30ce0c',
@@ -6636,7 +6711,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
       'prefix' => 'acf',
       'type' => 'true_false',
       'value' => true,
-      'menu_order' => 7,
+      'menu_order' => 9,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -6657,7 +6732,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
       '_name' => 'display_screen_size_for_testing',
       '_valid' => 1,
     ),
-    8 => 
+    10 => 
     array (
       'ID' => 0,
       'key' => 'field_654acf96b216a',
@@ -6667,7 +6742,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
       'prefix' => 'acf',
       'type' => 'accordion',
       'value' => false,
-      'menu_order' => 8,
+      'menu_order' => 10,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -6686,7 +6761,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
       '_name' => '',
       '_valid' => 1,
     ),
-    9 => 
+    11 => 
     array (
       'ID' => 0,
       'key' => 'field_654ad3d63f326',
@@ -6696,7 +6771,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
       'prefix' => 'acf',
       'type' => 'accordion',
       'value' => false,
-      'menu_order' => 9,
+      'menu_order' => 11,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -6715,7 +6790,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
       '_name' => '',
       '_valid' => 1,
     ),
-    10 => 
+    12 => 
     array (
       'ID' => 0,
       'key' => 'field_654ad3fe3f328',
@@ -6756,6 +6831,8 @@ footer{
 		display: grid;
 		grid-template-columns: auto;
 		grid-auto-rows: auto;
+		grid-gap: 0;
+		height: fit-content;
 	}
 
 	footer{
@@ -6763,7 +6840,7 @@ footer{
 	}
 
 }',
-      'menu_order' => 10,
+      'menu_order' => 12,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -6811,7 +6888,7 @@ footer{
       '_name' => 'core_framework_css',
       '_valid' => 1,
     ),
-    11 => 
+    13 => 
     array (
       'ID' => 0,
       'key' => 'field_654ad4e63f329',
@@ -6821,7 +6898,7 @@ footer{
       'prefix' => 'acf',
       'type' => 'repeater',
       'value' => false,
-      'menu_order' => 11,
+      'menu_order' => 13,
       'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
       'required' => 0,
       'id' => '',
@@ -6930,7 +7007,7 @@ footer{
         ),
       ),
     ),
-    12 => 
+    14 => 
     array (
       'ID' => 0,
       'key' => 'field_654ae2fc93109',
@@ -6940,7 +7017,7 @@ footer{
       'prefix' => 'acf',
       'type' => 'accordion',
       'value' => false,
-      'menu_order' => 12,
+      'menu_order' => 14,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -6959,7 +7036,7 @@ footer{
       '_name' => '',
       '_valid' => 1,
     ),
-    13 => 
+    15 => 
     array (
       'ID' => 0,
       'key' => 'field_654ae2da93107',
@@ -6969,7 +7046,7 @@ footer{
       'prefix' => 'acf',
       'type' => 'accordion',
       'value' => false,
-      'menu_order' => 13,
+      'menu_order' => 15,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -6988,7 +7065,7 @@ footer{
       '_name' => '',
       '_valid' => 1,
     ),
-    14 => 
+    16 => 
     array (
       'ID' => 0,
       'key' => 'field_654ad8b52f5ac',
@@ -7002,14 +7079,13 @@ footer{
 .kokako,
 .kokako .contain{
 	box-sizing: border-box;
+	height: fit-content; /* Prevents extra space being added */
 }
 
 .kokako,
 .kokako.width-full {
 	width: 100%;
 	max-width: 100%; /* This is also the default for .width-full */
-	/* display: grid;
-	grid-template-columns: 1fr; /* Defaults to .width-full*/
 }
 
 
@@ -7019,24 +7095,19 @@ footer{
 	margin: 0 auto;
 }
 
-/* .kokako.width-contain {
-	grid-template-columns: 1fr minmax( auto, [content-width-max] ) 1fr;
-}
-
-.kokako.width-contain .contain {
-	grid-column: 2 / 3;
-} */
-
-
 .kokako .contain,
 .kokako.width-full .contain {
 	padding-left: var(--edge-padding);
 	padding-right: var(--edge-padding);
 	width: calc( [content-width-max] + ( var(--edge-padding) * 2 ) );
 	max-width: 100%; /* This is also the default for .width-full */
-	/* grid-column: 1 / -1; */
 }
 
+.kokako .contain-text{
+	max-width: [text-content-width-max];
+	margin-left: auto;
+	margin-right: auto;
+}
 
 /* Working  */
 
@@ -7057,7 +7128,7 @@ footer{
 .kokako .image {
 	border: 10px #00f solid;
 }',
-      'menu_order' => 14,
+      'menu_order' => 16,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -7078,7 +7149,7 @@ footer{
       '_name' => 'kokako_framework_css',
       '_valid' => 1,
     ),
-    15 => 
+    17 => 
     array (
       'ID' => 0,
       'key' => 'field_654ad8dd2f5ad',
@@ -7099,15 +7170,7 @@ footer{
         1 => 
         array (
           'screen_size' => 'lg',
-          'screen_size_css' => '/* .kokako {
-	grid-template-columns: 1fr minmax( auto, [content-width-max] ) 1fr;
-}
-
-.kokako.width-contain .contain {
-	grid-column: 2 / 3;
-} */
-
-.kokako .contain {
+          'screen_size_css' => '.kokako .contain {
 	--edge-padding: [tsp-calc {edge-padding} *2];
 }
 
@@ -7119,19 +7182,19 @@ footer{
         2 => 
         array (
           'screen_size' => 'xl',
-          'screen_size_css' => '.kokako.width-full .text-columns {
+          'screen_size_css' => '.kokako.width-full .text-columns:not(.contain-text){
 	columns: 3;
 }',
         ),
         3 => 
         array (
           'screen_size' => 'xxl',
-          'screen_size_css' => '.kokako.width-full .text-columns {
+          'screen_size_css' => '.kokako.width-full .text-columns:not(.contain-text){
 	columns: 4;
 }',
         ),
       ),
-      'menu_order' => 15,
+      'menu_order' => 17,
       'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
       'required' => 0,
       'id' => '',
@@ -7240,7 +7303,7 @@ footer{
         ),
       ),
     ),
-    16 => 
+    18 => 
     array (
       'ID' => 0,
       'key' => 'field_654ae32c9310a',
@@ -7250,7 +7313,7 @@ footer{
       'prefix' => 'acf',
       'type' => 'accordion',
       'value' => false,
-      'menu_order' => 16,
+      'menu_order' => 18,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -7269,7 +7332,7 @@ footer{
       '_name' => '',
       '_valid' => 1,
     ),
-    17 => 
+    19 => 
     array (
       'ID' => 0,
       'key' => 'field_654ae2ef93108',
@@ -7279,7 +7342,7 @@ footer{
       'prefix' => 'acf',
       'type' => 'accordion',
       'value' => false,
-      'menu_order' => 17,
+      'menu_order' => 19,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -7298,7 +7361,7 @@ footer{
       '_name' => '',
       '_valid' => 1,
     ),
-    18 => 
+    20 => 
     array (
       'ID' => 0,
       'key' => 'field_654ad90e2f5b0',
@@ -7339,7 +7402,7 @@ footer{
 .hide-xs {
 	display: none;
 }',
-      'menu_order' => 18,
+      'menu_order' => 20,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -7360,7 +7423,7 @@ footer{
       '_name' => 'other_framework_css',
       '_valid' => 1,
     ),
-    19 => 
+    21 => 
     array (
       'ID' => 0,
       'key' => 'field_654ad9242f5b1',
@@ -7427,7 +7490,7 @@ footer{
 }',
         ),
       ),
-      'menu_order' => 19,
+      'menu_order' => 21,
       'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
       'required' => 0,
       'id' => '',
@@ -7536,7 +7599,7 @@ footer{
         ),
       ),
     ),
-    20 => 
+    22 => 
     array (
       'ID' => 0,
       'key' => 'field_654ad3e73f327',
@@ -7546,7 +7609,7 @@ footer{
       'prefix' => 'acf',
       'type' => 'accordion',
       'value' => false,
-      'menu_order' => 20,
+      'menu_order' => 22,
       'instructions' => '',
       'required' => 0,
       'id' => '',

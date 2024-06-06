@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 06/06/2024 2:46.57am UTC
+Updated at 06/06/2024 4:45.19am UTC
 
 
 FILE STRUCTURE:
@@ -746,6 +746,8 @@ footer{
 		display: grid;
 		grid-template-columns: auto;
 		grid-auto-rows: auto;
+		grid-gap: 0;
+		height: fit-content;
 	}
 
 	footer{
@@ -759,14 +761,13 @@ footer{
 .kokako,
 .kokako .contain{
 	box-sizing: border-box;
+	height: fit-content; /* Prevents extra space being added */
 }
 
 .kokako,
 .kokako.width-full {
 	width: 100%;
 	max-width: 100%; /* This is also the default for .width-full */
-	/* display: grid;
-	grid-template-columns: 1fr; /* Defaults to .width-full*/
 }
 
 
@@ -776,24 +777,19 @@ footer{
 	margin: 0 auto;
 }
 
-/* .kokako.width-contain {
-	grid-template-columns: 1fr minmax( auto, 1400px ) 1fr;
-}
-
-.kokako.width-contain .contain {
-	grid-column: 2 / 3;
-} */
-
-
 .kokako .contain,
 .kokako.width-full .contain {
 	padding-left: var(--edge-padding);
 	padding-right: var(--edge-padding);
 	width: calc( 1400px + ( var(--edge-padding) * 2 ) );
 	max-width: 100%; /* This is also the default for .width-full */
-	/* grid-column: 1 / -1; */
 }
 
+.kokako .contain-text{
+	max-width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 /* Working  */
 
@@ -2620,14 +2616,6 @@ div.accordion-content + a.button {
     	max-width: calc(100% - 15px);
     }
         
-    /* .kokako {
-    	grid-template-columns: 1fr minmax( auto, 1400px ) 1fr;
-    }
-        
-    .kokako.width-contain .contain {
-    	grid-column: 2 / 3;
-    } */
-        
     .kokako .contain {
     	--edge-padding: 60px;
     }
@@ -2817,7 +2805,7 @@ div.accordion-content + a.button {
 /* XL and above */
 @media (min-width: 1200px) {
 
-    .kokako.width-full .text-columns {
+    .kokako.width-full .text-columns:not(.contain-text){
     	columns: 3;
     }
         
@@ -2870,7 +2858,7 @@ div.accordion-content + a.button {
 /* XXL only */
 @media (min-width: 1400px) {
 
-    .kokako.width-full .text-columns {
+    .kokako.width-full .text-columns:not(.contain-text){
     	columns: 4;
     }
         
