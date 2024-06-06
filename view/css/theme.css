@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 06/06/2024 4:45.19am UTC
+Updated at 06/06/2024 11:01.37pm UTC
 
 
 FILE STRUCTURE:
@@ -781,11 +781,15 @@ footer{
 .kokako.width-full .contain {
 	padding-left: var(--edge-padding);
 	padding-right: var(--edge-padding);
-	width: calc( 1400px + ( var(--edge-padding) * 2 ) );
+	width: 100%;
 	max-width: 100%; /* This is also the default for .width-full */
 }
 
-.kokako .contain-text{
+.kokako.width-contain .contain {
+	width: calc( 1400px + ( var(--edge-padding) * 2 ) );
+}
+
+.kokako.width-contain .contain-text{
 	max-width: 950px;
 	margin-left: auto;
 	margin-right: auto;
@@ -1635,54 +1639,8 @@ footer {
 	overflow-x: hidden; /* Prevents animation beginning position from creating a scroll bar at bottom of window. Override as required (but check responsivity) */
 }
 
-/* .kokako .row {
-	position: relative;
-} */
-
-/* .kokako.section1 {
-	/* Now using header background div method, which allows for background gradients also. When header background div is hidden, set the top padding to 230px /* border-top: 140px [colour-header-	background] solid; /* formerly margin-top, not border-top for smoother header.scrolled transitions *
-} */
-
 .kokako .internalWrap {
 	padding: 45px 25px 90px;
-}
-
-
-/* Default - MD */
-
-section.kokako.section1 {
-	/* border-top: 70px #1a1a1a solid; */
-	border-top: 0;
-}
-
-
-/* Default - XS */
-
-section.kokako.section1 {
-	border-top: 0;
-	margin-top: 0 !important; /* Just in case */
-}
-
-section.kokako .row {
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
-section.kokako .container-fluid .row .col-lg-6.image { /* Bootstrap overides */
-	width: calc(100% + 60px);
-	margin-left: -30px;
-	margin-right: -30px;
-}
-
-section.kokako .internalWrap {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-section.kokako .container,
-section.kokako:not(.centredImages) .container-fluid {
-	padding-left: 25px;
-	padding-right: 25px;
 }
 
 .kokako .contain > *:first-child {
@@ -1696,16 +1654,6 @@ section.kokako:not(.centredImages) .container-fluid {
 
 
 /* Spacing */
-
-/* .kokako .col > :is(h1, h2, h3, h4, h5, h6, p, img, ul, ol):first-child,
-.kokako .col > p:first-child > img:first-child  {
-	margin-top: 0;
-}
-
-.kokako .col > :is(h1, h2, h3, h4, h5, h6, p, img, ul, ol):last-child,
-.kokako .col > p:last-child > img:last-child {
-	margin-bottom: 0;
-} */
 
 .kokako :is(.multiple-columns-col , .internalWrap) > *:first-child,
 .kokako :is(.multiple-columns-col , .internalWrap) > *.hide:first-child + *,
@@ -1843,54 +1791,35 @@ section.kokako:not(.centredImages) .container-fluid {
 	margin: 0 !important;
 }
 
-/* .kokako .kokako-buttons p.centre {
-	display: inline;
-	text-align: center; /* This will align the multiple buttons *
-} */
-
 
 /* Default - SM */
-
-section.kokako .cta-buttons:is(.buttons-align-centre, .buttons-align-left, .buttons-align-right) {
+.kokako .cta-buttons:is(.buttons-align-centre, .buttons-align-left, .buttons-align-right) {
 	flex-direction: column;
 }
 
-/* Width Max Limit */
-
-.kokako.width-max-limit .row {
-	max-width: 980px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-
-/* Other Section CSS */
-
-section.kokako:not(.colour-scheme) :is(.container, .container-fluid) .row:not(.no-background) {
+.kokako:not(.colour-scheme) :is(.container, .container-fluid) .row:not(.no-background) {
 	background: #fff;
 }
 
- section.kokako:not(.no-padding) .container .row.extra-top-padding:first-of-type {
+.kokako:not(.no-padding) .container .row.extra-top-padding:first-of-type {
 	padding-top: 40px;
 }
-
-section.kokako:not(.no-padding) .container .row.extra-bottom-padding:last-of-type {
+.kokako:not(.no-padding) .container .row.extra-bottom-padding:last-of-type {
 	padding-bottom: 40px;
 }
 
-
-/* section.kokako.no-padding .internalWrap {
+/*.kokako.no-padding .internalWrap {
 	padding-top: 90px;
 	padding-bottom: 90px;
 }
 
-section.kokako .row:first-child.extra-row-padding,
-section.kokako .row.extra-row-padding-top {
+.kokako .row:first-child.extra-row-padding,
+.kokako .row.extra-row-padding-top {
 	padding-top: 40px;
 }
 
-section.kokako .row:last-child.extra-row-padding,
-section.kokako .row.extra-row-padding-bottom {
+.kokako .row:last-child.extra-row-padding,
+.kokako .row.extra-row-padding-bottom {
 	padding-bottom: 40px;
 } */
 
@@ -1909,14 +1838,14 @@ section.kokako .row.extra-row-padding-bottom {
 
 /* Hide section - NB: this is a fallback, as the section should actually not be added to the code via loop_acf.php */
 
-section.kokako.hide-section {
+.kokako.hide-section {
 	display: none !important;
 }
 
 
 /* Text */
 
-section.kokako.text :is(h1, h2) { /* in case of floated images */
+.kokako.text :is(h1, h2) { /* in case of floated images */
 	clear: both;
 }
 
@@ -2792,7 +2721,7 @@ div.accordion-content + a.button {
         
     /* Text */
         
-    section.kokako.text :is(h1, h2) { /* Do not clear any floated images */
+    .kokako.text :is(h1, h2) { /* Do not clear any floated images */
     	clear: none;
     }
         
@@ -2805,7 +2734,7 @@ div.accordion-content + a.button {
 /* XL and above */
 @media (min-width: 1200px) {
 
-    .kokako.width-full .text-columns:not(.contain-text){
+    .kokako.width-full .text-columns{
     	columns: 3;
     }
         
@@ -2858,7 +2787,7 @@ div.accordion-content + a.button {
 /* XXL only */
 @media (min-width: 1400px) {
 
-    .kokako.width-full .text-columns:not(.contain-text){
+    .kokako.width-full .text-columns{
     	columns: 4;
     }
         

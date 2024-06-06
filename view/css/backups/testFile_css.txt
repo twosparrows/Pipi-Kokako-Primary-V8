@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 06/06/2024 4:45.19am UTC
+Updated at 06/06/2024 11:01.37pm UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -7099,11 +7099,15 @@ footer{
 .kokako.width-full .contain {
 	padding-left: var(--edge-padding);
 	padding-right: var(--edge-padding);
-	width: calc( [content-width-max] + ( var(--edge-padding) * 2 ) );
+	width: 100%;
 	max-width: 100%; /* This is also the default for .width-full */
 }
 
-.kokako .contain-text{
+.kokako.width-contain .contain {
+	width: calc( [content-width-max] + ( var(--edge-padding) * 2 ) );
+}
+
+.kokako.width-contain .contain-text{
 	max-width: [text-content-width-max];
 	margin-left: auto;
 	margin-right: auto;
@@ -7182,14 +7186,14 @@ footer{
         2 => 
         array (
           'screen_size' => 'xl',
-          'screen_size_css' => '.kokako.width-full .text-columns:not(.contain-text){
+          'screen_size_css' => '.kokako.width-full .text-columns{
 	columns: 3;
 }',
         ),
         3 => 
         array (
           'screen_size' => 'xxl',
-          'screen_size_css' => '.kokako.width-full .text-columns:not(.contain-text){
+          'screen_size_css' => '.kokako.width-full .text-columns{
 	columns: 4;
 }',
         ),
@@ -13440,54 +13444,8 @@ footer a.social-media-link:last-of-type {
 	overflow-x: hidden; /* Prevents animation beginning position from creating a scroll bar at bottom of window. Override as required (but check responsivity) */
 }
 
-/* .kokako .row {
-	position: relative;
-} */
-
-/* .kokako.section1 {
-	/* Now using header background div method, which allows for background gradients also. When header background div is hidden, set the top padding to [tsp-calc spv + {header-height}] /* border-top: [header-height] [colour-header-	background] solid; /* formerly margin-top, not border-top for smoother header.scrolled transitions *
-} */
-
 .kokako .internalWrap {
 	padding: [tsp-calc tm *3] [tsp-calc tm *5 /3, round] [tsp-calc tm *6];
-}
-
-
-/* Default - MD */
-
-section.kokako.section1 {
-	/* border-top: [header-height-scrolled] [colour-header-background] solid; */
-	border-top: 0;
-}
-
-
-/* Default - XS */
-
-section.kokako.section1 {
-	border-top: 0;
-	margin-top: 0 !important; /* Just in case */
-}
-
-section.kokako .row {
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
-section.kokako .container-fluid .row .col-lg-6.image { /* Bootstrap overides */
-	width: calc(100% + 60px);
-	margin-left: -30px;
-	margin-right: -30px;
-}
-
-section.kokako .internalWrap {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-section.kokako .container,
-section.kokako:not(.centredImages) .container-fluid {
-	padding-left: 25px;
-	padding-right: 25px;
 }',
       'menu_order' => 5,
       'instructions' => '',
@@ -13530,16 +13488,6 @@ section.kokako:not(.centredImages) .container-fluid {
 
 
 /* Spacing */
-
-/* .kokako .col > :is(h1, h2, h3, h4, h5, h6, p, img, ul, ol):first-child,
-.kokako .col > p:first-child > img:first-child  {
-	margin-top: 0;
-}
-
-.kokako .col > :is(h1, h2, h3, h4, h5, h6, p, img, ul, ol):last-child,
-.kokako .col > p:last-child > img:last-child {
-	margin-bottom: 0;
-} */
 
 .kokako :is(.multiple-columns-col , .internalWrap) > *:first-child,
 .kokako :is(.multiple-columns-col , .internalWrap) > *.hide:first-child + *,
@@ -13706,15 +13654,9 @@ section.kokako:not(.centredImages) .container-fluid {
 	margin: 0 !important;
 }
 
-/* .kokako .kokako-buttons p.centre {
-	display: inline;
-	text-align: center; /* This will align the multiple buttons *
-} */
-
 
 /* Default - SM */
-
-section.kokako .cta-buttons:is(.buttons-align-centre, .buttons-align-left, .buttons-align-right) {
+.kokako .cta-buttons:is(.buttons-align-centre, .buttons-align-left, .buttons-align-right) {
 	flex-direction: column;
 }',
       'menu_order' => 7,
@@ -13779,42 +13721,29 @@ section.kokako .cta-buttons p.centre {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '/* Width Max Limit */
-
-.kokako.width-max-limit .row {
-	max-width: 980px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-
-/* Other Section CSS */
-
-section.kokako:not(.colour-scheme) :is(.container, .container-fluid) .row:not(.no-background) {
+      'value' => '.kokako:not(.colour-scheme) :is(.container, .container-fluid) .row:not(.no-background) {
 	background: [colour-background];
 }
 
- section.kokako:not(.no-padding) .container .row.extra-top-padding:first-of-type {
+.kokako:not(.no-padding) .container .row.extra-top-padding:first-of-type {
 	padding-top: [tsp-calc spv *4 /9, round];
 }
-
-section.kokako:not(.no-padding) .container .row.extra-bottom-padding:last-of-type {
+.kokako:not(.no-padding) .container .row.extra-bottom-padding:last-of-type {
 	padding-bottom: [tsp-calc spv *4 /9, round];
 }
 
-
-/* section.kokako.no-padding .internalWrap {
+/*.kokako.no-padding .internalWrap {
 	padding-top: [section-padding-vertical];
 	padding-bottom: [section-padding-vertical];
 }
 
-section.kokako .row:first-child.extra-row-padding,
-section.kokako .row.extra-row-padding-top {
+.kokako .row:first-child.extra-row-padding,
+.kokako .row.extra-row-padding-top {
 	padding-top: [tsp-calc spv *4 /9, round];
 }
 
-section.kokako .row:last-child.extra-row-padding,
-section.kokako .row.extra-row-padding-bottom {
+.kokako .row:last-child.extra-row-padding,
+.kokako .row.extra-row-padding-bottom {
 	padding-bottom: [tsp-calc spv *4 /9, round];
 } */
 
@@ -13833,7 +13762,7 @@ section.kokako .row.extra-row-padding-bottom {
 
 /* Hide section - NB: this is a fallback, as the section should actually not be added to the code via loop_acf.php */
 
-section.kokako.hide-section {
+.kokako.hide-section {
 	display: none !important;
 }',
       'menu_order' => 8,
@@ -14304,7 +14233,7 @@ section.kokako.hide-section {
 
 /* Default State */
 
-section.kokako.centredImages .container-fluid {
+.kokako.centredImages .container-fluid {
 	padding-left: 0;
 	padding-right: 0;
 }',
@@ -14313,44 +14242,44 @@ section.kokako.centredImages .container-fluid {
             0 => 
             array (
               'screen_size' => 'sm',
-              'screen_size_css' => 'section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img {
+              'screen_size_css' => '.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img {
 	width: 50%;
 }
 
-/* section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img:nth-of-type(n+3) { /* Hide all but first 2 images *
+/* .kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img:nth-of-type(n+3) { /* Hide all but first 2 images *
 	display: none;
 } */',
             ),
             1 => 
             array (
               'screen_size' => 'md',
-              'screen_size_css' => 'section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img {
+              'screen_size_css' => '.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img {
 	width: 50%;
 }
 
-section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img:nth-of-type(n+3) { /* Hide all but first 2 images */
+.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4, .image-count-3) img:nth-of-type(n+3) { /* Hide all but first 2 images */
 	display: none;
 }',
             ),
             2 => 
             array (
               'screen_size' => 'lg',
-              'screen_size_css' => 'section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4) img {
+              'screen_size_css' => '.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4) img {
 	width: 33.33%;
 }
 
-section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4) img:nth-of-type(n+4) { /* Hide all but first 3 images */
+.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5, .image-count-4) img:nth-of-type(n+4) { /* Hide all but first 3 images */
 	display: none;
 }',
             ),
             3 => 
             array (
               'screen_size' => 'xl',
-              'screen_size_css' => 'section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5) img {
+              'screen_size_css' => '.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5) img {
 	width: 25%;
 }
 
-section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5) img:nth-of-type(n+5) { /* Hide all but first 4 images */
+.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-count-6, .image-count-5) img:nth-of-type(n+5) { /* Hide all but first 4 images */
 	display: none;
 }',
             ),
@@ -14500,11 +14429,11 @@ section.kokako.centredImages .col-md-12.centre-images-across-width:is(.image-cou
             0 => 
             array (
               'screen_size' => 'lg',
-              'screen_size_css' => 'section.kokako.latestPosts .row .col-lg-6:nth-of-type(odd) {
+              'screen_size_css' => '.kokako.latestPosts .row .col-lg-6:nth-of-type(odd) {
 	padding-right: [tsp-calc tm *3];
 }
 
-section.kokako.latestPosts .row .col-lg-6:nth-of-type(even) {
+.kokako.latestPosts .row .col-lg-6:nth-of-type(even) {
 	padding-left: [tsp-calc tm *3];
 }',
             ),
@@ -14529,15 +14458,15 @@ section.kokako.latestPosts .row .col-lg-6:nth-of-type(even) {
 	margin-bottom: [tsp-calc tm *4];
 }
 
-section.kokako:is(.multipleColumns, .multipleRows) .contain .heading :is(h1, h2) + p {
+.kokako:is(.multipleColumns, .multipleRows) .contain .heading :is(h1, h2) + p {
 	margin-top: [tsp-calc tm *2];
 }
 
-section.kokako.multipleColumns.images-circle .contain .image {
+.kokako.multipleColumns.images-circle .contain .image {
 	border-radius: 50%;
 }
 
-section.kokako.multipleColumns .content.cta-buttons-wrapper {
+.kokako.multipleColumns .content.cta-buttons-wrapper {
 	margin-top: [tsp-calc tm *10 /3, round];
 }',
           'section_responsivity' => 
@@ -14585,34 +14514,34 @@ section.kokako.multipleColumns .content.cta-buttons-wrapper {
           'section_type' => 'Multiple Rows',
           'section_css' => '/* NB: Some shared CSS under Multiple Columns section */
 
-section.kokako.multipleRows .row:not(.row-heading, .cta-buttons-wrapper) {
+.kokako.multipleRows .row:not(.row-heading, .cta-buttons-wrapper) {
 	margin-bottom: 30px;
 }
 
-section.kokako.multipleRows .row:not(.row-heading, .quick-links, .cta-buttons-wrapper) {
+.kokako.multipleRows .row:not(.row-heading, .quick-links, .cta-buttons-wrapper) {
 	background-color: [colour-background-alt-rgba 0.3];
 }
 
-/* section.kokako.multipleRows .row:not(.row-heading) {
+/* .kokako.multipleRows .row:not(.row-heading) {
 	margin-left: 0;
 	margin-right: 0;
 } */
 
-section.kokako.multipleRows .col-md-4 {
+.kokako.multipleRows .col-md-4 {
 	padding-left: 0;
 	padding-right: 0;
 }
 
-section.kokako.multipleRows .row:not(.cta-buttons-wrapper) :is(.col-md-8, .col-md-12) {
+.kokako.multipleRows .row:not(.cta-buttons-wrapper) :is(.col-md-8, .col-md-12) {
 	padding-bottom: 15px;
 }
 
-section.kokako.multipleRows .row:not(.row-heading) :is(.col-md-8, .col-md-12) {
+.kokako.multipleRows .row:not(.row-heading) :is(.col-md-8, .col-md-12) {
 	padding-left: 30px;
 	padding-right: 30px;
 }
 
-section.kokako.multipleRows .col-md-4.image-display-logo {
+.kokako.multipleRows .col-md-4.image-display-logo {
 	background-color: [colour-background-light];
 	padding: 10px 15px;
 	border-top: 1px solid [colour-text-dark-rgba 0.2];
@@ -14624,7 +14553,7 @@ section.kokako.multipleRows .col-md-4.image-display-logo {
 	flex-direction: column;
 }
 
-section.kokako.multipleRows a[name] {
+.kokako.multipleRows a[name] {
 	top: -150px;
 }',
           'section_responsivity' => false,
@@ -14632,7 +14561,7 @@ section.kokako.multipleRows a[name] {
         6 => 
         array (
           'section_type' => 'Page Banner',
-          'section_css' => 'section.kokako.pageBanner {
+          'section_css' => '.kokako.pageBanner {
 	position: relative;
 	padding: 0;
 	/* margin: [section-padding-vertical] 0; */
@@ -14647,15 +14576,11 @@ section.kokako.multipleRows a[name] {
 	min-height: 550px;
 }
 
-section.kokako.pageBanner.section1 {
-	margin-top: 0;
-}
-
-section.kokako.pageBanner + a + section.kokako.colour-scheme {
+.kokako.pageBanner + a + .kokako.colour-scheme {
 	margin-top: -[section-padding-vertical];
 }
 
-/* section.kokako.pageBanner .banner-overlay {
+/* .kokako.pageBanner .banner-overlay {
 	position: absolute;
 	left: 0;
 	width: 50%;
@@ -14665,32 +14590,32 @@ section.kokako.pageBanner + a + section.kokako.colour-scheme {
 	z-index: 1;
 } */
 
-section.kokako.pageBanner .container-fluid {
+.kokako.pageBanner .container-fluid {
 	padding-left: 0;
 	padding-right: 0;
 }
 
-section.kokako.pageBanner .container-fluid img {
+.kokako.pageBanner .container-fluid img {
 	width: 100%;
 	height: auto;
 }
 
-section.kokako.pageBanner .container-fluid .row img {
+.kokako.pageBanner .container-fluid .row img {
 	width: auto;
 }
 
-section.kokako.pageBanner .container-fluid .row {
+.kokako.pageBanner .container-fluid .row {
 	background: none !important;
 	margin-left: 0;
 	margin-right: 0;
 }
 
-section.kokako.pageBanner .container-fluid .row :is(.col-xs-12, .col-sm-12) {
+.kokako.pageBanner .container-fluid .row :is(.col-xs-12, .col-sm-12) {
 	padding-left: 0;
 	padding-right: 0;
 }
 
-section.kokako.pageBanner .overlay {
+.kokako.pageBanner .overlay {
 	/* position: absolute;
 	top: 27%;
 	left: 10%; */
@@ -14702,7 +14627,7 @@ section.kokako.pageBanner .overlay {
 	padding:[tsp-calc {text-margin} *2] [text-margin];
 }
 
-section.kokako.pageBanner .text-box {
+.kokako.pageBanner .text-box {
 	width: 100%; /* Default, max widths set for all sizes below */
 	max-width: [width-xl];
 	margin-left: auto;
@@ -14711,166 +14636,165 @@ section.kokako.pageBanner .text-box {
 	padding:[tsp-calc {text-margin} *2] [text-margin];
 }
 
-section.kokako.pageBanner :is(h1, h2, h3, h4, h5, h6, p, li) {
+.kokako.pageBanner :is(h1, h2, h3, h4, h5, h6, p, li) {
 	color: [colour-text-alt];
 	/* text-align: center; */
 	/* text-shadow: 0 2px 4px [colour-background-alt-rgba 0.8]; */
 	text-shadow: 0 0 30px [colour-background-alt-rgba 0.3]; /* Subtler option */
 }
 
-section.kokako.pageBanner.colour-scheme-light :is(h1, h2, h3, h4, h5, h6, p, li) {
+.kokako.pageBanner.colour-scheme-light :is(h1, h2, h3, h4, h5, h6, p, li) {
 	text-shadow: 0 0 30px [colour-background-rgba 0.3]; /* Subtler option */
 }
 
-section.kokako.pageBanner .overlay :is(h1, h2) {
+.kokako.pageBanner .overlay :is(h1, h2) {
 	text-transform: uppercase;
 }
 
-section.kokako.pageBanner p {
+.kokako.pageBanner p {
 	font-size: 1.2rem;
 }
 
-section.kokako.pageBanner .cta-buttons {
+.kokako.pageBanner .cta-buttons {
 	text-align: left;
 }
 
-
-section.kokako.pageBanner :is(button, a.button, a.btn) {
+.kokako.pageBanner :is(button, a.button, a.btn) {
 	text-shadow: none;
 }
 
-/* section.kokako.pageBanner a:is(.button, .button:link, .button:visited) { /* Force alt colours *
+/* .kokako.pageBanner a:is(.button, .button:link, .button:visited) { /* Force alt colours *
 	background: [colour-background];
 	color: [colour-text];
 	/* box-shadow: 0 2px 4px [colour-background-alt-rgba 0.8]; *
 	box-shadow: 0 0 30px [colour-background-alt-rgba 0.3]; /* Subtler option *
 }
 
-section.kokako.pageBanner a.button:hover {
+.kokako.pageBanner a.button:hover {
 	background: [colour-background-hover];
 }
 
-section.kokako.pageBanner a.button:active {
+.kokako.pageBanner a.button:active {
 	background: [colour-background-active];
 } */
 
 
 /* Page Banner - Vertical Height */
 
-section.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
+.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
 	/* overflow: hidden; */
 	max-height: fit-content; /* min-height takes precedence over max-height - see https://ishadeed.com/article/min-max-css/ */
 }
 
-section.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) :is(.container-fluid, .container) { /* Works with max-height:fit-content to ensure spacing */
+.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) :is(.container-fluid, .container) { /* Works with max-height:fit-content to ensure spacing */
 	padding-top: [section-padding-vertical];
 	padding-bottom: [section-padding-vertical];
 }
 
-section.kokako.vh-100 {
+.kokako.vh-100 {
 	min-height: 100vh;
 }
 
-section.kokako.vh-95 {
+.kokako.vh-95 {
 	min-height: 95vh;
 }
 
-section.kokako.vh-90 {
+.kokako.vh-90 {
 	min-height: 90vh;
 }
 
-section.kokako.vh-85 {
+.kokako.vh-85 {
 	min-height: 85vh;
 }
 
-section.kokako.vh-80 {
+.kokako.vh-80 {
 	min-height: 80vh;
 }
 
-section.kokako.vh-70 {
+.kokako.vh-70 {
 	min-height: 70vh;
 }
 
-section.kokako.vh-60 {
+.kokako.vh-60 {
 	min-height: 60vh;
 }
 
-section.kokako.vh-50 {
+.kokako.vh-50 {
 	min-height: 50vh;
 }
 
-section.kokako.vh-40 {
+.kokako.vh-40 {
 	min-height: 40vh;
 }
 
-section.kokako.vh-30 {
+.kokako.vh-30 {
 	min-height: 30vh;
 }
 
-/* section.kokako:is(.px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
+/* .kokako:is(.px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
 	overflow: hidden;
 	height: calc(100vh - [header-height]); /* default height, max height set below 
 } */
 
-section.kokako.px-700 {
+.kokako.px-700 {
 	min-height: 700px;
 }
 
-section.kokako.px-600 {
+.kokako.px-600 {
 	min-height: 600px;
 }
 
-section.kokako.px-500 {
+.kokako.px-500 {
 	min-height: 500px;
 }
 
-section.kokako.px-400 {
+.kokako.px-400 {
 	min-height: 400px;
 }
 
-section.kokako.px-300 {
+.kokako.px-300 {
 	min-height: 300px;
 }
 
-section.kokako.px-200 {
+.kokako.px-200 {
 	min-height: 200px;
 }
 
 
 /* Default - XS */
 
-section.kokako.pageBanner {
+.kokako.pageBanner {
 	max-height: none;
 }
 
-section.kokako.pageBanner.backgroundImage.max-vh-100 {
+.kokako.pageBanner.backgroundImage.max-vh-100 {
 	min-height: 600px;
 }
 
-section.kokako.pageBanner :is(.overlay, .text-box) {
+.kokako.pageBanner :is(.overlay, .text-box) {
 	width: [width-xs-max];
 	min-width: 0;
 	max-width: 100%;
 }
 
-/* section.kokako.pageBanner .text-box {
+/* .kokako.pageBanner .text-box {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 } */
 
-section.kokako.pageBanner :is(h1, h2) {
+.kokako.pageBanner :is(h1, h2) {
 	font-size: 3rem;
 }
 
-section.kokako.pageBanner :is(p:not(:has(img)), p.small-print) { /* Don\'t hide p tags that are wrapping images */
+.kokako.pageBanner :is(p:not(:has(img)), p.small-print) { /* Don\'t hide p tags that are wrapping images */
 	display: none;
 }
 
 
 /* Default - SM */
 
-section.kokako.pageBanner .overlay {
+.kokako.pageBanner .overlay {
 	position: relative;
 	top: 30px;
 	left: 0;
@@ -14880,14 +14804,14 @@ section.kokako.pageBanner .overlay {
 	padding: 40px 15px;
 }
 
-section.kokako.pageBanner .text-box {
+.kokako.pageBanner .text-box {
 	max-width: [width-sm];
 }
 
 
 /* Default - MD */
 
-section.kokako.pageBanner.section1 {
+.kokako.pageBanner.section1 {
 	position: relative;
 	top: -[header-height-scrolled];
 	margin-bottom: -[header-height-scrolled];
@@ -14895,20 +14819,20 @@ section.kokako.pageBanner.section1 {
 	border-top: 0;
 }
 
-section.kokako.pageBanner .text-box {
+.kokako.pageBanner .text-box {
 	max-width: [width-md];
 }
 
-section.kokako.pageBanner .overlay {
+.kokako.pageBanner .overlay {
 	width: 100%;
 	top: [header-height];
 }
 
-/* section.kokako.pageBanner.backgroundImage.max-vh-100 {
+/* .kokako.pageBanner.backgroundImage.max-vh-100 {
 	min-height: 700px;
 } */
 
-section.kokako.pageBanner :is(h1, h2) {
+.kokako.pageBanner :is(h1, h2) {
 	font-size: 3.5rem;
 	margin-bottom: [text-margin];
 }
@@ -14916,7 +14840,7 @@ section.kokako.pageBanner :is(h1, h2) {
 
 /* Default - LG */
 
-section.kokako.pageBanner .overlay {
+.kokako.pageBanner .overlay {
 	position: relative;
 	top: 30px;
 	left: 0;
@@ -14926,7 +14850,7 @@ section.kokako.pageBanner .overlay {
 	padding: 40px 15px;
 }
 
-section.kokako.pageBanner .text-box {
+.kokako.pageBanner .text-box {
 	max-width: [width-lg];
 }',
           'section_responsivity' => 
@@ -14934,7 +14858,7 @@ section.kokako.pageBanner .text-box {
             0 => 
             array (
               'screen_size' => 'sm',
-              'screen_size_css' => 'section.kokako.pageBanner.section1 {
+              'screen_size_css' => '.kokako.pageBanner.section1 {
 	position: relative;
 	top: -[header-height];
 	margin-bottom: -[header-height];
@@ -14944,16 +14868,16 @@ section.kokako.pageBanner .text-box {
             1 => 
             array (
               'screen_size' => 'lg',
-              'screen_size_css' => 'section.kokako.pageBanner.section1 {
+              'screen_size_css' => '.kokako.pageBanner.section1 {
 	top: 0;
 	margin-bottom: 0;
 }
 
-section.kokako.pageBanner {
+.kokako.pageBanner {
 	min-height: 700px;
 }
 
-section.kokako.pageBanner .overlay {
+.kokako.pageBanner .overlay {
 	width: 100%;
 	top: [header-height];
 }',
@@ -14963,7 +14887,7 @@ section.kokako.pageBanner .overlay {
         7 => 
         array (
           'section_type' => 'Page Heading',
-          'section_css' => 'section.kokako.pageHeading {
+          'section_css' => '.kokako.pageHeading {
 	position: relative;
 	padding: [section-padding-vertical] 0 0; /* No bottom padding by default */
 	display: flex;
@@ -14972,70 +14896,70 @@ section.kokako.pageBanner .overlay {
 	background: [colour-background];
 }
 
-section.kokako.pageHeading :is(h1, h2) {
+.kokako.pageHeading :is(h1, h2) {
 	color: [colour-text];
 }
 
-section.kokako.pageHeading.section1 {
+.kokako.pageHeading.section1 {
 	margin-top: 0;
 }
 
-section.kokako.pageHeading .container-fluid {
+.kokako.pageHeading .container-fluid {
 	padding-left: 0;
 	padding-right: 0;
 }
 
-section.kokako.pageHeading .container-fluid .row {
+.kokako.pageHeading .container-fluid .row {
 	margin-left: 0;
 	margin-right: 0;
 }
 
-section.kokako.pageHeading .container-fluid .row :is(.col-xs-12, .col-sm-12) {
+.kokako.pageHeading .container-fluid .row :is(.col-xs-12, .col-sm-12) {
 	padding-left: 0;
 	padding-right: 0;
 }
 
-/* section.kokako.pageHeading .text-box { /* Uncomment if background colour is required for text box *
+/* .kokako.pageHeading .text-box { /* Uncomment if background colour is required for text box *
 	padding: 21px 42px; *
 } */
 
-section.kokako.pageHeading .cta-buttons {
+.kokako.pageHeading .cta-buttons {
 	text-align: left;
 }
 
-section.kokako.pageHeading :is(button, a.button, a.btn) {
+.kokako.pageHeading :is(button, a.button, a.btn) {
 	text-shadow: none;
 }
 
-section.kokako.pageHeading a:is(.button, .button:link, .button:visited) { /* Force alt colours */
+.kokako.pageHeading a:is(.button, .button:link, .button:visited) { /* Force alt colours */
 	background: [colour-background-alt];
 	color: [colour-text-alt];
 	font-weight: bold;
 }
 
-section.kokako.pageHeading a.button:hover {
+.kokako.pageHeading a.button:hover {
 	background: [colour-background-alt-hover];
 }
 
-section.kokako.pageHeading a.button:active {
+.kokako.pageHeading a.button:active {
 	background: [colour-background-alt-active];
 }
 
 
 /* Default - XS */
 
-section.kokako.pageHeading :is(h1, h2) {
+.kokako.pageHeading :is(h1, h2) {
 	font-size: 3rem;
 }
 
-section.kokako.pageHeading :is(p, p.small-print) {
+.kokako.pageHeading :is(p, p.small-print) {
 	display: none;
 }
 
 
 /* Default - MD */
 
-section.kokako.pageHeading :is(h1, h2) {
+.kokako.pageHeading :is(h1, h2) {
 	font-size: 3.5rem;
 	margin-bottom: [text-margin];
 }',
@@ -15044,7 +14968,7 @@ section.kokako.pageHeading :is(h1, h2) {
         8 => 
         array (
           'section_type' => 'Quote',
-          'section_css' => 'section.kokako.quote {
+          'section_css' => '.kokako.quote {
 	position: relative;
 	padding: [section-padding-vertical] 0 0; /* No bottom padding by default */
 	display: flex;
@@ -15053,81 +14977,81 @@ section.kokako.pageHeading :is(h1, h2) {
 	background: [colour-background];
 }
 
-section.kokako.quote :is(h1, h2) {
+.kokako.quote :is(h1, h2) {
 	color: [colour-text];
 }
 
-section.kokako.quote.section1 {
+.kokako.quote.section1 {
 	margin-top: 0;
 }
 
-section.kokako.quote .container-fluid {
+.kokako.quote .container-fluid {
 	padding-left: 0;
 	padding-right: 0;
 }
 
-section.kokako.quote .container-fluid .row {
+.kokako.quote .container-fluid .row {
 	margin-left: 0;
 	margin-right: 0;
 }
 
-section.kokako.quote .container-fluid .row :is(.col-xs-12, .col-sm-12) {
+.kokako.quote .container-fluid .row :is(.col-xs-12, .col-sm-12) {
 	padding-left: 0;
 	padding-right: 0;
 }
 
-/* section.kokako.quote .text-box { /* Uncomment if background colour is required for text box *
+/* .kokako.quote .text-box { /* Uncomment if background colour is required for text box *
 	padding: 21px 42px; *
 } */
 
-section.kokako.quote .cta-buttons {
+.kokako.quote .cta-buttons {
 	text-align: left;
 }
 
-section.kokako.quote :is(button, a.button, a.btn) {
+.kokako.quote :is(button, a.button, a.btn) {
 	text-shadow: none;
 }
 
-section.kokako.quote a:is(.button, .button:link, .button:visited) { /* Force alt colours */
+.kokako.quote a:is(.button, .button:link, .button:visited) { /* Force alt colours */
 	background: [colour-background-alt];
 	color: [colour-text-alt];
 	font-weight: bold;
 }
 
-section.kokako.quote a.button:hover {
+.kokako.quote a.button:hover {
 	background: [colour-background-alt-hover];
 }
 
-section.kokako.quote a.button:active {
+.kokako.quote a.button:active {
 	background: [colour-background-alt-active];
 }
 
 
 /* Default - XS */
 
-section.kokako.quote :is(h1, h2) {
+.kokako.quote :is(h1, h2) {
 	font-size: 3rem;
 }
 
-section.kokako.quote :is(p, p.small-print) {
+.kokako.quote :is(p, p.small-print) {
 	display: none;
 }
 
 
 /* Default - XS */
 
-section.kokako.quote :is(h1, h2) {
+.kokako.quote :is(h1, h2) {
 	font-size: 3rem;
 }
 
-section.kokako.quote :is(p, p.small-print) {
+.kokako.quote :is(p, p.small-print) {
 	display: none;
 }
 
 
 /* Default - MD */
 
-section.kokako.quote :is(h1, h2) {
+.kokako.quote :is(h1, h2) {
 	font-size: 3.5rem;
 	margin-bottom: [text-margin];
 }',
@@ -15136,39 +15060,39 @@ section.kokako.quote :is(h1, h2) {
         9 => 
         array (
           'section_type' => 'Slider',
-          'section_css' => 'section.kokako.slider {
+          'section_css' => '.kokako.slider {
 	position: relative;
 	padding: 0;
 }
 
-section.kokako.slider .carousel.slide {
+.kokako.slider .carousel.slide {
 	height: 500px;
 	overflow: hidden;
 	background: [colour-background-dark-rgba 0.1];
 }
 
-section.kokako.slider .carousel-inner {
+.kokako.slider .carousel-inner {
 	height: 100%;
 	display: flex;
 	align-items: center;
 }
 
-section.kokako.slider :is(.carousel-item-next, .carousel-item-prev, .carousel-item.active) {
+.kokako.slider :is(.carousel-item-next, .carousel-item-prev, .carousel-item.active) {
 	display: flex;
 }
 
-section.kokako.slider .carousel-mobile-placeholder {
+.kokako.slider .carousel-mobile-placeholder {
 	display: none;
 }
 
-section.kokako.slider .carousel-item-overlay {
+.kokako.slider .carousel-item-overlay {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	background: [colour-brand-1-rgba 0.53];
 }
 
-section.kokako.slider .carousel-caption {
+.kokako.slider .carousel-caption {
 	background: [colour-brand-1-rgba 0.8];
 	bottom: 0;
 	width: 950px;
@@ -15177,23 +15101,23 @@ section.kokako.slider .carousel-caption {
 	padding: 35px 42px 50px;
 }
 
-section.kokako.slider .carousel-indicators {
+.kokako.slider .carousel-indicators {
 	margin-bottom: 5px;
 }
 
-section.kokako.slider p {
+.kokako.slider p {
 	font-size: 1.3rem;
 }
 
-section.kokako.slider h2 + p {
+.kokako.slider h2 + p {
 	margin-top: -5px;
 }
 
-section.kokako.slider .cta-buttons {
+.kokako.slider .cta-buttons {
 	text-align: left;
 }
 
-section.kokako.slider h3 {
+.kokako.slider h3 {
 	font-weight: normal;
 	color: [colour-text-light];
 	text-transform: uppercase;
@@ -15204,62 +15128,62 @@ section.kokako.slider h3 {
 
 /* Default - XS */
 
-section.kokako.slider .carousel.slide {
+.kokako.slider .carousel.slide {
 	height: 350px;
 }
 
-section.kokako.slider .carousel-caption {
+.kokako.slider .carousel-caption {
 	padding: 5vh 15px 0;
 }
 
-section.kokako.slider .carousel-caption :is(h3, img) {
+.kokako.slider .carousel-caption :is(h3, img) {
 	display: none;
 }
 
-section.kokako.slider .carousel-caption h2 {
+.kokako.slider .carousel-caption h2 {
 	font-size: 2rem;
 }
 
 
 /* Default - MD */
 
-section.kokako.slider .carousel-indicators {
+.kokako.slider .carousel-indicators {
 	margin-bottom: 5px;
 }
 
-section.kokako.slider .carousel-indicators li {
+.kokako.slider .carousel-indicators li {
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
-section.kokako.slider .carousel-caption {
+.kokako.slider .carousel-caption {
 	width: 100%;
 	left: 0;
 	padding: 15px 50px 25px;
 }
 
-section.kokako.slider .carousel-caption {
+.kokako.slider .carousel-caption {
 	height: 100%;
 	padding-top: 10vh;
 }
 
-section.kokako.slider .carousel-caption h2 {
+.kokako.slider .carousel-caption h2 {
 	font-size: 3rem;
 	line-height: 1;
 }
 
-section.kokako.slider .carousel-caption :is(h3, p) {
+.kokako.slider .carousel-caption :is(h3, p) {
 	font-size: 1rem;
 }
 
-section.kokako.slider .cta-buttons {
+.kokako.slider .cta-buttons {
 	margin-top: 10px;
 }
 
 
 /* Default - LG */
 
-section.kokako.slider .carousel-caption img {
+.kokako.slider .carousel-caption img {
 	max-width: 22px;
 }',
           'section_responsivity' => 
@@ -15267,36 +15191,36 @@ section.kokako.slider .carousel-caption img {
             0 => 
             array (
               'screen_size' => 'lg',
-              'screen_size_css' => 'section.kokako.slider .carousel-indicators {
+              'screen_size_css' => '.kokako.slider .carousel-indicators {
 	margin-bottom: 5px;
 }
 
-section.kokako.slider .carousel-indicators li {
+.kokako.slider .carousel-indicators li {
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
-section.kokako.slider .carousel-caption {
+.kokako.slider .carousel-caption {
 	width: 100%;
 	left: 0;
 	padding: 15px 50px 25px;
 }
 
-section.kokako.slider .carousel-caption {
+.kokako.slider .carousel-caption {
 	height: 100%;
 	padding-top: 10vh;
 }
 
-section.kokako.slider .carousel-caption h2 {
+.kokako.slider .carousel-caption h2 {
 	font-size: 3rem;
 	line-height: 1;
 }
 
-section.kokako.slider .carousel-caption :is(h3, p) {
+.kokako.slider .carousel-caption :is(h3, p) {
 	font-size: 1rem;
 }
 
-section.kokako.slider .cta-buttons {
+.kokako.slider .cta-buttons {
 	margin-top: 10px;
 }',
             ),
@@ -15305,15 +15229,15 @@ section.kokako.slider .cta-buttons {
         10 => 
         array (
           'section_type' => 'Team',
-          'section_css' => 'section.kokako.team .team-member-row img {
+          'section_css' => '.kokako.team .team-member-row img {
 	margin-top: [tsp-calc tm *2];
 }
 
-section.kokako.team h3 {
+.kokako.team h3 {
 	margin-bottom: [tsp-calc tm /3, round];
 }
 
-section.kokako.team h4 {
+.kokako.team h4 {
 	margin: [tsp-calc tm /3, round] 0;
 }
 
@@ -15501,30 +15425,30 @@ section.kokako.team h4 {
         11 => 
         array (
           'section_type' => 'Testimonials',
-          'section_css' => 'section.kokako.testimonials {
+          'section_css' => '.kokako.testimonials {
 	padding-bottom: 0; /* Due to testimonial links being moved up by [section-padding-vertical] */
 }
 
-section.kokako.testimonials .container .row:last-child { /* Testimonial Links */
+.kokako.testimonials .container .row:last-child { /* Testimonial Links */
 	position: relative;
 	top: -[section-padding-vertical];
 	background: none;
 }
 
-section.kokako.testimonials .container .row :is(.col-md-12, .col-md-10) {
+.kokako.testimonials .container .row :is(.col-md-12, .col-md-10) {
 	overflow: hidden;
 }
 
-section.kokako.testimonials .internalWrap {
+.kokako.testimonials .internalWrap {
 	min-height: 130px;
 	padding: 0;
 }
 
-section.kokako.testimonials .internalWrap.includeStarRating {
+.kokako.testimonials .internalWrap.includeStarRating {
 	min-height: 180px;
 }
 
-section.kokako.testimonials .testimonial {
+.kokako.testimonials .testimonial {
 	/* display: none; */
 	position: absolute;
 	width: 100%; /* Fallback - not correctly centred */
@@ -15533,46 +15457,46 @@ section.kokako.testimonials .testimonial {
 	transition: all 0.5s ease;
 }
 
-section.kokako.testimonials .testimonial.current {
+.kokako.testimonials .testimonial.current {
 	/* display: block !important; */
 	opacity: 1;
 }
 
-section.kokako.testimonials .testimonial img.alignleft {
+.kokako.testimonials .testimonial img.alignleft {
 	margin-right: 30px;
 }
 
-section.kokako.testimonials .testimonial img {
+.kokako.testimonials .testimonial img {
 	float: left;
 	border-radius: 50%;
 }
 
-section.kokako.testimonials p.testimonial-rating {
+.kokako.testimonials p.testimonial-rating {
 	text-align: center;
 }
 
-section.kokako.testimonials .testimonial p.testimonial-text {
+.kokako.testimonials .testimonial p.testimonial-text {
 	max-width: 900px;
 	margin: 0 auto 30px;
 	text-align: center;
 }
 
-section.kokako.testimonials .testimonial :is(p.testimonial-text, img) { /* For initial centring */
+.kokako.testimonials .testimonial :is(p.testimonial-text, img) { /* For initial centring */
 	transition: margin 0.5s ease;
 }
 
-section.kokako.testimonials .testimonial p.name-company {
+.kokako.testimonials .testimonial p.name-company {
 	text-transform: uppercase;
 	text-align: center;
 	margin: 0 auto 15px;
 	max-width: 900px;
 }
 
-section.kokako.testimonials p.testimonial-links {
+.kokako.testimonials p.testimonial-links {
 	text-align: center;
 }
 
-section.kokako.testimonials a.testimonial-link {
+.kokako.testimonials a.testimonial-link {
 	display: inline-block;
 	width: 13px;
 	height: 13px;
@@ -15582,21 +15506,21 @@ section.kokako.testimonials a.testimonial-link {
 	background: none;
 }
 
-section.kokako.testimonials a.testimonial-link.current {
+.kokako.testimonials a.testimonial-link.current {
 	background: [colour-background-alt];
 }
 
 
 /* Default - XS */
 
-section.kokako.testimonials .internalWrap {
+.kokako.testimonials .internalWrap {
 	min-height: 180px;
 }
 
 
 /* Default - SM */
 
-section.kokako.testimonials .testimonials-heading img.alignleft {
+.kokako.testimonials .testimonials-heading img.alignleft {
 	float: none;
 	padding-right: 0;
 	border-right: none;
@@ -15605,33 +15529,33 @@ section.kokako.testimonials .testimonials-heading img.alignleft {
 	width: 112px;
 }
 
-section.kokako.testimonials .testimonials-heading h1 {
+.kokako.testimonials .testimonials-heading h1 {
 	margin: 40px 28px;
 }
 
-section.kokako.testimonials .testimonials-heading :is(h1, h2, h3) {
+.kokako.testimonials .testimonials-heading :is(h1, h2, h3) {
 	text-align: center;
 }
 
 
 /* Default - SM only */
 
-section.kokako.testimonials .internalWrap {
+.kokako.testimonials .internalWrap {
 	min-height: 150px;
 }
 
 
 /* Default - MD */
 
-section.kokako.testimonials {
+.kokako.testimonials {
 	padding-bottom: 50px; /* Due to testimonial links being moved up by 10px */
 }
 
-section.kokako.testimonials .container .row:last-child { /* Testimonial Links */
+.kokako.testimonials .container .row:last-child { /* Testimonial Links */
 	top: -10px;
 }
 
-section.kokako.testimonials a.testimonial-link {
+.kokako.testimonials a.testimonial-link {
 	width: 20px;
 	height: 20px;
 	margin: 0 5px;
@@ -15640,7 +15564,7 @@ section.kokako.testimonials a.testimonial-link {
 
 /* Default - LG */
 
-section.kokako.testimonials .testimonials-heading img.alignleft {
+.kokako.testimonials .testimonials-heading img.alignleft {
 	float: none;
 	padding-right: 0;
 	border-right: none;
@@ -15649,26 +15573,26 @@ section.kokako.testimonials .testimonials-heading img.alignleft {
 	width: 112px;
 }
 
-section.kokako.testimonials .testimonials-heading h1 {
+.kokako.testimonials .testimonials-heading h1 {
 	margin: 40px 28px;
 }
 
-section.kokako.testimonials .testimonials-heading :is(h1, h2, h3) {
+.kokako.testimonials .testimonials-heading :is(h1, h2, h3) {
 	text-align: center;
 }
 
 
 /* Default - LG only */
 
-section.kokako.testimonials .testimonial.col-lg-6 {
+.kokako.testimonials .testimonial.col-lg-6 {
 	flex: 0 0 calc(50% - 15px);
 }
 
-section.kokako.testimonials .testimonial.col-lg-6:nth-child(odd) {
+.kokako.testimonials .testimonial.col-lg-6:nth-child(odd) {
 	margin-right: 15px;
 }
 
-section.kokako.testimonials .testimonial.col-lg-6:nth-child(even) {
+.kokako.testimonials .testimonial.col-lg-6:nth-child(even) {
 	margin-left: 15px;
 }',
           'section_responsivity' => 
@@ -15676,11 +15600,11 @@ section.kokako.testimonials .testimonial.col-lg-6:nth-child(even) {
             0 => 
             array (
               'screen_size' => 'lg',
-              'screen_size_css' => 'section.kokako.testimonials {
+              'screen_size_css' => '.kokako.testimonials {
 	padding-bottom: 50px; /* Due to testimonial links being moved up by 10px */
 }
 
-section.kokako.testimonials .container .row:last-child { /* Testimonial Links */
+.kokako.testimonials .container .row:last-child { /* Testimonial Links */
 	top: -10px;
 }',
             ),
@@ -15689,7 +15613,7 @@ section.kokako.testimonials .container .row:last-child { /* Testimonial Links */
         12 => 
         array (
           'section_type' => 'Text',
-          'section_css' => 'section.kokako.text :is(h1, h2) { /* in case of floated images */
+          'section_css' => '.kokako.text :is(h1, h2) { /* in case of floated images */
 	clear: both;
 }',
           'section_responsivity' => 
@@ -15697,7 +15621,7 @@ section.kokako.testimonials .container .row:last-child { /* Testimonial Links */
             0 => 
             array (
               'screen_size' => 'lg',
-              'screen_size_css' => 'section.kokako.text :is(h1, h2) { /* Do not clear any floated images */
+              'screen_size_css' => '.kokako.text :is(h1, h2) { /* Do not clear any floated images */
 	clear: none;
 }',
             ),
@@ -15808,7 +15732,7 @@ section.kokako.testimonials .container .row:last-child { /* Testimonial Links */
         14 => 
         array (
           'section_type' => 'Text with Photo',
-          'section_css' => 'section.kokako.textWithPhoto.no-margin-bottom.no-padding .container-fluid .internalWrap {
+          'section_css' => '.kokako.textWithPhoto.no-margin-bottom.no-padding .container-fluid .internalWrap {
 	padding-top: 60px;
 	padding-bottom: 60px;
 }
@@ -15816,36 +15740,36 @@ section.kokako.testimonials .container .row:last-child { /* Testimonial Links */
 
 /* Default - SM */
 
-section.kokako.textWithPhoto .container-fluid .internalWrap {
+.kokako.textWithPhoto .container-fluid .internalWrap {
 	max-width: [width-sm];
 }
 
 
 /* Default - MD */
 
-section.kokako.textWithPhoto .internalWrap {
+.kokako.textWithPhoto .internalWrap {
 	padding: [tsp-calc tm *3] 0 0;
 }
 
-section.kokako.textWithPhoto.mobile-column-reverse .internalWrap {
+.kokako.textWithPhoto.mobile-column-reverse .internalWrap {
 	padding: 0 0 [tsp-calc tm *3];
 }
 
-section.kokako.textWithPhoto.padding-none .internalWrap {
+.kokako.textWithPhoto.padding-none .internalWrap {
 	padding: [tsp-calc tm *4] 0;
 }
 
-section.kokako.textWithPhoto .container-fluid .internalWrap {
+.kokako.textWithPhoto .container-fluid .internalWrap {
 	max-width: [width-md];
 	margin-left: auto;
 	margin-right: auto;
 }
 
-section.kokako.textWithPhoto .internalWrap :is(h1, h2) {
+.kokako.textWithPhoto .internalWrap :is(h1, h2) {
 	margin-top: 0;
 }
 
-section.kokako.textWithPhoto.mobile-column-reverse .row { /* Reverse display of columns on mobile if required */
+.kokako.textWithPhoto.mobile-column-reverse .row { /* Reverse display of columns on mobile if required */
 	flex-direction: column-reverse !important;
 }',
           'section_responsivity' => 
@@ -15853,17 +15777,17 @@ section.kokako.textWithPhoto.mobile-column-reverse .row { /* Reverse display of 
             0 => 
             array (
               'screen_size' => 'lg',
-              'screen_size_css' => 'section.kokako.textWithPhoto .row .col-lg-6.text .internalWrap {
+              'screen_size_css' => '.kokako.textWithPhoto .row .col-lg-6.text .internalWrap {
 	padding-left: [tsp-calc tm *3];
 	padding-right: 0;
 }
 
-section.kokako.textWithPhoto .row.flex-row-reverse .col-lg-6.text .internalWrap {
+.kokako.textWithPhoto .row.flex-row-reverse .col-lg-6.text .internalWrap {
 	padding-left: 0;
 	padding-right: [tsp-calc tm *3];
 }
 
-section.kokako.textWithPhoto.padding-none .col-lg-6.text .internalWrap {
+.kokako.textWithPhoto.padding-none .col-lg-6.text .internalWrap {
 	padding-top: [section-padding-vertical];
 	padding-bottom: [section-padding-vertical];
 }
@@ -15871,11 +15795,11 @@ section.kokako.textWithPhoto.padding-none .col-lg-6.text .internalWrap {
 
 /* Sticky Images */
 
-section.kokako.textWithPhoto.image-sticky {
+.kokako.textWithPhoto.image-sticky {
 	overflow: visible; /* Required for sticky elements to work - won\'t work when overflow is set to hidden */
 }
 
-section.kokako.textWithPhoto.image-sticky div.image .sticky-image {
+.kokako.textWithPhoto.image-sticky div.image .sticky-image {
 	width: 100%;
 	aspect-ratio: 1/1;
 	position: -webkit-sticky; /* Safari */
@@ -15884,7 +15808,7 @@ section.kokako.textWithPhoto.image-sticky div.image .sticky-image {
 	max-height: calc(100vh - [tsp-calc spv *4 /3 + {header-height-scrolled}, round]);
 }
 
-section.kokako.textWithPhoto.image-sticky .internalWrap {
+.kokako.textWithPhoto.image-sticky .internalWrap {
 	padding-top: 0;
 	padding-bottom: 0;
 }
@@ -15892,7 +15816,7 @@ section.kokako.textWithPhoto.image-sticky .internalWrap {
 
 /* LG only */
 
-section.kokako.textWithPhoto .col-lg-6.text { /* Set max width on Text with Photo section */
+.kokako.textWithPhoto .col-lg-6.text { /* Set max width on Text with Photo section */
 	max-width: 480px;
 }',
             ),
@@ -15901,17 +15825,17 @@ section.kokako.textWithPhoto .col-lg-6.text { /* Set max width on Text with Phot
               'screen_size' => 'xl',
               'screen_size_css' => '/* Set max width on Text with Photo section */
 
-section.kokako.textWithPhoto .col-lg-6.text {
+.kokako.textWithPhoto .col-lg-6.text {
 	max-width: 570px; 
 }
 
 @media (min-width: 2100px) {
-	section.kokako.textWithPhoto .container-fluid .col-lg-6.image {
+	.kokako.textWithPhoto .container-fluid .col-lg-6.image {
 		max-width: 30%;
 		margin-left: 20%;
 	}
 
-	section.kokako.textWithPhoto .container-fluid .row.flex-row-reverse .col-lg-6.image {
+	.kokako.textWithPhoto .container-fluid .row.flex-row-reverse .col-lg-6.image {
 		margin-right: 20%;
 		margin-left: 0;
 	}
