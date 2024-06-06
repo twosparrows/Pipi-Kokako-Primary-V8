@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 05/06/2024 1:59.15am UTC
+Updated at 06/06/2024 2:46.57am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -2367,11 +2367,14 @@ CSS for importing fonts should be added to the top of Fundamental Elements CSS b
       'value' => '* {
 	margin: 0;
 	padding: 0;
+	/* max-width: 100vw; */
 }
 
 html {
 	scroll-behavior: smooth;
 	font-size: [font-size]; /* rem units are relative to the font size of the HTML element - see https://www.digitalocean.com/community/tutorials/css-rem-vs-em-units */
+	width: 100%;
+	max-width: 100%;
 }
 
 body {
@@ -2381,6 +2384,8 @@ body {
 	font-size: 1rem;
 	line-height: [line-height];
 	-webkit-font-smoothing: antialiased; /* Fix for Google Chrome issue where a slider change can cause text to flicker */
+	width: 100%;
+	max-width: 100%;
 }',
       'menu_order' => 10,
       'instructions' => 'Add any imported fonts to the top of this section (wrapped in @font-face or @import).',
@@ -4648,11 +4653,11 @@ background: [colour-background-light-rgba 0.3];',
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '.cta-buttons :is([button-selectors]):first-child {
+      'value' => '.kokako-buttons :is([button-selectors]):first-child {
 	margin-left: 0;
 }
 
-.cta-buttons :is([button-selectors]):last-child {
+.kokako-buttons :is([button-selectors]):last-child {
 	margin-right: 0;
 }',
       'menu_order' => 22,
@@ -6719,7 +6724,15 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '@supports (grid-area: auto) { /* Check this statement against the course */
+      'value' => 'header,
+main,
+footer{
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+@supports (grid-area: auto) { /* Check this statement against the course */
 
 	body {
 		min-height: 100vh; /* To position footer to bottom of screen if content too short? */
@@ -6734,18 +6747,18 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
 		grid-template-rows: fit-content 1fr fit-content; /* This and the min-height statement are designed to clamp the footer always to the bottom of the screen when the content is short. Requires testing! */
 	}
 
-	header.kokako {
+	header{
 		grid-area: header;
 	}
 
-	main.kokako {
+	main{
 		grid-area: main;
 		display: grid;
 		grid-template-columns: auto;
 		grid-auto-rows: auto;
 	}
 
-	footer.kokako {
+	footer{
 		grid-area: footer;
 	}
 
@@ -6987,40 +7000,62 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
       'value' => '/* Kokako wrap */
 
 .kokako,
-.kokako .contain,
-.kokako .content {
+.kokako .contain{
 	box-sizing: border-box;
 }
 
-.kokako {
+.kokako,
+.kokako.width-full {
 	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr;
+	max-width: 100%; /* This is also the default for .width-full */
+	/* display: grid;
+	grid-template-columns: 1fr; /* Defaults to .width-full*/
 }
 
 
 /* Content wrap */
 
-.kokako .contain {
+.kokako .contain{
+	margin: 0 auto;
+}
+
+/* .kokako.width-contain {
+	grid-template-columns: 1fr minmax( auto, [content-width-max] ) 1fr;
+}
+
+.kokako.width-contain .contain {
+	grid-column: 2 / 3;
+} */
+
+
+.kokako .contain,
+.kokako.width-full .contain {
 	padding-left: var(--edge-padding);
 	padding-right: var(--edge-padding);
-	width: 100%; /* This is also the default for .width-full */
-	grid-column: 1 / -1;
+	width: calc( [content-width-max] + ( var(--edge-padding) * 2 ) );
+	max-width: 100%; /* This is also the default for .width-full */
+	/* grid-column: 1 / -1; */
 }
 
 
 /* Working  */
 
-.kokako .contain {
-	border: 1px #f00 solid;
+header,
+.header-background,
+footer{
+	display: none;
 }
 
-.kokako .content {
-	border: 1px #0f0 solid;
+.kokako {
+	border: 10px #f00 solid;
+}
+
+.kokako .contain {
+	border: 10px #0f0 solid;
 }
 
 .kokako .image {
-	border: 1px #00f solid;
+	border: 10px #00f solid;
 }',
       'menu_order' => 14,
       'instructions' => '',
@@ -7064,14 +7099,13 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
         1 => 
         array (
           'screen_size' => 'lg',
-          'screen_size_css' => '.kokako {
+          'screen_size_css' => '/* .kokako {
 	grid-template-columns: 1fr minmax( auto, [content-width-max] ) 1fr;
 }
 
-.kokako.width-contained .contain {
-	max-width: [content-width-max];
+.kokako.width-contain .contain {
 	grid-column: 2 / 3;
-}
+} */
 
 .kokako .contain {
 	--edge-padding: [tsp-calc {edge-padding} *2];
@@ -13340,16 +13374,16 @@ footer a.social-media-link:last-of-type {
       'value' => '.kokako {
 	position: relative; /* Required for image overlays, hooks etc */
 	padding: [section-padding-vertical] 0;
-	overflow: hidden; /* Prevents animation beginning position from creating a scroll bar at bottom of window. Override as required (but check responsivity) */
+	overflow-x: hidden; /* Prevents animation beginning position from creating a scroll bar at bottom of window. Override as required (but check responsivity) */
 }
 
-.kokako .row {
+/* .kokako .row {
 	position: relative;
-}
+} */
 
-.kokako.section1 {
-	/* Now using header background div method, which allows for background gradients also. When header background div is hidden, set the top padding to [tsp-calc spv + {header-height}] /* border-top: [header-height] [colour-header-	background] solid; /* formerly margin-top, not border-top for smoother header.scrolled transitions */
-}
+/* .kokako.section1 {
+	/* Now using header background div method, which allows for background gradients also. When header background div is hidden, set the top padding to [tsp-calc spv + {header-height}] /* border-top: [header-height] [colour-header-	background] solid; /* formerly margin-top, not border-top for smoother header.scrolled transitions *
+} */
 
 .kokako .internalWrap {
 	padding: [tsp-calc tm *3] [tsp-calc tm *5 /3, round] [tsp-calc tm *6];
@@ -13422,11 +13456,12 @@ section.kokako:not(.centredImages) .container-fluid {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '.kokako :is(.content, .image) > *:first-child {
+      'value' => '.kokako .contain > *:first-child {
 	margin-top: 0;
 }
 
-.kokako :is(.content, .image) > *:last-child {
+.kokako .contain > *:last-child,
+.kokako .contain > *:last-child > * { /* This also catches if the last item is a container with items inside, eg. .kokako-buttons */
 	margin-bottom: 0;
 }
 
@@ -13573,44 +13608,45 @@ section.kokako:not(.centredImages) .container-fluid {
     array (
       'ID' => 0,
       'key' => 'field_6539e9a30cba4',
-      'label' => 'CTA Buttons CSS',
-      'name' => 'cta_buttons_css',
+      'label' => 'Kōkako Buttons CSS',
+      'name' => 'kokako_buttons_css',
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '.kokako .cta-buttons {
-	display: flex;
+      'value' => '.kokako .kokako-buttons {
 	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
 	grid-gap: [text-margin];
 	justify-content: left; /* Default, also for .align-left */
 	align-items: center;
 	min-height: 52px;
 }
 
-.kokako:not(.multipleRows) .cta-buttons {
+.kokako:not(.multipleRows) .kokako-buttons {
 	margin-top: [tsp-calc tm *2];
 }
 
-.kokako .cta-buttons.buttons-align-centre,
-.kokako.text-align-centre .cta-buttons,
-.kokako:is(.text-align-centre, .text-align-right) .cta-buttons.buttons-align-left { /* Button alignment has a higher priority than section text alignment */
+.kokako .kokako-buttons.buttons-align-centre,
+.kokako.text-align-centre .kokako-buttons,
+.kokako:is(.text-align-centre, .text-align-right) .kokako-buttons.buttons-align-centre { /* Button alignment has a higher priority than section text alignment */
 	justify-content: center;
 }
 
-.kokako .cta-buttons.buttons-align-right,
-.kokako.text-align-right .cta-buttons,
-.kokako:is(.text-align-left, .text-align-centre) .cta-buttons.buttons-align-right {
+.kokako .kokako-buttons.buttons-align-right,
+.kokako.text-align-right .kokako-buttons,
+.kokako:is(.text-align-left, .text-align-centre) .kokako-buttons.buttons-align-right {
 	justify-content: right;
 }
 
-.kokako .cta-buttons a {
+.kokako .kokako-buttons [button-selectors]{
 	margin: 0 !important;
 }
 
-.kokako .cta-buttons p.centre {
+/* .kokako .kokako-buttons p.centre {
 	display: inline;
-	text-align: center; /* This will align the multiple buttons */
-}
+	text-align: center; /* This will align the multiple buttons *
+} */
 
 
 /* Default - SM */
@@ -13668,7 +13704,7 @@ section.kokako .cta-buttons p.centre {
       'rows' => 16,
       'placeholder' => '',
       'new_lines' => '',
-      '_name' => 'cta_buttons_css',
+      '_name' => 'kokako_buttons_css',
       '_valid' => 1,
     ),
     8 => 
