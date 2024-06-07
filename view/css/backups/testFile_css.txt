@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 07/06/2024 12:17.55am UTC
+Updated at 07/06/2024 5:00.04am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -7109,13 +7109,14 @@ footer{
 }
 
 .kokako.width-contain .contain-text{
+	width: 100%;
 	max-width: [text-content-width-max];
 	margin-left: auto;
 	margin-right: auto;
 }
 
 
-/* Columns */
+/* Columns - NB: Proportional Columns set up below, under MD & Above */
 
 .kokako .columns {
 	display: grid;
@@ -7187,6 +7188,60 @@ footer{
 
 .kokako .columns:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6){
 	grid-template-columns: repeat(2, 1fr);
+}
+
+/* Proportional Columns */
+
+.kokako .columns.cols-2.cols-prop-0-12{ /* Just because this is technically possible */
+	grid-template-columns: 0% 1fr;
+}
+
+.kokako .columns.cols-2.cols-prop-1-11{
+	grid-template-columns: 1fr 11fr;
+}
+
+.kokako .columns.cols-2.cols-prop-2-10{
+	grid-template-columns: 1fr 5fr;
+}
+
+.kokako .columns.cols-2.cols-prop-3-9{
+	grid-template-columns: 1fr 3fr;
+}
+
+.kokako .columns.cols-2.cols-prop-4-8{
+	grid-template-columns: 1fr 2fr;
+}
+
+.kokako .columns.cols-2.cols-prop-5-7{
+	grid-template-columns: 5fr 7fr;
+}
+
+.kokako .columns.cols-2.cols-prop-6-6{
+	grid-template-columns: 1fr 1fr;
+}
+
+.kokako .columns.cols-2.cols-prop-7-5{
+	grid-template-columns: 7fr 5fr;
+}
+
+.kokako .columns.cols-2.cols-prop-8-4{
+	grid-template-columns: 2fr 1fr;
+}
+
+.kokako .columns.cols-2.cols-prop-9-3{
+	grid-template-columns: 3fr 1fr;
+}
+
+.kokako .columns.cols-2.cols-prop-10-2{
+	grid-template-columns: 5fr 1fr;
+}
+
+.kokako .columns.cols-2.cols-prop-11-1{
+	grid-template-columns: 11fr 1fr;
+}
+
+.kokako .columns.cols-2.cols-prop-12-0{ /* Just because this is technically possible */
+	grid-template-columns: 1fr 0%;
 }',
         ),
         1 => 
@@ -7208,8 +7263,12 @@ footer{
         2 => 
         array (
           'screen_size' => 'xl',
-          'screen_size_css' => '.kokako .columns:is(.cols-4, .cols-5, .cols-6){
+          'screen_size_css' => '.kokako .columns:is(.cols-4, .cols-6){
 	grid-template-columns: repeat(4, 1fr);
+}
+
+.kokako .columns.cols-5{
+	grid-template-columns: repeat(5, 1fr);
 }
 
 .kokako.width-full .text-columns{
@@ -7219,11 +7278,7 @@ footer{
         3 => 
         array (
           'screen_size' => 'xxl',
-          'screen_size_css' => '.kokako .columns.cols-5{
-	grid-template-columns: repeat(5, 1fr);
-}
-
-.kokako .columns.cols-6{
+          'screen_size_css' => '.kokako .columns.cols-6{
 	grid-template-columns: repeat(6, 1fr);
 }
 
@@ -14476,13 +14531,13 @@ section.kokako.hide-section {
         4 => 
         array (
           'section_type' => 'Multiple Columns',
-          'section_css' => '.kokako.multipleColumns .contain { /* Default, also for .cols-1 */
+          'section_css' => '/* .kokako.multipleColumns .contain { /* Default, also for .cols-1 *
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: [grid-gap-vertical] [grid-gap-horizontal];
 }
 
-.kokako:is(.multipleColumns, .multipleRows) .content h2 { /* Make it appear as an h3, and override animations (as the columns are already animated ) */
+.kokako:is(.multipleColumns, .multipleRows) .content h2 { /* Make it appear as an h3, and override animations (as the columns are already animated ) *
 	font-size: 1.5rem;
 	transform: translateY(0) scale(1) !important;
 	opacity: 1 !important;
@@ -14502,44 +14557,45 @@ section.kokako.hide-section {
 
 .kokako.multipleColumns .content.cta-buttons-wrapper {
 	margin-top: [tsp-calc tm *10 /3, round];
-}',
+}
+*/',
           'section_responsivity' => 
           array (
             0 => 
             array (
               'screen_size' => 'md',
-              'screen_size_css' => '.kokako.multipleColumns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
+              'screen_size_css' => '/* .kokako.multipleColumns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
 	grid-template-columns: repeat(2, 1fr);
-}',
+} */',
             ),
             1 => 
             array (
               'screen_size' => 'lg',
-              'screen_size_css' => '.kokako.multipleColumns .contain.cols-2 {
+              'screen_size_css' => '/* .kokako.multipleColumns .contain.cols-2 {
 	grid-template-columns: repeat(2, 1fr);
 }
 
 .kokako.multipleColumns .contain:is(.cols-3, .cols-4, .cols-5, .cols-6) {
 	grid-template-columns: repeat(3, 1fr);
-}',
+} */',
             ),
             2 => 
             array (
               'screen_size' => 'xl',
-              'screen_size_css' => '.kokako.multipleColumns .contain:is(.cols-4, .cols-6) {
+              'screen_size_css' => '/* .kokako.multipleColumns .contain:is(.cols-4, .cols-6) {
 	grid-template-columns: repeat(4, 1fr);
 }
 
 .kokako.multipleColumns .contain.cols-5 {
 	grid-template-columns: repeat(5, 1fr);
-}',
+} */',
             ),
             3 => 
             array (
               'screen_size' => 'xxl',
-              'screen_size_css' => '.kokako.multipleColumns .contain.cols-6 {
+              'screen_size_css' => '/* .kokako.multipleColumns .contain.cols-6 {
 	grid-template-columns: repeat(6, 1fr);
-}',
+} */',
             ),
           ),
         ),
@@ -15663,31 +15719,31 @@ section.kokako.hide-section {
         ),
         13 => 
         array (
-          'section_type' => 'Text with Image',
-          'section_css' => '.kokako.textWithImage .contain {
-	display: grid; /* Using grid rather than flex as grid allows to set equal width columns, flex will change the width to fit content as deemed required */ 
+          'section_type' => 'Text and Image',
+          'section_css' => '.kokako.textAndImage .contain {
+	display: grid; /* Using grid rather than flex as grid allows to set equal width columns, flex will change the width to fit content as deemed required */
 	grid-template-columns: 1fr;
 	grid-template-areas:
 		"twi-image"
 		"twi-content"; /* Defaults to image on top */
-	grid-gap: [grid-gap-horizontal];
+	gap: [grid-gap-horizontal];
 }
 
-.kokako.textWithImage.image-on-bottom .contain {
+.kokako.textAndImage.image-on-bottom .contain {
 	grid-template-areas:
 		"twi-content"
 		"twi-image";
 }
 
-.kokako.textWithImage .content {
+.kokako.textAndImage .content {
 	grid-area: twi-content;
 }
 
-.kokako.textWithImage .image {
+.kokako.textAndImage .image {
 	grid-area: twi-image;
 }
 
-.kokako.textWithImage .image img {
+.kokako.textAndImage .image img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -15696,12 +15752,12 @@ section.kokako.hide-section {
 
 /* Variation: Full width */
 
-.kokako.textWithImage.width-full .contain {
+.kokako.textAndImage.width-full .contain {
 	padding-left: 0;
 	padding-right: 0;
 }
 
-.kokako.textWithImage.width-full .content {
+.kokako.textAndImage.width-full .col.text {
 	padding-left: var(--edge-padding);
 	padding-right: var(--edge-padding);
 }',
@@ -15709,57 +15765,93 @@ section.kokako.hide-section {
           array (
             0 => 
             array (
-              'screen_size' => 'lg',
-              'screen_size_css' => '.kokako.textWithImage .contain {
-	grid-template-columns: repeat(2, 1fr); /* Using grid rather than flex as grid allows to set equal width columns, flex will change the width to fit content as deemed required */ 
-	grid-template-areas: "twi-image twi-content" !important; /* Defaults to image-on-left. important used to override any settings at mobile size, which can have greater selectivity */
+              'screen_size' => 'md',
+              'screen_size_css' => '.kokako.textAndImage.image-on-left .contain {
+	grid-template-areas:
+		"twi-image twi-content";
 }
 
-.kokako.textWithImage.image-on-right .contain {
-	grid-template-areas: "twi-content twi-image" !important;
+.kokako.textAndImage.image-on-right .contain {
+	grid-template-areas:
+		"twi-content twi-image";
+}
+
+/* .kokako.textAndImage .contain{
+	row-gap: 0;
+} */
+
+.kokako.textAndImage .col.text{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.kokako.textAndImage .col.text > .contain-text:last-child > *:last-child{
+	margin-bottom: 0;
 }
 
 
 /* Variation: Full width */
 
-.kokako.textWithImage.width-full .content {
+/*
+.kokako.textAndImage.width-full .content {
 	padding-left: 0;
 	padding-right: 0;
 }
 
-.kokako.textWithImage.width-full .content > * {
+.kokako.textAndImage.width-full .content > * {
 	box-sizing: border-box;
 	max-width: [tsp-calc {content-width-max} - {grid-gap-horizontal} /2, round1];
 }
 
-.kokako.textWithImage.width-full.image-on-left .content > * {
+.kokako.textAndImage.width-full.image-on-left .content > * {
 	padding-right: var(--edge-padding);
 	margin-right: auto;
 }
 
-.kokako.textWithImage.width-full.image-on-right .content > * {
+.kokako.textAndImage.width-full.image-on-right .content > * {
 	padding-left: var(--edge-padding);
 	margin-left: auto;
+} */
+
+.kokako.textAndImage.width-full.image-on-left .col.text{
+	padding-left: 0;
+}
+
+.kokako.textAndImage.width-full.image-on-right .col.text{
+	padding-right: 0;
+}',
+            ),
+            1 => 
+            array (
+              'screen_size' => 'lg',
+              'screen_size_css' => '.kokako.textAndImage .contain {
+	grid-template-columns: repeat(2, 1fr); /* Using grid rather than flex as grid allows to set equal width columns, flex will change the width to fit content as deemed required */ 
+	grid-template-areas: "twi-image twi-content" !important; /* Defaults to image-on-left. important used to override any settings at mobile size, which can have greater selectivity */
+}
+
+.kokako.textAndImage.image-on-right .contain {
+	grid-template-areas: "twi-content twi-image" !important;
 }
 
 
 /* Variation: Image 50% */
-
-.kokako.textWithImage.variation-image-50 .contain {
+/*
+.kokako.textAndImage.variation-image-50 .contain {
 	grid-gap: 0;
 }
 
-.kokako.textWithImage.variation-image-50.image-on-left .content {
+.kokako.textAndImage.variation-image-50.image-on-left .content {
 	padding-left: [grid-gap-horizontal];
 }
 
-.kokako.textWithImage.variation-image-50.image-on-right .content {
+.kokako.textAndImage.variation-image-50.image-on-right .content {
 	padding-right: [grid-gap-horizontal];
 }
 
-.kokako.textWithImage.variation-image-50.width-full .content > * {
+.kokako.textAndImage.variation-image-50.width-full .content > * {
 	max-width: [tsp-calc {content-width-max} /2 - {grid-gap-horizontal}, round1];
-}',
+} */',
             ),
           ),
         ),

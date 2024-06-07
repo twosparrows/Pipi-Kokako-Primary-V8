@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 07/06/2024 12:17.55am UTC
+Updated at 07/06/2024 5:00.04am UTC
 
 
 FILE STRUCTURE:
@@ -791,13 +791,14 @@ footer{
 }
 
 .kokako.width-contain .contain-text{
+	width: 100%;
 	max-width: 950px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 
-/* Columns */
+/* Columns - NB: Proportional Columns set up below, under MD & Above */
 
 .kokako .columns {
 	display: grid;
@@ -1859,13 +1860,13 @@ footer {
 
 /* Multiple Columns */
 
-.kokako.multipleColumns .contain { /* Default, also for .cols-1 */
+/* .kokako.multipleColumns .contain { /* Default, also for .cols-1 *
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 45px 45px;
 }
 
-.kokako:is(.multipleColumns, .multipleRows) .content h2 { /* Make it appear as an h3, and override animations (as the columns are already animated ) */
+.kokako:is(.multipleColumns, .multipleRows) .content h2 { /* Make it appear as an h3, and override animations (as the columns are already animated ) *
 	font-size: 1.5rem;
 	transform: translateY(0) scale(1) !important;
 	opacity: 1 !important;
@@ -1886,12 +1887,58 @@ footer {
 .kokako.multipleColumns .content.cta-buttons-wrapper {
 	margin-top: 50px;
 }
+*/
 
 
 /* Text */
 
 .kokako.text :is(h1, h2) { /* in case of floated images */
 	clear: both;
+}
+
+
+/* Text And Image */
+
+.kokako.textAndImage .contain {
+	display: grid; /* Using grid rather than flex as grid allows to set equal width columns, flex will change the width to fit content as deemed required */
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"twi-image"
+		"twi-content"; /* Defaults to image on top */
+	gap: 45px;
+}
+
+.kokako.textAndImage.image-on-bottom .contain {
+	grid-template-areas:
+		"twi-content"
+		"twi-image";
+}
+
+.kokako.textAndImage .content {
+	grid-area: twi-content;
+}
+
+.kokako.textAndImage .image {
+	grid-area: twi-image;
+}
+
+.kokako.textAndImage .image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+/* Variation: Full width */
+
+.kokako.textAndImage.width-full .contain {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.kokako.textAndImage.width-full .col.text {
+	padding-left: var(--edge-padding);
+	padding-right: var(--edge-padding);
 }
 
 
@@ -2578,6 +2625,60 @@ div.accordion-content + a.button {
     	grid-template-columns: repeat(2, 1fr);
     }
         
+    /* Proportional Columns */
+        
+    .kokako .columns.cols-2.cols-prop-0-12{ /* Just because this is technically possible */
+    	grid-template-columns: 0% 1fr;
+    }
+        
+    .kokako .columns.cols-2.cols-prop-1-11{
+    	grid-template-columns: 1fr 11fr;
+    }
+        
+    .kokako .columns.cols-2.cols-prop-2-10{
+    	grid-template-columns: 1fr 5fr;
+    }
+        
+    .kokako .columns.cols-2.cols-prop-3-9{
+    	grid-template-columns: 1fr 3fr;
+    }
+        
+    .kokako .columns.cols-2.cols-prop-4-8{
+    	grid-template-columns: 1fr 2fr;
+    }
+        
+    .kokako .columns.cols-2.cols-prop-5-7{
+    	grid-template-columns: 5fr 7fr;
+    }
+        
+    .kokako .columns.cols-2.cols-prop-6-6{
+    	grid-template-columns: 1fr 1fr;
+    }
+        
+    .kokako .columns.cols-2.cols-prop-7-5{
+    	grid-template-columns: 7fr 5fr;
+    }
+        
+    .kokako .columns.cols-2.cols-prop-8-4{
+    	grid-template-columns: 2fr 1fr;
+    }
+        
+    .kokako .columns.cols-2.cols-prop-9-3{
+    	grid-template-columns: 3fr 1fr;
+    }
+        
+    .kokako .columns.cols-2.cols-prop-10-2{
+    	grid-template-columns: 5fr 1fr;
+    }
+        
+    .kokako .columns.cols-2.cols-prop-11-1{
+    	grid-template-columns: 11fr 1fr;
+    }
+        
+    .kokako .columns.cols-2.cols-prop-12-0{ /* Just because this is technically possible */
+    	grid-template-columns: 1fr 0%;
+    }
+        
     .display-md {
     	display: block;
     }
@@ -2588,8 +2689,66 @@ div.accordion-content + a.button {
         
     /* Multiple Columns */
         
-    .kokako.multipleColumns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
+    /* .kokako.multipleColumns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
     	grid-template-columns: repeat(2, 1fr);
+    } */
+        
+    /* Text And Image */
+        
+    .kokako.textAndImage.image-on-left .contain {
+    	grid-template-areas:
+    		"twi-image twi-content";
+    }
+        
+    .kokako.textAndImage.image-on-right .contain {
+    	grid-template-areas:
+    		"twi-content twi-image";
+    }
+        
+    /* .kokako.textAndImage .contain{
+    	row-gap: 0;
+    } */
+        
+    .kokako.textAndImage .col.text{
+    	display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+    }
+        
+    .kokako.textAndImage .col.text > .contain-text:last-child > *:last-child{
+    	margin-bottom: 0;
+    }
+        
+        
+    /* Variation: Full width */
+        
+    /*
+    .kokako.textAndImage.width-full .content {
+    	padding-left: 0;
+    	padding-right: 0;
+    }
+        
+    .kokako.textAndImage.width-full .content > * {
+    	box-sizing: border-box;
+    	max-width: 677.5px;
+    }
+        
+    .kokako.textAndImage.width-full.image-on-left .content > * {
+    	padding-right: var(--edge-padding);
+    	margin-right: auto;
+    }
+        
+    .kokako.textAndImage.width-full.image-on-right .content > * {
+    	padding-left: var(--edge-padding);
+    	margin-left: auto;
+    } */
+        
+    .kokako.textAndImage.width-full.image-on-left .col.text{
+    	padding-left: 0;
+    }
+        
+    .kokako.textAndImage.width-full.image-on-right .col.text{
+    	padding-right: 0;
     }
     
 }
@@ -2781,19 +2940,49 @@ div.accordion-content + a.button {
         
     /* Multiple Columns */
         
-    .kokako.multipleColumns .contain.cols-2 {
+    /* .kokako.multipleColumns .contain.cols-2 {
     	grid-template-columns: repeat(2, 1fr);
     }
         
     .kokako.multipleColumns .contain:is(.cols-3, .cols-4, .cols-5, .cols-6) {
     	grid-template-columns: repeat(3, 1fr);
-    }
+    } */
         
     /* Text */
         
     .kokako.text :is(h1, h2) { /* Do not clear any floated images */
     	clear: none;
     }
+        
+    /* Text And Image */
+        
+    .kokako.textAndImage .contain {
+    	grid-template-columns: repeat(2, 1fr); /* Using grid rather than flex as grid allows to set equal width columns, flex will change the width to fit content as deemed required */ 
+    	grid-template-areas: "twi-image twi-content" !important; /* Defaults to image-on-left. important used to override any settings at mobile size, which can have greater selectivity */
+    }
+        
+    .kokako.textAndImage.image-on-right .contain {
+    	grid-template-areas: "twi-content twi-image" !important;
+    }
+        
+        
+    /* Variation: Image 50% */
+    /*
+    .kokako.textAndImage.variation-image-50 .contain {
+    	grid-gap: 0;
+    }
+        
+    .kokako.textAndImage.variation-image-50.image-on-left .content {
+    	padding-left: 45px;
+    }
+        
+    .kokako.textAndImage.variation-image-50.image-on-right .content {
+    	padding-right: 45px;
+    }
+        
+    .kokako.textAndImage.variation-image-50.width-full .content > * {
+    	max-width: 655px;
+    } */
         
     body.blog section.kokako.latestPosts .row .blog-grid.post:nth-of-type(2) h3 {
     	margin-top: 30px;
@@ -2804,8 +2993,12 @@ div.accordion-content + a.button {
 /* XL and above */
 @media (min-width: 1200px) {
 
-    .kokako .columns:is(.cols-4, .cols-5, .cols-6){
+    .kokako .columns:is(.cols-4, .cols-6){
     	grid-template-columns: repeat(4, 1fr);
+    }
+        
+    .kokako .columns.cols-5{
+    	grid-template-columns: repeat(5, 1fr);
     }
         
     .kokako.width-full .text-columns{
@@ -2854,13 +3047,13 @@ div.accordion-content + a.button {
         
     /* Multiple Columns */
         
-    .kokako.multipleColumns .contain:is(.cols-4, .cols-6) {
+    /* .kokako.multipleColumns .contain:is(.cols-4, .cols-6) {
     	grid-template-columns: repeat(4, 1fr);
     }
         
     .kokako.multipleColumns .contain.cols-5 {
     	grid-template-columns: repeat(5, 1fr);
-    }
+    } */
         
     body.blog section.kokako.latestPosts .row .col-xl-4.blog-grid.post:nth-of-type(3) h3 {
     	margin-top: 30px;
@@ -2871,10 +3064,6 @@ div.accordion-content + a.button {
 /* XXL only */
 @media (min-width: 1400px) {
 
-    .kokako .columns.cols-5{
-    	grid-template-columns: repeat(5, 1fr);
-    }
-        
     .kokako .columns.cols-6{
     	grid-template-columns: repeat(6, 1fr);
     }
@@ -2893,8 +3082,8 @@ div.accordion-content + a.button {
         
     /* Multiple Columns */
         
-    .kokako.multipleColumns .contain.cols-6 {
+    /* .kokako.multipleColumns .contain.cols-6 {
     	grid-template-columns: repeat(6, 1fr);
-    }
+    } */
     
 }
