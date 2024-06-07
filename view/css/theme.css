@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 06/06/2024 11:01.37pm UTC
+Updated at 07/06/2024 12:17.55am UTC
 
 
 FILE STRUCTURE:
@@ -734,7 +734,8 @@ footer{
 			"main"
 			"footer";
 		min-height: 100vh;
-		grid-template-rows: fit-content 1fr fit-content; /* This and the min-height statement are designed to clamp the footer always to the bottom of the screen when the content is short. Requires testing! */
+		/* grid-template-rows: fit-content 1fr fit-content; /* DOESN'T WORK - NEW ATTEMPT BELOW. This and the min-height statement are designed to clamp the footer always to the bottom of the screen when the content is short. Requires testing! */
+		grid-template-rows: auto 1fr auto;
 	}
 
 	header{
@@ -794,6 +795,19 @@ footer{
 	margin-left: auto;
 	margin-right: auto;
 }
+
+
+/* Columns */
+
+.kokako .columns {
+	display: grid;
+	gap: 45px 45px;
+}
+
+.kokako .columns:is(.cols-1, .cols-2, .cols-3, .cols-4, .cols-5, .cols-6){
+	grid-template-columns: 1fr;
+}
+
 
 /* Working  */
 
@@ -1648,7 +1662,7 @@ footer {
 }
 
 .kokako .contain > *:last-child,
-.kokako .contain > *:last-child > * { /* This also catches if the last item is a container with items inside, eg. .kokako-buttons */
+.kokako .contain:not(.columns) > *:last-child > * { /* This also catches if the last item is a container with items inside, eg. .kokako-buttons */
 	margin-bottom: 0;
 }
 
@@ -1840,6 +1854,37 @@ footer {
 
 .kokako.hide-section {
 	display: none !important;
+}
+
+
+/* Multiple Columns */
+
+.kokako.multipleColumns .contain { /* Default, also for .cols-1 */
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 45px 45px;
+}
+
+.kokako:is(.multipleColumns, .multipleRows) .content h2 { /* Make it appear as an h3, and override animations (as the columns are already animated ) */
+	font-size: 1.5rem;
+	transform: translateY(0) scale(1) !important;
+	opacity: 1 !important;
+}
+
+.kokako:is(.multipleColumns, .multipleRows) .contain .heading {
+	margin-bottom: 60px;
+}
+
+.kokako:is(.multipleColumns, .multipleRows) .contain .heading :is(h1, h2) + p {
+	margin-top: 30px;
+}
+
+.kokako.multipleColumns.images-circle .contain .image {
+	border-radius: 50%;
+}
+
+.kokako.multipleColumns .content.cta-buttons-wrapper {
+	margin-top: 50px;
 }
 
 
@@ -2425,7 +2470,7 @@ div.accordion-content + a.button {
 	color: #f00 !important;
 }
 
-#bootstrap-test {
+#kokako-screen-size-check{
 	position: fixed;
 	left: 0;
 	bottom: 0;
@@ -2436,10 +2481,11 @@ div.accordion-content + a.button {
 	z-index: 10;
 }
 
-#bootstrap-test p {
+#kokako-screen-size-check p {
 	font-weight: bold;
 	text-align: center;
 	color: #1a1a1a;
+	margin: 10px 0;
 }
 
 #js-loaded {
@@ -2528,12 +2574,22 @@ div.accordion-content + a.button {
     	--edge-padding: 45px;
     }
         
+    .kokako .columns:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6){
+    	grid-template-columns: repeat(2, 1fr);
+    }
+        
     .display-md {
     	display: block;
     }
         
     .hide-md {
     	display: none;
+    }
+        
+    /* Multiple Columns */
+        
+    .kokako.multipleColumns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
+    	grid-template-columns: repeat(2, 1fr);
     }
     
 }
@@ -2547,6 +2603,10 @@ div.accordion-content + a.button {
         
     .kokako .contain {
     	--edge-padding: 60px;
+    }
+        
+    .kokako .columns:is(.cols-3, .cols-4, .cols-5, .cols-6){
+    	grid-template-columns: repeat(3, 1fr);
     }
         
     .kokako .text-columns {
@@ -2719,6 +2779,16 @@ div.accordion-content + a.button {
     	padding-right: 0;
     }
         
+    /* Multiple Columns */
+        
+    .kokako.multipleColumns .contain.cols-2 {
+    	grid-template-columns: repeat(2, 1fr);
+    }
+        
+    .kokako.multipleColumns .contain:is(.cols-3, .cols-4, .cols-5, .cols-6) {
+    	grid-template-columns: repeat(3, 1fr);
+    }
+        
     /* Text */
         
     .kokako.text :is(h1, h2) { /* Do not clear any floated images */
@@ -2734,6 +2804,10 @@ div.accordion-content + a.button {
 /* XL and above */
 @media (min-width: 1200px) {
 
+    .kokako .columns:is(.cols-4, .cols-5, .cols-6){
+    	grid-template-columns: repeat(4, 1fr);
+    }
+        
     .kokako.width-full .text-columns{
     	columns: 3;
     }
@@ -2778,6 +2852,16 @@ div.accordion-content + a.button {
     	transition: all 1s ease;
     }
         
+    /* Multiple Columns */
+        
+    .kokako.multipleColumns .contain:is(.cols-4, .cols-6) {
+    	grid-template-columns: repeat(4, 1fr);
+    }
+        
+    .kokako.multipleColumns .contain.cols-5 {
+    	grid-template-columns: repeat(5, 1fr);
+    }
+        
     body.blog section.kokako.latestPosts .row .col-xl-4.blog-grid.post:nth-of-type(3) h3 {
     	margin-top: 30px;
     }
@@ -2787,6 +2871,14 @@ div.accordion-content + a.button {
 /* XXL only */
 @media (min-width: 1400px) {
 
+    .kokako .columns.cols-5{
+    	grid-template-columns: repeat(5, 1fr);
+    }
+        
+    .kokako .columns.cols-6{
+    	grid-template-columns: repeat(6, 1fr);
+    }
+        
     .kokako.width-full .text-columns{
     	columns: 4;
     }
@@ -2797,6 +2889,12 @@ div.accordion-content + a.button {
         
     .hide-xxl {
     	display: none;
+    }
+        
+    /* Multiple Columns */
+        
+    .kokako.multipleColumns .contain.cols-6 {
+    	grid-template-columns: repeat(6, 1fr);
     }
     
 }
