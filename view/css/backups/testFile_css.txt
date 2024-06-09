@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 07/06/2024 5:00.04am UTC
+Updated at 09/06/2024 11:58.14pm UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -14376,6 +14376,490 @@ section.kokako.hide-section {
         ),
         2 => 
         array (
+          'section_type' => 'Columns',
+          'section_css' => '/* .kokako.columns .contain { /* Default, also for .cols-1 *
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: [grid-gap-vertical] [grid-gap-horizontal];
+}
+
+.kokako:is(.columns, .multipleRows) .content h2 { /* Make it appear as an h3, and override animations (as the columns are already animated ) *
+	font-size: 1.5rem;
+	transform: translateY(0) scale(1) !important;
+	opacity: 1 !important;
+}
+
+.kokako:is(.columns, .multipleRows) .contain .heading {
+	margin-bottom: [tsp-calc tm *4];
+}
+
+.kokako:is(.columns, .multipleRows) .contain .heading :is(h1, h2) + p {
+	margin-top: [tsp-calc tm *2];
+}
+
+.kokako.columns.images-circle .contain .image {
+	border-radius: 50%;
+}
+
+.kokako.columns .content.cta-buttons-wrapper {
+	margin-top: [tsp-calc tm *10 /3, round];
+}
+*/',
+          'section_responsivity' => 
+          array (
+            0 => 
+            array (
+              'screen_size' => 'md',
+              'screen_size_css' => '/* .kokako.columns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
+	grid-template-columns: repeat(2, 1fr);
+} */',
+            ),
+            1 => 
+            array (
+              'screen_size' => 'lg',
+              'screen_size_css' => '/* .kokako.columns .contain.cols-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.kokako.columns .contain:is(.cols-3, .cols-4, .cols-5, .cols-6) {
+	grid-template-columns: repeat(3, 1fr);
+} */',
+            ),
+            2 => 
+            array (
+              'screen_size' => 'xl',
+              'screen_size_css' => '/* .kokako.columns .contain:is(.cols-4, .cols-6) {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.kokako.columns .contain.cols-5 {
+	grid-template-columns: repeat(5, 1fr);
+} */',
+            ),
+            3 => 
+            array (
+              'screen_size' => 'xxl',
+              'screen_size_css' => '/* .kokako.columns .contain.cols-6 {
+	grid-template-columns: repeat(6, 1fr);
+} */',
+            ),
+          ),
+        ),
+        3 => 
+        array (
+          'section_type' => 'Heading',
+          'section_css' => '.kokako.heading {
+	position: relative;
+	padding: [section-padding-vertical] 0 0; /* No bottom padding by default */
+	display: flex;
+	justify-content: center;
+	align-items: center; /* Use flex-end if need to align items at the end */
+	background: [colour-background];
+}
+
+.kokako.heading :is(h1, h2) {
+	color: [colour-text];
+}
+
+.kokako.heading.section1 {
+	margin-top: 0;
+}
+
+.kokako.heading .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.kokako.heading .container-fluid .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.kokako.heading .container-fluid .row :is(.col-xs-12, .col-sm-12) {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* .kokako.heading .text-box { /* Uncomment if background colour is required for text box *
+	padding: 21px 42px; *
+} */
+
+.kokako.heading .cta-buttons {
+	text-align: left;
+}
+
+.kokako.heading :is(button, a.button, a.btn) {
+	text-shadow: none;
+}
+
+.kokako.heading a:is(.button, .button:link, .button:visited) { /* Force alt colours */
+	background: [colour-background-alt];
+	color: [colour-text-alt];
+	font-weight: bold;
+}
+
+.kokako.heading a.button:hover {
+	background: [colour-background-alt-hover];
+}
+
+.kokako.heading a.button:active {
+	background: [colour-background-alt-active];
+}
+
+
+/* Default - XS */
+
+.kokako.heading :is(h1, h2) {
+	font-size: 3rem;
+}
+
+.kokako.heading :is(p, p.small-print) {
+	display: none;
+}',
+          'section_responsivity' => 
+          array (
+            0 => 
+            array (
+              'screen_size' => 'md',
+              'screen_size_css' => '.kokako.heading :is(h1, h2) {
+	font-size: 3.5rem;
+	margin-bottom: [text-margin];
+}
+
+.kokako.heading :is(p, p.small-print) {
+	display: block;
+}',
+            ),
+          ),
+        ),
+        4 => 
+        array (
+          'section_type' => 'Hero',
+          'section_css' => '.kokako.hero {
+	position: relative;
+	padding: 0;
+	/* margin: [section-padding-vertical] 0; */
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center; /* Use flex-end if need to align items at the end */
+	/* background-image: url(data:image/png;base64,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); /* Noise placeholder - see http://jsfiddle.net/osserpse/6SZQY/ *
+	background-size: 10px 10px; /* Increase size to make it grainier *
+	background-repeat: repeat;
+	background-color: [colour-background-dark-rgba 0.2]; */
+	min-height: 550px;
+}
+
+.kokako.hero + a + .kokako.colour-scheme {
+	margin-top: -[section-padding-vertical];
+}
+
+/* .kokako.hero .banner-overlay {
+	position: absolute;
+	left: 0;
+	width: 50%;
+	height: 70%;
+	background-size: 100% 100%;
+	background-position: left bottom;
+	z-index: 1;
+} */
+
+.kokako.hero .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.kokako.hero .container-fluid img {
+	width: 100%;
+	height: auto;
+}
+
+.kokako.hero .container-fluid .row img {
+	width: auto;
+}
+
+.kokako.hero .container-fluid .row {
+	background: none !important;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.kokako.hero .container-fluid .row :is(.col-xs-12, .col-sm-12) {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.kokako.hero .overlay {
+	/* position: absolute;
+	top: 27%;
+	left: 10%; */
+	width: 40%;
+	min-width: 500px;
+	max-width: 80%;
+	background: [colour-background-dark-rgba 0.7];
+	/* padding: 21px 42px; */
+	padding:[tsp-calc {text-margin} *2] [text-margin];
+}
+
+.kokako.hero .text-box {
+	width: 100%; /* Default, max widths set for all sizes below */
+	max-width: [width-xl];
+	margin-left: auto;
+	margin-right: auto;
+	/* padding: 21px 42px; */
+	padding:[tsp-calc {text-margin} *2] [text-margin];
+}
+
+.kokako.hero :is(h1, h2, h3, h4, h5, h6, p, li) {
+	color: [colour-text-alt];
+	/* text-align: center; */
+	/* text-shadow: 0 2px 4px [colour-background-alt-rgba 0.8]; */
+	text-shadow: 0 0 30px [colour-background-alt-rgba 0.3]; /* Subtler option */
+}
+
+.kokako.hero.colour-scheme-light :is(h1, h2, h3, h4, h5, h6, p, li) {
+	text-shadow: 0 0 30px [colour-background-rgba 0.3]; /* Subtler option */
+}
+
+.kokako.hero .overlay :is(h1, h2) {
+	text-transform: uppercase;
+}
+
+.kokako.hero p {
+	font-size: 1.2rem;
+}
+
+.kokako.hero .cta-buttons {
+	text-align: left;
+}
+
+.kokako.hero :is(button, a.button, a.btn) {
+	text-shadow: none;
+}
+
+/* .kokako.hero a:is(.button, .button:link, .button:visited) { /* Force alt colours *
+	background: [colour-background];
+	color: [colour-text];
+	/* box-shadow: 0 2px 4px [colour-background-alt-rgba 0.8]; *
+	box-shadow: 0 0 30px [colour-background-alt-rgba 0.3]; /* Subtler option *
+}
+
+.kokako.hero a.button:hover {
+	background: [colour-background-hover];
+}
+
+.kokako.hero a.button:active {
+	background: [colour-background-active];
+} */
+
+
+/* Page Banner - Vertical Height */
+
+.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
+	/* overflow: hidden; */
+	max-height: fit-content; /* min-height takes precedence over max-height - see https://ishadeed.com/article/min-max-css/ */
+}
+
+.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) :is(.container-fluid, .container) { /* Works with max-height:fit-content to ensure spacing */
+	padding-top: [section-padding-vertical];
+	padding-bottom: [section-padding-vertical];
+}
+
+.kokako.vh-100 {
+	min-height: 100vh;
+}
+
+.kokako.vh-95 {
+	min-height: 95vh;
+}
+
+.kokako.vh-90 {
+	min-height: 90vh;
+}
+
+.kokako.vh-85 {
+	min-height: 85vh;
+}
+
+.kokako.vh-80 {
+	min-height: 80vh;
+}
+
+.kokako.vh-70 {
+	min-height: 70vh;
+}
+
+.kokako.vh-60 {
+	min-height: 60vh;
+}
+
+.kokako.vh-50 {
+	min-height: 50vh;
+}
+
+.kokako.vh-40 {
+	min-height: 40vh;
+}
+
+.kokako.vh-30 {
+	min-height: 30vh;
+}
+
+/* .kokako:is(.px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
+	overflow: hidden;
+	height: calc(100vh - [header-height]); /* default height, max height set below 
+} */
+
+.kokako.px-700 {
+	min-height: 700px;
+}
+
+.kokako.px-600 {
+	min-height: 600px;
+}
+
+.kokako.px-500 {
+	min-height: 500px;
+}
+
+.kokako.px-400 {
+	min-height: 400px;
+}
+
+.kokako.px-300 {
+	min-height: 300px;
+}
+
+.kokako.px-200 {
+	min-height: 200px;
+}
+
+
+/* Default - XS */
+
+.kokako.hero {
+	max-height: none;
+}
+
+.kokako.hero.backgroundImage.max-vh-100 {
+	min-height: 600px;
+}
+
+.kokako.hero :is(.overlay, .text-box) {
+	width: [width-xs-max];
+	min-width: 0;
+	max-width: 100%;
+}
+
+/* .kokako.hero .text-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} */
+
+.kokako.hero :is(h1, h2) {
+	font-size: 3rem;
+}
+
+.kokako.hero :is(p:not(:has(img)), p.small-print) { /* Don\'t hide p tags that are wrapping images */
+	display: none;
+}
+
+
+/* Default - SM */
+
+.kokako.hero .overlay {
+	position: relative;
+	top: 30px;
+	left: 0;
+	background: [colour-background-dark];
+	min-width: 0;
+	max-width: 100%;
+	padding: 40px 15px;
+}
+
+.kokako.hero .text-box {
+	max-width: [width-sm];
+}
+
+
+/* Default - MD */
+
+.kokako.hero.section1 {
+	position: relative;
+	top: -[header-height-scrolled];
+	margin-bottom: -[header-height-scrolled];
+	/* border-top: [header-height-scrolled] transparent solid; */
+	border-top: 0;
+}
+
+.kokako.hero .text-box {
+	max-width: [width-md];
+}
+
+.kokako.hero .overlay {
+	width: 100%;
+	top: [header-height];
+}
+
+/* .kokako.hero.backgroundImage.max-vh-100 {
+	min-height: 700px;
+} */
+
+.kokako.hero :is(h1, h2) {
+	font-size: 3.5rem;
+	margin-bottom: [text-margin];
+}
+
+
+/* Default - LG */
+
+.kokako.hero .overlay {
+	position: relative;
+	top: 30px;
+	left: 0;
+	background: [colour-background-dark];
+	min-width: 0;
+	max-width: 100%;
+	padding: 40px 15px;
+}
+
+.kokako.hero .text-box {
+	max-width: [width-lg];
+}',
+          'section_responsivity' => 
+          array (
+            0 => 
+            array (
+              'screen_size' => 'sm',
+              'screen_size_css' => '.kokako.hero.section1 {
+	position: relative;
+	top: -[header-height];
+	margin-bottom: -[header-height];
+	border-top: 0;
+}',
+            ),
+            1 => 
+            array (
+              'screen_size' => 'lg',
+              'screen_size_css' => '.kokako.hero.section1 {
+	top: 0;
+	margin-bottom: 0;
+}
+
+.kokako.hero {
+	min-height: 700px;
+}
+
+.kokako.hero .overlay {
+	width: 100%;
+	top: [header-height];
+}',
+            ),
+          ),
+        ),
+        5 => 
+        array (
           'section_type' => 'Image Grid',
           'section_css' => '.kokako.imageGrid .image-grid {
 	display: grid;
@@ -14503,14 +14987,14 @@ section.kokako.hide-section {
             ),
           ),
         ),
-        3 => 
+        6 => 
         array (
-          'section_type' => 'Latest Posts',
-          'section_css' => '.kokako.latestPosts h4.breadcrumbs {
+          'section_type' => 'Posts',
+          'section_css' => '.kokako.posts h4.breadcrumbs {
 	margin-top: [tsp-calc tm *2];
 }
 
-.kokako.latestPosts .row.row-content .col-xs-12 {
+.kokako.posts .row.row-content .col-xs-12 {
 	margin-bottom: [tsp-calc tm *4];
 }',
           'section_responsivity' => 
@@ -14518,120 +15002,49 @@ section.kokako.hide-section {
             0 => 
             array (
               'screen_size' => 'lg',
-              'screen_size_css' => '.kokako.latestPosts .row .col-lg-6:nth-of-type(odd) {
+              'screen_size_css' => '.kokako.posts .row .col-lg-6:nth-of-type(odd) {
 	padding-right: [tsp-calc tm *3];
 }
 
-.kokako.latestPosts .row .col-lg-6:nth-of-type(even) {
+.kokako.posts .row .col-lg-6:nth-of-type(even) {
 	padding-left: [tsp-calc tm *3];
 }',
             ),
           ),
         ),
-        4 => 
+        7 => 
         array (
-          'section_type' => 'Multiple Columns',
-          'section_css' => '/* .kokako.multipleColumns .contain { /* Default, also for .cols-1 *
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-gap: [grid-gap-vertical] [grid-gap-horizontal];
-}
+          'section_type' => 'Rows',
+          'section_css' => '/* NB: Some shared CSS under Columns section */
 
-.kokako:is(.multipleColumns, .multipleRows) .content h2 { /* Make it appear as an h3, and override animations (as the columns are already animated ) *
-	font-size: 1.5rem;
-	transform: translateY(0) scale(1) !important;
-	opacity: 1 !important;
-}
-
-.kokako:is(.multipleColumns, .multipleRows) .contain .heading {
-	margin-bottom: [tsp-calc tm *4];
-}
-
-.kokako:is(.multipleColumns, .multipleRows) .contain .heading :is(h1, h2) + p {
-	margin-top: [tsp-calc tm *2];
-}
-
-.kokako.multipleColumns.images-circle .contain .image {
-	border-radius: 50%;
-}
-
-.kokako.multipleColumns .content.cta-buttons-wrapper {
-	margin-top: [tsp-calc tm *10 /3, round];
-}
-*/',
-          'section_responsivity' => 
-          array (
-            0 => 
-            array (
-              'screen_size' => 'md',
-              'screen_size_css' => '/* .kokako.multipleColumns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
-	grid-template-columns: repeat(2, 1fr);
-} */',
-            ),
-            1 => 
-            array (
-              'screen_size' => 'lg',
-              'screen_size_css' => '/* .kokako.multipleColumns .contain.cols-2 {
-	grid-template-columns: repeat(2, 1fr);
-}
-
-.kokako.multipleColumns .contain:is(.cols-3, .cols-4, .cols-5, .cols-6) {
-	grid-template-columns: repeat(3, 1fr);
-} */',
-            ),
-            2 => 
-            array (
-              'screen_size' => 'xl',
-              'screen_size_css' => '/* .kokako.multipleColumns .contain:is(.cols-4, .cols-6) {
-	grid-template-columns: repeat(4, 1fr);
-}
-
-.kokako.multipleColumns .contain.cols-5 {
-	grid-template-columns: repeat(5, 1fr);
-} */',
-            ),
-            3 => 
-            array (
-              'screen_size' => 'xxl',
-              'screen_size_css' => '/* .kokako.multipleColumns .contain.cols-6 {
-	grid-template-columns: repeat(6, 1fr);
-} */',
-            ),
-          ),
-        ),
-        5 => 
-        array (
-          'section_type' => 'Multiple Rows',
-          'section_css' => '/* NB: Some shared CSS under Multiple Columns section */
-
-.kokako.multipleRows .row:not(.row-heading, .cta-buttons-wrapper) {
+.kokako.rows .row:not(.row-heading, .cta-buttons-wrapper) {
 	margin-bottom: 30px;
 }
 
-.kokako.multipleRows .row:not(.row-heading, .quick-links, .cta-buttons-wrapper) {
+.kokako.rows .row:not(.row-heading, .quick-links, .cta-buttons-wrapper) {
 	background-color: [colour-background-alt-rgba 0.3];
 }
 
-/* .kokako.multipleRows .row:not(.row-heading) {
+/* .kokako.rows .row:not(.row-heading) {
 	margin-left: 0;
 	margin-right: 0;
 } */
 
-.kokako.multipleRows .col-md-4 {
+.kokako.rows .col-md-4 {
 	padding-left: 0;
 	padding-right: 0;
 }
 
-.kokako.multipleRows .row:not(.cta-buttons-wrapper) :is(.col-md-8, .col-md-12) {
+.kokako.rows .row:not(.cta-buttons-wrapper) :is(.col-md-8, .col-md-12) {
 	padding-bottom: 15px;
 }
 
-.kokako.multipleRows .row:not(.row-heading) :is(.col-md-8, .col-md-12) {
+.kokako.rows .row:not(.row-heading) :is(.col-md-8, .col-md-12) {
 	padding-left: 30px;
 	padding-right: 30px;
 }
 
-.kokako.multipleRows .col-md-4.image-display-logo {
+.kokako.rows .col-md-4.image-display-logo {
 	background-color: [colour-background-light];
 	padding: 10px 15px;
 	border-top: 1px solid [colour-text-dark-rgba 0.2];
@@ -14643,415 +15056,8 @@ section.kokako.hide-section {
 	flex-direction: column;
 }
 
-.kokako.multipleRows a[name] {
+.kokako.rows a[name] {
 	top: -150px;
-}',
-          'section_responsivity' => false,
-        ),
-        6 => 
-        array (
-          'section_type' => 'Page Banner',
-          'section_css' => '.kokako.pageBanner {
-	position: relative;
-	padding: 0;
-	/* margin: [section-padding-vertical] 0; */
-	margin: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center; /* Use flex-end if need to align items at the end */
-	/* background-image: url(data:image/png;base64,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); /* Noise placeholder - see http://jsfiddle.net/osserpse/6SZQY/ *
-	background-size: 10px 10px; /* Increase size to make it grainier *
-	background-repeat: repeat;
-	background-color: [colour-background-dark-rgba 0.2]; */
-	min-height: 550px;
-}
-
-.kokako.pageBanner + a + .kokako.colour-scheme {
-	margin-top: -[section-padding-vertical];
-}
-
-/* .kokako.pageBanner .banner-overlay {
-	position: absolute;
-	left: 0;
-	width: 50%;
-	height: 70%;
-	background-size: 100% 100%;
-	background-position: left bottom;
-	z-index: 1;
-} */
-
-.kokako.pageBanner .container-fluid {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.kokako.pageBanner .container-fluid img {
-	width: 100%;
-	height: auto;
-}
-
-.kokako.pageBanner .container-fluid .row img {
-	width: auto;
-}
-
-.kokako.pageBanner .container-fluid .row {
-	background: none !important;
-	margin-left: 0;
-	margin-right: 0;
-}
-
-.kokako.pageBanner .container-fluid .row :is(.col-xs-12, .col-sm-12) {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.kokako.pageBanner .overlay {
-	/* position: absolute;
-	top: 27%;
-	left: 10%; */
-	width: 40%;
-	min-width: 500px;
-	max-width: 80%;
-	background: [colour-background-dark-rgba 0.7];
-	/* padding: 21px 42px; */
-	padding:[tsp-calc {text-margin} *2] [text-margin];
-}
-
-.kokako.pageBanner .text-box {
-	width: 100%; /* Default, max widths set for all sizes below */
-	max-width: [width-xl];
-	margin-left: auto;
-	margin-right: auto;
-	/* padding: 21px 42px; */
-	padding:[tsp-calc {text-margin} *2] [text-margin];
-}
-
-.kokako.pageBanner :is(h1, h2, h3, h4, h5, h6, p, li) {
-	color: [colour-text-alt];
-	/* text-align: center; */
-	/* text-shadow: 0 2px 4px [colour-background-alt-rgba 0.8]; */
-	text-shadow: 0 0 30px [colour-background-alt-rgba 0.3]; /* Subtler option */
-}
-
-.kokako.pageBanner.colour-scheme-light :is(h1, h2, h3, h4, h5, h6, p, li) {
-	text-shadow: 0 0 30px [colour-background-rgba 0.3]; /* Subtler option */
-}
-
-.kokako.pageBanner .overlay :is(h1, h2) {
-	text-transform: uppercase;
-}
-
-.kokako.pageBanner p {
-	font-size: 1.2rem;
-}
-
-.kokako.pageBanner .cta-buttons {
-	text-align: left;
-}
-
-.kokako.pageBanner :is(button, a.button, a.btn) {
-	text-shadow: none;
-}
-
-/* .kokako.pageBanner a:is(.button, .button:link, .button:visited) { /* Force alt colours *
-	background: [colour-background];
-	color: [colour-text];
-	/* box-shadow: 0 2px 4px [colour-background-alt-rgba 0.8]; *
-	box-shadow: 0 0 30px [colour-background-alt-rgba 0.3]; /* Subtler option *
-}
-
-.kokako.pageBanner a.button:hover {
-	background: [colour-background-hover];
-}
-
-.kokako.pageBanner a.button:active {
-	background: [colour-background-active];
-} */
-
-
-/* Page Banner - Vertical Height */
-
-.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
-	/* overflow: hidden; */
-	max-height: fit-content; /* min-height takes precedence over max-height - see https://ishadeed.com/article/min-max-css/ */
-}
-
-.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) :is(.container-fluid, .container) { /* Works with max-height:fit-content to ensure spacing */
-	padding-top: [section-padding-vertical];
-	padding-bottom: [section-padding-vertical];
-}
-
-.kokako.vh-100 {
-	min-height: 100vh;
-}
-
-.kokako.vh-95 {
-	min-height: 95vh;
-}
-
-.kokako.vh-90 {
-	min-height: 90vh;
-}
-
-.kokako.vh-85 {
-	min-height: 85vh;
-}
-
-.kokako.vh-80 {
-	min-height: 80vh;
-}
-
-.kokako.vh-70 {
-	min-height: 70vh;
-}
-
-.kokako.vh-60 {
-	min-height: 60vh;
-}
-
-.kokako.vh-50 {
-	min-height: 50vh;
-}
-
-.kokako.vh-40 {
-	min-height: 40vh;
-}
-
-.kokako.vh-30 {
-	min-height: 30vh;
-}
-
-/* .kokako:is(.px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
-	overflow: hidden;
-	height: calc(100vh - [header-height]); /* default height, max height set below 
-} */
-
-.kokako.px-700 {
-	min-height: 700px;
-}
-
-.kokako.px-600 {
-	min-height: 600px;
-}
-
-.kokako.px-500 {
-	min-height: 500px;
-}
-
-.kokako.px-400 {
-	min-height: 400px;
-}
-
-.kokako.px-300 {
-	min-height: 300px;
-}
-
-.kokako.px-200 {
-	min-height: 200px;
-}
-
-
-/* Default - XS */
-
-.kokako.pageBanner {
-	max-height: none;
-}
-
-.kokako.pageBanner.backgroundImage.max-vh-100 {
-	min-height: 600px;
-}
-
-.kokako.pageBanner :is(.overlay, .text-box) {
-	width: [width-xs-max];
-	min-width: 0;
-	max-width: 100%;
-}
-
-/* .kokako.pageBanner .text-box {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-} */
-
-.kokako.pageBanner :is(h1, h2) {
-	font-size: 3rem;
-}
-
-.kokako.pageBanner :is(p:not(:has(img)), p.small-print) { /* Don\'t hide p tags that are wrapping images */
-	display: none;
-}
-
-
-/* Default - SM */
-
-.kokako.pageBanner .overlay {
-	position: relative;
-	top: 30px;
-	left: 0;
-	background: [colour-background-dark];
-	min-width: 0;
-	max-width: 100%;
-	padding: 40px 15px;
-}
-
-.kokako.pageBanner .text-box {
-	max-width: [width-sm];
-}
-
-
-/* Default - MD */
-
-.kokako.pageBanner.section1 {
-	position: relative;
-	top: -[header-height-scrolled];
-	margin-bottom: -[header-height-scrolled];
-	/* border-top: [header-height-scrolled] transparent solid; */
-	border-top: 0;
-}
-
-.kokako.pageBanner .text-box {
-	max-width: [width-md];
-}
-
-.kokako.pageBanner .overlay {
-	width: 100%;
-	top: [header-height];
-}
-
-/* .kokako.pageBanner.backgroundImage.max-vh-100 {
-	min-height: 700px;
-} */
-
-.kokako.pageBanner :is(h1, h2) {
-	font-size: 3.5rem;
-	margin-bottom: [text-margin];
-}
-
-
-/* Default - LG */
-
-.kokako.pageBanner .overlay {
-	position: relative;
-	top: 30px;
-	left: 0;
-	background: [colour-background-dark];
-	min-width: 0;
-	max-width: 100%;
-	padding: 40px 15px;
-}
-
-.kokako.pageBanner .text-box {
-	max-width: [width-lg];
-}',
-          'section_responsivity' => 
-          array (
-            0 => 
-            array (
-              'screen_size' => 'sm',
-              'screen_size_css' => '.kokako.pageBanner.section1 {
-	position: relative;
-	top: -[header-height];
-	margin-bottom: -[header-height];
-	border-top: 0;
-}',
-            ),
-            1 => 
-            array (
-              'screen_size' => 'lg',
-              'screen_size_css' => '.kokako.pageBanner.section1 {
-	top: 0;
-	margin-bottom: 0;
-}
-
-.kokako.pageBanner {
-	min-height: 700px;
-}
-
-.kokako.pageBanner .overlay {
-	width: 100%;
-	top: [header-height];
-}',
-            ),
-          ),
-        ),
-        7 => 
-        array (
-          'section_type' => 'Page Heading',
-          'section_css' => '.kokako.pageHeading {
-	position: relative;
-	padding: [section-padding-vertical] 0 0; /* No bottom padding by default */
-	display: flex;
-	justify-content: center;
-	align-items: center; /* Use flex-end if need to align items at the end */
-	background: [colour-background];
-}
-
-.kokako.pageHeading :is(h1, h2) {
-	color: [colour-text];
-}
-
-.kokako.pageHeading.section1 {
-	margin-top: 0;
-}
-
-.kokako.pageHeading .container-fluid {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.kokako.pageHeading .container-fluid .row {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-.kokako.pageHeading .container-fluid .row :is(.col-xs-12, .col-sm-12) {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-/* .kokako.pageHeading .text-box { /* Uncomment if background colour is required for text box *
-	padding: 21px 42px; *
-} */
-
-.kokako.pageHeading .cta-buttons {
-	text-align: left;
-}
-
-.kokako.pageHeading :is(button, a.button, a.btn) {
-	text-shadow: none;
-}
-
-.kokako.pageHeading a:is(.button, .button:link, .button:visited) { /* Force alt colours */
-	background: [colour-background-alt];
-	color: [colour-text-alt];
-	font-weight: bold;
-}
-
-.kokako.pageHeading a.button:hover {
-	background: [colour-background-alt-hover];
-}
-
-.kokako.pageHeading a.button:active {
-	background: [colour-background-alt-active];
-}
-
-
-/* Default - XS */
-
-.kokako.pageHeading :is(h1, h2) {
-	font-size: 3rem;
-}
-
-.kokako.pageHeading :is(p, p.small-print) {
-	display: none;
-}
-
-
-/* Default - MD */
-
-.kokako.pageHeading :is(h1, h2) {
-	font-size: 3.5rem;
-	margin-bottom: [text-margin];
 }',
           'section_responsivity' => false,
         ),
@@ -15852,120 +15858,6 @@ section.kokako.hide-section {
 .kokako.textAndImage.variation-image-50.width-full .content > * {
 	max-width: [tsp-calc {content-width-max} /2 - {grid-gap-horizontal}, round1];
 } */',
-            ),
-          ),
-        ),
-        14 => 
-        array (
-          'section_type' => 'Text with Photo',
-          'section_css' => '.kokako.textWithPhoto.no-margin-bottom.no-padding .container-fluid .internalWrap {
-	padding-top: 60px;
-	padding-bottom: 60px;
-}
-
-
-/* Default - SM */
-
-.kokako.textWithPhoto .container-fluid .internalWrap {
-	max-width: [width-sm];
-}
-
-
-/* Default - MD */
-
-.kokako.textWithPhoto .internalWrap {
-	padding: [tsp-calc tm *3] 0 0;
-}
-
-.kokako.textWithPhoto.mobile-column-reverse .internalWrap {
-	padding: 0 0 [tsp-calc tm *3];
-}
-
-.kokako.textWithPhoto.padding-none .internalWrap {
-	padding: [tsp-calc tm *4] 0;
-}
-
-.kokako.textWithPhoto .container-fluid .internalWrap {
-	max-width: [width-md];
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.kokako.textWithPhoto .internalWrap :is(h1, h2) {
-	margin-top: 0;
-}
-
-.kokako.textWithPhoto.mobile-column-reverse .row { /* Reverse display of columns on mobile if required */
-	flex-direction: column-reverse !important;
-}',
-          'section_responsivity' => 
-          array (
-            0 => 
-            array (
-              'screen_size' => 'lg',
-              'screen_size_css' => '.kokako.textWithPhoto .row .col-lg-6.text .internalWrap {
-	padding-left: [tsp-calc tm *3];
-	padding-right: 0;
-}
-
-.kokako.textWithPhoto .row.flex-row-reverse .col-lg-6.text .internalWrap {
-	padding-left: 0;
-	padding-right: [tsp-calc tm *3];
-}
-
-.kokako.textWithPhoto.padding-none .col-lg-6.text .internalWrap {
-	padding-top: [section-padding-vertical];
-	padding-bottom: [section-padding-vertical];
-}
-
-
-/* Sticky Images */
-
-.kokako.textWithPhoto.image-sticky {
-	overflow: visible; /* Required for sticky elements to work - won\'t work when overflow is set to hidden */
-}
-
-.kokako.textWithPhoto.image-sticky div.image .sticky-image {
-	width: 100%;
-	aspect-ratio: 1/1;
-	position: -webkit-sticky; /* Safari */
-	position: sticky;
-	top: [tsp-calc spv *2 /3 + {header-height-scrolled}, round];
-	max-height: calc(100vh - [tsp-calc spv *4 /3 + {header-height-scrolled}, round]);
-}
-
-.kokako.textWithPhoto.image-sticky .internalWrap {
-	padding-top: 0;
-	padding-bottom: 0;
-}
-
-
-/* LG only */
-
-.kokako.textWithPhoto .col-lg-6.text { /* Set max width on Text with Photo section */
-	max-width: 480px;
-}',
-            ),
-            1 => 
-            array (
-              'screen_size' => 'xl',
-              'screen_size_css' => '/* Set max width on Text with Photo section */
-
-.kokako.textWithPhoto .col-lg-6.text {
-	max-width: 570px; 
-}
-
-@media (min-width: 2100px) {
-	.kokako.textWithPhoto .container-fluid .col-lg-6.image {
-		max-width: 30%;
-		margin-left: 20%;
-	}
-
-	.kokako.textWithPhoto .container-fluid .row.flex-row-reverse .col-lg-6.image {
-		margin-right: 20%;
-		margin-left: 0;
-	}
-}',
             ),
           ),
         ),

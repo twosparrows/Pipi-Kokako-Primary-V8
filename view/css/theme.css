@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 07/06/2024 5:00.04am UTC
+Updated at 09/06/2024 11:58.14pm UTC
 
 
 FILE STRUCTURE:
@@ -1858,36 +1858,108 @@ footer {
 }
 
 
-/* Multiple Columns */
+/* Columns */
 
-/* .kokako.multipleColumns .contain { /* Default, also for .cols-1 *
+/* .kokako.columns .contain { /* Default, also for .cols-1 *
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 45px 45px;
 }
 
-.kokako:is(.multipleColumns, .multipleRows) .content h2 { /* Make it appear as an h3, and override animations (as the columns are already animated ) *
+.kokako:is(.columns, .multipleRows) .content h2 { /* Make it appear as an h3, and override animations (as the columns are already animated ) *
 	font-size: 1.5rem;
 	transform: translateY(0) scale(1) !important;
 	opacity: 1 !important;
 }
 
-.kokako:is(.multipleColumns, .multipleRows) .contain .heading {
+.kokako:is(.columns, .multipleRows) .contain .heading {
 	margin-bottom: 60px;
 }
 
-.kokako:is(.multipleColumns, .multipleRows) .contain .heading :is(h1, h2) + p {
+.kokako:is(.columns, .multipleRows) .contain .heading :is(h1, h2) + p {
 	margin-top: 30px;
 }
 
-.kokako.multipleColumns.images-circle .contain .image {
+.kokako.columns.images-circle .contain .image {
 	border-radius: 50%;
 }
 
-.kokako.multipleColumns .content.cta-buttons-wrapper {
+.kokako.columns .content.cta-buttons-wrapper {
 	margin-top: 50px;
 }
 */
+
+
+/* Heading */
+
+.kokako.heading {
+	position: relative;
+	padding: 90px 0 0; /* No bottom padding by default */
+	display: flex;
+	justify-content: center;
+	align-items: center; /* Use flex-end if need to align items at the end */
+	background: #fff;
+}
+
+.kokako.heading :is(h1, h2) {
+	color: #1a1a1a;
+}
+
+.kokako.heading.section1 {
+	margin-top: 0;
+}
+
+.kokako.heading .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.kokako.heading .container-fluid .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.kokako.heading .container-fluid .row :is(.col-xs-12, .col-sm-12) {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* .kokako.heading .text-box { /* Uncomment if background colour is required for text box *
+	padding: 21px 42px; *
+} */
+
+.kokako.heading .cta-buttons {
+	text-align: left;
+}
+
+.kokako.heading :is(button, a.button, a.btn) {
+	text-shadow: none;
+}
+
+.kokako.heading a:is(.button, .button:link, .button:visited) { /* Force alt colours */
+	background: #1a1a1a;
+	color: #fff;
+	font-weight: bold;
+}
+
+.kokako.heading a.button:hover {
+	background: #333;
+}
+
+.kokako.heading a.button:active {
+	background: #474747;
+}
+
+
+/* Default - XS */
+
+.kokako.heading :is(h1, h2) {
+	font-size: 3rem;
+}
+
+.kokako.heading :is(p, p.small-print) {
+	display: none;
+}
 
 
 /* Text */
@@ -2687,11 +2759,22 @@ div.accordion-content + a.button {
     	display: none;
     }
         
-    /* Multiple Columns */
+    /* Columns */
         
-    /* .kokako.multipleColumns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
+    /* .kokako.columns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
     	grid-template-columns: repeat(2, 1fr);
     } */
+        
+    /* Heading */
+        
+    .kokako.heading :is(h1, h2) {
+    	font-size: 3.5rem;
+    	margin-bottom: 15px;
+    }
+        
+    .kokako.heading :is(p, p.small-print) {
+    	display: block;
+    }
         
     /* Text And Image */
         
@@ -2938,13 +3021,13 @@ div.accordion-content + a.button {
     	padding-right: 0;
     }
         
-    /* Multiple Columns */
+    /* Columns */
         
-    /* .kokako.multipleColumns .contain.cols-2 {
+    /* .kokako.columns .contain.cols-2 {
     	grid-template-columns: repeat(2, 1fr);
     }
         
-    .kokako.multipleColumns .contain:is(.cols-3, .cols-4, .cols-5, .cols-6) {
+    .kokako.columns .contain:is(.cols-3, .cols-4, .cols-5, .cols-6) {
     	grid-template-columns: repeat(3, 1fr);
     } */
         
@@ -3045,13 +3128,13 @@ div.accordion-content + a.button {
     	transition: all 1s ease;
     }
         
-    /* Multiple Columns */
+    /* Columns */
         
-    /* .kokako.multipleColumns .contain:is(.cols-4, .cols-6) {
+    /* .kokako.columns .contain:is(.cols-4, .cols-6) {
     	grid-template-columns: repeat(4, 1fr);
     }
         
-    .kokako.multipleColumns .contain.cols-5 {
+    .kokako.columns .contain.cols-5 {
     	grid-template-columns: repeat(5, 1fr);
     } */
         
@@ -3080,9 +3163,9 @@ div.accordion-content + a.button {
     	display: none;
     }
         
-    /* Multiple Columns */
+    /* Columns */
         
-    /* .kokako.multipleColumns .contain.cols-6 {
+    /* .kokako.columns .contain.cols-6 {
     	grid-template-columns: repeat(6, 1fr);
     } */
     
