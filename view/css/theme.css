@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 09/06/2024 11:58.14pm UTC
+Updated at 10/06/2024 4:35.26am UTC
 
 
 FILE STRUCTURE:
@@ -461,7 +461,7 @@ button, input[type="submit"], a.button {
 	transition: 0.3s ease all;
 }
 
-:is(button, input[type="submit"], a.button):hover
+:is(button, input[type="submit"], a.button):hover,
 :is(button, input[type="submit"], a.button):focus {
 	color: #fff;
 	background: #333;
@@ -765,6 +765,10 @@ footer{
 	height: fit-content; /* Prevents extra space being added */
 }
 
+.kokako .contain + .contain{
+	margin-top: 45px;
+}
+
 .kokako,
 .kokako.width-full {
 	width: 100%;
@@ -812,7 +816,7 @@ footer{
 
 /* Working  */
 
-header,
+/* header,
 .header-background,
 footer{
 	display: none;
@@ -828,7 +832,7 @@ footer{
 
 .kokako .image {
 	border: 10px #00f solid;
-}
+} */
 
 /* Display & Hide classes - these classes will cascade, and can be added together. To make an element only display or hide at certain screen sizes, start from the smallest size (display or hide), then add classes for other sizes as required. */
 
@@ -1960,6 +1964,27 @@ footer {
 .kokako.heading :is(p, p.small-print) {
 	display: none;
 }
+
+
+/* Posts */
+
+/* .kokako.posts h4.breadcrumbs {
+	margin-top: 30px;
+} */
+
+.kokako.posts .col.blog-grid :is(a, h4.breadcrumbs){
+	margin-top: 0;
+}
+
+.kokako.posts .col.blog-grid :last-child{
+	margin-bottom: 0;
+}
+
+.kokako.posts .col.blog-grid a.read-more-link{ /* Works around for issue where hover underline pushes all following content down (only appears to affect these anchors) */ 
+	box-sizing: border-box;
+	height: 32px;/* 32px */
+}
+
 
 
 /* Text */

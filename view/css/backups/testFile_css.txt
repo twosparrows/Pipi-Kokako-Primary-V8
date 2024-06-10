@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 09/06/2024 11:58.14pm UTC
+Updated at 10/06/2024 4:35.26am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -4415,7 +4415,7 @@ li.disabled > a:first-child {
 	transition: [button-transition];
 }
 
-:is([button-selectors]):hover
+:is([button-selectors]):hover,
 :is([button-selectors]):focus {
 	color: [colour-text-light];
 	background: [colour-background-dark-hover];
@@ -7083,6 +7083,10 @@ footer{
 	height: fit-content; /* Prevents extra space being added */
 }
 
+.kokako .contain + .contain{
+	margin-top: [grid-gap-vertical];
+}
+
 .kokako,
 .kokako.width-full {
 	width: 100%;
@@ -7130,7 +7134,7 @@ footer{
 
 /* Working  */
 
-header,
+/* header,
 .header-background,
 footer{
 	display: none;
@@ -7146,7 +7150,7 @@ footer{
 
 .kokako .image {
 	border: 10px #00f solid;
-}',
+} */',
       'menu_order' => 16,
       'instructions' => '',
       'required' => 0,
@@ -14990,27 +14994,24 @@ section.kokako.hide-section {
         6 => 
         array (
           'section_type' => 'Posts',
-          'section_css' => '.kokako.posts h4.breadcrumbs {
+          'section_css' => '/* .kokako.posts h4.breadcrumbs {
 	margin-top: [tsp-calc tm *2];
+} */
+
+.kokako.posts .col.blog-grid :is(a, h4.breadcrumbs){
+	margin-top: 0;
 }
 
-.kokako.posts .row.row-content .col-xs-12 {
-	margin-bottom: [tsp-calc tm *4];
-}',
-          'section_responsivity' => 
-          array (
-            0 => 
-            array (
-              'screen_size' => 'lg',
-              'screen_size_css' => '.kokako.posts .row .col-lg-6:nth-of-type(odd) {
-	padding-right: [tsp-calc tm *3];
+.kokako.posts .col.blog-grid :last-child{
+	margin-bottom: 0;
 }
 
-.kokako.posts .row .col-lg-6:nth-of-type(even) {
-	padding-left: [tsp-calc tm *3];
-}',
-            ),
-          ),
+.kokako.posts .col.blog-grid a.read-more-link{ /* Works around for issue where hover underline pushes all following content down (only appears to affect these anchors) */ 
+	box-sizing: border-box;
+	height: [tsp-calc "1.3px" * {font-size} * {line-height} + 3, round];/* 32px */
+}
+',
+          'section_responsivity' => false,
         ),
         7 => 
         array (
