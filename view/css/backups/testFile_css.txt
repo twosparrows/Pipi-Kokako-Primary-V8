@@ -1,7 +1,7 @@
 CSS Options Fields
 
-Updated at 11/06/2024 2:43.04am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-developer-options
+Updated at 11/06/2024 4:27.45am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
 Shortcodes:
@@ -8082,31 +8082,52 @@ Set this to between 0 and 1.',
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => 'header {
-	position: [header-position];
+      'value' => 'header#site-header.kokako {
+	position: relative; /* [header-position]; */
 	left: 0;
 	top: 0;
+	width: 100%;
 	height: [header-height];
-	padding-top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: [colour-header-background];
 	z-index: 10;
 	transition: [header-transition];
 }
 
-header,
-.header-background {
-	background: [colour-header-background];
+header#site-header.kokako .contain{
+	display: grid;
+	grid-template-areas: "header-logo header-menu";
+	grid-template-columns: [header-logo-width] 1fr;
+	gap: [text-margin];
 }
 
-.header-background {
-	width: 100%;
-	height: [header-height];
-	z-index: -1;
+header#site-header .header-logo{
+	grid-area: header-logo;
+	/* display: flex;
+	justify-content: flex-start;
+	align-items: center; */
+}
+
+header#site-header nav{
+	grid-area: header-menu;
+} 
+
+header#site-header.has-header-widget .header-widget{
+	grid-area: header-widget;
+}
+
+header#site-header :is(nav, .header-widget){
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
 }
 
 
-/* Default - MD */
+/* Default - MD *
 
-/* Header - Set header to height to scrolled height by default */
+/* Header - Set header to height to scrolled height by default *
 
 header {
 	position: relative;
@@ -8118,14 +8139,14 @@ header.container-fluid .container {
 	max-width: 100%;
 }
 
-@media (max-width: 782px) { /* Not required when header is positioned relative */
+@media (max-width: 782px) { /* Not required when header is positioned relative *
 	body.header-fixed.logged-in.admin-bar header {
 		top: 46px;
 	}
 }
 
 
-/* Default - XS */
+/* Default - XS *
 
 header {
 	background: [colour-header-background];
@@ -8138,7 +8159,7 @@ header nav.navbar {
 
 body.header-fixed.logged-in.admin-bar header {
 	top: 0;
-}',
+} */',
       'menu_order' => 10,
       'instructions' => '',
       'required' => 0,
@@ -8169,15 +8190,16 @@ body.header-fixed.logged-in.admin-bar header {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => 'header .logo {
-	height: [header-height]; /* For positioning drop down menu correctly */
-	width: [header-logo-width]; /* 166px is width of logo at normal size (logo will resize to this) */
+      'value' => 'header .header-logo {
+	/* height: [header-height]; /* For positioning drop down menu correctly *
+	width: [header-logo-width]; /* 166px is width of logo at normal size (logo will resize to this) *
 	display: flex;
 	align-items: center; /* Centres logo vertically */
 	z-index: 100;
 	transition: [header-transition];
 }
 
+/*
 header nav.flex-row-reverse .logo {
 	justify-content: right;
 }
@@ -8190,11 +8212,11 @@ header.scrolled .logo {
 header .logo a.navbar-brand {
 	position: relative;
 	top: 0;
-	/* margin: 20px 0 0 0; */
+	/* margin: 20px 0 0 0; *
 	width: [header-logo-width];
 	border-bottom: none !important;
 	transition: [header-transition];
-	/* Bootstrap overrides below: */
+	/* Bootstrap overrides below: *
 	padding: 0;
 	margin-right: 0;
 }
@@ -8205,14 +8227,14 @@ header.scrolled .logo a.navbar-brand {
 }
 
 
-/* Default - LG */
+/* Default - LG *
 
 header .logo {
 	max-width: 50vw;
 }
 
 
-/* Default - MD */
+/* Default - MD *
 
 header .logo {
 	height: [header-height-scrolled];
@@ -8225,18 +8247,18 @@ header .logo a.navbar-brand {
 }
 
 
-/* Default - SM */
+/* Default - SM *
 
 header .logo {
 	max-width: 50vw;
 }
 
 
-/* Default - XS */
+/* Default - XS *
 
 header .logo {
 	max-width: 55vw;
-}',
+} */',
       'menu_order' => 11,
       'instructions' => '',
       'required' => 0,
@@ -8297,9 +8319,18 @@ header.scrolled .logo a.navbar-brand {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => 'header .header-widget-wrap {
+      'value' => 'header .header-widget{
+	color: [colour-nav-text];
+}
+
+header .header-widget .widgetArea *{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* header .header-widget-wrap {
 	position: absolute;
-	/* right: 26px; */
+	/* right: 26px; *
 	right: 20px;
 	top: 20px;
 	display: flex;
@@ -8309,12 +8340,12 @@ header.scrolled .logo a.navbar-brand {
 }
 
 header .header-widget-wrap .header-widget-row-reverse {
-	left: 25px; /* To line up with the Home button */
+	left: 25px; /* To line up with the Home button *
 	right: unset;
 }
 
 header.scrolled .header-widget-wrap {
-	top: -[header-height-scrolled]; /* This is normally set to: ( header height - header.scrolled height ). Ideally, it should be set to about the height of the header widget (c. 70px?)  */
+	top: -[header-height-scrolled]; /* This is normally set to: ( header height - header.scrolled height ). Ideally, it should be set to about the height of the header widget (c. 70px?)  *
 	transition: [header-transition];
 }
 
@@ -8324,7 +8355,7 @@ header .header-widget-wrap :is(h3, p) {
 }
 
 header .header-widget-wrap h3 {
-	line-height: 51px; /* Height of button, including margins */
+	line-height: 51px; /* Height of button, including margins *
 }
 
 header .header-widget-wrap .textwidget {
@@ -8353,10 +8384,10 @@ header .header-widget-wrap :is(button, input[type="submit"], a.button, a.btn) {
 }
 
 
-/* Default - LG */
+/* Default - LG *
 
 header .header-widget {
-	/* right: 30px; */
+	/* right: 30px; *
 	text-align: right;
 }
 
@@ -8365,7 +8396,7 @@ header .header-widget h2 {
 }
 
 
-/* Default - MD */
+/* Default - MD *
 
 header .header-widget {
 	right: 110px;
@@ -8377,7 +8408,7 @@ header .header-widget.header-widget-row-reverse {
 }
 
 header.scrolled .header-widget {
-	top: -[header-height-scrolled]; /* This is normally set to: ( header height - header.scrolled height ). Ideally, it should be set to about the height of the header widget (c. 70px?)  */
+	top: -[header-height-scrolled]; /* This is normally set to: ( header height - header.scrolled height ). Ideally, it should be set to about the height of the header widget (c. 70px?)  *
 }
 
 header .header-widget h2 {
@@ -8385,7 +8416,7 @@ header .header-widget h2 {
 }
 
 
-/* Default - SM */
+/* Default - SM *
 
 header .header-widget {
 	display: none;
@@ -8393,7 +8424,7 @@ header .header-widget {
 
 header .header-widget h2 {
 	font-size: 2rem;
-}',
+} */',
       'menu_order' => 12,
       'instructions' => 'This CSS will only be added to the CSS file if the Header widget is available (under <a href="/wp-admin/admin.php?page=acf-options-developer-options" target="_blank">Developer Options &gt; Widget areas tab</a>).',
       'required' => 0,
@@ -8429,7 +8460,7 @@ header .header-widget h2 {
 	transition: [header-transition];
 }
 
-header nav.navbar {
+/* header nav.navbar {
 	top: 0;
 	transition: [header-transition];
 }
@@ -8438,7 +8469,7 @@ header.scrolled nav.navbar {
 	top: 0;
 	height: [header-height-scrolled];
 	transition: [header-transition];
-}',
+} */',
       'menu_order' => 13,
       'instructions' => '',
       'required' => 0,
@@ -8479,7 +8510,7 @@ header.scrolled nav.navbar {
 	padding:[tsp-calc tm /3, round] [text-margin];
 	border: 1px [colour-nav-dropdown-text] solid;
 	border-radius: [button-border-radius];
-	transform: translateY(-100%);
+	transform: translateY(-200%);
 	transition: [anchor-transition];
 }
 
@@ -8611,8 +8642,22 @@ body.header-fixed.logged-in.admin-bar header { /* Not required when header is po
         0 => 
         array (
           'screen_size' => 'nav-expanded',
-          'screen_size_css' => 'header {
-	background: [colour-header-background]; /* Fall back */
+          'screen_size_css' => 'header#site-header.kokako.has-widget-area .contain{
+	grid-template-areas: "header-logo header-widget"
+		"header-logo header-menu";
+}
+
+header#site-header .header-widget{
+	align-items: flex-end;
+}
+
+header#site-header nav{
+	align-items: flex-start;
+}
+
+
+/* header {
+	background: [colour-header-background]; /* Fall back *
 	background: [colour-header-background-rgba {header-mobile-opacity}]
 }
 
@@ -8621,25 +8666,25 @@ body.header-fixed.logged-in.admin-bar header { /* Not required when header is po
 }
 
 
-/* Admin bar positioning */
+/* Admin bar positioning *
 
-body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative */
+body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative *
 	top: 0;
-}',
+} */',
         ),
         1 => 
         array (
           'screen_size' => 'lg',
-          'screen_size_css' => 'header .header-widget h2 {
+          'screen_size_css' => '/* header .header-widget h2 {
 	font-size: 1.8rem;
-}',
+} */',
         ),
         2 => 
         array (
           'screen_size' => 'xl',
-          'screen_size_css' => 'header .header-widget {
+          'screen_size_css' => '/* header .header-widget {
 	left: 50%;
-}',
+} */',
         ),
       ),
       'menu_order' => 15,

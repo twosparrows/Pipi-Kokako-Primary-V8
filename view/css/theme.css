@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 11/06/2024 2:43.03am UTC
+Updated at 11/06/2024 4:27.44am UTC
 
 
 FILE STRUCTURE:
@@ -870,31 +870,52 @@ footer{
 
 /* ---- 8. Header ---- */
 
-header {
-	position: fixed;
+header#site-header.kokako {
+	position: relative; /* fixed; */
 	left: 0;
 	top: 0;
+	width: 100%;
 	height: 140px;
-	padding-top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #1a1a1a;
 	z-index: 10;
 	transition: 1s ease all;
 }
 
-header,
-.header-background {
-	background: #1a1a1a;
+header#site-header.kokako .contain{
+	display: grid;
+	grid-template-areas: "header-logo header-menu";
+	grid-template-columns: 185px 1fr;
+	gap: 15px;
 }
 
-.header-background {
-	width: 100%;
-	height: 140px;
-	z-index: -1;
+header#site-header .header-logo{
+	grid-area: header-logo;
+	/* display: flex;
+	justify-content: flex-start;
+	align-items: center; */
+}
+
+header#site-header nav{
+	grid-area: header-menu;
+} 
+
+header#site-header.has-header-widget .header-widget{
+	grid-area: header-widget;
+}
+
+header#site-header :is(nav, .header-widget){
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
 }
 
 
-/* Default - MD */
+/* Default - MD *
 
-/* Header - Set header to height to scrolled height by default */
+/* Header - Set header to height to scrolled height by default *
 
 header {
 	position: relative;
@@ -906,14 +927,14 @@ header.container-fluid .container {
 	max-width: 100%;
 }
 
-@media (max-width: 782px) { /* Not required when header is positioned relative */
+@media (max-width: 782px) { /* Not required when header is positioned relative *
 	body.header-fixed.logged-in.admin-bar header {
 		top: 46px;
 	}
 }
 
 
-/* Default - XS */
+/* Default - XS *
 
 header {
 	background: #1a1a1a;
@@ -926,17 +947,18 @@ header nav.navbar {
 
 body.header-fixed.logged-in.admin-bar header {
 	top: 0;
-}
+} */
 
-header .logo {
-	height: 140px; /* For positioning drop down menu correctly */
-	width: 185px; /* 166px is width of logo at normal size (logo will resize to this) */
+header .header-logo {
+	/* height: 140px; /* For positioning drop down menu correctly *
+	width: 185px; /* 166px is width of logo at normal size (logo will resize to this) *
 	display: flex;
 	align-items: center; /* Centres logo vertically */
 	z-index: 100;
 	transition: 1s ease all;
 }
 
+/*
 header nav.flex-row-reverse .logo {
 	justify-content: right;
 }
@@ -949,11 +971,11 @@ header.scrolled .logo {
 header .logo a.navbar-brand {
 	position: relative;
 	top: 0;
-	/* margin: 20px 0 0 0; */
+	/* margin: 20px 0 0 0; *
 	width: 185px;
 	border-bottom: none !important;
 	transition: 1s ease all;
-	/* Bootstrap overrides below: */
+	/* Bootstrap overrides below: *
 	padding: 0;
 	margin-right: 0;
 }
@@ -964,14 +986,14 @@ header.scrolled .logo a.navbar-brand {
 }
 
 
-/* Default - LG */
+/* Default - LG *
 
 header .logo {
 	max-width: 50vw;
 }
 
 
-/* Default - MD */
+/* Default - MD *
 
 header .logo {
 	height: 70px;
@@ -984,22 +1006,31 @@ header .logo a.navbar-brand {
 }
 
 
-/* Default - SM */
+/* Default - SM *
 
 header .logo {
 	max-width: 50vw;
 }
 
 
-/* Default - XS */
+/* Default - XS *
 
 header .logo {
 	max-width: 55vw;
+} */
+
+header .header-widget{
+	color: #fff;
 }
 
-header .header-widget-wrap {
+header .header-widget .widgetArea *{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* header .header-widget-wrap {
 	position: absolute;
-	/* right: 26px; */
+	/* right: 26px; *
 	right: 20px;
 	top: 20px;
 	display: flex;
@@ -1009,12 +1040,12 @@ header .header-widget-wrap {
 }
 
 header .header-widget-wrap .header-widget-row-reverse {
-	left: 25px; /* To line up with the Home button */
+	left: 25px; /* To line up with the Home button *
 	right: unset;
 }
 
 header.scrolled .header-widget-wrap {
-	top: -70px; /* This is normally set to: ( header height - header.scrolled height ). Ideally, it should be set to about the height of the header widget (c. 70px?)  */
+	top: -70px; /* This is normally set to: ( header height - header.scrolled height ). Ideally, it should be set to about the height of the header widget (c. 70px?)  *
 	transition: 1s ease all;
 }
 
@@ -1024,7 +1055,7 @@ header .header-widget-wrap :is(h3, p) {
 }
 
 header .header-widget-wrap h3 {
-	line-height: 51px; /* Height of button, including margins */
+	line-height: 51px; /* Height of button, including margins *
 }
 
 header .header-widget-wrap .textwidget {
@@ -1053,10 +1084,10 @@ header .header-widget-wrap :is(button, input[type="submit"], a.button, a.btn) {
 }
 
 
-/* Default - LG */
+/* Default - LG *
 
 header .header-widget {
-	/* right: 30px; */
+	/* right: 30px; *
 	text-align: right;
 }
 
@@ -1065,7 +1096,7 @@ header .header-widget h2 {
 }
 
 
-/* Default - MD */
+/* Default - MD *
 
 header .header-widget {
 	right: 110px;
@@ -1077,7 +1108,7 @@ header .header-widget.header-widget-row-reverse {
 }
 
 header.scrolled .header-widget {
-	top: -70px; /* This is normally set to: ( header height - header.scrolled height ). Ideally, it should be set to about the height of the header widget (c. 70px?)  */
+	top: -70px; /* This is normally set to: ( header height - header.scrolled height ). Ideally, it should be set to about the height of the header widget (c. 70px?)  *
 }
 
 header .header-widget h2 {
@@ -1085,7 +1116,7 @@ header .header-widget h2 {
 }
 
 
-/* Default - SM */
+/* Default - SM *
 
 header .header-widget {
 	display: none;
@@ -1093,14 +1124,14 @@ header .header-widget {
 
 header .header-widget h2 {
 	font-size: 2rem;
-}
+} */
 
 header.scrolled {
 	height: 70px;
 	transition: 1s ease all;
 }
 
-header nav.navbar {
+/* header nav.navbar {
 	top: 0;
 	transition: 1s ease all;
 }
@@ -1109,7 +1140,7 @@ header.scrolled nav.navbar {
 	top: 0;
 	height: 70px;
 	transition: 1s ease all;
-}
+} */
 
 /* Skip link */
 
@@ -1121,7 +1152,7 @@ header.scrolled nav.navbar {
 	padding:5px 15px;
 	border: 1px #fff solid;
 	border-radius: 25px;
-	transform: translateY(-100%);
+	transform: translateY(-200%);
 	transition: 0.3s ease all;
 }
 
@@ -2884,8 +2915,22 @@ div.accordion-content + a.button {
     	display: none;
     }
         
-    header {
-    	background: #1a1a1a; /* Fall back */
+    header#site-header.kokako.has-widget-area .contain{
+    	grid-template-areas: "header-logo header-widget"
+    		"header-logo header-menu";
+    }
+        
+    header#site-header .header-widget{
+    	align-items: flex-end;
+    }
+        
+    header#site-header nav{
+    	align-items: flex-start;
+    }
+        
+        
+    /* header {
+    	background: #1a1a1a; /* Fall back *
     	background: rgba(26,26,26,0.8)
     }
         
@@ -2894,15 +2939,15 @@ div.accordion-content + a.button {
     }
         
         
-    /* Admin bar positioning */
+    /* Admin bar positioning *
         
-    body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative */
+    body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative *
     	top: 0;
-    }
+    } */
         
-    header .header-widget h2 {
+    /* header .header-widget h2 {
     	font-size: 1.8rem;
-    }
+    } */
         
     header .navbar-collapse {
     	position: absolute;
@@ -3120,9 +3165,9 @@ div.accordion-content + a.button {
     	display: none;
     }
         
-    header .header-widget {
+    /* header .header-widget {
     	left: 50%;
-    }
+    } */
         
     header nav.navbar #main-nav {
     	margin-bottom: 0;
