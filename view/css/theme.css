@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 10/06/2024 4:35.26am UTC
+Updated at 11/06/2024 2:43.03am UTC
 
 
 FILE STRUCTURE:
@@ -2177,11 +2177,6 @@ section.kokako.background-overlay.background-overlay-dark .image-overlay {
 	background: #1a1a1a;
 }
 
-/* section.kokako.colour-scheme-dark .container-fluid {
-	border-top: 60px #fff solid;
-	border-bottom: 60px #fff solid;
-} */
-
 /* Colour Scheme Foo */
 
 section.kokako.colour-scheme-foo,
@@ -3031,6 +3026,10 @@ div.accordion-content + a.button {
     	margin-bottom: 30px;
     }
         
+    footer.kokako .columns.cols-4{
+    	grid-template-columns: repeat(2, 1fr);
+    }
+        
     footer .footer-col-4 h3 {
     	margin-top: 15px;
     }
@@ -3151,6 +3150,10 @@ div.accordion-content + a.button {
     header.scrolled nav button.navbar-toggler {
     	top: -25px;
     	transition: all 1s ease;
+    }
+        
+    footer.kokako .columns.cols-4{
+    	grid-template-columns: repeat(4, 1fr);
     }
         
     /* Columns */

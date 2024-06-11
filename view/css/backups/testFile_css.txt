@@ -1,7 +1,7 @@
 CSS Options Fields
 
-Updated at 10/06/2024 4:35.26am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-css-editor
+Updated at 11/06/2024 2:43.04am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-developer-options
 
 
 Shortcodes:
@@ -13189,6 +13189,10 @@ footer {
 	margin-bottom: [tsp-calc tm * 2];
 }
 
+footer.kokako .columns.cols-4{
+	grid-template-columns: repeat(2, 1fr);
+}
+
 footer .footer-col-4 h3 {
 	margin-top: [text-margin];
 }
@@ -13202,6 +13206,13 @@ footer .tsp-social-links {
 
 footer a.social-media-link:last-of-type {
 	padding-right: 0;
+}',
+        ),
+        1 => 
+        array (
+          'screen_size' => 'xl',
+          'screen_size_css' => 'footer.kokako .columns.cols-4{
+	grid-template-columns: repeat(4, 1fr);
 }',
         ),
       ),
@@ -16414,7 +16425,7 @@ section.kokako.colour-scheme.has-background-image {
       'ID' => 0,
       'key' => 'field_6539e9a30cbec',
       'label' => 'Colour Schemes Classes',
-      'name' => 'colour_schemes',
+      'name' => 'colour_schemes_classes',
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'repeater',
@@ -16489,12 +16500,7 @@ background: [colour-button-text-active];',
           'other_colour_scheme_css' => '/* Dark Image Overlay (option always available) */
 section.kokako.background-overlay.background-overlay-dark .image-overlay {
 	background: [colour-background-dark];
-}
-
-/* section.kokako.colour-scheme-dark .container-fluid {
-	border-top: [tsp-calc tm*4] [colour-background] solid;
-	border-bottom: [tsp-calc tm*4] [colour-background] solid;
-} */',
+}',
           'colour_scheme_responsivity' => false,
         ),
         2 => 
@@ -16586,7 +16592,7 @@ Any Colour Schemes entered below will automatically populate any Colour Scheme d
       'collapsed' => 'field_6539e9a3693b2',
       'button_label' => 'Add Colour Scheme',
       'rows_per_page' => 20,
-      '_name' => 'colour_schemes',
+      '_name' => 'colour_schemes_classes',
       '_valid' => 1,
       'sub_fields' => 
       array (
