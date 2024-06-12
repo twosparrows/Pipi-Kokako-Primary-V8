@@ -4,12 +4,12 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 11/06/2024 4:27.44am UTC
+Updated at 12/06/2024 4:54.59am UTC
 
 
 FILE STRUCTURE:
 
-1.  Root
+1.  Import / Root
 2.  Elements
 3.  Anchors
 4.  Buttons
@@ -33,7 +33,7 @@ FILE STRUCTURE:
 
 
 
-/* ---- 1. Root ---- */
+/* ---- 1. Import / Root ---- */
 
 :root {
 	--edge-padding: 30px; /* This is a CSS property as it is updated dynamically at different screen sizes */
@@ -240,8 +240,12 @@ a:visited {
 	border-bottom: 2px solid #1a1a1a;
 }
 
-a:hover,
 a:focus {
+	outline: solid #f00 1px !important;
+}
+
+a:focus,
+a:hover{
 	text-decoration: none;
 	color: #333;
 	border-bottom: 3px solid #1a1a1a;
@@ -251,10 +255,6 @@ a:focus {
 a:active {
 	color: #474747;
 	transition: 0.3s ease all;
-}
-
-a:focus {
-	outline: solid #f00 1px !important;
 }
 
 :is(h1, h2, h3, h4, h5, h6) a {
@@ -320,8 +320,8 @@ a.social-media-link:visited:last-of-type {
 	margin-right: 0;
 }
 
-a.social-media-link:hover,
-a.social-media-link:focus {
+a.social-media-link:focus,
+a.social-media-link:hover {
 	color: #e6e6e6;
 	background: #333;
 	transform: scale(1.05);
@@ -342,8 +342,8 @@ a.social-media-link i {
 	transition: 0.3s ease all;
 }
 
-a.social-media-link:hover i,
-a.social-media-link:focus i {
+a.social-media-link:focus i,
+a.social-media-link:hover i {
 	transform: scale(1.05);
 }
 
@@ -407,8 +407,8 @@ a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a,
 	transition: 0.3s ease all;
 }
 
-a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):hover:before,
-a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):focus:before {
+a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):focus:before,
+a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):hover:before {
 	visibility: visible;
 	-webkit-transform: translate3d(0,0,0);
 	width: 100%;
@@ -461,8 +461,15 @@ button, input[type="submit"], a.button {
 	transition: 0.3s ease all;
 }
 
-:is(button, input[type="submit"], a.button):hover,
 :is(button, input[type="submit"], a.button):focus {
+	box-shadow: none;
+	color: #fff;
+	background: #333;
+	transform: scale(1.05);
+}
+
+:is(button, input[type="submit"], a.button):focus,
+:is(button, input[type="submit"], a.button):hover {
 	color: #fff;
 	background: #333;
 	transform: scale(1.05);
@@ -470,13 +477,6 @@ button, input[type="submit"], a.button {
 
 :is(button, input[type="submit"], a.button):active {
 	background: #474747;
-}
-
-:is(button, input[type="submit"], a.button):focus {
-	box-shadow: none;
-	color: #fff;
-	background: #333;
-	transform: scale(1.05);
 }
 
 .alt:is(button, input[type="submit"], a.button) { 
@@ -842,7 +842,8 @@ footer{
 .display-md,
 .display-lg,
 .display-xl,
-.display-xxl{ /* At XS size, these are not yet displayed */
+.display-xxl,
+.display-nav-expand{ /* At XS size, these are not yet displayed */
 	display: none;
 }
 
@@ -850,7 +851,8 @@ footer{
 .hide-md,
 .hide-lg,
 .hide-xl,
-.hide-xxl{/* At XS size, these are not yet hidden */
+.hide-xxl,
+.hide-nav-expand{/* At XS size, these are not yet hidden */
 	display: block;
 }
 
@@ -906,10 +908,14 @@ header#site-header.has-header-widget .header-widget{
 	grid-area: header-widget;
 }
 
-header#site-header :is(nav, .header-widget){
+header#site-header nav{
 	display: flex;
 	flex-direction: row-reverse;
 	align-items: center;
+}
+
+header#site-header .header-widget{
+	display: none;
 }
 
 
@@ -1304,7 +1310,18 @@ button.hamburger:active {
 	transform: translate3d(0, -10px, 0) rotate(-45deg);
 }
 
-header nav.navbar {
+header nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+header nav .hamburger {
+	display: block;
+}
+
+
+/* header nav.navbar {
 	grid-gap: 15px;
 	padding-top: 0;
 	padding-bottom: 0;
@@ -1312,8 +1329,8 @@ header nav.navbar {
 	transition: 1s ease all;
 }
 
-header nav.navbar #main-nav { /* Push nav menu up (is positioned flex) */
-	/* margin-bottom: 30px; */
+header nav.navbar #main-nav { /* Push nav menu up (is positioned flex) *
+	/* margin-bottom: 30px; *
 	transition: 1s ease all;
 }
 
@@ -1333,12 +1350,12 @@ nav ul {
 
 nav ul li {
 	margin: 0;
-	white-space: nowrap; /* Prevent line breaks between words */
+	white-space: nowrap; /* Prevent line breaks between words *
 	color: #fff;
 }
 
 
-/* Default - MD */
+/* Default - MD *
 
 header nav.navbar {
 	top: 0;
@@ -1346,7 +1363,7 @@ header nav.navbar {
 }
 
 
-/* Default - XS */
+/* Default - XS *
 
 header .navbar-collapse {
 	top: 70px;
@@ -1367,9 +1384,35 @@ nav .navbar-collapse {
 	left: -30px;
 	width: 100%;
 	width: calc(100% + 60px);
+} */
+
+nav ul li :is(a, a:link, a:visited) {
+	color: #fff;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	border-bottom: 2px transparent solid;
+	transition: 0.3s ease all;
 }
 
-.navbar-expand-lg .navbar-nav a.nav-link {
+nav ul li a:hover,
+nav ul li.dropdown.show > a {
+	color: #e6e6e6;
+	transition: 0.3s ease all;
+}
+
+nav ul li a:active {
+	color: #d2d2d2;
+	transition: 0.3s ease all;
+}
+
+nav a.nav-link:before {
+	background: #e6e6e6;
+}
+
+
+/* .navbar-expand-lg .navbar-nav a.nav-link {
 	padding: 10px 20px;
 }
 
@@ -1393,16 +1436,16 @@ nav ul li.dropdown.show > a {
 
 nav ul li a:active {
 	color: #d2d2d2;
-	/* border-bottom: 2px #d2d2d2 solid; */
+	/* border-bottom: 2px #d2d2d2 solid; *
 	transition: 0.3s ease all;
 }
 
 nav a.nav-link:before {
 	background: #e6e6e6;
-}
+} */
 
-.navbar-nav .dropdown-menu {
-	background: #1a1a1a; /* Fall back */
+/* .navbar-nav .dropdown-menu {
+	background: #1a1a1a; /* Fall back *
 	background: rgba(26,26,26,0.8);
 	border: none;
 	border-radius: 0;
@@ -1423,9 +1466,9 @@ nav ul.dropdown-menu li:not(:last-child):after {
 
 .navbar-nav .dropdown-menu li a:hover {
 	color: #e6e6e6;
-	background: #333; /* Fall back */
+	background: #333; /* Fall back *
 	background: rgba(26,26,26,0.8);
-	/* border-bottom: none; */
+	/* border-bottom: none; *
 }
 
 .navbar-nav .dropdown-menu li a:active {
@@ -1439,7 +1482,7 @@ nav ul.dropdown-menu li:not(:last-child):after {
 
 nav a.dropdown-item:before {
 	background: transparent;
-}
+} */
 
 
 /* ---- 10. Footer ---- */
@@ -2708,11 +2751,11 @@ div.accordion-content + a.button {
     	margin-right: 15px;
     }
         
-    .display-sm {
+    .display-sm{
     	display: block;
     }
         
-    .hide-sm {
+    .hide-sm{
     	display: none;
     }
     
@@ -2802,11 +2845,11 @@ div.accordion-content + a.button {
     	grid-template-columns: 1fr 0%;
     }
         
-    .display-md {
+    .display-md{
     	display: block;
     }
         
-    .hide-md {
+    .hide-md{
     	display: none;
     }
         
@@ -2907,11 +2950,19 @@ div.accordion-content + a.button {
     	grid-gap: 45px;
     }
         
-    .display-lg {
+    .display-lg{
     	display: block;
     }
         
-    .hide-lg {
+    .hide-lg{
+    	display: none;
+    }
+        
+    .display-nav-expand{
+    	display: block;
+    }
+        
+    .hide-nav-expand{
     	display: none;
     }
         
@@ -2921,6 +2972,8 @@ div.accordion-content + a.button {
     }
         
     header#site-header .header-widget{
+    	display: flex;
+    	flex-direction: row-reverse;
     	align-items: flex-end;
     }
         
@@ -2949,12 +3002,20 @@ div.accordion-content + a.button {
     	font-size: 1.8rem;
     } */
         
-    header .navbar-collapse {
+    header nav .hamburger {
+    	display: none;
+    }
+        
+    nav ul li :is(a, a:link, a:visited) {
+    	display: inline-block;
+    }
+        
+    /* header .navbar-collapse {
     	position: absolute;
     	width: calc(100% + 60px);
     	top: 70px;
     	left: -30px;
-    	align-items: normal; /* This is important for a smooth transition when menu collapsed! */
+    	align-items: normal; /* This is important for a smooth transition when menu collapsed! *
     	margin-top: 0;
     	transition: 1s ease all;
     }
@@ -2979,7 +3040,7 @@ div.accordion-content + a.button {
     }
         
     header nav.navbar #main-nav {
-    	background: #1a1a1a; /* Fall back */
+    	background: #1a1a1a; /* Fall back *
     	background: rgba(26,26,26,0.8);
     	width: 100%;
     	z-index: 1000;
@@ -2995,7 +3056,7 @@ div.accordion-content + a.button {
     }
         
     nav .collapse:not(.show) {
-    	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows */
+    	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows *
     }
         
     header nav button.navbar-toggler {
@@ -3028,7 +3089,7 @@ div.accordion-content + a.button {
         
     header #main-nav ul li a:hover {
     	color: #fff;
-    	background: #333; /* Fall back */
+    	background: #333; /* Fall back *
     	background: rgba(26,26,26,0.8);
     }
         
@@ -3065,7 +3126,7 @@ div.accordion-content + a.button {
         
     header #main-nav ul li a.dropdown-item:active {
     	color: rgba(255,255,255,0.55);
-    }
+    } */
         
     footer .footer-logo {
     	margin-bottom: 30px;
@@ -3157,11 +3218,11 @@ div.accordion-content + a.button {
     	columns: 3;
     }
         
-    .display-xl {
+    .display-xl{
     	display: block;
     }
         
-    .hide-xl {
+    .hide-xl{
     	display: none;
     }
         
@@ -3169,13 +3230,13 @@ div.accordion-content + a.button {
     	left: 50%;
     } */
         
-    header nav.navbar #main-nav {
+    /* header nav.navbar #main-nav {
     	margin-bottom: 0;
     }
         
     header.scrolled .logo a.navbar-brand {
     	margin: 0;
-    }
+    } */
         
     header nav button:focus {
     	outline: none;
@@ -3228,11 +3289,11 @@ div.accordion-content + a.button {
     	columns: 4;
     }
         
-    .display-xxl {
+    .display-xxl{
     	display: block;
     }
         
-    .hide-xxl {
+    .hide-xxl{
     	display: none;
     }
         

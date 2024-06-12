@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 11/06/2024 4:27.45am UTC
+Updated at 12/06/2024 4:55.00am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -392,7 +392,7 @@ array (
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '10000',
   ),
   'layout' => 'block',
   '_name' => 'colours_colours',
@@ -1618,8 +1618,8 @@ This is the default button background colour when used in a section with a light
 )array (
   'ID' => 0,
   'key' => 'field_6632c94ad4c0a_field_6632be1cfac83',
-  'label' => 'Custom Shortcodes & Properties',
-  'name' => 'custom_shortcodes_and_properties_custom_shortcodes_and_properties',
+  'label' => 'Imports, Custom Shortcodes & Properties',
+  'name' => 'imports_custom_shortcodes_and_properties_imports_custom_shortcodes_and_properties',
   'aria-label' => '',
   'prefix' => 'acf[field_6632c94ad4c0a]',
   'type' => 'group',
@@ -1635,10 +1635,10 @@ This is the default button background colour when used in a section with a light
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '20000',
   ),
   'layout' => 'block',
-  '_name' => 'custom_shortcodes_and_properties_custom_shortcodes_and_properties',
+  '_name' => 'imports_custom_shortcodes_and_properties_imports_custom_shortcodes_and_properties',
   '_valid' => 1,
   'sub_fields' => 
   array (
@@ -1802,8 +1802,8 @@ This is the default button background colour when used in a section with a light
     3 => 
     array (
       'ID' => 0,
-      'key' => 'field_654c28529dc68',
-      'label' => 'CSS Properties',
+      'key' => 'field_66691e58c6492',
+      'label' => 'Imports',
       'name' => '',
       'aria-label' => '',
       'prefix' => 'acf',
@@ -1831,19 +1831,15 @@ This is the default button background colour when used in a section with a light
     4 => 
     array (
       'ID' => 0,
-      'key' => 'field_6539e7319acce',
-      'label' => 'CSS Properties',
-      'name' => 'css_properties',
+      'key' => 'field_66691d14081da',
+      'label' => 'Import CSS',
+      'name' => 'import_css',
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => ':root {
-	--edge-padding: [edge-padding]; /* This is a CSS property as it is updated dynamically at different screen sizes */
-}',
+      'value' => '',
       'menu_order' => 4,
-      'instructions' => 'Use this area to set CSS properties (variables) via the :root element<br /><br />
-
-As a general rule, use Two Sparrows custom shortcodes to set values, as these are pre-compiled and therefore require less browser processing for visitors. However, CSS properties should be used if dynamic variables are required, or for blocks of repeating code that would otherwise increase the CSS full size.',
+      'instructions' => 'Import any CSS here (such as fonts, wrapped in @font-face or @import). This will appear at the very start of the CSS file.',
       'required' => 0,
       'id' => '',
       'class' => '',
@@ -1857,13 +1853,106 @@ As a general rule, use Two Sparrows custom shortcodes to set values, as these ar
       ),
       'default_value' => '',
       'maxlength' => '',
+      'rows' => 8,
+      'placeholder' => '',
+      'new_lines' => '',
+      '_name' => 'import_css',
+      '_valid' => 1,
+    ),
+    5 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_66691e63c6493',
+      'label' => 'Imports End',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 5,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6632be1cfac83',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 0,
+      'endpoint' => 1,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    6 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654c28529dc68',
+      'label' => 'CSS Properties',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 6,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6632be1cfac83',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'open' => 0,
+      'multi_expand' => 1,
+      'endpoint' => 0,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    7 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_6539e7319acce',
+      'label' => 'CSS Properties',
+      'name' => 'css_properties',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'textarea',
+      'value' => ':root {
+	--edge-padding: [edge-padding]; /* This is a CSS property as it is updated dynamically at different screen sizes */
+}',
+      'menu_order' => 7,
+      'instructions' => 'Use this area to set CSS properties (variables) via the :root element<br /><br />
+
+As a general rule, use Two Sparrows custom shortcodes to set values, as these are pre-compiled and therefore require less browser processing for visitors. However, CSS properties should be used if dynamic variables are required, or for blocks of repeating code that would otherwise increase the CSS full size.',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6632be1cfac83',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css full',
+        'id' => '020020',
+      ),
+      'default_value' => '',
+      'maxlength' => '',
       'rows' => 24,
       'placeholder' => '',
       'new_lines' => '',
       '_name' => 'css_properties',
       '_valid' => 1,
     ),
-    5 => 
+    8 => 
     array (
       'ID' => 0,
       'key' => 'field_654c29af64bf3',
@@ -1873,7 +1962,7 @@ As a general rule, use Two Sparrows custom shortcodes to set values, as these ar
       'prefix' => 'acf',
       'type' => 'repeater',
       'value' => false,
-      'menu_order' => 5,
+      'menu_order' => 8,
       'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
       'required' => 0,
       'id' => '',
@@ -1884,7 +1973,7 @@ As a general rule, use Two Sparrows custom shortcodes to set values, as these ar
       array (
         'width' => '',
         'class' => 'css responsivity',
-        'id' => '020020',
+        'id' => '020030',
       ),
       'layout' => 'table',
       'pagination' => 0,
@@ -1982,7 +2071,7 @@ As a general rule, use Two Sparrows custom shortcodes to set values, as these ar
         ),
       ),
     ),
-    6 => 
+    9 => 
     array (
       'ID' => 0,
       'key' => 'field_654c28739dc69',
@@ -1992,7 +2081,7 @@ As a general rule, use Two Sparrows custom shortcodes to set values, as these ar
       'prefix' => 'acf',
       'type' => 'accordion',
       'value' => false,
-      'menu_order' => 6,
+      'menu_order' => 9,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -2014,8 +2103,8 @@ As a general rule, use Two Sparrows custom shortcodes to set values, as these ar
   ),
   '_clone' => 'field_6632c94ad4c0a',
   '__key' => 'field_6632be1cfac83',
-  '__name' => 'custom_shortcodes_and_properties',
-  '__label' => 'Custom Shortcodes & Properties',
+  '__name' => 'imports_custom_shortcodes_and_properties',
+  '__label' => 'Imports, Custom Shortcodes & Properties',
 )array (
   'ID' => 0,
   'key' => 'field_6632d0f5f9474_field_6632cf6369f60',
@@ -2036,7 +2125,7 @@ As a general rule, use Two Sparrows custom shortcodes to set values, as these ar
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '30000',
   ),
   'layout' => 'block',
   '_name' => 'elements_elements',
@@ -2066,9 +2155,9 @@ As a general rule, use Two Sparrows custom shortcodes to set values, as these ar
         'class' => '',
         'id' => '',
       ),
-      'message' => 'Most of these element styles are preset to the specifications of the designer - fonts and exact sizes will need to be tweaked.
+      'message' => 'Fonts should be imported on the "Imports, Custom Shortcodes & Properties" tab. These need to appear at the very top of a CSS stylesheet.
 
-As this page will be output as CSS, correctly syntaxed CSS should be written in the boxes (the boxes will be automatically wrapped with the according CSS elements).',
+Most of these element styles are preset to the specifications of the designer - fonts and exact sizes will need to be tweaked. All font sizes should be relative to the root font size (using rem units).',
       'new_lines' => 'wpautop',
       'esc_html' => 0,
       '_name' => '',
@@ -2389,7 +2478,7 @@ body {
 	max-width: 100%;
 }',
       'menu_order' => 10,
-      'instructions' => 'Add any imported fonts to the top of this section (wrapped in @font-face or @import).',
+      'instructions' => '',
       'required' => 0,
       'id' => '',
       'class' => '',
@@ -3246,7 +3335,7 @@ p.extra-margin-bottom {
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '40000',
   ),
   'layout' => 'block',
   '_name' => 'anchors_and_buttons_anchors_and_buttons',
@@ -3812,8 +3901,12 @@ a:visited {
 	border-bottom: 2px solid [colour-text];
 }
 
-a:hover,
 a:focus {
+	outline: solid [colour-brand-1] 1px !important;
+}
+
+a:focus,
+a:hover{
 	text-decoration: none;
 	color: [colour-text-hover];
 	border-bottom: [tsp-calc tm /5, round] solid [colour-anchor-underline];
@@ -3823,10 +3916,6 @@ a:focus {
 a:active {
 	color: [colour-text-active];
 	transition: [anchor-transition];
-}
-
-a:focus {
-	outline: solid [colour-brand-1] 1px !important;
 }
 
 :is(h1, h2, h3, h4, h5, h6) a {
@@ -3921,8 +4010,8 @@ a.social-media-link:visited:last-of-type {
 	margin-right: 0;
 }
 
-a.social-media-link:hover,
-a.social-media-link:focus {
+a.social-media-link:focus,
+a.social-media-link:hover {
 	color: [colour-text-light-hover];
 	background: [colour-background-dark-hover];
 	transform: [button-swell];
@@ -3943,8 +4032,8 @@ a.social-media-link i {
 	transition: [button-transition];
 }
 
-a.social-media-link:hover i,
-a.social-media-link:focus i {
+a.social-media-link:focus i,
+a.social-media-link:hover i {
 	transform: [button-swell];
 }
 
@@ -4008,8 +4097,8 @@ a[anchor-underline-exclusions]:before {
 	transition: [anchor-transition];
 }
 
-a[anchor-underline-exclusions]:hover:before,
-a[anchor-underline-exclusions]:focus:before {
+a[anchor-underline-exclusions]:focus:before,
+a[anchor-underline-exclusions]:hover:before {
 	visibility: visible;
 	-webkit-transform: translate3d(0,0,0);
 	width: 100%;
@@ -4415,8 +4504,15 @@ li.disabled > a:first-child {
 	transition: [button-transition];
 }
 
-:is([button-selectors]):hover,
 :is([button-selectors]):focus {
+	box-shadow: none;
+	color: [colour-text-light];
+	background: [colour-background-dark-hover];
+	transform: [button-swell];
+}
+
+:is([button-selectors]):focus,
+:is([button-selectors]):hover {
 	color: [colour-text-light];
 	background: [colour-background-dark-hover];
 	transform: [button-swell];
@@ -4424,13 +4520,6 @@ li.disabled > a:first-child {
 
 :is([button-selectors]):active {
 	background: [colour-background-dark-active];
-}
-
-:is([button-selectors]):focus {
-	box-shadow: none;
-	color: [colour-text-light];
-	background: [colour-background-dark-hover];
-	transform: [button-swell];
 }',
       'menu_order' => 20,
       'instructions' => '',
@@ -4870,7 +4959,7 @@ background: [colour-background-light-rgba 0.3];',
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '50000',
   ),
   'layout' => 'block',
   '_name' => 'forms_forms',
@@ -5307,7 +5396,7 @@ form.searchform label {
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '60000',
   ),
   'layout' => 'block',
   '_name' => 'images_iframes_and_videos_images_iframes_and_videos',
@@ -6231,7 +6320,7 @@ body a.fbx-close {
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '70000',
   ),
   'layout' => 'block',
   '_name' => 'structure_and_framework_structure_and_framework',
@@ -7475,7 +7564,8 @@ footer{
 .display-md,
 .display-lg,
 .display-xl,
-.display-xxl{ /* At XS size, these are not yet displayed */
+.display-xxl,
+.display-nav-expand{ /* At XS size, these are not yet displayed */
 	display: none;
 }
 
@@ -7483,7 +7573,8 @@ footer{
 .hide-md,
 .hide-lg,
 .hide-xl,
-.hide-xxl{/* At XS size, these are not yet hidden */
+.hide-xxl,
+.hide-nav-expand{/* At XS size, these are not yet hidden */
 	display: block;
 }
 
@@ -7534,55 +7625,66 @@ footer{
         0 => 
         array (
           'screen_size' => 'sm',
-          'screen_size_css' => '.display-sm {
+          'screen_size_css' => '.display-sm{
 	display: block;
 }
 
-.hide-sm {
+.hide-sm{
 	display: none;
 }',
         ),
         1 => 
         array (
           'screen_size' => 'md',
-          'screen_size_css' => '.display-md {
+          'screen_size_css' => '.display-md{
 	display: block;
 }
 
-.hide-md {
+.hide-md{
 	display: none;
 }',
         ),
         2 => 
         array (
           'screen_size' => 'lg',
-          'screen_size_css' => '.display-lg {
+          'screen_size_css' => '.display-lg{
 	display: block;
 }
 
-.hide-lg {
+.hide-lg{
 	display: none;
 }',
         ),
         3 => 
         array (
           'screen_size' => 'xl',
-          'screen_size_css' => '.display-xl {
+          'screen_size_css' => '.display-xl{
 	display: block;
 }
 
-.hide-xl {
+.hide-xl{
 	display: none;
 }',
         ),
         4 => 
         array (
           'screen_size' => 'xxl',
-          'screen_size_css' => '.display-xxl {
+          'screen_size_css' => '.display-xxl{
 	display: block;
 }
 
-.hide-xxl {
+.hide-xxl{
+	display: none;
+}',
+        ),
+        5 => 
+        array (
+          'screen_size' => 'nav-expanded',
+          'screen_size_css' => '.display-nav-expand{
+	display: block;
+}
+
+.hide-nav-expand{
 	display: none;
 }',
         ),
@@ -7750,7 +7852,7 @@ footer{
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '80000',
   ),
   'layout' => 'block',
   '_name' => 'header_header',
@@ -8118,10 +8220,14 @@ header#site-header.has-header-widget .header-widget{
 	grid-area: header-widget;
 }
 
-header#site-header :is(nav, .header-widget){
+header#site-header nav{
 	display: flex;
 	flex-direction: row-reverse;
 	align-items: center;
+}
+
+header#site-header .header-widget{
+	display: none;
 }
 
 
@@ -8648,6 +8754,8 @@ body.header-fixed.logged-in.admin-bar header { /* Not required when header is po
 }
 
 header#site-header .header-widget{
+	display: flex;
+	flex-direction: row-reverse;
 	align-items: flex-end;
 }
 
@@ -8850,7 +8958,7 @@ body.header-fixed.logged-in.admin-bar header { /* Not required when header is po
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '90000',
   ),
   'layout' => 'block',
   '_name' => 'nav_nav',
@@ -12183,7 +12291,18 @@ button.hamburger:active {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => 'header nav.navbar {
+      'value' => 'header nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+header nav .hamburger {
+	display: block;
+}
+
+
+/* header nav.navbar {
 	grid-gap: [text-margin];
 	padding-top: 0;
 	padding-bottom: 0;
@@ -12191,8 +12310,8 @@ button.hamburger:active {
 	transition: [header-transition];
 }
 
-header nav.navbar #main-nav { /* Push nav menu up (is positioned flex) */
-	/* margin-bottom: 30px; */
+header nav.navbar #main-nav { /* Push nav menu up (is positioned flex) *
+	/* margin-bottom: 30px; *
 	transition: [header-transition];
 }
 
@@ -12212,12 +12331,12 @@ nav ul {
 
 nav ul li {
 	margin: 0;
-	white-space: nowrap; /* Prevent line breaks between words */
+	white-space: nowrap; /* Prevent line breaks between words *
 	color: [colour-nav-text];
 }
 
 
-/* Default - MD */
+/* Default - MD *
 
 header nav.navbar {
 	top: 0;
@@ -12225,7 +12344,7 @@ header nav.navbar {
 }
 
 
-/* Default - XS */
+/* Default - XS *
 
 header .navbar-collapse {
 	top: [header-height-scrolled];
@@ -12246,7 +12365,7 @@ nav .navbar-collapse {
 	left: -30px;
 	width: 100%;
 	width: calc(100% + 60px);
-}',
+} */',
       'menu_order' => 40,
       'instructions' => 'This is the main CSS for the expanded Nav bar. CSS for the collapsed nav should be entered in the Nav Responsivity area, under the Responsivity tab.',
       'required' => 0,
@@ -12307,7 +12426,33 @@ nav ul li {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '.navbar-expand-lg .navbar-nav a.nav-link {
+      'value' => 'nav ul li :is(a, a:link, a:visited) {
+	color: [colour-nav-text];
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	border-bottom: 2px transparent solid;
+	transition: [anchor-transition];
+}
+
+nav ul li a:hover,
+nav ul li.dropdown.show > a {
+	color: [colour-nav-text-hover];
+	transition: [anchor-transition];
+}
+
+nav ul li a:active {
+	color: [colour-nav-text-active];
+	transition: [anchor-transition];
+}
+
+nav a.nav-link:before {
+	background: [colour-nav-text-hover];
+}
+
+
+/* .navbar-expand-lg .navbar-nav a.nav-link {
 	padding: [tsp-calc tm *2 /3] [tsp-calc tm *4 /3];
 }
 
@@ -12331,13 +12476,13 @@ nav ul li.dropdown.show > a {
 
 nav ul li a:active {
 	color: [colour-nav-text-active];
-	/* border-bottom: 2px [colour-nav-text-active] solid; */
+	/* border-bottom: 2px [colour-nav-text-active] solid; *
 	transition: [anchor-transition];
 }
 
 nav a.nav-link:before {
 	background: [colour-nav-text-hover];
-}',
+} */',
       'menu_order' => 41,
       'instructions' => '',
       'required' => 0,
@@ -12398,8 +12543,8 @@ nav a.nav-link:before {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '.navbar-nav .dropdown-menu {
-	background: [colour-nav-dropdown-background]; /* Fall back */
+      'value' => '/* .navbar-nav .dropdown-menu {
+	background: [colour-nav-dropdown-background]; /* Fall back *
 	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
 	border: none;
 	border-radius: 0;
@@ -12420,9 +12565,9 @@ nav ul.dropdown-menu li:not(:last-child):after {
 
 .navbar-nav .dropdown-menu li a:hover {
 	color: [colour-nav-dropdown-text-hover];
-	background: [colour-nav-dropdown-background-hover]; /* Fall back */
+	background: [colour-nav-dropdown-background-hover]; /* Fall back *
 	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
-	/* border-bottom: none; */
+	/* border-bottom: none; *
 }
 
 .navbar-nav .dropdown-menu li a:active {
@@ -12436,7 +12581,7 @@ nav ul.dropdown-menu li:not(:last-child):after {
 
 nav a.dropdown-item:before {
 	background: transparent;
-}',
+} */',
       'menu_order' => 42,
       'instructions' => '',
       'required' => 0,
@@ -12510,12 +12655,20 @@ nav a.dropdown-item:before {
         0 => 
         array (
           'screen_size' => 'nav-expanded',
-          'screen_size_css' => 'header .navbar-collapse {
+          'screen_size_css' => 'header nav .hamburger {
+	display: none;
+}
+
+nav ul li :is(a, a:link, a:visited) {
+	display: inline-block;
+}
+
+/* header .navbar-collapse {
 	position: absolute;
 	width: calc(100% + 60px);
 	top: [header-height-scrolled];
 	left: -30px;
-	align-items: normal; /* This is important for a smooth transition when menu collapsed! */
+	align-items: normal; /* This is important for a smooth transition when menu collapsed! *
 	margin-top: 0;
 	transition: [header-transition];
 }
@@ -12540,7 +12693,7 @@ header .navbar .logo {
 }
 
 header nav.navbar #main-nav {
-	background: [colour-nav-dropdown-background]; /* Fall back */
+	background: [colour-nav-dropdown-background]; /* Fall back *
 	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
 	width: 100%;
 	z-index: 1000;
@@ -12556,7 +12709,7 @@ header nav button:focus {
 }
 
 nav .collapse:not(.show) {
-	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows */
+	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows *
 }
 
 header nav button.navbar-toggler {
@@ -12589,7 +12742,7 @@ header #main-nav ul li :is(a, a:link, a:visited) {
 
 header #main-nav ul li a:hover {
 	color: [colour-nav-dropdown-text];
-	background: [colour-nav-dropdown-background-hover]; /* Fall back */
+	background: [colour-nav-dropdown-background-hover]; /* Fall back *
 	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
 }
 
@@ -12626,18 +12779,18 @@ header #main-nav ul li a.dropdown-item:hover {
 
 header #main-nav ul li a.dropdown-item:active {
 	color: [colour-nav-dropdown-text-rgba 0.55];
-}',
+} */',
         ),
         1 => 
         array (
           'screen_size' => 'xl',
-          'screen_size_css' => 'header nav.navbar #main-nav {
+          'screen_size_css' => '/* header nav.navbar #main-nav {
 	margin-bottom: 0;
 }
 
 header.scrolled .logo a.navbar-brand {
 	margin: 0;
-}
+} */
 
 header nav button:focus {
 	outline: none;
@@ -12823,7 +12976,7 @@ header.scrolled nav button.navbar-toggler {
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '100000',
   ),
   'layout' => 'block',
   '_name' => 'footer_footer',
@@ -13424,7 +13577,7 @@ footer a.social-media-link:last-of-type {
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '110000',
   ),
   'layout' => 'block',
   '_name' => 'kokako_sections_kokako_sections',
@@ -16182,7 +16335,7 @@ section.kokako.hide-section {
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '120000',
   ),
   'layout' => 'block',
   '_name' => 'colour_schemes_colour_schemes',
@@ -17323,7 +17476,7 @@ section.kokako.background-overlay.background-overlay-light .image-overlay {
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '130000',
   ),
   'layout' => 'block',
   '_name' => 'blog_blog',
@@ -17939,7 +18092,7 @@ body.single .post-meta + img {
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '140000',
   ),
   'layout' => 'block',
   '_name' => 'shop_shop',
@@ -18463,7 +18616,7 @@ i.icon-basket + span.cart-count {
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '150000',
   ),
   'layout' => 'block',
   '_name' => 'custom_custom',
@@ -18732,7 +18885,7 @@ i.icon-basket + span.cart-count {
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '160000',
   ),
   'layout' => 'block',
   '_name' => 'animations_animations',
@@ -19631,7 +19784,7 @@ section.kokako.latestPosts .blog-grid.post.appear {
   array (
     'width' => '',
     'class' => 'css',
-    'id' => '',
+    'id' => '170000',
   ),
   'layout' => 'block',
   '_name' => 'miscellaneous_miscellaneous',
@@ -20296,7 +20449,7 @@ Enter full CSS below.',
   array (
     'width' => '',
     'class' => 'css no-js',
-    'id' => '',
+    'id' => '180000',
   ),
   'layout' => 'block',
   '_name' => 'accessibility_accessibility',
