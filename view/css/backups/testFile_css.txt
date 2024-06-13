@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 12/06/2024 4:55.00am UTC
+Updated at 12/06/2024 11:39.20pm UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -333,7 +333,7 @@ Shortcodes:
 [edge-padding] => 30px
 [font-family-heading] => Arial, sans-serif
 [font-family] => Arial, sans-serif
-[font-size] => 13pt
+[font-size] => 13.5pt
 [footer-logo-width] => 255px
 [golden-ratio-inverse] => 0.6180339888
 [golden-ratio] => 1.6180339887
@@ -2201,7 +2201,7 @@ Most of these element styles are preset to the specifications of the designer - 
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'text',
-      'value' => '13pt',
+      'value' => '13.5pt',
       'menu_order' => 2,
       'instructions' => 'Shortcode: <code>[font-size]</code><br />
 This is the base font size (in px) that all other font sizes are referenced to (using rem units). This will be the paragraph font size.',
@@ -2454,20 +2454,19 @@ CSS for importing fonts should be added to the top of Fundamental Elements CSS b
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '* {
+      'value' => '*{
 	margin: 0;
 	padding: 0;
-	/* max-width: 100vw; */
 }
 
-html {
+html{
 	scroll-behavior: smooth;
 	font-size: [font-size]; /* rem units are relative to the font size of the HTML element - see https://www.digitalocean.com/community/tutorials/css-rem-vs-em-units */
 	width: 100%;
 	max-width: 100%;
 }
 
-body {
+body{
 	background: [colour-background];
 	color: [colour-text];
 	font-family: [font-family];
@@ -2684,7 +2683,9 @@ body {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => 'p, li, td {
+      'value' => 'p,
+li,
+td{
 	font-family: [font-family];
 	font-size: 1rem;
 	line-height: [line-height];
@@ -2692,7 +2693,12 @@ body {
 	padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
 	font-family: [font-family-heading];
 	font-weight: bold;
 	color: [colour-text];
@@ -2706,7 +2712,8 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 0;
 }
 
-h1, h2 {
+h1,
+h2 {
 	font-size: 2.5rem;
 }
 
@@ -2714,7 +2721,8 @@ h3 {
 	font-size: 1.5rem;
 }
 
-ol, ul {
+ol,
+ul {
 	margin-bottom: [text-margin];
 }
 
@@ -4486,8 +4494,8 @@ li.disabled > a:first-child {
       'value' => '[button-selectors] {
 	cursor: pointer;
 	display: inline-block;
-	background: [colour-background-dark];
-	color: [colour-text-light];
+	color: [colour-button-text];
+	background: [colour-button-background];
 	font-family: [font-family];
 	font-size: 1rem;
 	font-weight: normal;
@@ -4506,20 +4514,17 @@ li.disabled > a:first-child {
 
 :is([button-selectors]):focus {
 	box-shadow: none;
-	color: [colour-text-light];
-	background: [colour-background-dark-hover];
-	transform: [button-swell];
 }
 
 :is([button-selectors]):focus,
 :is([button-selectors]):hover {
 	color: [colour-text-light];
-	background: [colour-background-dark-hover];
+	background: [colour-button-background-hover];
 	transform: [button-swell];
 }
 
 :is([button-selectors]):active {
-	background: [colour-background-dark-active];
+	background: [colour-button-background-active];
 }',
       'menu_order' => 20,
       'instructions' => '',
@@ -4556,15 +4561,12 @@ li.disabled > a:first-child {
         0 => 
         array (
           'button_class_name' => 'alt',
-          'button_class_css' => 'color: [colour-text];
-background: [colour-background];
-border: 1px [colour-text-dark] solid;
-border-bottom: 1px [colour-text-dark] solid !important;
-padding: [tsp-calc {button-padding-vertical} - 1] [tsp-calc {button-padding-horizontal} -1]; /* To account for border */',
-          'button_class_hover_css' => 'color: [colour-text];
-background: [colour-background-rgba 0.8];',
-          'button_class_active_css' => 'color: [colour-text];
-background: [colour-background-rgba 0.7];',
+          'button_class_css' => 'color: [colour-button-background];
+background: [colour-button-text];',
+          'button_class_hover_css' => 'color: [colour-button-background];
+background: [colour-button-text-hover];',
+          'button_class_active_css' => 'color: [colour-button-background];
+background: [colour-button-text-active];',
         ),
         1 => 
         array (
@@ -8561,12 +8563,12 @@ header .header-widget h2 {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => 'header.scrolled {
+      'value' => '/* header#site-header.kokako.scrolled {
 	height: [header-height-scrolled];
 	transition: [header-transition];
 }
 
-/* header nav.navbar {
+header nav.navbar {
 	top: 0;
 	transition: [header-transition];
 }
@@ -14661,7 +14663,7 @@ section.kokako.hide-section {
         3 => 
         array (
           'section_type' => 'Heading',
-          'section_css' => '.kokako.heading {
+          'section_css' => '.kokako.heading{
 	position: relative;
 	padding: [section-padding-vertical] 0 0; /* No bottom padding by default */
 	display: flex;
@@ -14670,64 +14672,12 @@ section.kokako.hide-section {
 	background: [colour-background];
 }
 
-.kokako.heading :is(h1, h2) {
-	color: [colour-text];
-}
-
-.kokako.heading.section1 {
-	margin-top: 0;
-}
-
-.kokako.heading .container-fluid {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.kokako.heading .container-fluid .row {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-.kokako.heading .container-fluid .row :is(.col-xs-12, .col-sm-12) {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-/* .kokako.heading .text-box { /* Uncomment if background colour is required for text box *
-	padding: 21px 42px; *
-} */
-
-.kokako.heading .cta-buttons {
-	text-align: left;
-}
-
-.kokako.heading :is(button, a.button, a.btn) {
-	text-shadow: none;
-}
-
-.kokako.heading a:is(.button, .button:link, .button:visited) { /* Force alt colours */
-	background: [colour-background-alt];
-	color: [colour-text-alt];
-	font-weight: bold;
-}
-
-.kokako.heading a.button:hover {
-	background: [colour-background-alt-hover];
-}
-
-.kokako.heading a.button:active {
-	background: [colour-background-alt-active];
-}
-
-
-/* Default - XS */
-
-.kokako.heading :is(h1, h2) {
+.kokako.heading h1{
 	font-size: 3rem;
 }
 
-.kokako.heading :is(p, p.small-print) {
-	display: none;
+.kokako.heading :is(h1 + h2, h2+ h3){ /* Subheading */
+	font-size: 2rem;
 }',
           'section_responsivity' => 
           array (
@@ -14736,11 +14686,6 @@ section.kokako.hide-section {
               'screen_size' => 'md',
               'screen_size_css' => '.kokako.heading :is(h1, h2) {
 	font-size: 3.5rem;
-	margin-bottom: [text-margin];
-}
-
-.kokako.heading :is(p, p.small-print) {
-	display: block;
 }',
             ),
           ),
@@ -15936,7 +15881,7 @@ section.kokako.hide-section {
         13 => 
         array (
           'section_type' => 'Text and Image',
-          'section_css' => '.kokako.textAndImage .contain {
+          'section_css' => '.kokako.textAndImage .contain{
 	display: grid; /* Using grid rather than flex as grid allows to set equal width columns, flex will change the width to fit content as deemed required */
 	grid-template-columns: 1fr;
 	grid-template-areas:
@@ -15945,21 +15890,21 @@ section.kokako.hide-section {
 	gap: [grid-gap-horizontal];
 }
 
-.kokako.textAndImage.image-on-bottom .contain {
+.kokako.textAndImage.image-on-bottom .contain{
 	grid-template-areas:
 		"twi-content"
 		"twi-image";
 }
 
-.kokako.textAndImage .content {
+.kokako.textAndImage .content{
 	grid-area: twi-content;
 }
 
-.kokako.textAndImage .image {
+.kokako.textAndImage .image{
 	grid-area: twi-image;
 }
 
-.kokako.textAndImage .image img {
+.kokako.textAndImage .image img{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -15968,12 +15913,12 @@ section.kokako.hide-section {
 
 /* Variation: Full width */
 
-.kokako.textAndImage.width-full .contain {
+.kokako.textAndImage.width-full .contain{
 	padding-left: 0;
 	padding-right: 0;
 }
 
-.kokako.textAndImage.width-full .col.text {
+.kokako.textAndImage.width-full .col.text{
 	padding-left: var(--edge-padding);
 	padding-right: var(--edge-padding);
 }',
@@ -15982,12 +15927,12 @@ section.kokako.hide-section {
             0 => 
             array (
               'screen_size' => 'md',
-              'screen_size_css' => '.kokako.textAndImage.image-on-left .contain {
+              'screen_size_css' => '.kokako.textAndImage.image-on-left .contain{
 	grid-template-areas:
 		"twi-image twi-content";
 }
 
-.kokako.textAndImage.image-on-right .contain {
+.kokako.textAndImage.image-on-right .contain{
 	grid-template-areas:
 		"twi-content twi-image";
 }
@@ -16041,12 +15986,12 @@ section.kokako.hide-section {
             1 => 
             array (
               'screen_size' => 'lg',
-              'screen_size_css' => '.kokako.textAndImage .contain {
+              'screen_size_css' => '.kokako.textAndImage .contain{
 	grid-template-columns: repeat(2, 1fr); /* Using grid rather than flex as grid allows to set equal width columns, flex will change the width to fit content as deemed required */ 
 	grid-template-areas: "twi-image twi-content" !important; /* Defaults to image-on-left. important used to override any settings at mobile size, which can have greater selectivity */
 }
 
-.kokako.textAndImage.image-on-right .contain {
+.kokako.textAndImage.image-on-right .contain{
 	grid-template-areas: "twi-content twi-image" !important;
 }
 
