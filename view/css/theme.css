@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 13/06/2024 3:36.41am UTC
+Updated at 13/06/2024 7:20.19am UTC
 
 
 FILE STRUCTURE:
@@ -113,25 +113,15 @@ li {
 }
 
 blockquote {
-	margin: 30px;
+	margin: 45px 0
 }
 
-blockquote h3 {
-	font-size: 2rem;
-	line-height: 1.5;
-	margin-top: 15px;
-	margin-bottom: 0;
-}
-
-blockquote h3 + p {
-	margin-top: 0;
-}
-
-blockquote :is(p, li) {
+blockquote,
+blockquote :is(h2, h3, h4, p, li){ 
 	font-family: Arial, sans-serif;
 	font-weight: bold;
-	font-size: 1.4rem;
-	line-height: 1.7;
+	font-size: 2rem;
+	line-height: 1.25;
 }
 
 /* Text Alignment classes */
@@ -2364,7 +2354,7 @@ body.single :is(h1, h2, h3, h4, h5, h6) {
 }
 
 .post-meta h4 {
-	margin-bottom: 50px;
+	margin-bottom: 0;
 	font-style: italic;
 }
 

@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 13/06/2024 3:36.42am UTC
+Updated at 13/06/2024 7:20.20am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -2731,25 +2731,15 @@ li {
 }
 
 blockquote {
-	margin: [tsp-calc tm *2];
+	margin: [tsp-calc tm *3] 0
 }
 
-blockquote h3 {
-	font-size: 2rem;
-	line-height: 1.5;
-	margin-top: [text-margin];
-	margin-bottom: 0;
-}
-
-blockquote h3 + p {
-	margin-top: 0;
-}
-
-blockquote :is(p, li) {
-	font-family: [font-family];
+blockquote,
+blockquote :is(h2, h3, h4, p, li){ 
+	font-family: [font-family-heading];
 	font-weight: bold;
-	font-size: 1.4rem;
-	line-height: [line-height];
+	font-size: 2rem;
+	line-height: [line-height-headings];
 }',
       'menu_order' => 14,
       'instructions' => '',
@@ -17814,7 +17804,7 @@ a.read-more-link { /* Fix for hover not appearing when the link is on it\'s own 
 }
 
 .post-meta h4 {
-	margin-bottom: 50px;
+	margin-bottom: 0;
 	font-style: italic;
 }
 
