@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 12/06/2024 11:39.20pm UTC
+Updated at 13/06/2024 3:36.42am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -13120,6 +13120,7 @@ Please note: After updating this value, you may need to <a href="tools.php?page=
 	padding: [section-padding-vertical] 0; /* Ensure bottom padding prevents Google reCaptcha from obscuring footer (can happen on all screen sizes) */
 	background: [colour-footer-background];
 	color: [colour-footer-text];
+	text-align: center;
 }
 
 footer :is(p, li) {
@@ -13282,14 +13283,6 @@ img#shielded-logo {
 
 /* Default - MD */
 
-footer {
-	text-align: center;
-}
-
-footer .footer-logo {
-	margin-bottom: 30px;
-}
-
 footer .footer-col-4 h3 {
 	margin-top:[text-margin];
 }
@@ -13384,9 +13377,20 @@ footer {
       array (
         0 => 
         array (
+          'screen_size' => 'md',
+          'screen_size_css' => ' footer .cols-3 .footer-logo{
+	grid-column: 1/-1;
+}',
+        ),
+        1 => 
+        array (
           'screen_size' => 'lg',
-          'screen_size_css' => 'footer .footer-logo {
-	margin-bottom: [tsp-calc tm * 2];
+          'screen_size_css' => 'footer{
+	text-align: left;
+}
+
+ footer .cols-3 .footer-logo{
+	grid-column: 1/2;
 }
 
 footer.kokako .columns.cols-4{
@@ -13408,7 +13412,7 @@ footer a.social-media-link:last-of-type {
 	padding-right: 0;
 }',
         ),
-        1 => 
+        2 => 
         array (
           'screen_size' => 'xl',
           'screen_size_css' => 'footer.kokako .columns.cols-4{

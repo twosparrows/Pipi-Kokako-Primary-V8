@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 12/06/2024 11:39.19pm UTC
+Updated at 13/06/2024 3:36.41am UTC
 
 
 FILE STRUCTURE:
@@ -1494,6 +1494,7 @@ footer {
 	padding: 90px 0; /* Ensure bottom padding prevents Google reCaptcha from obscuring footer (can happen on all screen sizes) */
 	background: #1a1a1a;
 	color: #fff;
+	text-align: center;
 }
 
 footer :is(p, li) {
@@ -1655,14 +1656,6 @@ img#shielded-logo {
 
 
 /* Default - MD */
-
-footer {
-	text-align: center;
-}
-
-footer .footer-logo {
-	margin-bottom: 30px;
-}
 
 footer .footer-col-4 h3 {
 	margin-top:15px;
@@ -2803,6 +2796,10 @@ div.accordion-content + a.button {
     	display: none;
     }
         
+     footer .cols-3 .footer-logo{
+    	grid-column: 1/-1;
+    }
+        
     /* Columns */
         
     /* .kokako.columns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
@@ -3073,8 +3070,12 @@ div.accordion-content + a.button {
     	color: rgba(255,255,255,0.55);
     } */
         
-    footer .footer-logo {
-    	margin-bottom: 30px;
+    footer{
+    	text-align: left;
+    }
+        
+     footer .cols-3 .footer-logo{
+    	grid-column: 1/2;
     }
         
     footer.kokako .columns.cols-4{
