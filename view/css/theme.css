@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 14/06/2024 2:08.35am UTC
+Updated at 14/06/2024 3:56.17am UTC
 
 
 FILE STRUCTURE:
@@ -2040,9 +2040,16 @@ footer {
 	padding-right: 0;
 }
 
-.kokako.textAndImage.width-full .col.text{
+.kokako.textAndImage.width-full .col.text {
 	padding-left: var(--edge-padding);
 	padding-right: var(--edge-padding);
+}
+
+
+/* Colour Scheme & Padding none */
+
+.kokako.textAndImage.colour-scheme:is(.padding-none, .padding-bottom-none) .col.text{
+	padding-bottom: 45px ;
 }
 
 
@@ -2859,6 +2866,18 @@ div.accordion-content + a.button{
         
     .kokako.textAndImage.width-full.image-on-right .col.text{
     	padding-right: 0;
+    }
+        
+    .kokako.textAndImage:is(.padding-none, .padding-top-none) .col.text{
+    	padding-top: 60px;
+    }
+        
+    .kokako.textAndImage:is(.padding-none, .padding-bottom-none, .colour-scheme.padding-none, .colour-scheme.padding-bottom-none) .col.text{
+    	padding-bottom: 60px;
+    }
+        
+    .kokako.textAndImage .col.image{
+    	overflow-y: hidden; /* Prevent vertical scrollbar from appearing on section */
     }
     
 }
