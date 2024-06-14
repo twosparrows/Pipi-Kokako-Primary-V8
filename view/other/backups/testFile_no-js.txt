@@ -1,6 +1,6 @@
 NO-JSCSS Options Fields
 
-Updated at 13/06/2024 7:20.20am UTC
+Updated at 14/06/2024 2:08.36am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 array (
   'ID' => 0,
@@ -38,11 +38,11 @@ array (
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => 'section.kokako :is(h1, h2),
-section.kokako.textWithPhoto .row .image,
-section.kokako.multipleColumns .multiple-columns-col,
-section.kokako.multipleRows .multiple-rows-row,
-section.kokako.latestPosts .blog-grid.post {
+      'value' => '.kokako :is(h1, h2),
+.kokako.textAndImage .image,
+.kokako.columns .col,
+.kokako.rows .col,
+.kokako.posts .blog-grid.post {
 	opacity: 1 !important;
 	transform: translate(0) scale(1) !important;
 	transition: all [animation-duration] [animation-transition] !important;

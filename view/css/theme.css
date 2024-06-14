@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 13/06/2024 7:20.19am UTC
+Updated at 14/06/2024 2:08.35am UTC
 
 
 FILE STRUCTURE:
@@ -71,7 +71,7 @@ td{
 	font-family: Arial, sans-serif;
 	font-size: 1rem;
 	line-height: 1.7;
-	margin-bottom: 15px;
+	margin: 15px 0;
 	padding: 0;
 }
 
@@ -90,29 +90,37 @@ h6{
 	margin: 30px 0 15px;
 }
 
-:is(h1, h2, h3, h4, h5, h6):first-child {
+:is(h1, h2, h3, h4, h5, h6, p, li):first-child{
 	margin-top: 0;
 }
 
+/* :is(h1, h2, h3, h4, h5, h6, p, li):last-child{
+	margin-bottom: 0;
+} */
+
 h1,
-h2 {
+h2{
 	font-size: 2.5rem;
 }
 
-h3 {
+h3{
 	font-size: 1.5rem;
 }
 
 ol,
-ul {
-	margin-bottom: 15px;
+ul{
+	margin: 15px;
 }
 
-li {
+ul{
+	list-style-type: disc;
+}
+
+li{
 	margin: 5px 0 5px 30px;
 }
 
-blockquote {
+blockquote{
 	margin: 45px 0
 }
 
@@ -126,22 +134,22 @@ blockquote :is(h2, h3, h4, p, li){
 
 /* Text Alignment classes */
 
-.text-align-centre {
+.text-align-centre{
 	text-align: center;
 }
 
-.text-align-left {
+.text-align-left{
 	text-align: left;
 }
 
-.text-align-right {
+.text-align-right{
 	text-align: right;
 }
 
 
 /* Screen Readers only */
 
-.sr-only { /* From https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices/how-to-hide-visual-content?autoSkip=true&autoplay=true&resume=false&u=92735081 */
+.sr-only{ /* From https://www.linkedin.com/learning/simplifying-web-development-with-accessibility-best-practices/how-to-hide-visual-content?autoSkip=true&autoplay=true&resume=false&u=92735081 */
 	position: absolute;
 	clip: rect(1px, 1px, 1px, 1px);
 	clip-path: inset(50%);
@@ -155,13 +163,9 @@ blockquote :is(h2, h3, h4, p, li){
 
 /* Other elements */
 
-section.kokako .col-xs-12 > :is(h1, h2):first-child {
+/* section.kokako .col-xs-12 > :is(h1, h2):first-child {
 	margin-top: 0;
-}
-
-ul {
-	list-style-type: disc;
-}
+} */
 
 wbr:before { /* IE 8–11 (old) and Prince page pdf creator don’t recognize the "wbr" element, but a pseudo-element can achieve the same effect with IE 9+ and Prince (from https://css-tricks.com/better-line-breaks-for-long-urls/ ) */
 	content: "\200B";  /* Unicode zero width space */
@@ -171,18 +175,18 @@ wbr:before { /* IE 8–11 (old) and Prince page pdf creator don’t recognize th
 
 /* List items */
 
-ul.no-bullets li {
+ul.no-bullets li{
 	list-style-type: none;
-	margin: 0 0 10px 0;
+	/* margin: 0 0 10px 0; */
 }
 
-:is(ul.tick, ul.ticks, section.kokako.ul-ticks ul) li {
+:is(ul.tick, ul.ticks, .kokako.ul-ticks ul) li{
 	list-style-type: none;
 	position: relative;
-	margin: 0 0 10px 35px;
+	/* margin: 0 0 10px 35px; */
 }
 
-:is(ul.tick, ul.ticks, section.kokako.ul-ticks ul) li:before {
+:is(ul.tick, ul.ticks, section.kokako.ul-ticks ul) li:before{
 	position: absolute;
 	left: -35px;
 	font-family: "fa-select";
@@ -196,7 +200,7 @@ ul.no-bullets li {
 
 /* Small */
 
-small {
+small{
 	display: inline-block;
 	font-size: 0.923075rem; /* This works out to 16px (min for accessibility) at a base size of 13pt */
 	line-height: 1.2;
@@ -205,13 +209,13 @@ small {
 
 /* Extra text classes */
 
-p.extra-margin-top {
+/* p.extra-margin-top{
 	margin-top: 30px;
 }
 
-p.extra-margin-bottom {
+p.extra-margin-bottom{
 	margin-bottom: 30px;
-}
+} */
 
 .uppercase {
 	text-transform: uppercase;
@@ -224,78 +228,78 @@ p.extra-margin-bottom {
 
 /* ---- 3. Anchors ---- */
 
-a {
+a{
 	text-decoration: none;
-	border-bottom: 2px solid #1a1a1a;
+	border-bottom: 2px #1a1a1a solid;
 	-webkit-transform:translate3d(0,0,0); /* Fix for Google Chrome flickers on subsequent anchor elements - see https://maximelafarie.com/avoid-css-flickering */
 	transition: 0.3s ease all;
 }
 
 a:link,
-a:visited {
+a:visited{
 	text-decoration: none;
 	color: #1a1a1a;
-	border-bottom: 2px solid #1a1a1a;
+	border-bottom: 2px #1a1a1a solid;
 }
 
-a:focus {
-	outline: solid #f00 1px !important;
+a:focus{
+	outline: 1px #f00 solid !important;
 }
 
 a:focus,
 a:hover{
 	text-decoration: none;
 	color: #333;
-	border-bottom: 3px solid #1a1a1a;
+	border-bottom: 3px #1a1a1a solid;
 	transition: 0.3s ease all;
 }
 
-a:active {
+a:active{
 	color: #474747;
 	transition: 0.3s ease all;
 }
 
-:is(h1, h2, h3, h4, h5, h6) a {
+:is(h1, h2, h3, h4, h5, h6) a{
 	text-decoration: none;
 	border-bottom: none !important;
 }
 
-a.section-named-anchor {
+/* a.section-named-anchor{
 	border: none !important;
 	transition: none !important;
-}
+} */
 
 /* Social Media links (and additional icons) */
 
-ul.social-media-links {
+ul.social-media-links{
 	display: flex;
-	grid-gap:15px;
+	gap:15px;
 	list-style-type: none;
 }
 
 ul.social-media-links, /* Default */
-ul.social-media-links.align-centre,
-ul.social-media-links.align-center {
+ul.social-media-links.align-centre{
 	justify-content: center;
 }
 
-ul.social-media-links.align-left {
+ul.social-media-links.align-left{
 	justify-content: left;
 }
 
-ul.social-media-links.align-right {
+ul.social-media-links.align-right{
 	justify-content: right;
 }
 
-ul.social-media-links li {
-	margin-left: 0;
+ul.social-media-links li{
+	/* margin-left: 0;
 	margin-top: 0;
-	margin-bottom: 0;
+	margin-bottom: 0; */
+	margin: 0;
 }
 
 a.social-media-link,
 a.social-media-link:link,
-a.social-media-link:visited {
+a.social-media-link:visited{
 	color: #fff;
 	background: #1a1a1a;
 	font-size: 1.4rem;
@@ -306,31 +310,31 @@ a.social-media-link:visited {
 	align-items: center;
 	padding: 0;
 	border-radius: 50%;
-	margin-right: 10px;
+	/* margin-right: 10px; */
 	border-bottom: none !important;
 	transform: scale(1);
 	transition: 0.3s ease all;
 }
 
-a.social-media-link:last-of-type,
+/* a.social-media-link:last-of-type,
 a.social-media-link:link:last-of-type,
-a.social-media-link:visited:last-of-type {
+a.social-media-link:visited:last-of-type{
 	margin-right: 0;
-}
+} */
 
 a.social-media-link:focus,
-a.social-media-link:hover {
+a.social-media-link:hover{
 	color: #e6e6e6;
 	background: #333;
 	transform: scale(1.05);
 }
 
-a.social-media-link:active {
+a.social-media-link:active{
 	color: #d2d2d2;
 	background: #474747;
 }
 
-a.social-media-link i {
+a.social-media-link i{
 	/* position: relative;
 	top: 1px; */
 	display: flex;
@@ -341,18 +345,18 @@ a.social-media-link i {
 }
 
 a.social-media-link:focus i,
-a.social-media-link:hover i {
+a.social-media-link:hover i{
 	transform: scale(1.05);
 }
 
-.icon-deezer:before {
+.icon-deezer:before{
 	content: '\20';
 	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/deezer-black.svg);
 	background-size: 100% 100%;
 	white-space: pre;
 }
 
-.icon-kofi:before {
+.icon-kofi:before{
 	content: '\20';
 	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/kofi-black.svg);
 	background-size: 130% 130%;
@@ -360,19 +364,19 @@ a.social-media-link:hover i {
 	white-space: pre;
 }
 
-.icon-tiktok:before {
+.icon-tiktok:before{
 	content: '\20';
 	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/tiktok-white.svg);
 	background-size: 100% 100%;
 	white-space: pre;
 }
 
-.icon-amazon {
+.icon-amazon{
 	font-size: 90%;
 }
 
-.icon-soundcloud {
-	 font-size: 90%;
+.icon-soundcloud{
+	font-size: 90%;
 	position: relative;
 	left: -2px;
 }
@@ -380,19 +384,20 @@ a.social-media-link:hover i {
 
 /* New hover - adapted from https://codepen.io/Kseso/pen/bfzjC */
 
-*:after, *:before {
+*:after,
+*:before{
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
 
-a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow) {
+a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow){
 	position: relative;
 	outline: none;
 	text-decoration: none;
 	z-index: 1;
 }
 
-a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before{
 	content: "";
 	position: absolute;
 	width: 0;
@@ -406,7 +411,7 @@ a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a,
 }
 
 a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):focus:before,
-a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):hover:before {
+a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):hover:before{
 	visibility: visible;
 	-webkit-transform: translate3d(0,0,0);
 	width: 100%;
@@ -417,28 +422,28 @@ a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a,
 
 /* Miscellaneous anchors (named anchors etc) */
 
-a[name] {
+/* a[name]{
 	position: relative;
 	top: -70px;
-}
+} */
 
-a:is(.no-border, .no-underline) {
+a:is(.no-border, .no-underline){
 	border-bottom: none !important;
 }
 
 
 /* Disabled Anchors - only use this for WordPress menus, not recommended for other use. See https://css-tricks.com/how-to-disable-links/ */
 
-a.disabled,
-li.disabled > a:first-child {
+/* a.disabled,
+li.disabled > a:first-child{
 	cursor: default;
 	pointer-events: none;
-}
+} */
 
 
 /* ---- 4. Buttons ---- */
 
-button, input[type="submit"], a.button {
+button, input[type="submit"], a.button{
 	cursor: pointer;
 	display: inline-block;
 	color: #1a1a1a;
@@ -459,18 +464,18 @@ button, input[type="submit"], a.button {
 	transition: 0.3s ease all;
 }
 
-:is(button, input[type="submit"], a.button):focus {
+:is(button, input[type="submit"], a.button):focus{
 	box-shadow: none;
 }
 
 :is(button, input[type="submit"], a.button):focus,
-:is(button, input[type="submit"], a.button):hover {
+:is(button, input[type="submit"], a.button):hover{
 	color: #fff;
 	background: #e6e6e6;
 	transform: scale(1.05);
 }
 
-:is(button, input[type="submit"], a.button):active {
+:is(button, input[type="submit"], a.button):active{
 	background: #d2d2d2;
 }
 
@@ -509,24 +514,25 @@ button, input[type="submit"], a.button {
     background: rgba(255,255,255,0.3);
 }
 
-.kokako-buttons :is(button, input[type="submit"], a.button):first-child {
+/* .kokako-buttons :is(button, input[type="submit"], a.button):first-child {
 	margin-left: 0;
 }
 
 .kokako-buttons :is(button, input[type="submit"], a.button):last-child {
 	margin-right: 0;
-}
+} */
 
 
 /* ---- 5. Forms ---- */
 
-label {
+label{
 	font-family: Arial, sans-serif;
 	font-weight: bold;
 	width: 100%;
 }
 
-input, textarea {
+input,
+textarea{
 	font-family: Arial, sans-serif;
 	font-size: 1rem;
 	border: 1px solid rgba(26,26,26,0.2);
@@ -535,62 +541,62 @@ input, textarea {
 	padding: 6px;
 }
 
-textarea {
+textarea{
 	min-height: 40px;
 	height: 120px;
 }
 
-input[type="submit"] {
+input[type="submit"]{
 	width: initial;
 }
 
-:is(input, textarea):focus {
-	border: 1px solid #fff;
+:is(input, textarea):focus{
+	border: 1px #f00 solid;
 	box-shadow: 0 0 4px rgba(26,26,26,0.2);
 	outline: none;
 }
 
-input[type=checkbox] {
+input[type=checkbox]{
 	width: auto;
 }
 
 .wpcf7 input:not[type="submit"],
-.wpcf7 textarea {
+.wpcf7 textarea{
 	margin-top: 0.5rem;
 }
 
-.wpcf7 form.wpcf7-form p:last-of-type {
+.wpcf7 form.wpcf7-form p:last-of-type{
 	margin-top: 20px;
 }
 
-input[type=checkbox] {
+input[type=checkbox]{
 	width: auto;
 	margin-right: 15px;
 }
 
-.wpcf7-checkbox .wpcf7-list-item {
+.wpcf7-checkbox .wpcf7-list-item{
 	display: block;
 }
 
-.wpcf7-checkbox .wpcf7-list-item.first {
+.wpcf7-checkbox .wpcf7-list-item.first{
 	margin-top: 10px;
 }
 
-input[type=date] {
+input[type=date]{
 	max-width: 250px;
 }
 
-.wpcf7-checkbox .wpcf7-list-item {
+.wpcf7-checkbox .wpcf7-list-item{
 	margin-left: 0;
 }
 
-.wpcf7-checkbox .wpcf7-list-item-label {
+.wpcf7-checkbox .wpcf7-list-item-label{
 	display: inline-block;
 	padding-left: 30px;
 	margin-top: -25px;
 }
 
-.wpcf7-response-output {
+.wpcf7-response-output{
 	padding: 15px !important;
 	border-radius: 8px;
 }
@@ -598,73 +604,72 @@ input[type=date] {
 
 /* Search Form */
 
-form.searchform label {
+form.searchform label{
 	display: none;
 }
 
 
 /* ---- 6. Images / Iframes / Videos ---- */
 
-img, svg {
+img,
+svg{
 	max-width: 100%;
 	height: auto;
 	border: none;
 }
 
-/* Default - up to SM */
-
-:is(img, svg) :is(.alignnone, .alignleft, .alignright, .aligncenter, .aligncenter) {
+:is(img, svg):is(.alignnone, .alignleft, .alignright, .aligncentre, .aligncenter){
 	float: none;
 	display: block;
-	margin: 15px auto;
+	margin: 30px auto;
 }
 
 
 /* WP Captions */
 
-div.wp-caption {
+div.wp-caption{
 	margin-top: 45px;
 	margin-bottom: 45px;
 }
 
-.wp-caption.aligncenter {
+.wp-caption:is(.aligncentre, .aligncenter){
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.wp-caption.alignleft {
+.wp-caption.alignleft{
 	float: left;
 	text-align: center;
-	margin-right: 15px;
+	margin-right: 30px;
 }
 
-.wp-caption.alignright {
+.wp-caption.alignright{
 	float: right;
 	text-align: center;
-	margin-left: 15px;
+	margin-left: 30px;
 }
 
-.wp-caption p {
+.wp-caption p{
 	font-style: italic;
 }
 
 
 /* Lightbox Gallery overrides */
 
-body .fbx-rounded .fbx-inner {
+body .fbx-rounded .fbx-inner{
 	border: none;
 	border-radius: 0;
 }
 
-body .fbx-rounded :is(.fbx-item-current, .fbx-item-image, .fbx-prev, .fbx-item-next) {
+body .fbx-rounded :is(.fbx-item-current, .fbx-item-image, .fbx-prev, .fbx-item-next){
 	border-radius: 0;
 }
 
-body a.fbx-close {
+body a.fbx-close{
 	z-index: 1000000; /* Yes, really! It needs to be this high */
 }
 
-iframe:not([title=reCAPTCHA]) {
+iframe:not([title=reCAPTCHA]){
 	max-width: 100%;
 	margin-bottom: 15px;
 }
@@ -672,14 +677,14 @@ iframe:not([title=reCAPTCHA]) {
 
 /* Aspect Ratio iframes - see https://stackoverflow.com/questions/25302836/responsive-video-iframes-keeping-aspect-ratio-with-only-css */
 
-.aspect-ratio {
+.aspect-ratio{
 	position: relative;
 	width: 100%;
 	height: 0;
 	padding-bottom: 56.25%; /* The height of the item will now be 56.25% of the width. */
 }
 
-.aspect-ratio iframe { /* Adjust the iframe so it's rendered in the outer-width and outer-height of it's parent */
+.aspect-ratio iframe{ /* Adjust the iframe so it's rendered in the outer-width and outer-height of it's parent */
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -689,13 +694,13 @@ iframe:not([title=reCAPTCHA]) {
 
 /* Video Containers */
 
-.video-container { /* see https://stackoverflow.com/questions/35814653/automatic-height-when-embedding-a-youtube-video */
+.video-container{ /* see https://stackoverflow.com/questions/35814653/automatic-height-when-embedding-a-youtube-video */
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
 	height: 0;
 }
 
-.video-container iframe {
+.video-container iframe{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -714,9 +719,9 @@ footer{
 	overflow-x: hidden;
 }
 
-@supports (grid-area: auto) { /* Check this statement against the course */
+@supports (grid-area: auto){
 
-	body {
+	body{
 		min-height: 100vh; /* To position footer to bottom of screen if content too short? */
 		display: grid;
 		grid-template-columns: auto;
@@ -762,7 +767,7 @@ footer{
 }
 
 .kokako,
-.kokako.width-full {
+.kokako.width-full{
 	width: 100%;
 	max-width: 100%; /* This is also the default for .width-full */
 }
@@ -775,28 +780,37 @@ footer{
 }
 
 .kokako .contain,
-.kokako.width-full .contain {
+.kokako.width-full .contain{
 	padding-left: var(--edge-padding);
 	padding-right: var(--edge-padding);
 	width: 100%;
 	max-width: 100%; /* This is also the default for .width-full */
 }
 
-.kokako.width-contain .contain {
+.kokako.width-contain .contain{
 	width: calc( 1400px + ( var(--edge-padding) * 2 ) );
 }
 
-.kokako.width-contain .contain-text{
+.kokako.width-contain .text-full{
+	width: 100%;
+	max-width: 100%;
+}
+
+.kokako.width-contain .text-contain{
 	width: 100%;
 	max-width: 950px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+.kokako :is(.text-contain, .text-full) *:not(h1, h2, h3, h4):last-child{
+	margin-bottom: 0;
+}
+
 
 /* Columns - NB: Proportional Columns set up below, under MD & Above */
 
-.kokako .columns {
+.kokako .columns{
 	display: grid;
 	gap: 45px 45px;
 }
@@ -814,15 +828,15 @@ footer{
 	display: none;
 }
 
-.kokako {
+.kokako{
 	border: 10px #f00 solid;
 }
 
-.kokako .contain {
+.kokako .contain{
 	border: 10px #0f0 solid;
 }
 
-.kokako .image {
+.kokako .image{
 	border: 10px #00f solid;
 } */
 
@@ -844,7 +858,7 @@ footer{
 .hide-lg,
 .hide-xl,
 .hide-xxl,
-.hide-nav-expand{/* At XS size, these are not yet hidden */
+.hide-nav-expand{ /* At XS size, these are not yet hidden */
 	display: block;
 }
 
@@ -852,19 +866,19 @@ footer{
 /* XS size */
 
 .display,
-.display-xs {
+.display-xs{
 	display: block;
 }
 
 .hide,
-.hide-xs {
+.hide-xs{
 	display: none;
 }
 
 
 /* ---- 8. Header ---- */
 
-header#site-header.kokako {
+header#site-header.kokako{
 	position: relative; /* fixed; */
 	left: 0;
 	top: 0;
@@ -947,7 +961,7 @@ body.header-fixed.logged-in.admin-bar header {
 	top: 0;
 } */
 
-header .header-logo {
+header .header-logo{
 	/* height: 140px; /* For positioning drop down menu correctly *
 	width: 185px; /* 166px is width of logo at normal size (logo will resize to this) *
 	display: flex;
@@ -1142,7 +1156,7 @@ header.scrolled nav.navbar {
 
 /* Skip link */
 
-.skip-link {
+.skip-link{
 	position: absolute;
 	left: 0%;
 	color: #fff;
@@ -1154,51 +1168,34 @@ header.scrolled nav.navbar {
 	transition: 0.3s ease all;
 }
 
-.skip-link:focus-within {
+.skip-link:focus-within{
 	z-index: 10001; /* Must be able to sit above logo */
 	transform: translateY(0%);
 }
 
-.skip-link :is(a, a:link, a:visited) {
+.skip-link :is(a, a:link, a:visited){
 	color: #fff;
 }
 
-.skip-link a:hover {
+.skip-link a:hover{
 	color: #e6e6e6;
 }
 
-.skip-link a:active {
+.skip-link a:active{
 	color: #d2d2d2;
 }
 
 
-/* FOR NAV TESTING *
+/* Logged in *
 
-header nav.navbar {
-	border: 1px #00f solid;
-}
-
-header .logo {
-	border: 1px #f00 solid;
-}
-
-header .header-widget {
-	border: 1px #0f0 solid;
-}
-
-* END: FOR NAV TESTING */
-
-
-/* Logged in */
-
-body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative */
+body.header-fixed.logged-in.admin-bar header { /* Not required when header is positioned relative *
 	top: 32px;
-}
+} */
 
 
 /* ---- 9. Nav ---- */
 
-.hamburger {
+.hamburger{
 	padding: 15px; /* Was 15px 15px 5px 15px; */
 	display: flex;
 	align-items: center;
@@ -1215,36 +1212,36 @@ body.header-fixed.logged-in.admin-bar header { /* Not required when header is po
 	overflow: visible;
 }
 
-button.hamburger:focus {
+button.hamburger:focus{
 	outline: none;
 }
 
-button.hamburger:active {
+button.hamburger:active{
 	background: transparent;
 }
 
-.hamburger:hover {
+.hamburger:hover{
 	opacity: 0.7;
 }
 
-.hamburger:not(.collapsed):hover {
+.hamburger:not(.collapsed):hover{
 	opacity: 0.7;
 }
 
 .hamburger:not(.collapsed) .hamburger-inner,
 .hamburger:not(.collapsed) .hamburger-inner::before,
-.hamburger:not(.collapsed) .hamburger-inner::after {
+.hamburger:not(.collapsed) .hamburger-inner::after{
 	background-color: #fff;
 }
 
-.hamburger-box {
+.hamburger-box{
 	width: 40px;
 	height: 24px;
 	display: inline-block;
 	position: relative;
 }
 
-.hamburger-inner {
+.hamburger-inner{
 	display: block;
 	top: 50%;
 	margin-top: -2px;
@@ -1252,7 +1249,7 @@ button.hamburger:active {
 
 .hamburger-inner,
 .hamburger-inner::before,
-.hamburger-inner::after {
+.hamburger-inner::after{
 	width: 40px;
 	height: 4px;
 	background-color: #fff;
@@ -1264,41 +1261,42 @@ button.hamburger:active {
 }
 
 .hamburger-inner::before,
-.hamburger-inner::after {
+.hamburger-inner::after{
 	content: "";
 	display: block;
 }
 
-.hamburger-inner::before {
+.hamburger-inner::before{
 	top: -10px;
 }
 
-.hamburger-inner::after {
+.hamburger-inner::after{
 	bottom: -10px;
 }
 
-.hamburger--3dx .hamburger-box {
+.hamburger--3dx .hamburger-box{
 	perspective: 80px;
 }
 
-.hamburger--3dx .hamburger-inner {
+.hamburger--3dx .hamburger-inner{
 	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.hamburger--3dx .hamburger-inner::before, .hamburger--3dx .hamburger-inner::after {
+.hamburger--3dx .hamburger-inner::before,
+.hamburger--3dx .hamburger-inner::after{
 	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.hamburger--3dx:not(.collapsed) .hamburger-inner {
+.hamburger--3dx:not(.collapsed) .hamburger-inner{
 	background-color: transparent !important;
 	transform: rotateY(180deg);
 }
 
-.hamburger--3dx:not(.collapsed) .hamburger-inner::before {
+.hamburger--3dx:not(.collapsed) .hamburger-inner::before{
 	transform: translate3d(0, 10px, 0) rotate(45deg);
 }
 
-.hamburger--3dx:not(.collapsed) .hamburger-inner::after {
+.hamburger--3dx:not(.collapsed) .hamburger-inner::after{
 	transform: translate3d(0, -10px, 0) rotate(-45deg);
 }
 
@@ -1378,7 +1376,7 @@ nav .navbar-collapse {
 	width: calc(100% + 60px);
 } */
 
-nav ul li :is(a, a:link, a:visited) {
+nav ul li :is(a, a:link, a:visited){
 	color: #fff;
 	display: block;
 	text-align: center;
@@ -1389,17 +1387,17 @@ nav ul li :is(a, a:link, a:visited) {
 }
 
 nav ul li a:hover,
-nav ul li.dropdown.show > a {
+nav ul li.dropdown.show > a{
 	color: #e6e6e6;
 	transition: 0.3s ease all;
 }
 
-nav ul li a:active {
+nav ul li a:active{
 	color: #d2d2d2;
 	transition: 0.3s ease all;
 }
 
-nav a.nav-link:before {
+nav a.nav-link:before{
 	background: #e6e6e6;
 }
 
@@ -1479,7 +1477,7 @@ nav a.dropdown-item:before {
 
 /* ---- 10. Footer ---- */
 
-footer {
+footer{
 	position: relative;
 	padding: 90px 0; /* Ensure bottom padding prevents Google reCaptcha from obscuring footer (can happen on all screen sizes) */
 	background: #1a1a1a;
@@ -1487,131 +1485,132 @@ footer {
 	text-align: center;
 }
 
-footer :is(p, li) {
+footer :is(p, li){
 	color: #fff;
 	font-size: 0.9rem;
 }
 
-footer.bottom-align {
+footer.bottom-align{
 	position: absolute;
 	bottom: 0;
 }
 
-footer .footer-logo img {
+footer .footer-logo img{
 	width: 255px;
+	margin-top: 0;
 }
 
-footer h4 {
+footer h4{
 	text-transform: uppercase;
 }
 
-footer p:is(.align-left, .align-right) {
+footer p:is(.align-left, .align-right){
 	float: left;
 	width: 50%;
 }
 
-footer ul.sub-menu {
+footer ul.sub-menu{
 	margin: 0;
 }
 
-footer li {
+footer li{
 	list-style-type: none;
 	margin-left: 0;
-	margin-top: 10px;
+	margin-bottom:10px;
 }
 
-footer ul.sub-menu li {
+footer ul.sub-menu li{
 	text-indent: 20px;
-	margin-top: 0;
+	margin-bottom: 0;
 }
 
-footer ul li:first-child {
-	margin-top: 0
+footer ul li:last-child{
+	margin-bottom: 0;
 }
 
-footer li a {
+footer li a{
 	border-bottom: none;
 	text-transform: uppercase;
 	font-weight: bold;
 }
 
-footer ul.sub-menu li a {
+footer ul.sub-menu li a{
 	text-transform: capitalize;
 	font-weight: normal;
 }
 
-footer :is(a, a:link, a:visited) {
+footer :is(a, a:link, a:visited){
 	display: inline-block;
 	color: #fff;
 	text-decoration: none;
 	border-bottom: none;
 }
 
-footer a:hover {
+footer a:hover{
 	color: #e6e6e6;
 	border-bottom: none;
 }
 
-footer a:active {
+footer a:active{
 	color: #d2d2d2;
 	border-bottom: none;
 }
 
-footer a:before {
+footer a:before{
 	background: #e6e6e6 !important; /* !important is required to override :not() statement */
 }
 
-footer a.no-underline:hover img {
+footer a.no-underline:hover img{
 	opacity: 1;
 	transition: 0.3s ease all;
 }
 
-footer a.no-underline:hover img {
+footer a.no-underline:hover img{
 	opacity: 0.95;
 	transition: 0.3s ease all;
 }
 
-footer .footer-col-4 a {
+/* footer .footer-col-4 a{
 	white-space: nowrap;
-}
+} */
 
 
 /* Social Media Links */
 
-footer a.social-media-link {
+footer a.social-media-link{
 	font-size: 1.4rem;
 	padding: 0 10px;
 }
 
-footer :is(a.social-media-link, a.social-media-link:link, a.social-media-link:visited) {
+footer :is(a.social-media-link, a.social-media-link:link, a.social-media-link:visited){
 	color: #1a1a1a !important;
 	background: #fff !important;
 }
 
-footer a.social-media-link:hover {
+footer a.social-media-link:hover{
 	color: #1a1a1a !important;
 	background: #e6e6e6 !important;
 }
 
-footer a.social-media-link:active {
+footer a.social-media-link:active{
 	color: #1a1a1a !important;
 	background: #d2d2d2 !important;
 }
 
 footer a.social-media-link .icon-deezer:before,
-.icon-deezer.invert:before {
+.icon-deezer.invert:before{
 	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/deezer-black.svg);
 }
 
 footer a.social-media-link .icon-tiktok:before,
-.icon-tiktok.invert:before {
+.icon-tiktok.invert:before{
 	background-image: url(../../../kokako-by-two-sparrows/fonts/other-icons/tiktok-black.svg);
 }
 
 
 /* Last column of Footer */
 
-footer .footer-col-4 h3 {
+/* footer .footer-col-4 h3{
 	margin: 0;
 	font-size: 0.9rem;
 	font-weight: normal;
@@ -1625,7 +1624,7 @@ footer .footer-col-4 h3 {
 
 /* Sub footer */
 
-#subfooter .col-sm-12:first-of-type .widgetArea .textwidget {
+/* #subfooter .col-sm-12:first-of-type .widgetArea .textwidget {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -1633,7 +1632,7 @@ footer .footer-col-4 h3 {
 
 #subfooter img {
 	margin: 15px;
-}
+} */
 
 img#shielded-logo {
 	width: 30px;
@@ -1645,23 +1644,23 @@ img#shielded-logo {
 }
 
 
-/* Default - MD */
+/* Default - MD *
 
 footer .footer-col-4 h3 {
 	margin-top:15px;
+} */
+
+footer img#shielded-logo{
+	margin-left: auto;
+	margin-right: auto;
 }
 
-footer img#shielded-logo {
-	margin-left: auto !important;
-	margin-right: auto !important;
-}
-
-footer #subfooter span.footer-copyright-separator:before {
+footer #subfooter span.footer-copyright-separator:before{
 	content: "\A";
 	white-space: pre;
 }
 
-footer #subfooter span.footer-copyright-separator { /* Hide vertical bar and make it a line break instead */
+footer #subfooter span.footer-copyright-separator{ /* Hide vertical bar and make it a line break instead */
 	display: block;
 	z-index: -1000;
 	opacity: 0;
@@ -1672,196 +1671,203 @@ footer #subfooter span.footer-copyright-separator { /* Hide vertical bar and mak
  	user-select: none;
 }
 
-footer img.alignleft {
+footer img.alignleft{
 	float: none;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-footer ul.menu {
+footer ul.menu{
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
-footer ul.menu > li > a {
+footer ul.menu > li > a{
 	display: inline-block;
 	margin-top: 15px;
 }
 
-footer ul.sub-menu li {
+footer ul.sub-menu li{
 	text-indent: 0;
 }
 
 
-/* Default - SM */
+/* Default - SM *
 
-footer p:is(.align-left, .align-right) {
+footer p:is(.align-left, .align-right){
 	float: none;
 	width: 100%;
 	text-align: left;
 }
 
 
-/* Default - XS */
+/* Default - XS *
 
 footer {
     padding-bottom: 200px;
-}
+} */
 
 
 /* ---- 11. Kokako Sections ---- */
 
-.kokako {
+.kokako{
 	position: relative; /* Required for image overlays, hooks etc */
 	padding: 90px 0;
 	overflow-x: hidden; /* Prevents animation beginning position from creating a scroll bar at bottom of window. Override as required (but check responsivity) */
 }
 
-.kokako .internalWrap {
+/* .kokako .internalWrap{
 	padding: 45px 25px 90px;
-}
+} */
 
-.kokako .contain > *:first-child {
+.kokako .contain > *:first-child{
 	margin-top: 0;
 }
 
 .kokako .contain > *:last-child,
-.kokako .contain:not(.columns) > *:last-child > * { /* This also catches if the last item is a container with items inside, eg. .kokako-buttons */
+.kokako .contain:not(.columns) > *:last-child > *{ /* This also catches if the last item is a container with items inside, eg. .kokako-buttons */
 	margin-bottom: 0;
 }
 
 
 /* Spacing */
 
+/*
 .kokako :is(.multiple-columns-col , .internalWrap) > *:first-child,
 .kokako :is(.multiple-columns-col , .internalWrap) > *.hide:first-child + *,
-.kokako :is(.multiple-columns-col , .internalWrap) > p:first-child > img:first-child { /* First child, or second child if the first is hidden, or img within first child p tag */
+.kokako :is(.multiple-columns-col , .internalWrap) > p:first-child > img:first-child{ /* First child, or second child if the first is hidden, or img within first child p tag */
 	margin-top: 0;
 }
 
-.kokako .internalWrap > *:last-child {
+.kokako .internalWrap > *:last-child{
 	margin-bottom: 0;
 }
+*/
 
-.kokako:is(.padding-top-none, .padding-none) {
+/* Padding classes */
+
+.kokako:is(.padding-top-none, .padding-none){
 	padding-top: 0 !important;
 }
 
-.kokako:is(.padding-bottom-none, .padding-none) {
+.kokako:is(.padding-bottom-none, .padding-none){
 	padding-bottom: 0 !important;
 }
 
-.kokako:is(.padding-top-small, .padding-small) {
+.kokako:is(.padding-top-xs, .padding-xs){ /* Formerly "small" */
 	padding-top: 45px !important;
 }
 
-.kokako:is(.padding-bottom-small, .padding-small) {
+.kokako:is(.padding-bottom-xs, .padding-xs){
 	padding-bottom: 45px !important;
 }
 
-.kokako:is(.padding-top-reduced, .padding-reduced) {
+.kokako:is(.padding-top-sm, .padding-sm){ /* Formerly "reduced" */
 	padding-top: 68px !important;
 }
 
-.kokako:is(.padding-bottom-reduced, .padding-reduced) {
+.kokako:is(.padding-bottom-sm, .padding-sm){
 	padding-bottom: 68px !important;
 }
 
-.kokako:is(.padding-top-standard, .padding-standard) {
+.kokako:is(.padding-top-md, .padding-md){ /* Formerly "standard" */
 	padding-top: 90px !important;
 }
 
-.kokako:is(.padding-bottom-standard, .padding-standard) {
+.kokako:is(.padding-bottom-md, .padding-md){
 	padding-bottom: 90px !important;
 }
 
-.kokako:is(.padding-top-large, .padding-large) {
+.kokako:is(.padding-top-lg, .padding-lg){ /* Formerly "large" */
 	padding-top: 135px !important;
 }
 
-.kokako:is(.padding-bottom-large, .padding-large) {
+.kokako:is(.padding-bottom-lg, .padding-lg){
 	padding-bottom: 135px !important;
 }
 
-.kokako:is(.padding-top-extra-large, .padding-extra-large) {
+.kokako:is(.padding-top-xl, .padding-xl){ /* Formerly "extra-large" */
 	padding-top: 180px !important;
 }
 
-.kokako:is(.padding-bottom-extra-large, .padding-extra-large) {
+.kokako:is(.padding-bottom-xl, .padding-xl){
 	padding-bottom: 180px !important;
 }
 
-.kokako:is(.margin-top-none, .margin-none) {
+
+/* Margin classes */
+
+.kokako:is(.margin-top-none, .margin-none){
 	margin-top: 0 !important;
 }
 
-.kokako:is(.margin-bottom-none, .margin-none) {
+.kokako:is(.margin-bottom-none, .margin-none){
 	margin-bottom: 0 !important;
 }
 
-.kokako:is(.margin-top-small, .margin-small) {
+.kokako:is(.margin-top-xs, .margin-xs){ /* Formerly "small" */
 	margin-top: 45px !important;
 }
 
-.kokako:is(.margin-bottom-small, .margin-small) {
+.kokako:is(.margin-bottom-xs, .margin-xs){
 	margin-bottom: 45px !important;
 }
 
-.kokako:is(.margin-top-reduced, .margin-reduced) {
+.kokako:is(.margin-top-sm, .margin-sm){ /* Formerly "reduced" */
 	margin-top: 68px !important;
 }
 
-.kokako:is(.margin-bottom-reduced, .margin-reduced) {
+.kokako:is(.margin-bottom-sm, .margin-sm){
 	margin-bottom: 68px !important;
 }
 
-.kokako:is(.margin-top-standard, .margin-standard) {
+.kokako:is(.margin-top-md, .margin-md){ /* Formerly "standard" */
 	margin-top: 90px !important;
 }
 
-.kokako:is(.margin-bottom-standard, .margin-standard) {
+.kokako:is(.margin-bottom-md, .margin-md){
 	margin-bottom: 90px !important;
 }
 
-.kokako:is(.margin-top-large, .margin-large) {
+.kokako:is(.margin-top-lg, .margin-lg){ /* Formerly "large" */
 	margin-top: 135px !important;
 }
 
-.kokako:is(.margin-bottom-large, .margin-large) {
+.kokako:is(.margin-bottom-lg, .margin-lg){
 	margin-bottom: 135px !important;
 }
 
-.kokako:is(.margin-top-extra-large, .margin-extra-large) {
+.kokako:is(.margin-top-xl, .margin-xl){ /* Formerly "extra-large" */
 	margin-top: 180px !important;
 }
 
-.kokako:is(.margin-bottom-extra-large, .margin-extra-large) {
+.kokako:is(.margin-bottom-xl, .margin-xl){
 	margin-bottom: 180px !important;
 }
 
-.kokako .kokako-buttons {
+.kokako .kokako-buttons{
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	grid-gap: 15px;
+	gap: 15px;
 	justify-content: left; /* Default, also for .align-left */
 	align-items: center;
 	min-height: 52px;
 }
 
-.kokako:not(.multipleRows) .kokako-buttons {
+.kokako:not(.multipleRows) .kokako-buttons{
 	margin-top: 30px;
 }
 
 .kokako .kokako-buttons.buttons-align-centre,
 .kokako.text-align-centre .kokako-buttons,
-.kokako:is(.text-align-centre, .text-align-right) .kokako-buttons.buttons-align-centre { /* Button alignment has a higher priority than section text alignment */
+.kokako:is(.text-align-centre, .text-align-right) .kokako-buttons.buttons-align-centre{ /* Button alignment has a higher priority than section text alignment */
 	justify-content: center;
 }
 
 .kokako .kokako-buttons.buttons-align-right,
 .kokako.text-align-right .kokako-buttons,
-.kokako:is(.text-align-left, .text-align-centre) .kokako-buttons.buttons-align-right {
+.kokako:is(.text-align-left, .text-align-centre) .kokako-buttons.buttons-align-right{
 	justify-content: right;
 }
 
@@ -1869,13 +1875,20 @@ footer {
 	margin: 0 !important;
 }
 
+.footnote{
+	font-size: 80%;
+	font-style: italic;
+} 
 
-/* Default - SM */
-.kokako .cta-buttons:is(.buttons-align-centre, .buttons-align-left, .buttons-align-right) {
-	flex-direction: column;
+
+/* Hide section - NB: this is a fallback, as the section should actually not be added to the code via loop_acf.php */
+
+.kokako.hide-section{
+	display: none !important;
 }
 
-.kokako:not(.colour-scheme) :is(.container, .container-fluid) .row:not(.no-background) {
+
+/* .kokako:not(.colour-scheme) :is(.container, .container-fluid) .row:not(.no-background) {
 	background: #fff;
 }
 
@@ -1899,31 +1912,19 @@ footer {
 .kokako .row:last-child.extra-row-padding,
 .kokako .row.extra-row-padding-bottom {
 	padding-bottom: 40px;
-} */
+} *
 
 /* .center-block, .centre-block {
 	display: block;
 	float: none;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.footnote {
-	font-size: 80%;
-	font-style: italic;
 } */
-
-
-/* Hide section - NB: this is a fallback, as the section should actually not be added to the code via loop_acf.php */
-
-.kokako.hide-section {
-	display: none !important;
-}
 
 
 /* Columns */
 
-/* .kokako.columns .contain { /* Default, also for .cols-1 *
+/* .kokako.columns .contain{ /* Default, also for .cols-1 *
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 45px 45px;
@@ -1968,7 +1969,7 @@ footer {
 	font-size: 3rem;
 }
 
-.kokako.heading :is(h1 + h2, h2+ h3){ /* Subheading */
+.kokako.heading :is(.text-contain + .text-contain, .text-full + .text-full) :is(h2, h3){ /* Subheading */
 	font-size: 2rem;
 }
 
@@ -1993,10 +1994,9 @@ footer {
 }
 
 
-
 /* Text */
 
-.kokako.text :is(h1, h2) { /* in case of floated images */
+.kokako.text :is(h1, h2){ /* in case of floated images */
 	clear: both;
 }
 
@@ -2048,14 +2048,14 @@ footer {
 
 /* ---- 12. Colour Schemes ---- */
 
-section.kokako.colour-scheme :is(.container, .container-fluid) .row {
+/* section.kokako.colour-scheme :is(.container, .container-fluid) .row {
 	background: none;
-}
+} */
 
 
 /* Image overlays base */
 
-section.kokako.background-overlay .image-overlay { /* Note that the background colour classes themselves are created dynamically by ticking the "Add Image Overlay Colours" option under Elements CSS > Colours, and are added automatically to the CSS at the start of the Colour Schemes section */
+section.kokako.background-overlay .image-overlay{ /* Note that the background colour classes themselves are created dynamically by ticking the "Add Image Overlay Colours" option under Elements CSS > Colours, and are added automatically to the CSS at the start of the Colour Schemes section */
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -2068,7 +2068,7 @@ section.kokako.background-overlay .image-overlay { /* Note that the background c
 
 /* Remove background if section already has a background image (otherwise interferes with background blend modes) */
 
-section.kokako.colour-scheme.has-background-image {
+section.kokako.colour-scheme.has-background-image{
 	background: none;
 }
 
@@ -2124,7 +2124,7 @@ section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button):a
 }
 
 /* Light Image Overlay (option always available) */
-section.kokako.background-overlay.background-overlay-light .image-overlay {
+section.kokako.background-overlay.background-overlay-light .image-overlay{
 	background: #fff;
 }
 
@@ -2180,7 +2180,7 @@ section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button):ac
 }
 
 /* Dark Image Overlay (option always available) */
-section.kokako.background-overlay.background-overlay-dark .image-overlay {
+section.kokako.background-overlay.background-overlay-dark .image-overlay{
 	background: #1a1a1a;
 }
 
@@ -2285,14 +2285,15 @@ section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):a
 
 /* ---- 13. Blog ---- */
 
-body:is(.blog, .archive, .single) {
+body:is(.blog, .archive, .single){
 	background: #fff;
 }
 
-body:is(.blog, .archive) section.kokako.pageBanner.section1 {
+/* body:is(.blog, .archive) section.kokako.pageBanner.section1 {
 	min-height: 450px;
-}
+} */
 
+/*
 body:is(.blog, .archive) .blog-grid h4.breadcrumbs {
 	margin: 15px 0 0;
 }
@@ -2318,7 +2319,7 @@ body.archive h1 + h4.breadcrumbs {
 
 /* body.blog .row.extra-row-padding-top {
 	padding-top: 45px;
-} */
+} *
 
 body.blog section.kokako.latestPosts .row .blog-grid.post:first-of-type h3 {
 	margin-top: 30px;
@@ -2340,11 +2341,11 @@ body.blog section.latestPosts .row.row-content .col-xs-12 {
 	margin-bottom: 75px;
 }
 
-a.read-more-link { /* Fix for hover not appearing when the link is on it's own line */
+a.read-more-link { /* Fix for hover not appearing when the link is on it's own line *
 	display: inline-block;
-}
+} */
 
-body.single :is(h1, h2, h3, h4, h5, h6) {
+/* body.single :is(h1, h2, h3, h4, h5, h6) {
 	clear: both;
 }
 
@@ -2365,7 +2366,7 @@ h4.breadcrumbs {
 
 body.single .post-meta + img {
 	margin-bottom: 30px;
-}
+} */
 
 
 /* ---- 14. Shop ---- */
@@ -2376,169 +2377,169 @@ body.single .post-meta + img {
 
 /* ---- 16. Animations ---- */
 
-section.kokako :is(h1, h2),
-section.kokako.textWithPhoto .row .image,
-section.kokako.multipleColumns .multiple-columns-col,
-section.kokako.multipleRows .multiple-rows-row,
-section.kokako.latestPosts .blog-grid.post {
+.kokako :is(h1, h2),
+.kokako.textAndImage .image,
+.kokako.columns .col,
+.kokako.rows .col,
+.kokako.posts .blog-grid.post{
 	opacity: 0.5;
 	transform: scale(0.95);
 }
 
-section.kokako:not(.textWithPhoto) :is(h1, h2) {
+.kokako:not(.textAndImage) :is(h1, h2){
 	transform: translateY(-20px) scale(0.95);
 }
 
-section.kokako.textWithPhoto .row .text :is(h1,  h2) {
+.kokako.textAndImage .text :is(h1,  h2){
 	transform: translateX(20px) scale(0.95);
 }
 
-section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2) {
+.kokako.textAndImage.image-on-right .text :is(h1, h2){
 	transform: translateX(-20px) scale(0.95);
 }
 
-section.kokako.textWithPhoto .row .image {
+.kokako.textAndImage .image{
 	transform: translateX(-20px);
 }
 
-section.kokako.textWithPhoto .row.flex-row-reverse .image {
+.kokako.textAndImage .image-on-right .image{
 	transform: translateX(20px);
 }
 
-section.kokako:not(.textWithPhoto) :is(h1, h2).appear,
-section.kokako.multipleColumns .col-xs-12.appear :is(h1, h2) {
+.kokako:not(.textAndImage) :is(h1, h2).appear,
+.kokako.columns .col.appear :is(h1, h2){
 	transform: translateY(-20px) scale(0.95);
 	animation: slideDownScale 1s ease-out forwards;
 }
 
-section.kokako.textWithPhoto .row .text :is(h1, h2).appear {
+.kokako.textAndImage .text :is(h1, h2).appear{
 	transform: translateX(20px) scale(0.95);
 	animation: slideLeftScale 1s ease-out forwards;
 }
 
-section.kokako.textWithPhoto .row.flex-row-reverse .text :is(h1, h2).appear {
+.kokako.textAndImage.image-on-right .text :is(h1, h2).appear{
 	transform: translateX(-20px) scale(0.95);
 	animation: slideRightScale 1s ease-out forwards;
 }
 
-section.kokako.textWithPhoto .row .image.appear {
+.kokako.textAndImage .image.appear{
 	transform: translateX(-20px);
 	animation: slideRight 1s ease-out forwards;
 }
 
-section.kokako.textWithPhoto .row.flex-row-reverse .image.appear {
+.kokako.textAndImage.image-on-right .image.appear{
 	transform: translateX(20px);
 	animation: slideLeft 1s ease-out forwards;
 }
 
-section.kokako.multipleColumns .multiple-columns-col.appear,
-section.kokako.multipleRows .multiple-rows-row.appear,
-section.kokako.latestPosts .blog-grid.post.appear {
+.kokako.columns .col.appear,
+.kokako.rows .col.appear,
+.kokako.posts .blog-grid.post.appear{
 	transform: scale(0.95);
 	animation: scale 1s ease-out forwards;
 }
 
-@keyframes slideUpScale {
-	from {
+@keyframes slideUpScale{
+	from{
 		transform: translateY(20px) scale(0.95);
 		opacity: 0.5;
 	}
-	to {
+	to{
 		transform: translateY(0) scale(1);
 		opacity: 1;
 	}
 }
 
-@keyframes slideRightScale {
-	from {
+@keyframes slideRightScale{
+	from{
 		transform: translateX(-20px) scale(0.95);
 		opacity: 0.5;
 	}
-	to {
+	to{
 		transform: translateX(0) scale(1);
 		opacity: 1;
 	}
 }
 
-@keyframes slideDownScale {
-	from {
+@keyframes slideDownScale{
+	from{
 		transform: translateY(-20px) scale(0.95);
 		opacity: 0.5;
 	}
-	to {
+	to{
 		transform: translateY(0) scale(1);
 		opacity: 1;
 	}
 }
 
-@keyframes slideLeftScale {
-	from {
+@keyframes slideLeftScale{
+	from{
 		transform: translateX(20px) scale(0.95);
 		opacity: 0.5;
 	}
-	to {
+	to{
 		transform: translateX(0) scale(1);
 		opacity: 1;
 	}
 }
 
-@keyframes slideUp {
-	from {
+@keyframes slideUp{
+	from{
 		transform: translateY(20px);
 		opacity: 0.5;
 	}
-	to {
+	to{
 		transform: translateY(0);
 		opacity: 1;
 	}
 }
 
-@keyframes slideRight {
-	from {
+@keyframes slideRight{
+	from{
 		transform: translateX(-20px);
 		opacity: 0.5;
 	}
-	to {
+	to{
 		transform: translateX(0);
 		opacity: 1;
 	}
 }
 
-@keyframes slideDown {
-	from {
+@keyframes slideDown{
+	from{
 		transform: translateY(-20px);
 		opacity: 0.5;
 	}
-	to {
+	to{
 		transform: translateY(0);
 		opacity: 1;
 	}
 }
 
-@keyframes slideLeft {
-	from {
+@keyframes slideLeft{
+	from{
 		transform: translateX(20px);
 		opacity: 0.5;
 	}
-	to {
+	to{
 		transform: translateX(0);
 		opacity: 1;
 	}
 }
 
-@keyframes scale {
-	from {
+@keyframes scale{
+	from{
 		transform: scale(0.95);
 		opacity: 0.5;
 	}
-	to {
+	to{
 		transform: scale(1);
 		opacity: 1;
 	}
 }
 
-@keyframes clear {
-	to {
+@keyframes clear{
+	to{
 		transform: none;
 		opacity: 1;
 	}
@@ -2549,7 +2550,7 @@ section.kokako.latestPosts .blog-grid.post.appear {
 
 /* Accordions */
 
-h4.accordion-toggle {
+h4.accordion-toggle{
 	position: relative;
 	color: #fff;
 	background: #1a1a1a;
@@ -2561,11 +2562,11 @@ h4.accordion-toggle {
 	user-select: none;
 }
 
-h4.accordion-toggle:hover {
+h4.accordion-toggle:hover{
 	cursor: pointer;
 }
 
-h4.accordion-toggle i.icon-plus {
+h4.accordion-toggle i.icon-plus{
 	position: absolute;
 	right: 20px;
 	top: 10px;
@@ -2573,46 +2574,46 @@ h4.accordion-toggle i.icon-plus {
 	transition: all 0.4s ease;
 }
 
-h4.accordion-toggle i.icon-plus:before {
+h4.accordion-toggle i.icon-plus:before{
 	transform: rotate(0deg);
 	transition: all 0.4s ease;
 }
 
-h4.accordion-toggle i.icon-plus.open:before {
+h4.accordion-toggle i.icon-plus.open:before{
 	transform: rotate(45deg);
 	transition: all 0.4s ease;
 }
 
-div.accordion-content {
+div.accordion-content{
 	display: none;
 	padding-top: 15px;
 	overflow: hidden; /* This causes any floated elements within to be wrapped - see https://stackoverflow.com/questions/2614619/how-to-make-a-div-expand-vertically-to-wrap-the-content-within-it */
 }
 
-div.accordion-content.open { /* Not required for action, but allows an initial open state to be set */
+div.accordion-content.open{ /* Not required for action, but allows an initial open state to be set */
 	display: block;
 }
 
-div.accordion-content *:last-child {
+div.accordion-content *:last-child{
 	margin-bottom: 0;
 }
 
-div.accordion-content + a.button {
+div.accordion-content + a.button{
 	margin-top: 30px;
 }
 
 
 /* Other Miscellaneous */
 
-.clear {
-	clear: both;
-}
-
-.non-breaking-spaces {
+.non-breaking-spaces{
 	white-space: nowrap;
 }
 
-.tsp {
+/* .clear{ /* NOT SURE IF THIS IS STILL REQUIRED? IS A LEGACY FROM FLOATED WEBSITES. REMOVING TO CHECK *
+	clear: both;
+} */
+
+.tsp{
 	color: #f00 !important;
 }
 
@@ -2627,14 +2628,14 @@ div.accordion-content + a.button {
 	z-index: 10;
 }
 
-#kokako-screen-size-check p {
+#kokako-screen-size-check p{
 	font-weight: bold;
 	text-align: center;
 	color: #1a1a1a;
 	margin: 10px 0;
 }
 
-#js-loaded {
+#js-loaded{
 	display: none !important;
 }
 
@@ -2643,31 +2644,31 @@ div.accordion-content + a.button {
 
 /* Kokako Development Mode Activation Notice */
 
-#wpadminbar .kdman :is(a, a:link, a:visited) {
+#wpadminbar .kdman :is(a, a:link, a:visited){
 	background: #d08; /* #f0a - 34 */
 	margin-left: 10px;
 }
 
-#wpadminbar .kdman a:hover {
+#wpadminbar .kdman a:hover{
 	background: #e09 !important; /* #d08 + 17 */
 }
 
-#wpadminbar .kdman a:active {
+#wpadminbar .kdman a:active{
 	background: #f0a !important;
 }
 
 /* Kokako "No JavaScript" Test Mode Active Notice */
 
-#wpadminbar .knjstan :is(a, a:link, a:visited) {
+#wpadminbar .knjstan :is(a, a:link, a:visited){
 	background: #e52b2e;
 	margin-left: 10px;
 }
 
-#wpadminbar .knjstan a:hover {
+#wpadminbar .knjstan a:hover{
 	background: #f63c3f !important; /* #e52b2e + 17 */
 }
 
-#wpadminbar .knjstan a:active {
+#wpadminbar .knjstan a:active{
 	background: #ff4d50 !important; /* #e52b2e + 34 */
 }
 
@@ -2680,9 +2681,9 @@ div.accordion-content + a.button {
 /* SM and above */
 @media (min-width: 577px) {
 
-    button, input[type="submit"], a.button {
+    /* button, input[type="submit"], a.button {
     	margin-right: 15px;
-    }
+    } */
         
     .display-sm{
     	display: block;
@@ -2697,26 +2698,26 @@ div.accordion-content + a.button {
 /* MD and above */
 @media (min-width: 768px) {
 
-    :is(img, svg).alignnone {
-    	margin: 15px 0;
+    :is(img, svg).alignnone{
+    	margin: 30px 0;
     }
         
-    :is(img, svg).alignleft {
+    :is(img, svg).alignleft{
     	float: left;
-    	margin: 0 45px 15px 0;
+    	margin: 0 45px 30px 0;
     }
         
-    :is(img, svg).alignright {
+    :is(img, svg).alignright{
     	float: right;
-    	margin: 0 0 15px 45px;
+    	margin: 0 0 30px 45px;
     }
         
-    :is(img, svg):is(.aligncentre, .aligncenter) {
+    :is(img, svg):is(.aligncentre, .aligncenter){
     	display: block;
-    	margin: 30px auto; /* Double the vertical margin when image is centerd */
+    	margin: 60px auto; /* Double the vertical margin when image is centerd */
     }
         
-    .kokako .contain {
+    .kokako .contain{
     	--edge-padding: 45px;
     }
         
@@ -2798,7 +2799,7 @@ div.accordion-content + a.button {
         
     /* Heading */
         
-    .kokako.heading :is(h1, h2) {
+    .kokako.heading .contain-text:first-child :is(h1, h2){
     	font-size: 3.5rem;
     }
         
@@ -2865,11 +2866,11 @@ div.accordion-content + a.button {
 /* LG and above */
 @media (min-width: 992px) {
 
-    .kokako div:not(.col-lg-12, .col-xl-12) :is(input, textarea) {
+    /* .kokako div:not(.col-lg-12, .col-xl-12) :is(input, textarea) {
     	max-width: calc(100% - 15px);
-    }
+    } */
         
-    .kokako .contain {
+    .kokako .contain{
     	--edge-padding: 60px;
     }
         
@@ -2877,7 +2878,7 @@ div.accordion-content + a.button {
     	grid-template-columns: repeat(3, 1fr);
     }
         
-    .kokako .text-columns {
+    .kokako .text-columns{
     	columns: 2;
     	grid-gap: 45px;
     }
@@ -2934,13 +2935,14 @@ div.accordion-content + a.button {
     	font-size: 1.8rem;
     } */
         
-    header nav .hamburger {
+    header nav .hamburger{
     	display: none;
     }
         
-    nav ul li :is(a, a:link, a:visited) {
+    nav ul li :is(a, a:link, a:visited){
     	display: inline-block;
     }
+        
         
     /* header .navbar-collapse {
     	position: absolute;
@@ -3099,7 +3101,7 @@ div.accordion-content + a.button {
         
     /* Text */
         
-    .kokako.text :is(h1, h2) { /* Do not clear any floated images */
+    .kokako.text :is(h1, h2){ /* Do not clear any floated images */
     	clear: none;
     }
         
@@ -3115,8 +3117,8 @@ div.accordion-content + a.button {
     }
         
         
-    /* Variation: Image 50% */
-    /*
+    /* Variation: Image 50% *
+        
     .kokako.textAndImage.variation-image-50 .contain {
     	grid-gap: 0;
     }
@@ -3133,9 +3135,9 @@ div.accordion-content + a.button {
     	max-width: 655px;
     } */
         
-    body.blog section.kokako.latestPosts .row .blog-grid.post:nth-of-type(2) h3 {
+    /* body.blog section.kokako.latestPosts .row .blog-grid.post:nth-of-type(2) h3 {
     	margin-top: 30px;
-    }
+    } */
     
 }
 
@@ -3172,7 +3174,7 @@ div.accordion-content + a.button {
         
     header.scrolled .logo a.navbar-brand {
     	margin: 0;
-    } */
+    } *
         
     header nav button:focus {
     	outline: none;
@@ -3180,7 +3182,7 @@ div.accordion-content + a.button {
         
     /* nav .collapse:not(.show) {
     	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows *
-    } */
+    } *
         
     header nav button.navbar-toggler {
     	position: relative;
@@ -3192,7 +3194,7 @@ div.accordion-content + a.button {
     header.scrolled nav button.navbar-toggler {
     	top: -25px;
     	transition: all 1s ease;
-    }
+    } */
         
     footer.kokako .columns.cols-4{
     	grid-template-columns: repeat(4, 1fr);
@@ -3208,9 +3210,9 @@ div.accordion-content + a.button {
     	grid-template-columns: repeat(5, 1fr);
     } */
         
-    body.blog section.kokako.latestPosts .row .col-xl-4.blog-grid.post:nth-of-type(3) h3 {
+    /* body.blog section.kokako.latestPosts .row .col-xl-4.blog-grid.post:nth-of-type(3) h3 {
     	margin-top: 30px;
-    }
+    } */
     
 }
 
