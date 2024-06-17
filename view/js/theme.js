@@ -50,7 +50,6 @@ jQuery(document).ready(function($){
     let columns = document.querySelectorAll('.kokako.columns .col');
     let rows = document.querySelectorAll('.kokako.rows .col');
     let posts = document.querySelectorAll('.kokako.posts .col.blog-grid');
-    	console.log("posts:");console.log(posts);
     
     /* heading2s.forEach(
     	(item) => ( item.style.animationDelay = (Math.random() * 0.5) + 's' )
