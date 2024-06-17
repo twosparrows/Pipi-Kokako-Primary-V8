@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 17/06/2024 12:31.26am UTC
+Updated at 17/06/2024 2:27.33am UTC
 
 
 FILE STRUCTURE:
@@ -1962,7 +1962,6 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center; /* Use flex-end if need to align items at the end */
-	background: #fff;
 }
 
 .kokako.heading h1{
