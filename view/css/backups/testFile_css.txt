@@ -1,7 +1,7 @@
 CSS Options Fields
 
-Updated at 14/06/2024 3:56.19am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-css-editor
+Updated at 17/06/2024 12:31.28am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-js-editor
 
 
 Shortcodes:
@@ -13779,7 +13779,7 @@ footer a.social-media-link:last-of-type {
 /*
 .kokako :is(.multiple-columns-col , .internalWrap) > *:first-child,
 .kokako :is(.multiple-columns-col , .internalWrap) > *.hide:first-child + *,
-.kokako :is(.multiple-columns-col , .internalWrap) > p:first-child > img:first-child{ /* First child, or second child if the first is hidden, or img within first child p tag */
+.kokako :is(.multiple-columns-col , .internalWrap) > p:first-child > img:first-child{ /* First child, or second child if the first is hidden, or img within first child p tag *
 	margin-top: 0;
 }
 

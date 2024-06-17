@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 14/06/2024 3:56.17am UTC
+Updated at 17/06/2024 12:31.26am UTC
 
 
 FILE STRUCTURE:
@@ -1735,7 +1735,7 @@ footer {
 /*
 .kokako :is(.multiple-columns-col , .internalWrap) > *:first-child,
 .kokako :is(.multiple-columns-col , .internalWrap) > *.hide:first-child + *,
-.kokako :is(.multiple-columns-col , .internalWrap) > p:first-child > img:first-child{ /* First child, or second child if the first is hidden, or img within first child p tag */
+.kokako :is(.multiple-columns-col , .internalWrap) > p:first-child > img:first-child{ /* First child, or second child if the first is hidden, or img within first child p tag *
 	margin-top: 0;
 }
 

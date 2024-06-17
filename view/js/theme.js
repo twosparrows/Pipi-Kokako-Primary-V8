@@ -44,12 +44,13 @@ jQuery(document).ready(function($){
     $('#js-loaded').text("true"); // This will prevent "No JS" file from being loaded in footer.php (which is a fallback in case JS doesn't execute)
     
     // Animations
-    let heading1 = document.querySelector('section.kokako h1');
-    let heading2s = document.querySelectorAll('section.kokako h2');
-    let textWithPhotoImages = document.querySelectorAll('section.textWithPhoto .image');
-    let multipleColumns = document.querySelectorAll('section.multipleColumns .multiple-columns-col');
-    let multipleRows = document.querySelectorAll('section.multipleRows .multiple-rows-row');
-    let latestPosts = document.querySelectorAll('section.kokako.latestPosts .blog-grid.post');
+    let heading1 = document.querySelector('.kokako h1');
+    let heading2s = document.querySelectorAll('.kokako h2');
+    let textAndImageImages = document.querySelectorAll('.kokako.textAndImage .image');
+    let columns = document.querySelectorAll('.kokako.columns .col');
+    let rows = document.querySelectorAll('.kokako.rows .col');
+    let posts = document.querySelectorAll('.kokako.posts .col.blog-grid');
+    	console.log("posts:");console.log(posts);
     
     /* heading2s.forEach(
     	(item) => ( item.style.animationDelay = (Math.random() * 0.5) + 's' )
@@ -103,61 +104,61 @@ jQuery(document).ready(function($){
     		});
     	}
     
-    	// Text with Photo images
+    	// Text And Image - images
     	animationDelay = animationDelayInitial; // Will add 300ms in case h1 and first h2 are in view together, to match headings
-    	textWithPhotoImages.forEach(function(textWithPhotoImage) {
-    		if ( inViewPort(textWithPhotoImage) ) {
+    	textAndImageImages.forEach(function(taiImage) {
+    		if ( inViewPort(taiImage) ) {
     			if ( performance.now() < 4000) { // If page has recently loaded, add a variation, so that headings in view don't display all at the same time
-    				textWithPhotoImage.style.animationDelay = animationDelay + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+    				taiImage.style.animationDelay = animationDelay + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
     				animationDelay += animationDelayIncrease;
     			}			
-    			textWithPhotoImage.classList.add('appear');
+    			taiImage.classList.add('appear');
     		}
     	});
     
-    	// Multiple Columns columns
+    	// Columns columns
     	animationDelay = animationDelayInitial;
     	parentSection = "";
     	previousParentSection = "";
-    	multipleColumns.forEach(function(multipleColumnsCol) {
-    		if ( inViewPort(multipleColumnsCol) ) {
+    	columns.forEach(function(columnsCol) {
+    		if ( inViewPort(columnsCol) ) {
     			if ( jQuery(window).outerWidth() > 767 ) {
-    				parentSection = jQuery(multipleColumnsCol).parent().parent().parent("section").attr("class");
+    				parentSection = jQuery(columnsCol).parent().parent().parent("section").attr("class");
     				if ( ( "" == previousParentSection) || ( parentSection == previousParentSection ) ) {
-    					multipleColumnsCol.style.animationDelay = animationDelay + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+    					columnsCol.style.animationDelay = animationDelay + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
     					animationDelay += animationDelayIncrease;
     				} else {
     					animationDelay = animationDelayInitial;
-    					multipleColumnsCol.style.animationDelay = animationDelay + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+    					columnsCol.style.animationDelay = animationDelay + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
     					animationDelay += animationDelayIncrease;
     				}
     				previousParentSection = parentSection;
     			}
-    			multipleColumnsCol.classList.add('appear');
+    			columnsCol.classList.add('appear');
     		}
     	});
     
-    	// Multiple Rows rows
+    	// Rows rows
     	animationDelay = animationDelayInitial;
-    	multipleRows.forEach(function(multipleRowsRow) {
-    		if ( inViewPort(multipleRowsRow) ) {
+    	rows.forEach(function(rowsRow) {
+    		if ( inViewPort(rowsRow) ) {
     			if ( jQuery(window).outerWidth() > 767 ) {
-    				multipleRowsRow.style.animationDelay = animationDelay + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+    				rowsRow.style.animationDelay = animationDelay + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
     				animationDelay += animationDelayIncrease;
     			}
-    			multipleRowsRow.classList.add('appear');
+    			rowsRow.classList.add('appear');
     		}
     	});
     
-    	// Latest Posts columns
+    	// Posts columns
     	animationDelay = animationDelayInitial;
-    	latestPosts.forEach(function(latestPostsPost) {
-    		if ( inViewPort(latestPostsPost) ) {
+    	posts.forEach(function(postsPost) {
+    		if ( inViewPort(postsPost) ) {
     			if ( jQuery(window).outerWidth() > 767 ) {
-    				latestPostsPost.style.animationDelay = animationDelay + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
+    				postsPost.style.animationDelay = animationDelay + 's'; // Animation delay doesn't need to be removed, as this code is only executing when a heading is in view with 4 seconds of the page loading, and the animation is never being re-triggered
     				animationDelay += animationDelayIncrease;
     			}
-    			latestPostsPost.classList.add('appear');
+    			postsPost.classList.add('appear');
     		}
     	});
     
@@ -169,21 +170,21 @@ jQuery(document).ready(function($){
     // Custom Animations
     /* let scrollMagicController = new ScrollMagic.Controller();
     
-    if ( jQuery('section.kokako.textWithCircularPhoto').length ) {
+    if ( jQuery('.kokako.textWithCircularPhoto').length ) {
     
-    	let textWithCircularPhotoMotifTween = TweenMax.from('section.kokako.textWithCircularPhoto .background-motif', {
+    	let textWithCircularPhotoMotifTween = TweenMax.from('.kokako.textWithCircularPhoto .background-motif', {
     		x: 25, // 25
     		y: 25, // 50
     		ease: Sine.easeInOut, // See https://greensock.com/docs/v2/Easing
     	});
-    	let textWithCircularPhotoImageTween = TweenMax.from('section.kokako.textWithCircularPhoto .image', {
+    	let textWithCircularPhotoImageTween = TweenMax.from('.kokako.textWithCircularPhoto .image', {
     		x: -25, // -50
     		y: -25,
     		ease: Sine.easeInOut,
     	});
     
     	new ScrollMagic.Scene({
-    		triggerElement: 'section.kokako.textWithCircularPhoto',
+    		triggerElement: '.kokako.textWithCircularPhoto',
     		duration: ( jQuery(window).height() * 1.5),
     		triggerHook: 0.5,
     		offset: ( jQuery(window).height() / -2 ),
@@ -193,7 +194,7 @@ jQuery(document).ready(function($){
     		// .addIndicators(); // For debugging, see https://scrollmagic.io/docs/debug.addIndicators.html#Scene.addIndicators
     
     	new ScrollMagic.Scene({
-    		triggerElement: 'section.kokako.textWithCircularPhoto',
+    		triggerElement: '.kokako.textWithCircularPhoto',
     		duration: ( jQuery(window).height() * 1.5),
     		triggerHook: 0.5,
     		offset: ( jQuery(window).height() / -2 ),
@@ -203,22 +204,22 @@ jQuery(document).ready(function($){
     		// .addIndicators(); // For debugging, see https://scrollmagic.io/docs/debug.addIndicators.html#Scene.addIndicators
     }
     
-    if ( jQuery('section.kokako.contact-footer').length ) {
+    if ( jQuery('.kokako.contact-footer').length ) {
     
-    	let contactFooterMotifTween = TweenMax.from('section.kokako.contact-footer .foreground-motif', {
+    	let contactFooterMotifTween = TweenMax.from('.kokako.contact-footer .foreground-motif', {
     		x: -25,
     		y: 50,
     		ease: Sine.easeInOut,
     	});
     
-    	let contactFooterImageTween = TweenMax.from('section.kokako.contact-footer img', {
+    	let contactFooterImageTween = TweenMax.from('.kokako.contact-footer img', {
     		x: 0,
     		y: -50,
     		ease: Sine.easeInOut,
     	});
     
     	new ScrollMagic.Scene({
-    		triggerElement: 'section.kokako.contact-footer',
+    		triggerElement: '.kokako.contact-footer',
     		duration: ( jQuery(window).height() * 1.5),
     		triggerHook: 0.5,
     		offset: ( jQuery(window).height() / -2 ),	
@@ -227,7 +228,7 @@ jQuery(document).ready(function($){
     		.addTo(scrollMagicController);
     
     	new ScrollMagic.Scene({
-    		triggerElement: 'section.kokako.contact-footer',
+    		triggerElement: '.kokako.contact-footer',
     		duration: ( jQuery(window).height() * 1.5),
     		triggerHook: 0.5,
     		offset: ( jQuery(window).height() / -2 ),
