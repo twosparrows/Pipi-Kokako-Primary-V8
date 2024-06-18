@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 17/06/2024 7:08.07am UTC
+Updated at 18/06/2024 2:43.32am UTC
 
 
 FILE STRUCTURE:
@@ -2053,6 +2053,25 @@ footer {
 
 
 /* ---- 12. Colour Schemes ---- */
+
+
+/* Brand Colour Classes */
+
+.kokako.heading-foo :is(h1,h2), .kokako.colour-scheme.heading-foo :is(h1,h2), .kokako.headings-foo :is(h1,h2,h3,h4,h5,h6){
+    color: #ff0000;
+}
+
+.kokako.background-overlay.background-overlay-foo .image-overlay{
+    background: #ff0000;
+}
+
+.kokako.heading-green :is(h1,h2), .kokako.colour-scheme.heading-green :is(h1,h2), .kokako.headings-green :is(h1,h2,h3,h4,h5,h6){
+    color: #81d742;
+}
+
+.kokako.background-overlay.background-overlay-green .image-overlay{
+    background: #81d742;
+}
 
 /* section.kokako.colour-scheme :is(.container, .container-fluid) .row {
 	background: none;
