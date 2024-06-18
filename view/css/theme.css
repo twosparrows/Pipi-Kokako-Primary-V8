@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 18/06/2024 2:43.32am UTC
+Updated at 18/06/2024 10:40.38pm UTC
 
 
 FILE STRUCTURE:
@@ -764,6 +764,10 @@ footer{
 
 .kokako .contain + .contain{
 	margin-top: 45px;
+}
+
+.kokako.has-intro-text .contain + .contain{
+	margin-top: 90px;
 }
 
 .kokako,
@@ -1924,6 +1928,14 @@ footer {
 
 /* Columns */
 
+.kokako.columns :is(img, svg).alignnone{
+	margin: 30px 0;
+}
+
+.kokako.columns .col :is(*:first-child > img:first-child, *:first-child > svg:first-child, img:first-child, svg:first-child){
+	margin-top: 0;
+}
+
 /* .kokako.columns .contain{ /* Default, also for .cols-1 *
 	display: grid;
 	grid-template-columns: 1fr;
@@ -2818,6 +2830,10 @@ div.accordion-content + a.button{
         
     /* Columns */
         
+    /* .kokako.columns .col :is(*:first-child > img:first-child, *:first-child > svg:first-child, img:first-child, svg:first-child){ /* ADD HEIGHT HERE IF REQUIRED TO ALIGN ITEMS *
+    	height: 92px;
+    } */
+        
     /* .kokako.columns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
     	grid-template-columns: repeat(2, 1fr);
     } */
@@ -2911,7 +2927,7 @@ div.accordion-content + a.button{
     	--edge-padding: 60px;
     }
         
-    .kokako .columns:is(.cols-3, .cols-4, .cols-5, .cols-6){
+    .kokako .columns:is(.cols-3, .cols-5, .cols-6){
     	grid-template-columns: repeat(3, 1fr);
     }
         

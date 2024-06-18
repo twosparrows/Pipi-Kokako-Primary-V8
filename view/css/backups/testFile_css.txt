@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 18/06/2024 2:43.33am UTC
+Updated at 18/06/2024 10:40.40pm UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -7162,6 +7162,10 @@ footer{
 	margin-top: [grid-gap-vertical];
 }
 
+.kokako.has-intro-text .contain + .contain{
+	margin-top: [tsp-calc {grid-gap-vertical} *2];
+}
+
 .kokako,
 .kokako.width-full{
 	width: 100%;
@@ -7339,7 +7343,7 @@ footer{
 	--edge-padding: [tsp-calc {edge-padding} *2];
 }
 
-.kokako .columns:is(.cols-3, .cols-4, .cols-5, .cols-6){
+.kokako .columns:is(.cols-3, .cols-5, .cols-6){
 	grid-template-columns: repeat(3, 1fr);
 }
 
@@ -14577,7 +14581,15 @@ section.kokako.hide-section {
         2 => 
         array (
           'section_type' => 'Columns',
-          'section_css' => '/* .kokako.columns .contain{ /* Default, also for .cols-1 *
+          'section_css' => '.kokako.columns :is(img, svg).alignnone{
+	margin: [image-margin-vertical] 0;
+}
+
+.kokako.columns .col :is(*:first-child > img:first-child, *:first-child > svg:first-child, img:first-child, svg:first-child){
+	margin-top: 0;
+}
+
+/* .kokako.columns .contain{ /* Default, also for .cols-1 *
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: [grid-gap-vertical] [grid-gap-horizontal];
@@ -14610,7 +14622,11 @@ section.kokako.hide-section {
             0 => 
             array (
               'screen_size' => 'md',
-              'screen_size_css' => '/* .kokako.columns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
+              'screen_size_css' => '/* .kokako.columns .col :is(*:first-child > img:first-child, *:first-child > svg:first-child, img:first-child, svg:first-child){ /* ADD HEIGHT HERE IF REQUIRED TO ALIGN ITEMS *
+	height: 92px;
+} */
+
+/* .kokako.columns .contain:is(.cols-2, .cols-3, .cols-4, .cols-5, .cols-6) {
 	grid-template-columns: repeat(2, 1fr);
 } */',
             ),
