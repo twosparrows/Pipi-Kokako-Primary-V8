@@ -4,14 +4,14 @@
 
 THEME SETUP
 
-Updated at 18/06/2024 10:40.40pm UTC
+Updated at 19/06/2024 12:30.13am UTC
 
 Included via functions/site.php
 
 */
 
 
-$GLOBALS['updatedTimeStamp'] = 1718750438;
+$GLOBALS['updatedTimeStamp'] = 1718757011;
 
 // Development Modes
 $GLOBALS['kokakoDevelopmentMode'] = false;
@@ -22,8 +22,10 @@ $GLOBALS['additionalBodyClasses'] = "header-fixed";
 
 // Sections
 $GLOBALS['availableSectionTypes'] = array( // NB: Text section is always available
+     "accordions",
      "columns",
      "heading",
+     "logos",
      "posts",
      "text",
      "text-and-image",
@@ -107,7 +109,7 @@ $GLOBALS['apply_text_content_width_max_site_wide'] = true;
 // Functions
 
 function tsp_updated_timeStamp() { // Can also be called as a function if required, although higher overhead than a variable
-     return 1718750438;
+     return 1718757011;
 }
 
 ?>

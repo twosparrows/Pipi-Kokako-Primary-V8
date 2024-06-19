@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 18/06/2024 10:40.40pm UTC
+Updated at 19/06/2024 12:30.13am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -7208,7 +7208,7 @@ footer{
 }
 
 
-/* Columns - NB: Proportional Columns set up below, under MD & Above */
+/* Columns (uses Grid) - NB: Proportional Columns set up below, under MD & Above */
 
 .kokako .columns{
 	display: grid;
@@ -7217,6 +7217,21 @@ footer{
 
 .kokako .columns:is(.cols-1, .cols-2, .cols-3, .cols-4, .cols-5, .cols-6){
 	grid-template-columns: 1fr;
+}
+
+
+/* Flex */
+
+.kokako .flex{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: [grid-gap-vertical] [grid-gap-horizontal];
+}
+
+.kokako .flex > a{ /* Force anchors to wrap their contents without space */
+	display: contents;
 }
 
 
@@ -15147,6 +15162,14 @@ section.kokako.hide-section {
         ),
         6 => 
         array (
+          'section_type' => 'Logos',
+          'section_css' => '.kokako.logos {
+	text-align: center;
+}',
+          'section_responsivity' => false,
+        ),
+        7 => 
+        array (
           'section_type' => 'Posts',
           'section_css' => '/* .kokako.posts h4.breadcrumbs {
 	margin-top: [tsp-calc tm *2];
@@ -15166,7 +15189,7 @@ section.kokako.hide-section {
 }',
           'section_responsivity' => false,
         ),
-        7 => 
+        8 => 
         array (
           'section_type' => 'Rows',
           'section_css' => '/* NB: Some shared CSS under Columns section *
@@ -15215,7 +15238,7 @@ section.kokako.hide-section {
 } */',
           'section_responsivity' => false,
         ),
-        8 => 
+        9 => 
         array (
           'section_type' => 'Quote',
           'section_css' => '/* .kokako.quote {
@@ -15307,7 +15330,7 @@ section.kokako.hide-section {
 } */',
           'section_responsivity' => false,
         ),
-        9 => 
+        10 => 
         array (
           'section_type' => 'Slider',
           'section_css' => '/* .kokako.slider {
@@ -15476,7 +15499,7 @@ section.kokako.hide-section {
             ),
           ),
         ),
-        10 => 
+        11 => 
         array (
           'section_type' => 'Team',
           'section_css' => '/* .kokako.team .team-member-row img {
@@ -15672,7 +15695,7 @@ section.kokako.hide-section {
             ),
           ),
         ),
-        11 => 
+        12 => 
         array (
           'section_type' => 'Testimonials',
           'section_css' => '/* .kokako.testimonials {
@@ -15860,7 +15883,7 @@ section.kokako.hide-section {
             ),
           ),
         ),
-        12 => 
+        13 => 
         array (
           'section_type' => 'Text',
           'section_css' => '.kokako.text :is(h1, h2){ /* in case of floated images */
@@ -15877,7 +15900,7 @@ section.kokako.hide-section {
             ),
           ),
         ),
-        13 => 
+        14 => 
         array (
           'section_type' => 'Text and Image',
           'section_css' => '.kokako.textAndImage .contain{

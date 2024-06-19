@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 18/06/2024 10:40.38pm UTC
+Updated at 19/06/2024 12:30.11am UTC
 
 
 FILE STRUCTURE:
@@ -812,7 +812,7 @@ footer{
 }
 
 
-/* Columns - NB: Proportional Columns set up below, under MD & Above */
+/* Columns (uses Grid) - NB: Proportional Columns set up below, under MD & Above */
 
 .kokako .columns{
 	display: grid;
@@ -821,6 +821,21 @@ footer{
 
 .kokako .columns:is(.cols-1, .cols-2, .cols-3, .cols-4, .cols-5, .cols-6){
 	grid-template-columns: 1fr;
+}
+
+
+/* Flex */
+
+.kokako .flex{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 45px 45px;
+}
+
+.kokako .flex > a{ /* Force anchors to wrap their contents without space */
+	display: contents;
 }
 
 
@@ -1982,6 +1997,13 @@ footer {
 
 .kokako.heading :is(.text-contain + .text-contain, .text-full + .text-full) :is(h2, h3){ /* Subheading */
 	font-size: 2rem;
+}
+
+
+/* Logos */
+
+.kokako.logos {
+	text-align: center;
 }
 
 
