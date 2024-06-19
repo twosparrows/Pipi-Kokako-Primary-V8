@@ -284,7 +284,7 @@ jQuery(window).on('load', function(){
     }
     
     // Accordion functionality
-    jQuery('h4.accordion-toggle').click(function(){
+    jQuery('.accordion-toggle').click(function(){
     	jQuery(this).find('i.icon-plus').toggleClass('open');	
     	jQuery(this).next('div.accordion-content').slideToggle(400);	
     });

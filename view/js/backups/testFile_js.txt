@@ -1,6 +1,6 @@
 JS Options Fields
 
-Updated at 19/06/2024 12:30.13am UTC
+Updated at 19/06/2024 4:13.10am UTC
 
 
 Shortcodes:
@@ -875,7 +875,7 @@ if (jQuery(\'section.section1.fullScreen\').length) {
 }
 
 // Accordion functionality
-jQuery(\'h4.accordion-toggle\').click(function(){
+jQuery(\'.accordion-toggle\').click(function(){
 	jQuery(this).find(\'i.icon-plus\').toggleClass(\'open\');	
 	jQuery(this).next(\'div.accordion-content\').slideToggle(400);	
 });

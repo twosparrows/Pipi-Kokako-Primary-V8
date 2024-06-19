@@ -1,7 +1,7 @@
 CSS Options Fields
 
-Updated at 19/06/2024 12:30.13am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-css-editor
+Updated at 19/06/2024 4:13.10am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-js-editor
 
 
 Shortcodes:
@@ -83,20 +83,20 @@ Shortcodes:
 [color-brand-green-rgba => 129,215,66
 [color-brand-green-variation => 129,215,66
 [color-brand-green] => #81d742
-[color-button-background-active-rgba => 210,210,210
-[color-button-background-active] => #d2d2d2
-[color-button-background-hover-rgba => 230,230,230
-[color-button-background-hover] => #e6e6e6
-[color-button-background-rgba => 255,255,255
-[color-button-background-variation => 255,255,255
-[color-button-background] => #fff
-[color-button-text-active-rgba => 71,71,71
-[color-button-text-active] => #474747
-[color-button-text-hover-rgba => 51,51,51
-[color-button-text-hover] => #333
-[color-button-text-rgba => 26,26,26
-[color-button-text-variation => 26,26,26
-[color-button-text] => #1a1a1a
+[color-button-background-active-rgba => 71,71,71
+[color-button-background-active] => #474747
+[color-button-background-hover-rgba => 51,51,51
+[color-button-background-hover] => #333
+[color-button-background-rgba => 26,26,26
+[color-button-background-variation => 26,26,26
+[color-button-background] => #1a1a1a
+[color-button-text-active-rgba => 210,210,210
+[color-button-text-active] => #d2d2d2
+[color-button-text-hover-rgba => 230,230,230
+[color-button-text-hover] => #e6e6e6
+[color-button-text-rgba => 255,255,255
+[color-button-text-variation => 255,255,255
+[color-button-text] => #ffffff
 [color-footer-background-active-rgba => 71,71,71
 [color-footer-background-active] => #474747
 [color-footer-background-hover-rgba => 51,51,51
@@ -238,20 +238,20 @@ Shortcodes:
 [colour-brand-green-rgba => 129,215,66
 [colour-brand-green-variation => 129,215,66
 [colour-brand-green] => #81d742
-[colour-button-background-active-rgba => 210,210,210
-[colour-button-background-active] => #d2d2d2
-[colour-button-background-hover-rgba => 230,230,230
-[colour-button-background-hover] => #e6e6e6
-[colour-button-background-rgba => 255,255,255
-[colour-button-background-variation => 255,255,255
-[colour-button-background] => #fff
-[colour-button-text-active-rgba => 71,71,71
-[colour-button-text-active] => #474747
-[colour-button-text-hover-rgba => 51,51,51
-[colour-button-text-hover] => #333
-[colour-button-text-rgba => 26,26,26
-[colour-button-text-variation => 26,26,26
-[colour-button-text] => #1a1a1a
+[colour-button-background-active-rgba => 71,71,71
+[colour-button-background-active] => #474747
+[colour-button-background-hover-rgba => 51,51,51
+[colour-button-background-hover] => #333
+[colour-button-background-rgba => 26,26,26
+[colour-button-background-variation => 26,26,26
+[colour-button-background] => #1a1a1a
+[colour-button-text-active-rgba => 210,210,210
+[colour-button-text-active] => #d2d2d2
+[colour-button-text-hover-rgba => 230,230,230
+[colour-button-text-hover] => #e6e6e6
+[colour-button-text-rgba => 255,255,255
+[colour-button-text-variation => 255,255,255
+[colour-button-text] => #ffffff
 [colour-footer-background-active-rgba => 71,71,71
 [colour-footer-background-active] => #474747
 [colour-footer-background-hover-rgba => 51,51,51
@@ -1501,7 +1501,7 @@ Also used by default for links in the footer.',
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'color_picker',
-      'value' => '#1a1a1a',
+      'value' => '#ffffff',
       'menu_order' => 32,
       'instructions' => 'Shortcode: <code>[colour-button-text]</code><br /><br />
 This is the default button text colour when used  in a section with a light background (the button text and background colours will be inverted in a section with a dark background).',
@@ -1531,7 +1531,7 @@ This is the default button text colour when used  in a section with a light back
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'color_picker',
-      'value' => '#fff',
+      'value' => '#1a1a1a',
       'menu_order' => 33,
       'instructions' => 'Shortcode: <code>[colour-button-background]</code><br /><br />
 This is the default button background colour when used in a section with a light background (the button text and background colours will be inverted in a section with a dark background).',
@@ -19818,7 +19818,18 @@ section.kokako.latestPosts .blog-grid.post.appear {
       'type' => 'textarea',
       'value' => '/* Accordions */
 
-h4.accordion-toggle{
+.accordion-toggle{
+	width: 100%;
+	margin-bottom: 0 !important;
+	background: none !important;
+	padding: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	text-align: left !important;
+	transform: scale(1) !important;
+}
+
+.accordion-toggle h4{
 	position: relative;
 	color: [colour-text-alt];
 	background: [colour-background-alt];
@@ -19830,11 +19841,11 @@ h4.accordion-toggle{
 	user-select: none;
 }
 
-h4.accordion-toggle:hover{
+/* h4.accordion-toggle:hover{
 	cursor: pointer;
-}
+} */
 
-h4.accordion-toggle i.icon-plus{
+.accordion-toggle i.icon-plus{
 	position: absolute;
 	right: 20px;
 	top: 10px;
@@ -19842,12 +19853,12 @@ h4.accordion-toggle i.icon-plus{
 	transition: all 0.4s ease;
 }
 
-h4.accordion-toggle i.icon-plus:before{
+.accordion-toggle i.icon-plus:before{
 	transform: rotate(0deg);
 	transition: all 0.4s ease;
 }
 
-h4.accordion-toggle i.icon-plus.open:before{
+.accordion-toggle i.icon-plus.open:before{
 	transform: rotate(45deg);
 	transition: all 0.4s ease;
 }

@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 19/06/2024 12:30.11am UTC
+Updated at 19/06/2024 4:13.08am UTC
 
 
 FILE STRUCTURE:
@@ -446,8 +446,8 @@ li.disabled > a:first-child{
 button, input[type="submit"], a.button{
 	cursor: pointer;
 	display: inline-block;
-	color: #1a1a1a;
-	background: #fff;
+	color: #ffffff;
+	background: #1a1a1a;
 	font-family: Arial, sans-serif;
 	font-size: 1rem;
 	font-weight: normal;
@@ -471,28 +471,28 @@ button, input[type="submit"], a.button{
 :is(button, input[type="submit"], a.button):focus,
 :is(button, input[type="submit"], a.button):hover{
 	color: #fff;
-	background: #e6e6e6;
+	background: #333;
 	transform: scale(1.05);
 }
 
 :is(button, input[type="submit"], a.button):active{
-	background: #d2d2d2;
+	background: #474747;
 }
 
 .alt:is(button, input[type="submit"], a.button) { 
-    color: #fff;
-    background: #1a1a1a;
+    color: #1a1a1a;
+    background: #ffffff;
 }
 
 .alt:is(button, input[type="submit"], a.button):hover,
 .alt:is(button, input[type="submit"], a.button):focus { 
-    color: #fff;
-    background: #333;
+    color: #1a1a1a;
+    background: #e6e6e6;
 }
 
 .alt:is(button, input[type="submit"], a.button):active { 
-    color: #fff;
-    background: #474747;
+    color: #1a1a1a;
+    background: #d2d2d2;
 }
 
 .transparent:is(button, input[type="submit"], a.button) { 
@@ -2000,6 +2000,64 @@ footer {
 }
 
 
+/* Image Grid */
+
+/* .kokako.imageGrid .image-grid {
+	display: grid;
+	grid-template-columns: 1fr; /* Default - XS *
+	grid-gap: 30px;
+	grid-auto-flow: dense;
+}
+
+.kokako.imageGrid .image-grid-item {
+	position: relative;
+	/* aspect-ratio: 1 / 1; *
+	height: 350px;
+}
+
+.kokako.imageGrid .image-grid-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 20px;
+}
+
+.kokako.imageGrid .image-grid-item .image-grid-item-heading {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: rgba(255,255,255,0.7);
+	padding: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-gap: 15px;
+	border-radius: 0 0 20px 20px;
+	box-sizing: border-box;
+}
+
+.kokako.imageGrid .image-grid-item .image-grid-item-heading * {
+	margin: 0;
+}
+
+.kokako.imageGrid .image-grid-item .image-grid-item-heading :is(h3, h3 a) {
+	font-family: Arial, sans-serif;
+	color: #828282;
+	font-size: 1.3rem;
+	/* font-size: 1.81818rem; *
+	/* opacity: 0.5; *
+}
+
+.kokako.imageGrid .image-grid-item .image-grid-item-heading h3 :is(a:hover, a:active) {
+	color: #999;
+}
+
+.kokako.imageGrid .image-grid-item :is(button, a.button, input[type=submit]) {
+	display: none;
+} */
+
+
 /* Logos */
 
 .kokako.logos {
@@ -2167,19 +2225,19 @@ section.kokako.colour-scheme-light a:not(.button, .social-media-link, .navbar-br
 }
 
 section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button) {
-    color: #1a1a1a;
-    background-color: #fff;
+    color: #ffffff;
+    background-color: #1a1a1a;
 }
 
 section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button):hover,
 section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button):focus {
-    color: #1a1a1a;
-    background-color: #e6e6e6;
+    color: #ffffff;
+    background-color: #333;
 }
 
 section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button):active {
-    color: #1a1a1a;
-    background-color: #d2d2d2;
+    color: #ffffff;
+    background-color: #474747;
 }
 
 /* Light Image Overlay (option always available) */
@@ -2223,19 +2281,19 @@ section.kokako.colour-scheme-dark a:not(.button, .social-media-link, .navbar-bra
 }
 
 section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button) {
-    color: #fff;
-    background: #1a1a1a;
+    color: #1a1a1a;
+    background: #ffffff;
 }
 
 section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button):hover,
 section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button):focus {
-    color: #fff;
-    background: #333;
+    color: #1a1a1a;
+    background: #e6e6e6;
 }
 
 section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button):active {
-    color: #fff;
-    background: #474747;
+    color: #1a1a1a;
+    background: #d2d2d2;
 }
 
 /* Dark Image Overlay (option always available) */
@@ -2279,17 +2337,17 @@ section.kokako.colour-scheme-foo a:not(.button, .social-media-link, .navbar-bran
 }
 
 section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button) {
-    color: #fff;
-    background-color: #1a1a1a;
+    color: #1a1a1a;
+    background-color: #ffffff;
 }
 
 section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):hover,
 section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):focus {
-    background-color: #333;
+    background-color: #e6e6e6;
 }
 
 section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):active {
-    background-color: #474747;
+    background-color: #d2d2d2;
 }
 
 /* Colour Scheme Green */
@@ -2328,17 +2386,17 @@ section.kokako.colour-scheme-green a:not(.button, .social-media-link, .navbar-br
 }
 
 section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button) {
-    color: #1a1a1a;
-    background-color: #fff;
+    color: #ffffff;
+    background-color: #1a1a1a;
 }
 
 section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):hover,
 section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):focus {
-    background-color: #e6e6e6;
+    background-color: #333;
 }
 
 section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):active {
-    background-color: #d2d2d2;
+    background-color: #474747;
 }
 
 
@@ -2609,7 +2667,18 @@ body.single .post-meta + img {
 
 /* Accordions */
 
-h4.accordion-toggle{
+.accordion-toggle{
+	width: 100%;
+	margin-bottom: 0 !important;
+	background: none !important;
+	padding: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	text-align: left !important;
+	transform: scale(1) !important;
+}
+
+.accordion-toggle h4{
 	position: relative;
 	color: #fff;
 	background: #1a1a1a;
@@ -2621,11 +2690,11 @@ h4.accordion-toggle{
 	user-select: none;
 }
 
-h4.accordion-toggle:hover{
+/* h4.accordion-toggle:hover{
 	cursor: pointer;
-}
+} */
 
-h4.accordion-toggle i.icon-plus{
+.accordion-toggle i.icon-plus{
 	position: absolute;
 	right: 20px;
 	top: 10px;
@@ -2633,12 +2702,12 @@ h4.accordion-toggle i.icon-plus{
 	transition: all 0.4s ease;
 }
 
-h4.accordion-toggle i.icon-plus:before{
+.accordion-toggle i.icon-plus:before{
 	transform: rotate(0deg);
 	transition: all 0.4s ease;
 }
 
-h4.accordion-toggle i.icon-plus.open:before{
+.accordion-toggle i.icon-plus.open:before{
 	transform: rotate(45deg);
 	transition: all 0.4s ease;
 }
@@ -2751,6 +2820,30 @@ div.accordion-content + a.button{
     .hide-sm{
     	display: none;
     }
+        
+    /* Image Grid */
+        
+    /* .kokako.imageGrid .image-grid-item .image-grid-item-heading {
+    	justify-content: space-between;
+    }
+        
+    .kokako.imageGrid .image-grid-item :is(button, a.button, input[type=submit]) {
+    	display: inline-block;
+    	padding-left: 30px;
+    	padding-right: 30px;
+    	color: #1a1a1a;
+    	background: #fff;
+    }
+        
+    .kokako.imageGrid .image-grid-item :is(button, a.button, input[type=submit]):hover {
+    	color: #1a1a1a;
+    	background: #e6e6e6;
+    }
+        
+    .kokako.imageGrid .image-grid-item :is(button, a.button, input[type=submit]):active {
+    	color: #1a1a1a;
+    	background: #d2d2d2;
+    } */
     
 }
 
@@ -2865,6 +2958,30 @@ div.accordion-content + a.button{
     .kokako.heading .contain-text:first-child :is(h1, h2){
     	font-size: 3.5rem;
     }
+        
+    /* Image Grid */
+        
+    /* .kokako.imageGrid .image-grid {
+    	grid-template-columns: repeat(2, 1fr);
+    }
+        
+    .kokako.imageGrid .image-grid-item.aspect-ratio-landscape {
+    	grid-column: span 2;
+    	/* aspect-ratio: 2 / 1; *
+    }
+        
+    .kokako.imageGrid .image-grid-item.aspect-ratio-portrait {
+    	grid-row: span 2;
+    	/* aspect-ratio: 1 / 2; *
+    	height: 730px;
+    }
+        
+    .kokako.imageGrid .image-grid-item.aspect-ratio-featured {
+    	grid-column: span 2;
+    	grid-row: span 2;
+    	/* aspect-ratio: 1 / 2; *
+    	height: 730px;
+    } */
         
     /* Text And Image */
         
@@ -3174,6 +3291,12 @@ div.accordion-content + a.button{
     	grid-template-columns: repeat(3, 1fr);
     } */
         
+    /* Image Grid */
+        
+    /* body .kokako.imageGrid .image-grid { /* Body is required because of the way this CSS responsivity currently cascades (PRE MOBILE FIRST) *
+    	grid-template-columns: repeat(3, 1fr);
+    } */
+        
     /* Text */
         
     .kokako.text :is(h1, h2){ /* Do not clear any floated images */
@@ -3283,6 +3406,16 @@ div.accordion-content + a.button{
         
     .kokako.columns .contain.cols-5 {
     	grid-template-columns: repeat(5, 1fr);
+    } */
+        
+    /* Image Grid */
+        
+    /* .kokako.imageGrid .image-grid-item {
+    	height: 350px;
+    }
+        
+    .kokako.imageGrid .image-grid-item:is(.aspect-ratio-portrait, .aspect-ratio-featured) {
+    	height: 730px;
     } */
         
     /* body.blog section.kokako.latestPosts .row .col-xl-4.blog-grid.post:nth-of-type(3) h3 {
