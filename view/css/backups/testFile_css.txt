@@ -1,7 +1,7 @@
 CSS Options Fields
 
-Updated at 19/06/2024 4:13.10am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-js-editor
+Updated at 21/06/2024 2:18.55am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
 Shortcodes:
@@ -2718,7 +2718,7 @@ h6{
 
 h1,
 h2{
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 
 h3{
@@ -2727,7 +2727,7 @@ h3{
 
 ol,
 ul{
-	margin: [text-margin];
+	margin: [text-margin] 0;
 }
 
 ul{
@@ -2779,7 +2779,17 @@ blockquote :is(h2, h3, h4, p, li){
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'repeater',
-      'value' => false,
+      'value' => 
+      array (
+        0 => 
+        array (
+          'screen_size' => 'sm',
+          'screen_size_css' => 'h1,
+h2{
+	font-size: 2.5rem;
+}',
+        ),
+      ),
       'menu_order' => 15,
       'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
       'required' => 0,
@@ -7188,7 +7198,8 @@ footer{
 }
 
 .kokako.width-contain .contain{
-	width: calc( [content-width-max] + ( var(--edge-padding) * 2 ) );
+	width: 100%;
+	max-width: calc( [content-width-max] + ( var(--edge-padding) * 2 ) );
 }
 
 .kokako.width-contain .text-full{

@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 19/06/2024 4:13.08am UTC
+Updated at 21/06/2024 2:18.53am UTC
 
 
 FILE STRUCTURE:
@@ -100,7 +100,7 @@ h6{
 
 h1,
 h2{
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 
 h3{
@@ -109,7 +109,7 @@ h3{
 
 ol,
 ul{
-	margin: 15px;
+	margin: 15px 0;
 }
 
 ul{
@@ -792,7 +792,8 @@ footer{
 }
 
 .kokako.width-contain .contain{
-	width: calc( 1400px + ( var(--edge-padding) * 2 ) );
+	width: 100%;
+	max-width: calc( 1400px + ( var(--edge-padding) * 2 ) );
 }
 
 .kokako.width-contain .text-full{
@@ -2809,6 +2810,11 @@ div.accordion-content + a.button{
 /* SM and above */
 @media (min-width: 577px) {
 
+    h1,
+    h2{
+    	font-size: 2.5rem;
+    }
+        
     /* button, input[type="submit"], a.button {
     	margin-right: 15px;
     } */
