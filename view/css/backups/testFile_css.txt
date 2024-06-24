@@ -1,13 +1,13 @@
 CSS Options Fields
 
-Updated at 21/06/2024 2:18.55am UTC
+Updated at 24/06/2024 4:00.33am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
 Shortcodes:
 
 [anchor-transition] => 0.3s ease all
-[anchor-underline-exclusions] => :not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow)
+[anchor-underline-exclusions] => :not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow)
 [animation-duration] => 1s
 [animation-start-opacity] => 0.5
 [animation-start-scale] => 0.95
@@ -345,7 +345,7 @@ Shortcodes:
 [header-logo-width] => 185px
 [header-mobile-opacity] => 0.8
 [header-position] => fixed
-[header-transition] => 1s ease all
+[header-transition] => 0.4s ease all
 [image-margin-horizontal] => 45px
 [image-margin-vertical] => 30px
 [line-height-headings] => 1.25
@@ -3589,7 +3589,7 @@ The default theme setting for anchor transitions, eg. "0.3s ease all".',
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'text',
-      'value' => ':not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow)',
+      'value' => ':not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow)',
       'menu_order' => 5,
       'instructions' => 'Shortcode: <code>[anchor-underline-exclusions]</code><br />
 Anchor classes that should not have the underline style applied, eg. ":not(.button)".  The full "not" statement is required. This statement will be added to the anchors themselves. It is best therefore to only add the anchor class itself (and not increase the selectivity count of the CSS statement). For further control (ie. selecting anchors within an element), manual override is recommended.',
@@ -8120,7 +8120,7 @@ Set this to between 0 and 1.',
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'text',
-      'value' => '1s ease all',
+      'value' => '0.4s ease all',
       'menu_order' => 7,
       'instructions' => 'Shortcode: <code>[header-transition]</code>',
       'required' => 0,
@@ -8210,7 +8210,8 @@ Set this to between 0 and 1.',
       'prefix' => 'acf',
       'type' => 'textarea',
       'value' => 'header#site-header.kokako{
-	position: relative; /* [header-position]; */
+	/* position: relative; /* [header-position]; */
+	position: static; /* Required for nav menu */
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -8237,18 +8238,12 @@ header#site-header .header-logo{
 	align-items: center; */
 }
 
-header#site-header nav{
+header#site-header #header-menu{
 	grid-area: header-menu;
 } 
 
 header#site-header.has-header-widget .header-widget{
 	grid-area: header-widget;
-}
-
-header#site-header nav{
-	display: flex;
-	flex-direction: row-reverse;
-	align-items: center;
 }
 
 header#site-header .header-widget{
@@ -8284,7 +8279,7 @@ header {
 }
 
 header,
-header nav.navbar {
+header #main-nav {
 	position: relative;
 }
 
@@ -8767,7 +8762,7 @@ header#site-header .header-widget{
 	align-items: flex-end;
 }
 
-header#site-header nav{
+header#site-header #main-nav{
 	align-items: flex-start;
 }
 
@@ -12300,14 +12295,83 @@ button.hamburger:active {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => 'header nav ul{
+      'value' => 'header#site-header #header-menu{
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+}
+
+header#site-header #header-menu nav{
+	background-color: [colour-nav-dropdown-background];
+	/* position: absolute; */
+	position: fixed;
+	/* a higher z-index put navbar above hamburger */
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	padding: var(--edge-padding);
+	box-sizing: border-box;
+	overflow: hidden;
+	/* style the bar in one cell and the close button in the other */
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	/* animate slide up/down */
+	transition: transform 0.4s ease;
+}
+
+header#site-header #header-menu nav ul{
+	display: flex;
+	flex-direction: column;	
+}
+
+header#site-header #header-menu nav,
+header#site-header.nav-slide-in-top #header-menu nav{ /* This is the default */
+	transform: translateY(-100%);
+}
+
+header#site-header.nav-slide-in-bottom #header-menu nav{
+	transform: translateY(100%);
+}
+
+header#site-header.nav-slide-in-left #header-menu nav{
+	transform: translateX(-100%);
+}
+
+header#site-header.nav-slide-in-right #header-menu nav{
+	transform: translateX(100%);
+}
+
+header#site-header #header-menu nav#navigation:target{
+	transform: translate(0);
+}
+
+#header-menu .hamburger{
+	display: block;
+	border-radius: 0;
+	box-sizing: border-box;
+	height: 54px; /* Enforce no extra space added inside */
+}
+
+#header-menu nav :is(ul, li){
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	white-space: nowrap; /* Prevent line breaks between words */
 }
 
-header nav .hamburger {
-	display: block;
+
+/*
+nav ul {
+	margin: 0;
+}
+
+nav ul li {
+	margin: 0;
+	white-space: nowrap; /* Prevent line breaks between words *
+	color: [colour-nav-text];
 }
 
 
@@ -12334,15 +12398,7 @@ header.scrolled .navbar-collapse {
 	transition: [header-transition];
 }
 
-nav ul {
-	margin: 0;
-}
 
-nav ul li {
-	margin: 0;
-	white-space: nowrap; /* Prevent line breaks between words *
-	color: [colour-nav-text];
-}
 
 
 /* Default - MD *
@@ -12435,7 +12491,32 @@ nav ul li {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => 'nav ul li :is(a, a:link, a:visited){
+      'value' => '#header-menu nav li a{
+	display: block;
+	background-color: [colour-nav-dropdown-background];
+	color: [colour-nav-dropdown-text];
+	padding: [text-margin];
+	margin: 0;
+	border-bottom: 0;
+	transition: [anchor-transition];
+}
+
+#header-menu nav li a:hover{
+	background-color: [colour-nav-dropdown-background-hover];
+	transition: [anchor-transition];
+}
+
+#header-menu nav li a:active{
+	background-color: [colour-nav-dropdown-background-active];
+	transition: [anchor-transition];
+}
+
+#header-menu nav li a:before{
+	background: [colour-nav-text];
+}
+
+
+/* nav ul li :is(a, a:link, a:visited){
 	color: [colour-nav-text];
 	display: block;
 	text-align: center;
@@ -12664,16 +12745,30 @@ nav a.dropdown-item:before {
         0 => 
         array (
           'screen_size' => 'nav-expanded',
-          'screen_size_css' => 'header nav .hamburger{
+          'screen_size_css' => '#header-menu .hamburger{
 	display: none;
 }
 
-nav ul li :is(a, a:link, a:visited){
+header#site-header #header-menu nav{
+	padding: 0;
+	position: relative;
+	height: auto;
+	transform: translate(0) !important;
+	overflow: visible;
+}
+
+header#site-header #header-menu nav ul{
+	flex-flow: row wrap;
+	justify-content: right;
+}
+
+
+/* nav ul li :is(a, a:link, a:visited){
 	display: inline-block;
 }
 
 
-/* header .navbar-collapse {
+header .navbar-collapse {
 	position: absolute;
 	width: calc(100% + 60px);
 	top: [header-height-scrolled];
@@ -19876,7 +19971,8 @@ section.kokako.latestPosts .blog-grid.post.appear {
 
 div.accordion-content{
 	display: none;
-	padding-top: [text-margin];
+	/* padding-top: [text-margin]; */
+	padding: [tsp-calc tm *2] [tsp-calc tm *2] 0;
 	overflow: hidden; /* This causes any floated elements within to be wrapped - see https://stackoverflow.com/questions/2614619/how-to-make-a-div-expand-vertically-to-wrap-the-content-within-it */
 }
 

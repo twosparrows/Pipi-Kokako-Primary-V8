@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 21/06/2024 2:18.53am UTC
+Updated at 24/06/2024 4:00.31am UTC
 
 
 FILE STRUCTURE:
@@ -390,14 +390,14 @@ a.social-media-link:hover i{
 	-moz-box-sizing: border-box;
 }
 
-a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow){
+a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow){
 	position: relative;
 	outline: none;
 	text-decoration: none;
 	z-index: 1;
 }
 
-a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before{
+a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before{
 	content: "";
 	position: absolute;
 	width: 0;
@@ -410,8 +410,8 @@ a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a,
 	transition: 0.3s ease all;
 }
 
-a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):focus:before,
-a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):hover:before{
+a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):focus:before,
+a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):hover:before{
 	visibility: visible;
 	-webkit-transform: translate3d(0,0,0);
 	width: 100%;
@@ -899,7 +899,8 @@ footer{
 /* ---- 8. Header ---- */
 
 header#site-header.kokako{
-	position: relative; /* fixed; */
+	/* position: relative; /* fixed; */
+	position: static; /* Required for nav menu */
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -909,7 +910,7 @@ header#site-header.kokako{
 	justify-content: center;
 	background: #1a1a1a;
 	z-index: 10;
-	transition: 1s ease all;
+	transition: 0.4s ease all;
 }
 
 header#site-header.kokako .contain{
@@ -926,18 +927,12 @@ header#site-header .header-logo{
 	align-items: center; */
 }
 
-header#site-header nav{
+header#site-header #header-menu{
 	grid-area: header-menu;
 } 
 
 header#site-header.has-header-widget .header-widget{
 	grid-area: header-widget;
-}
-
-header#site-header nav{
-	display: flex;
-	flex-direction: row-reverse;
-	align-items: center;
 }
 
 header#site-header .header-widget{
@@ -973,7 +968,7 @@ header {
 }
 
 header,
-header nav.navbar {
+header #main-nav {
 	position: relative;
 }
 
@@ -987,7 +982,7 @@ header .header-logo{
 	display: flex;
 	align-items: center; /* Centres logo vertically */
 	z-index: 100;
-	transition: 1s ease all;
+	transition: 0.4s ease all;
 }
 
 /*
@@ -997,7 +992,7 @@ header nav.flex-row-reverse .logo {
 
 header.scrolled .logo {
 	height: 70px;
-	transition: 1s ease all;
+	transition: 0.4s ease all;
 }
 
 header .logo a.navbar-brand {
@@ -1006,7 +1001,7 @@ header .logo a.navbar-brand {
 	/* margin: 20px 0 0 0; *
 	width: 185px;
 	border-bottom: none !important;
-	transition: 1s ease all;
+	transition: 0.4s ease all;
 	/* Bootstrap overrides below: *
 	padding: 0;
 	margin-right: 0;
@@ -1014,7 +1009,7 @@ header .logo a.navbar-brand {
 
 header.scrolled .logo a.navbar-brand {
 	width: 110px;
-	transition: 1s ease all;
+	transition: 0.4s ease all;
 }
 
 
@@ -1034,7 +1029,7 @@ header .logo {
 header .logo a.navbar-brand {
 	margin-top: 0;
 	width: 110px;
-	transition: 1s ease all;
+	transition: 0.4s ease all;
 }
 
 
@@ -1068,7 +1063,7 @@ header .header-widget .widgetArea *{
 	display: flex;
 	text-align: right;
 	color: #fff;
-	transition: 1s ease all;
+	transition: 0.4s ease all;
 }
 
 header .header-widget-wrap .header-widget-row-reverse {
@@ -1078,7 +1073,7 @@ header .header-widget-wrap .header-widget-row-reverse {
 
 header.scrolled .header-widget-wrap {
 	top: -70px; /* This is normally set to: ( header height - header.scrolled height ). Ideally, it should be set to about the height of the header widget (c. 70px?)  *
-	transition: 1s ease all;
+	transition: 0.4s ease all;
 }
 
 header .header-widget-wrap :is(h3, p) {
@@ -1160,18 +1155,18 @@ header .header-widget h2 {
 
 /* header#site-header.kokako.scrolled {
 	height: 70px;
-	transition: 1s ease all;
+	transition: 0.4s ease all;
 }
 
 header nav.navbar {
 	top: 0;
-	transition: 1s ease all;
+	transition: 0.4s ease all;
 }
 
 header.scrolled nav.navbar {
 	top: 0;
 	height: 70px;
-	transition: 1s ease all;
+	transition: 0.4s ease all;
 } */
 
 /* Skip link */
@@ -1320,40 +1315,75 @@ button.hamburger:active{
 	transform: translate3d(0, -10px, 0) rotate(-45deg);
 }
 
-header nav ul{
+header#site-header #header-menu{
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+}
+
+header#site-header #header-menu nav{
+	background-color: #1a1a1a;
+	/* position: absolute; */
+	position: fixed;
+	/* a higher z-index put navbar above hamburger */
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	padding: var(--edge-padding);
+	box-sizing: border-box;
+	overflow: hidden;
+	/* style the bar in one cell and the close button in the other */
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	/* animate slide up/down */
+	transition: transform 0.4s ease;
+}
+
+header#site-header #header-menu nav ul{
+	display: flex;
+	flex-direction: column;	
+}
+
+header#site-header #header-menu nav,
+header#site-header.nav-slide-in-top #header-menu nav{ /* This is the default */
+	transform: translateY(-100%);
+}
+
+header#site-header.nav-slide-in-bottom #header-menu nav{
+	transform: translateY(100%);
+}
+
+header#site-header.nav-slide-in-left #header-menu nav{
+	transform: translateX(-100%);
+}
+
+header#site-header.nav-slide-in-right #header-menu nav{
+	transform: translateX(100%);
+}
+
+header#site-header #header-menu nav#navigation:target{
+	transform: translate(0);
+}
+
+#header-menu .hamburger{
+	display: block;
+	border-radius: 0;
+	box-sizing: border-box;
+	height: 54px; /* Enforce no extra space added inside */
+}
+
+#header-menu nav :is(ul, li){
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-}
-
-header nav .hamburger {
-	display: block;
+	white-space: nowrap; /* Prevent line breaks between words */
 }
 
 
-/* header nav.navbar {
-	grid-gap: 15px;
-	padding-top: 0;
-	padding-bottom: 0;
-	height: 140px;
-	transition: 1s ease all;
-}
-
-header nav.navbar #main-nav { /* Push nav menu up (is positioned flex) *
-	/* margin-bottom: 30px; *
-	transition: 1s ease all;
-}
-
-header .navbar-collapse {
-	margin-top: 70px;
-	transition: 1s ease all;
-}
-
-header.scrolled .navbar-collapse {
-	margin-top: 0;
-	transition: 1s ease all;
-}
-
+/*
 nav ul {
 	margin: 0;
 }
@@ -1363,6 +1393,32 @@ nav ul li {
 	white-space: nowrap; /* Prevent line breaks between words *
 	color: #fff;
 }
+
+
+/* header nav.navbar {
+	grid-gap: 15px;
+	padding-top: 0;
+	padding-bottom: 0;
+	height: 140px;
+	transition: 0.4s ease all;
+}
+
+header nav.navbar #main-nav { /* Push nav menu up (is positioned flex) *
+	/* margin-bottom: 30px; *
+	transition: 0.4s ease all;
+}
+
+header .navbar-collapse {
+	margin-top: 70px;
+	transition: 0.4s ease all;
+}
+
+header.scrolled .navbar-collapse {
+	margin-top: 0;
+	transition: 0.4s ease all;
+}
+
+
 
 
 /* Default - MD *
@@ -1381,7 +1437,7 @@ header .navbar-collapse {
 
 header.scrolled .navbar-collapse {
 	top: 70px;
-	transition: 1s ease all;
+	transition: 0.4s ease all;
 }
 
 header .navbar-collapse,
@@ -1396,7 +1452,32 @@ nav .navbar-collapse {
 	width: calc(100% + 60px);
 } */
 
-nav ul li :is(a, a:link, a:visited){
+#header-menu nav li a{
+	display: block;
+	background-color: #1a1a1a;
+	color: #fff;
+	padding: 15px;
+	margin: 0;
+	border-bottom: 0;
+	transition: 0.3s ease all;
+}
+
+#header-menu nav li a:hover{
+	background-color: #333;
+	transition: 0.3s ease all;
+}
+
+#header-menu nav li a:active{
+	background-color: #474747;
+	transition: 0.3s ease all;
+}
+
+#header-menu nav li a:before{
+	background: #fff;
+}
+
+
+/* nav ul li :is(a, a:link, a:visited){
 	color: #fff;
 	display: block;
 	text-align: center;
@@ -2221,7 +2302,7 @@ section.kokako.colour-scheme-light a:active:not(.button, .btn) {
     border-bottom: 2px solid #474747;
 }
 
-section.kokako.colour-scheme-light a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+section.kokako.colour-scheme-light a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
     background-color: #333;
 }
 
@@ -2277,7 +2358,7 @@ section.kokako.colour-scheme-dark a:active:not(.button, .btn) {
     border-bottom: 2px solid #d2d2d2;
 }
 
-section.kokako.colour-scheme-dark a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+section.kokako.colour-scheme-dark a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
     background-color: #e6e6e6;
 }
 
@@ -2333,7 +2414,7 @@ section.kokako.colour-scheme-foo a:active:not(.button, .btn) {
     border-bottom: 2px solid #d2d2d2;
 }
 
-section.kokako.colour-scheme-foo a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+section.kokako.colour-scheme-foo a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
     background-color: #e6e6e6;
 }
 
@@ -2382,7 +2463,7 @@ section.kokako.colour-scheme-green a:active:not(.button, .btn) {
     border-bottom: 2px solid #474747;
 }
 
-section.kokako.colour-scheme-green a:not(.button, .social-media-link, .navbar-brand, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+section.kokako.colour-scheme-green a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
     background-color: #333;
 }
 
@@ -2715,7 +2796,8 @@ body.single .post-meta + img {
 
 div.accordion-content{
 	display: none;
-	padding-top: 15px;
+	/* padding-top: 15px; */
+	padding: 30px 30px 0;
 	overflow: hidden; /* This causes any floated elements within to be wrapped - see https://stackoverflow.com/questions/2614619/how-to-make-a-div-expand-vertically-to-wrap-the-content-within-it */
 }
 
@@ -3108,7 +3190,7 @@ div.accordion-content + a.button{
     	align-items: flex-end;
     }
         
-    header#site-header nav{
+    header#site-header #main-nav{
     	align-items: flex-start;
     }
         
@@ -3133,38 +3215,52 @@ div.accordion-content + a.button{
     	font-size: 1.8rem;
     } */
         
-    header nav .hamburger{
+    #header-menu .hamburger{
     	display: none;
     }
         
-    nav ul li :is(a, a:link, a:visited){
+    header#site-header #header-menu nav{
+    	padding: 0;
+    	position: relative;
+    	height: auto;
+    	transform: translate(0) !important;
+    	overflow: visible;
+    }
+        
+    header#site-header #header-menu nav ul{
+    	flex-flow: row wrap;
+    	justify-content: right;
+    }
+        
+        
+    /* nav ul li :is(a, a:link, a:visited){
     	display: inline-block;
     }
         
         
-    /* header .navbar-collapse {
+    header .navbar-collapse {
     	position: absolute;
     	width: calc(100% + 60px);
     	top: 70px;
     	left: -30px;
     	align-items: normal; /* This is important for a smooth transition when menu collapsed! *
     	margin-top: 0;
-    	transition: 1s ease all;
+    	transition: 0.4s ease all;
     }
         
     header.scrolled .navbar-collapse,
     header .navbar-collapse.show {
-    	transition: 1s ease all;
+    	transition: 0.4s ease all;
     }
         
     header .navbar-collapse.collapse {
     	height: 0;
-    	transition: 1s ease all;
+    	transition: 0.4s ease all;
     }
         
     header .navbar-collapse.collapse.show {
     	height: auto;
-    	transition: 1s ease all;
+    	transition: 0.4s ease all;
     }
         
     header .navbar .logo {
@@ -3195,7 +3291,7 @@ div.accordion-content + a.button{
     	position: relative;
     	top: 0;
     	border-radius: 0;
-    	transition: 1s ease all;
+    	transition: 0.4s ease all;
     	z-index: 1000;
     }
         
