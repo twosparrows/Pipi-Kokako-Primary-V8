@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 25/06/2024 12:40.00am UTC
+Updated at 25/06/2024 1:00.19am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -8636,7 +8636,7 @@ header.scrolled nav.navbar {
 	padding:[tsp-calc tm /3, round] [text-margin];
 	border: 1px [colour-nav-dropdown-text] solid;
 	border-radius: [button-border-radius];
-	transform: translateY(-200%);
+	transform: translateY(-300%);
 	transition: [anchor-transition];
 }
 
@@ -12307,10 +12307,8 @@ button.hamburger:active {
 
 header#site-header #header-menu nav{
 	background-color: [colour-nav-dropdown-background];
-	/* position: absolute; */
 	position: fixed;
-	/* a higher z-index put navbar above hamburger */
-	z-index: 1000;
+	z-index: 1000; /* A higher z-index to put nav above hamburger */
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -12318,11 +12316,9 @@ header#site-header #header-menu nav{
 	padding: var(--edge-padding);
 	box-sizing: border-box;
 	overflow: hidden;
-	/* style the bar in one cell and the close button in the other */
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	/* animate slide up/down */
 	transition: transform 0.4s ease;
 }
 
@@ -12332,7 +12328,7 @@ header#site-header #header-menu nav ul{
 }
 
 header#site-header #header-menu nav,
-header#site-header.nav-slide-in-top #header-menu nav{ /* This is the default */
+header#site-header.nav-slide-in-top #header-menu nav{ /* Slide in from top is the default */
 	transform: translateY(-100%);
 }
 
@@ -12364,78 +12360,7 @@ header#site-header #header-menu nav#navigation:target{ /* This is how the collap
 	margin: 0;
 	padding: 0;
 	white-space: nowrap; /* Prevent line breaks between words */
-}
-
-
-
-/*
-nav ul {
-	margin: 0;
-}
-
-nav ul li {
-	margin: 0;
-	white-space: nowrap; /* Prevent line breaks between words *
-	color: [colour-nav-text];
-}
-
-
-/* header nav.navbar {
-	grid-gap: [text-margin];
-	padding-top: 0;
-	padding-bottom: 0;
-	height: [header-height];
-	transition: [header-transition];
-}
-
-header nav.navbar #main-nav { /* Push nav menu up (is positioned flex) *
-	/* margin-bottom: 30px; *
-	transition: [header-transition];
-}
-
-header .navbar-collapse {
-	margin-top: 70px;
-	transition: [header-transition];
-}
-
-header.scrolled .navbar-collapse {
-	margin-top: 0;
-	transition: [header-transition];
-}
-
-
-
-
-/* Default - MD *
-
-header nav.navbar {
-	top: 0;
-	height: [header-height-scrolled];
-}
-
-
-/* Default - XS *
-
-header .navbar-collapse {
-	top: [header-height-scrolled];
-}
-
-header.scrolled .navbar-collapse {
-	top: [header-height-scrolled];
-	transition: [header-transition];
-}
-
-header .navbar-collapse,
-header.scrolled .navbar-collapse,
-header .navbar-collapse.show {
-	border-top: none;
-}
-
-nav .navbar-collapse {
-	left: -30px;
-	width: 100%;
-	width: calc(100% + 60px);
-} */',
+}',
       'menu_order' => 40,
       'instructions' => 'This is the main CSS for the expanded Nav bar. CSS for the collapsed nav should be entered in the Nav Responsivity area, under the Responsivity tab.',
       'required' => 0,
@@ -12506,7 +12431,7 @@ nav ul li {
 	transition: [anchor-transition];
 }
 
-#header-menu nav li a:hover{
+#header-menu nav li a:is(:hover, :focus){
 	background-color: [colour-nav-dropdown-background-hover];
 	transition: [anchor-transition];
 }
@@ -12527,66 +12452,7 @@ nav ul li {
 
 #header-menu nav li:is(.current-menu-item, .current-menu-ancestor, current-menu-parent) > a{
 	font-weight: bold;
-}
-
-
-/* nav ul li :is(a, a:link, a:visited){
-	color: [colour-nav-text];
-	display: block;
-	text-align: center;
-	text-decoration: none;
-	font-weight: bold;
-	border-bottom: 2px transparent solid;
-	transition: [anchor-transition];
-}
-
-nav ul li a:hover,
-nav ul li.dropdown.show > a{
-	color: [colour-nav-text-hover];
-	transition: [anchor-transition];
-}
-
-nav ul li a:active{
-	color: [colour-nav-text-active];
-	transition: [anchor-transition];
-}
-
-nav a.nav-link::before{
-	background: [colour-nav-text-hover];
-}
-
-
-/* .navbar-expand-lg .navbar-nav a.nav-link {
-	padding: [tsp-calc tm *2 /3] [tsp-calc tm *4 /3];
-}
-
-nav ul li :is(a, a:link, a:visited) {
-	font-family: [font-family];
-	width: 100%;
-	text-align: center;
-	text-transform: uppercase;
-	text-decoration: none;
-	font-weight: bold;
-	color: [colour-nav-text];
-	border-bottom: 2px transparent solid;
-	transition: [anchor-transition];
-}
-
-nav ul li a:hover,
-nav ul li.dropdown.show > a {
-	color: [colour-nav-text-hover];
-	transition: [anchor-transition];
-}
-
-nav ul li a:active {
-	color: [colour-nav-text-active];
-	/* border-bottom: 2px [colour-nav-text-active] solid; *
-	transition: [anchor-transition];
-}
-
-nav a.nav-link:before {
-	background: [colour-nav-text-hover];
-} */',
+}',
       'menu_order' => 41,
       'instructions' => '',
       'required' => 0,
@@ -12658,9 +12524,6 @@ nav a.nav-link:before {
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
-	/* display: inline-block;
-	text-decoration: inherit;
-	text-align: center; */
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -12669,48 +12532,7 @@ nav a.nav-link:before {
 	font-size: 0.9rem;
 	font-style: italic;
 	padding: [tsp-calc tm *2 /3, round] [text-margin];
-}
-
-
-/* .navbar-nav .dropdown-menu {
-	background: [colour-nav-dropdown-background]; /* Fall back *
-	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
-	border: none;
-	border-radius: 0;
-	padding: 0;
-}
-
-nav ul.dropdown-menu li:not(:last-child):after {
-	content: "";
-}
-
-.navbar-nav .dropdown-menu li a {
-	color: [colour-nav-dropdown-text];
-	display: block;
-	text-transform: capitalize;
-	font-weight: normal;
-	text-align: left;
-}
-
-.navbar-nav .dropdown-menu li a:hover {
-	color: [colour-nav-dropdown-text-hover];
-	background: [colour-nav-dropdown-background-hover]; /* Fall back *
-	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
-	/* border-bottom: none; *
-}
-
-.navbar-nav .dropdown-menu li a:active {
-	color: [colour-nav-dropdown-text-active];
-	background: [colour-nav-dropdown-background-active];
-}
-
-.dropdown-toggle::after {
-	display: none !important;
-}
-
-nav a.dropdown-item:before {
-	background: transparent;
-} */',
+}',
       'menu_order' => 42,
       'instructions' => '',
       'required' => 0,
@@ -12814,14 +12636,6 @@ header#site-header #header-menu nav ul.sub-menu li a::before{
 	pointer-events: all;
 }
 
-/* #header-menu nav li a[href="#"]:hover{
-	background-color: [colour-nav-dropdown-background-hover];
-}
-
-#header-menu nav li a[href="#"]:active{
-	background-color: [colour-nav-dropdown-background-active];
-} */
-
 header#site-header #header-menu nav li.menu-item-has-children > a::before{
 	display: none;
 }
@@ -12850,163 +12664,15 @@ header#site-header #header-menu nav li.menu-item-has-children > a:is(:hover, :fo
 	display: block;
 }
 
-
-
-
-
-/* nav ul li :is(a, a:link, a:visited){
-	display: inline-block;
+header#site-header #header-menu nav#navigation .skip-link{ /* Not required for keyboard navigation when nav expanded */
+	display: none;
 }
-
-
-header .navbar-collapse {
-	position: absolute;
-	width: calc(100% + 60px);
-	top: [header-height-scrolled];
-	left: -30px;
-	align-items: normal; /* This is important for a smooth transition when menu collapsed! *
-	margin-top: 0;
-	transition: [header-transition];
-}
-
-header.scrolled .navbar-collapse,
-header .navbar-collapse.show {
-	transition: [header-transition];
-}
-
-header .navbar-collapse.collapse {
-	height: 0;
-	transition: [header-transition];
-}
-
-header .navbar-collapse.collapse.show {
-	height: auto;
-	transition: [header-transition];
-}
-
-header .navbar .logo {
-	z-index: 10000;
-}
-
-header nav.navbar #main-nav {
-	background: [colour-nav-dropdown-background]; /* Fall back *
-	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
-	width: 100%;
-	z-index: 1000;
-	margin-bottom: 0;
-}
-
-header.scrolled .logo a.navbar-brand {
-	margin-top: 0;
-}
-
-header nav button:focus {
-	outline: none;
-}
-
-nav .collapse:not(.show) {
-	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows *
-}
-
-header nav button.navbar-toggler {
-	position: relative;
-	top: 0;
-	border-radius: 0;
-	transition: [header-transition];
-	z-index: 1000;
-}
-
-header nav ul li:not(:last-child)::after {
-	content: "";
-}
-
-header #main-nav ul li {
-	margin: 0;
-}
-
-header #main-nav ul li a {
-	display: block;
-	width: 100%;
-	margin: 0;
-	text-align: center;
-}
-
-header #main-nav ul li :is(a, a:link, a:visited) {
-	color: [colour-nav-dropdown-text];
-	background: transparent;
-}
-
-header #main-nav ul li a:hover {
-	color: [colour-nav-dropdown-text];
-	background: [colour-nav-dropdown-background-hover]; /* Fall back *
-	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
-}
-
-header #main-nav ul li a:active {
-	color: [colour-nav-dropdown-text];
-	background: [colour-nav-dropdown-background-active];
-}
-
-header .navbar-collapse {
-	z-index: 100;
-}
-
-.navbar-nav .dropdown-menu {
-	text-align: center;
-	transform: inherit;
-	background: transparent;
-}
-
-.navbar-nav .dropdown-menu .dropdown-menu {
-	width: 100%;
-}
-
-nav a.nav-link:before, nav a.dropdown-item::before {
-	background: transparent;
-}
-
-header #main-nav ul li a:is(.dropdown-item, .dropdown-item:link, .dropdown-item:visited) {
-	color: [colour-nav-dropdown-text-rgba 0.7];
-}
-
-header #main-nav ul li a.dropdown-item:hover {
-	color: [colour-nav-dropdown-text-rgba 0.6];
-}
-
-header #main-nav ul li a.dropdown-item:active {
-	color: [colour-nav-dropdown-text-rgba 0.55];
-} */',
+',
         ),
         1 => 
         array (
           'screen_size' => 'xl',
-          'screen_size_css' => '/* header nav.navbar #main-nav {
-	margin-bottom: 0;
-}
-
-header.scrolled .logo a.navbar-brand {
-	margin: 0;
-} *
-
-header nav button:focus {
-	outline: none;
-}
-
-/* nav .collapse:not(.show) {
-	display: none !important; /* Required to override the !important statement on the .d-flex class - otherwise menu always shows *
-} *
-
-header nav button.navbar-toggler {
-	position: relative;
-	top: 0;
-	border-radius: 0;
-	transition: all 1s ease;
-}
-
-header.scrolled nav button.navbar-toggler {
-	top: -25px;
-	transition: all 1s ease;
-} */',
+          'screen_size_css' => '',
         ),
       ),
       'menu_order' => 43,
