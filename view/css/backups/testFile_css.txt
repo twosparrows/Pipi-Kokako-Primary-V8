@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 25/06/2024 2:41.57am UTC
+Updated at 25/06/2024 4:17.27am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -8215,7 +8215,7 @@ Set this to between 0 and 1.',
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: [header-height];
+	/* height: [header-height]; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -8318,9 +8318,9 @@ body.header-fixed.logged-in.admin-bar header {
       'type' => 'textarea',
       'value' => 'header .header-logo{
 	/* height: [header-height]; /* For positioning drop down menu correctly *
-	width: [header-logo-width]; /* 166px is width of logo at normal size (logo will resize to this) *
 	display: flex;
 	align-items: center; /* Centres logo vertically */
+	width: [header-logo-width];
 	z-index: 100;
 	transition: [header-transition];
 }
@@ -12668,11 +12668,6 @@ header#site-header #header-menu nav#navigation .skip-link{ /* Not required for k
 	display: none;
 }
 ',
-        ),
-        1 => 
-        array (
-          'screen_size' => 'xl',
-          'screen_size_css' => '',
         ),
       ),
       'menu_order' => 43,
@@ -19728,8 +19723,7 @@ section.kokako.latestPosts .blog-grid.post.appear {
 
 div.accordion-content{
 	display: none;
-	/* padding-top: [text-margin]; */
-	padding: [tsp-calc tm *2] [tsp-calc tm *2] 0;
+	padding: [tsp-calc tm *2] 0 0;
 	overflow: hidden; /* This causes any floated elements within to be wrapped - see https://stackoverflow.com/questions/2614619/how-to-make-a-div-expand-vertically-to-wrap-the-content-within-it */
 }
 
@@ -19824,7 +19818,17 @@ body a.fbx-close {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'repeater',
-      'value' => false,
+      'value' => 
+      array (
+        0 => 
+        array (
+          'screen_size' => 'lg',
+          'screen_size_css' => 'div.accordion-content{
+	padding: [tsp-calc tm *2] [tsp-calc tm *2] 0;
+}
+',
+        ),
+      ),
       'menu_order' => 2,
       'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
       'required' => 0,

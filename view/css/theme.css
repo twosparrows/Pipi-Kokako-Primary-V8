@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 25/06/2024 2:41.55am UTC
+Updated at 25/06/2024 4:17.25am UTC
 
 
 FILE STRUCTURE:
@@ -904,7 +904,7 @@ header#site-header.kokako{
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 140px;
+	/* height: 140px; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -978,9 +978,9 @@ body.header-fixed.logged-in.admin-bar header {
 
 header .header-logo{
 	/* height: 140px; /* For positioning drop down menu correctly *
-	width: 185px; /* 166px is width of logo at normal size (logo will resize to this) *
 	display: flex;
 	align-items: center; /* Centres logo vertically */
+	width: 185px;
 	z-index: 100;
 	transition: 0.4s ease all;
 }
@@ -2653,8 +2653,7 @@ body.single .post-meta + img {
 
 div.accordion-content{
 	display: none;
-	/* padding-top: 15px; */
-	padding: 30px 30px 0;
+	padding: 30px 0 0;
 	overflow: hidden; /* This causes any floated elements within to be wrapped - see https://stackoverflow.com/questions/2614619/how-to-make-a-div-expand-vertically-to-wrap-the-content-within-it */
 }
 
@@ -3221,6 +3220,10 @@ div.accordion-content + a.button{
     /* body.blog section.kokako.latestPosts .row .blog-grid.post:nth-of-type(2) h3 {
     	margin-top: 30px;
     } */
+        
+    div.accordion-content{
+    	padding: 30px 30px 0;
+    }
     
 }
 
@@ -3250,8 +3253,6 @@ div.accordion-content + a.button{
     /* header .header-widget {
     	left: 50%;
     } */
-        
-        
         
     footer.kokako .columns.cols-4{
     	grid-template-columns: repeat(4, 1fr);
