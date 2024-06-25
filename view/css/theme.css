@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 25/06/2024 1:00.16am UTC
+Updated at 25/06/2024 2:41.55am UTC
 
 
 FILE STRUCTURE:
@@ -1227,13 +1227,13 @@ body.header-fixed.logged-in.admin-bar header { /* Not required when header is po
 	overflow: visible;
 }
 
-button.hamburger:focus{
+/* button.hamburger:focus{
 	outline: none;
 }
 
 button.hamburger:active{
 	background: transparent;
-}
+} */
 
 .hamburger:hover{
 	opacity: 0.7;
@@ -1289,7 +1289,7 @@ button.hamburger:active{
 	bottom: -10px;
 }
 
-.hamburger--3dx .hamburger-box{
+/* .hamburger--3dx .hamburger-box{
 	perspective: 80px;
 }
 
@@ -1300,7 +1300,7 @@ button.hamburger:active{
 .hamburger--3dx .hamburger-inner::before,
 .hamburger--3dx .hamburger-inner::after{
 	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
+} */
 
 .hamburger--3dx:not(.collapsed) .hamburger-inner{
 	background-color: transparent !important;

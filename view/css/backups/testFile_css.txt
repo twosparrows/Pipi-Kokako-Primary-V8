@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 25/06/2024 1:00.19am UTC
+Updated at 25/06/2024 2:41.57am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -9258,13 +9258,13 @@ Set this to between 0 and 1.',
 	overflow: visible;
 }
 
-button.hamburger:focus{
+/* button.hamburger:focus{
 	outline: none;
 }
 
 button.hamburger:active{
 	background: transparent;
-}
+} */
 
 .hamburger:hover{
 	opacity: 0.7;
@@ -9437,7 +9437,7 @@ button.hamburger:active {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '.hamburger--3dx .hamburger-box{
+      'value' => '/* .hamburger--3dx .hamburger-box{
 	perspective: 80px;
 }
 
@@ -9448,7 +9448,7 @@ button.hamburger:active {
 .hamburger--3dx .hamburger-inner::before,
 .hamburger--3dx .hamburger-inner::after{
 	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
+} */
 
 .hamburger--3dx:not(.collapsed) .hamburger-inner{
 	background-color: transparent !important;
