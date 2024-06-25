@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 24/06/2024 4:00.33am UTC
+Updated at 25/06/2024 12:40.00am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -8751,7 +8751,11 @@ body.header-fixed.logged-in.admin-bar header { /* Not required when header is po
         0 => 
         array (
           'screen_size' => 'nav-expanded',
-          'screen_size_css' => 'header#site-header.kokako.has-widget-area .contain{
+          'screen_size_css' => 'header#site-header{
+	overflow: visible;
+}
+
+header#site-header.kokako.has-widget-area .contain{
 	grid-template-areas: "header-logo header-widget"
 		"header-logo header-menu";
 }
@@ -12344,7 +12348,7 @@ header#site-header.nav-slide-in-right #header-menu nav{
 	transform: translateX(100%);
 }
 
-header#site-header #header-menu nav#navigation:target{
+header#site-header #header-menu nav#navigation:target{ /* This is how the collapsed navigation opens, when the #navigation element is targeted by the open menu button, it is moved on to the screen (no JS required) */
 	transform: translate(0);
 }
 
@@ -12361,6 +12365,7 @@ header#site-header #header-menu nav#navigation:target{
 	padding: 0;
 	white-space: nowrap; /* Prevent line breaks between words */
 }
+
 
 
 /*
@@ -12511,8 +12516,17 @@ nav ul li {
 	transition: [anchor-transition];
 }
 
-#header-menu nav li a:before{
-	background: [colour-nav-text];
+#header-menu nav li a::before{
+	display: none;
+}
+
+#header-menu nav li a[href="#"]{ /* Disable empty anchors from being selected, or having hover events */
+	background-color: [colour-nav-dropdown-background];
+	pointer-events: none;
+}
+
+#header-menu nav li:is(.current-menu-item, .current-menu-ancestor, current-menu-parent) > a{
+	font-weight: bold;
 }
 
 
@@ -12537,7 +12551,7 @@ nav ul li a:active{
 	transition: [anchor-transition];
 }
 
-nav a.nav-link:before{
+nav a.nav-link::before{
 	background: [colour-nav-text-hover];
 }
 
@@ -12633,7 +12647,32 @@ nav a.nav-link:before {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '/* .navbar-nav .dropdown-menu {
+      'value' => '#header-menu nav li.menu-item-has-children > a::after{
+	position: relative;
+	left: 1rem;
+	top: -2px;
+	content: \'\\e75c\';
+	font-family: "fa-select";
+	font-size: 0.8rem;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	/* display: inline-block;
+	text-decoration: inherit;
+	text-align: center; */
+	-webkit-font-smoothing: antialiased;
+}
+
+#header-menu nav ul.sub-menu li a{
+	color: [colour-nav-dropdown-text-rgba 0.8];
+	font-size: 0.9rem;
+	font-style: italic;
+	padding: [tsp-calc tm *2 /3, round] [text-margin];
+}
+
+
+/* .navbar-nav .dropdown-menu {
 	background: [colour-nav-dropdown-background]; /* Fall back *
 	background: [colour-nav-dropdown-background-rgba {nav-dropdown-menu-opacity}];
 	border: none;
@@ -12762,6 +12801,58 @@ header#site-header #header-menu nav ul{
 	justify-content: right;
 }
 
+header#site-header #header-menu nav ul li a::before{
+	display: block;
+	background: [colour-nav-text];
+}
+
+header#site-header #header-menu nav ul.sub-menu li a::before{
+	display: none;
+}
+
+#header-menu nav li a[href="#"]{
+	pointer-events: all;
+}
+
+/* #header-menu nav li a[href="#"]:hover{
+	background-color: [colour-nav-dropdown-background-hover];
+}
+
+#header-menu nav li a[href="#"]:active{
+	background-color: [colour-nav-dropdown-background-active];
+} */
+
+header#site-header #header-menu nav li.menu-item-has-children > a::before{
+	display: none;
+}
+
+#header-menu nav li.menu-item-has-children > a::after{
+	left: 0.4rem;
+}
+
+#header-menu nav li.menu-item-has-children{
+	position: relative;
+}
+
+header#site-header #header-menu nav ul.sub-menu{
+	display: none;
+        position: absolute;
+        z-index: 1;
+	text-align: left;
+}
+
+header#site-header #header-menu nav li.menu-item-has-children:is(:hover, :focus, :active) > a{
+	background-color: [colour-nav-dropdown-background-hover];
+}
+
+header#site-header #header-menu nav li.menu-item-has-children:is(:hover, :focus, :focus-within, :active) ul.sub-menu,
+header#site-header #header-menu nav li.menu-item-has-children > a:is(:hover, :focus, :active) + ul.sub-menu{ /* :focus and :focus-within on the parent, and when the anchor sibling receives focus, are crucial for keyboard navigation */
+	display: block;
+}
+
+
+
+
 
 /* nav ul li :is(a, a:link, a:visited){
 	display: inline-block;
@@ -12825,7 +12916,7 @@ header nav button.navbar-toggler {
 	z-index: 1000;
 }
 
-header nav ul li:not(:last-child):after {
+header nav ul li:not(:last-child)::after {
 	content: "";
 }
 
@@ -12870,7 +12961,7 @@ header .navbar-collapse {
 	width: 100%;
 }
 
-nav a.nav-link:before, nav a.dropdown-item:before {
+nav a.nav-link:before, nav a.dropdown-item::before {
 	background: transparent;
 }
 
