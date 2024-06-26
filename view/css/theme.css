@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 25/06/2024 4:17.25am UTC
+Updated at 26/06/2024 4:36.38am UTC
 
 
 FILE STRUCTURE:
@@ -443,7 +443,8 @@ li.disabled > a:first-child{
 
 /* ---- 4. Buttons ---- */
 
-button, input[type="submit"], a.button{
+button, input[type="submit"], a.button,
+nav#navigation li.button a{
 	cursor: pointer;
 	display: inline-block;
 	color: #ffffff;
@@ -464,18 +465,18 @@ button, input[type="submit"], a.button{
 	transition: 0.3s ease all;
 }
 
-:is(button, input[type="submit"], a.button):focus{
+:is(button, input[type="submit"], a.button, nav#navigation li.button a):focus{
 	box-shadow: none;
 }
 
-:is(button, input[type="submit"], a.button):focus,
-:is(button, input[type="submit"], a.button):hover{
+:is(button, input[type="submit"], a.button, nav#navigation li.button a):focus,
+:is(button, input[type="submit"], a.button, nav#navigation li.button a):hover{
 	color: #fff;
 	background: #333;
 	transform: scale(1.05);
 }
 
-:is(button, input[type="submit"], a.button):active{
+:is(button, input[type="submit"], a.button, nav#navigation li.button a):active{
 	background: #474747;
 }
 
@@ -862,8 +863,6 @@ footer{
 
 /* Display & Hide classes - these classes will cascade, and can be added together. To make an element only display or hide at certain screen sizes, start from the smallest size (display or hide), then add classes for other sizes as required. */
 
-/* Initial states */
-
 .display-sm,
 .display-md,
 .display-lg,
@@ -881,9 +880,6 @@ footer{
 .hide-nav-expand{ /* At XS size, these are not yet hidden */
 	display: block;
 }
-
-
-/* XS size */
 
 .display,
 .display-xs{
@@ -909,6 +905,7 @@ header#site-header.kokako{
 	align-items: center;
 	justify-content: center;
 	background: #1a1a1a;
+	padding: 26.25px 0;
 	z-index: 10;
 	transition: 0.4s ease all;
 }
@@ -2130,51 +2127,51 @@ section.kokako.colour-scheme.has-background-image{
 
 /* Colour Scheme Light */
 
-section.kokako.colour-scheme-light,
-section.kokako.colour-scheme-light :is(.container, .container-fluid) .row.text-row-background {
+.kokako.colour-scheme-light,
+.kokako.colour-scheme-light :is(.container, .container-fluid) .row.text-row-background {
     color: #1a1a1a;
     background-color: #fff;
 }
 
-section.kokako.colour-scheme-light :is(h1, h2, h3, h4, h5, h6) {
+.kokako.colour-scheme-light :is(h1, h2, h3, h4, h5, h6) {
     color: #1a1a1a;
 }
 
-section.kokako.colour-scheme-light :is(p, li, td) {
+.kokako.colour-scheme-light :is(p, li, td) {
     color: #1a1a1a;
 }
 
-section.kokako.colour-scheme-light :is(a, a:link, a:visited):not(.button, .btn) {
+.kokako.colour-scheme-light :is(a, a:link, a:visited):not(.button, .btn) {
     color: #1a1a1a;
     border-bottom: 2px solid #1a1a1a;
 }
 
-section.kokako.colour-scheme-light a:hover:not(.button, .btn) {
+.kokako.colour-scheme-light a:hover:not(.button, .btn) {
     color: #333;
     border-bottom: 2px solid #333;
 }
 
-section.kokako.colour-scheme-light a:active:not(.button, .btn) {
+.kokako.colour-scheme-light a:active:not(.button, .btn) {
     color: #474747;
     border-bottom: 2px solid #474747;
 }
 
-section.kokako.colour-scheme-light a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+.kokako.colour-scheme-light a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
     background-color: #333;
 }
 
-section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button) {
+.kokako.colour-scheme-light :is(button, input[type="submit"], a.button) {
     color: #ffffff;
     background-color: #1a1a1a;
 }
 
-section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button):hover,
-section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button):focus {
+.kokako.colour-scheme-light :is(button, input[type="submit"], a.button):hover,
+.kokako.colour-scheme-light :is(button, input[type="submit"], a.button):focus {
     color: #ffffff;
     background-color: #333;
 }
 
-section.kokako.colour-scheme-light :is(button, input[type="submit"], a.button):active {
+.kokako.colour-scheme-light :is(button, input[type="submit"], a.button):active {
     color: #ffffff;
     background-color: #474747;
 }
@@ -2186,51 +2183,51 @@ section.kokako.background-overlay.background-overlay-light .image-overlay{
 
 /* Colour Scheme Dark */
 
-section.kokako.colour-scheme-dark,
-section.kokako.colour-scheme-dark :is(.container, .container-fluid) .row.text-row-background {
+.kokako.colour-scheme-dark,
+.kokako.colour-scheme-dark :is(.container, .container-fluid) .row.text-row-background {
     color: #fff;
     background-color: #1a1a1a;
 }
 
-section.kokako.colour-scheme-dark :is(h1, h2, h3, h4, h5, h6) {
+.kokako.colour-scheme-dark :is(h1, h2, h3, h4, h5, h6) {
     color: #fff;
 }
 
-section.kokako.colour-scheme-dark :is(p, li, td) {
+.kokako.colour-scheme-dark :is(p, li, td) {
     color: #fff;
 }
 
-section.kokako.colour-scheme-dark :is(a, a:link, a:visited):not(.button, .btn) {
+.kokako.colour-scheme-dark :is(a, a:link, a:visited):not(.button, .btn) {
     color: #fff;
     border-bottom: 2px solid #fff;
 }
 
-section.kokako.colour-scheme-dark a:hover:not(.button, .btn) {
+.kokako.colour-scheme-dark a:hover:not(.button, .btn) {
     color: #e6e6e6;
     border-bottom: 2px solid #e6e6e6;
 }
 
-section.kokako.colour-scheme-dark a:active:not(.button, .btn) {
+.kokako.colour-scheme-dark a:active:not(.button, .btn) {
     color: #d2d2d2;
     border-bottom: 2px solid #d2d2d2;
 }
 
-section.kokako.colour-scheme-dark a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+.kokako.colour-scheme-dark a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
     background-color: #e6e6e6;
 }
 
-section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button) {
+.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button) {
     color: #1a1a1a;
     background: #ffffff;
 }
 
-section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button):hover,
-section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button):focus {
+.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button):hover,
+.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button):focus {
     color: #1a1a1a;
     background: #e6e6e6;
 }
 
-section.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button):active {
+.kokako.colour-scheme-dark :is(button, input[type="submit"], a.button):active {
     color: #1a1a1a;
     background: #d2d2d2;
 }
@@ -2242,99 +2239,99 @@ section.kokako.background-overlay.background-overlay-dark .image-overlay{
 
 /* Colour Scheme Foo */
 
-section.kokako.colour-scheme-foo,
-section.kokako.colour-scheme-foo :is(.container, .container-fluid) .row.text-row-background {
+.kokako.colour-scheme-foo,
+.kokako.colour-scheme-foo :is(.container, .container-fluid) .row.text-row-background {
     color: #fff;
     background-color: #f00;
 }
 
-section.kokako.colour-scheme-foo :is(h1, h2, h3, h4, h5, h6) {
+.kokako.colour-scheme-foo :is(h1, h2, h3, h4, h5, h6) {
     color: #fff;
 }
 
-section.kokako.colour-scheme-foo :is(p, li, td) {
+.kokako.colour-scheme-foo :is(p, li, td) {
     color: #fff;
 }
 
-section.kokako.colour-scheme-foo :is(a, a:link, a:visited):not(.button, .btn) {
+.kokako.colour-scheme-foo :is(a, a:link, a:visited):not(.button, .btn) {
     color: #fff;
     border-bottom: 2px solid #fff;
 }
 
-section.kokako.colour-scheme-foo a:hover:not(.button, .btn) {
+.kokako.colour-scheme-foo a:hover:not(.button, .btn) {
     color: #e6e6e6;
     border-bottom: 2px solid #e6e6e6;
 }
 
-section.kokako.colour-scheme-foo a:active:not(.button, .btn) {
+.kokako.colour-scheme-foo a:active:not(.button, .btn) {
     color: #d2d2d2;
     border-bottom: 2px solid #d2d2d2;
 }
 
-section.kokako.colour-scheme-foo a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+.kokako.colour-scheme-foo a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
     background-color: #e6e6e6;
 }
 
-section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button) {
+.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button) {
     color: #1a1a1a;
     background-color: #ffffff;
 }
 
-section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):hover,
-section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):focus {
+.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):hover,
+.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):focus {
     background-color: #e6e6e6;
 }
 
-section.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):active {
+.kokako.colour-scheme-foo :is(button, input[type="submit"], a.button):active {
     background-color: #d2d2d2;
 }
 
 /* Colour Scheme Green */
 
-section.kokako.colour-scheme-green,
-section.kokako.colour-scheme-green :is(.container, .container-fluid) .row.text-row-background {
+.kokako.colour-scheme-green,
+.kokako.colour-scheme-green :is(.container, .container-fluid) .row.text-row-background {
     color: #1a1a1a;
     background-color: #81d742;
 }
 
-section.kokako.colour-scheme-green :is(h1, h2, h3, h4, h5, h6) {
+.kokako.colour-scheme-green :is(h1, h2, h3, h4, h5, h6) {
     color: #1a1a1a;
 }
 
-section.kokako.colour-scheme-green :is(p, li, td) {
+.kokako.colour-scheme-green :is(p, li, td) {
     color: #1a1a1a;
 }
 
-section.kokako.colour-scheme-green :is(a, a:link, a:visited):not(.button, .btn) {
+.kokako.colour-scheme-green :is(a, a:link, a:visited):not(.button, .btn) {
     color: #1a1a1a;
     border-bottom: 2px solid #1a1a1a;
 }
 
-section.kokako.colour-scheme-green a:hover:not(.button, .btn) {
+.kokako.colour-scheme-green a:hover:not(.button, .btn) {
     color: #333;
     border-bottom: 2px solid #333;
 }
 
-section.kokako.colour-scheme-green a:active:not(.button, .btn) {
+.kokako.colour-scheme-green a:active:not(.button, .btn) {
     color: #474747;
     border-bottom: 2px solid #474747;
 }
 
-section.kokako.colour-scheme-green a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
+.kokako.colour-scheme-green a:not(.button, .social-media-link, .image-anchor, .footer-logo-a, .ab-item, .foobox, .testimonial-link, .disabled, .no-underline, .no-hover, .section-named-anchor, .fbx-link, .fbx-btn-shadow):before {
     background-color: #333;
 }
 
-section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button) {
+.kokako.colour-scheme-green :is(button, input[type="submit"], a.button) {
     color: #ffffff;
     background-color: #1a1a1a;
 }
 
-section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):hover,
-section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):focus {
+.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):hover,
+.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):focus {
     background-color: #333;
 }
 
-section.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):active {
+.kokako.colour-scheme-green :is(button, input[type="submit"], a.button):active {
     background-color: #474747;
 }
 

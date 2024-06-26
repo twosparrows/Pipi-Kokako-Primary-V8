@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 25/06/2024 4:17.27am UTC
+Updated at 26/06/2024 4:36.42am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -1853,7 +1853,7 @@ This is the default button background colour when used in a section with a light
       ),
       'default_value' => '',
       'maxlength' => '',
-      'rows' => 8,
+      'rows' => 24,
       'placeholder' => '',
       'new_lines' => '',
       '_name' => 'import_css',
@@ -4496,7 +4496,8 @@ li.disabled > a:first-child {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '[button-selectors]{
+      'value' => '[button-selectors],
+nav#navigation li.button a{
 	cursor: pointer;
 	display: inline-block;
 	color: [colour-button-text];
@@ -4517,18 +4518,18 @@ li.disabled > a:first-child {
 	transition: [button-transition];
 }
 
-:is([button-selectors]):focus{
+:is([button-selectors], nav#navigation li.button a):focus{
 	box-shadow: none;
 }
 
-:is([button-selectors]):focus,
-:is([button-selectors]):hover{
+:is([button-selectors], nav#navigation li.button a):focus,
+:is([button-selectors], nav#navigation li.button a):hover{
 	color: [colour-text-light];
 	background: [colour-button-background-hover];
 	transform: [button-swell];
 }
 
-:is([button-selectors]):active{
+:is([button-selectors], nav#navigation li.button a):active{
 	background: [colour-button-background-active];
 }',
       'menu_order' => 20,
@@ -7583,8 +7584,6 @@ footer{
       'type' => 'textarea',
       'value' => '/* Display & Hide classes - these classes will cascade, and can be added together. To make an element only display or hide at certain screen sizes, start from the smallest size (display or hide), then add classes for other sizes as required. */
 
-/* Initial states */
-
 .display-sm,
 .display-md,
 .display-lg,
@@ -7602,9 +7601,6 @@ footer{
 .hide-nav-expand{ /* At XS size, these are not yet hidden */
 	display: block;
 }
-
-
-/* XS size */
 
 .display,
 .display-xs{
@@ -8220,6 +8216,7 @@ Set this to between 0 and 1.',
 	align-items: center;
 	justify-content: center;
 	background: [colour-header-background];
+	padding: [tsp-calc tm *7 /4, round2] 0;
 	z-index: 10;
 	transition: [header-transition];
 }
