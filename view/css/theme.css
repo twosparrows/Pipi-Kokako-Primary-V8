@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 26/06/2024 4:36.38am UTC
+Updated at 27/06/2024 4:09.34am UTC
 
 
 FILE STRUCTURE:
@@ -1699,53 +1699,53 @@ footer {
 }
 */
 
-/* Padding classes */
+/* Padding classes (unlike margin classes, these can be added to .contain as well as .kokako) */
 
-.kokako:is(.padding-top-none, .padding-none){
+:is(.kokako, .kokako .contain):is(.padding-top-none, .padding-none){
 	padding-top: 0 !important;
 }
 
-.kokako:is(.padding-bottom-none, .padding-none){
+:is(.kokako, .kokako .contain):is(.padding-bottom-none, .padding-none){
 	padding-bottom: 0 !important;
 }
 
-.kokako:is(.padding-top-xs, .padding-xs){ /* Formerly "small" */
+:is(.kokako, .kokako .contain):is(.padding-top-xs, .padding-xs){ /* Formerly "small" */
 	padding-top: 45px !important;
 }
 
-.kokako:is(.padding-bottom-xs, .padding-xs){
+:is(.kokako, .kokako .contain):is(.padding-bottom-xs, .padding-xs){
 	padding-bottom: 45px !important;
 }
 
-.kokako:is(.padding-top-sm, .padding-sm){ /* Formerly "reduced" */
+:is(.kokako, .kokako .contain):is(.padding-top-sm, .padding-sm){ /* Formerly "reduced" */
 	padding-top: 68px !important;
 }
 
-.kokako:is(.padding-bottom-sm, .padding-sm){
+:is(.kokako, .kokako .contain):is(.padding-bottom-sm, .padding-sm){
 	padding-bottom: 68px !important;
 }
 
-.kokako:is(.padding-top-md, .padding-md){ /* Formerly "standard" */
+:is(.kokako, .kokako .contain):is(.padding-top-md, .padding-md){ /* Formerly "standard" */
 	padding-top: 90px !important;
 }
 
-.kokako:is(.padding-bottom-md, .padding-md){
+:is(.kokako, .kokako .contain):is(.padding-bottom-md, .padding-md){
 	padding-bottom: 90px !important;
 }
 
-.kokako:is(.padding-top-lg, .padding-lg){ /* Formerly "large" */
+:is(.kokako, .kokako .contain):is(.padding-top-lg, .padding-lg){ /* Formerly "large" */
 	padding-top: 135px !important;
 }
 
-.kokako:is(.padding-bottom-lg, .padding-lg){
+:is(.kokako, .kokako .contain):is(.padding-bottom-lg, .padding-lg){
 	padding-bottom: 135px !important;
 }
 
-.kokako:is(.padding-top-xl, .padding-xl){ /* Formerly "extra-large" */
+:is(.kokako, .kokako .contain):is(.padding-top-xl, .padding-xl){ /* Formerly "extra-large" */
 	padding-top: 180px !important;
 }
 
-.kokako:is(.padding-bottom-xl, .padding-xl){
+:is(.kokako, .kokako .contain):is(.padding-bottom-xl, .padding-xl){
 	padding-bottom: 180px !important;
 }
 
@@ -1936,6 +1936,176 @@ footer {
 }
 
 
+/* Hero */
+
+.kokako.hero{
+	width: 100%; /* Explicitly set for mobile due to "display: grid" */
+	display: grid;
+	grid-template-areas: "hero";
+	min-height: 450px;
+	max-height: 70vh; /* Default */
+}
+
+.kokako.hero .hero-image{
+	grid-area: hero;
+	width: 100%;
+	height: 100%;
+	max-height: 70vh; /* Needs to match parent */
+	overflow: hidden;
+	/* display: flex;
+	justify-content: center; /* These are the defaults *
+	align-items: center; */
+}
+
+.kokako.hero .hero-image img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.kokako.hero .contain{
+	grid-area: hero;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* Height */
+
+.kokako.max-vh-100,
+.kokako.hero.max-vh-100 .hero-image{
+	max-height: 100vh;
+}
+
+.kokako.max-vh-90,
+.kokako.hero.max-vh-90 .hero-image{
+	max-height: 90vh;
+}
+
+.kokako.max-vh-80,
+.kokako.hero.max-vh-80  .hero-image{
+	max-height: 80vh;
+}
+
+.kokako.max-vh-70,
+.kokako.hero.max-vh-70  .hero-image{ /* Not explicitly required here as this is the default setting, but declared anyway in case used elsewhere */
+	max-height: 70vh;
+}
+
+.kokako.max-vh-60,
+.kokako.hero.max-vh-60  .hero-image{
+	max-height: 60vh;
+}
+
+.kokako.max-vh-50,
+.kokako.hero.max-vh-50  .hero-image{
+	max-height: 50vh;
+}
+
+.kokako.max-vh-40,
+.kokako.hero.max-vh-40  .hero-image{
+	max-height: 40vh;
+}
+
+
+/* Overlay */
+
+.kokako.overlay .overlay{
+	grid-area: hero;
+	width: 100%;
+	height: 100%;
+	opacity: 0.3; /* Default */
+	background: #f0f;
+}
+
+.kokako.overlay.overlay-opacity-10 .overlay{
+	opacity: 0.1;
+}
+
+.kokako.overlay.overlay-opacity-20 .overlay{
+	opacity: 0.2;
+}
+
+/* .kokako.overlay.overlay-opacity-30 .overlay{ /* Is default, so not explicitly required *
+	opacity: 0.3;
+} */
+
+.kokako.overlay.overlay-opacity-40 .overlay{
+	opacity: 0.4;
+}
+
+.kokako.overlay.overlay-opacity-50 .overlay{
+	opacity: 0.5;
+}
+
+.kokako.overlay.overlay-opacity-60 .overlay{
+	opacity: 0.6;
+}
+
+.kokako.overlay.overlay-opacity-70 .overlay{
+	opacity: 0.7;
+}
+
+.kokako.overlay.overlay-opacity-80 .overlay{
+	opacity: 0.8;
+}
+
+.kokako.overlay.overlay-opacity-90 .overlay{
+	opacity: 0.9;
+}
+
+.kokako.overlay.overlay-opacity-100 .overlay{
+	opacity: 1;
+}
+
+
+/*
+DID NOT WORK SO COMMENTED OUT:
+
+/* Image focal point  -- defaults to "center" so center settings not required explicitly *
+
+.kokako.hero:is(.image-focal-point-top-left, .image-focal-point-centre-left, .image-focal-point-bottom-left) .hero-image{ /* Left *
+	justify-content: left;
+}
+
+.kokako.hero:is(.image-focal-point-top-right, .image-focal-point-centre-right, .image-focal-point-bottom-right) .hero-image{ /* Right *
+	justify-content: right;
+}
+
+.kokako.hero:is(.image-focal-point-top-left, .image-focal-point-top-centre, .image-focal-point-top-right) .hero-image{ /* Top *
+	align-items: flex-start;
+}
+
+.kokako.hero:is(.image-focal-point-bottom-left, .image-focal-point-bottom-centre, .image-focal-point-bottom-right) .hero-image{ /* Bottom *
+	align-items: flex-end;
+}
+*/
+
+
+/*
+
+OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
+
+.kokako.hero {
+	position: relative;
+	padding: 0;
+	/* margin: 90px 0; *
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center; /* Use flex-end if need to align items at the end *
+	/* background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAB71JREFUaEN12mtO5EoQhNHuH6wI1sSsqVkTrKmvssSxPlJ9kUbGdj3yERkZZeb+/f39drvdbl9fX7f39/fbv3//bt/f3+f+8/NzXt0+Pj5uj8fj3M/7+Zn7n5+fM2fez+/9mffWnDHWmnH+GT/jns/nue2cvp/59/v9rGPf+X3Gz/39dru9zSJzMw8ZWQc4wugaPE7P3HFwGz/j598YMFcGCNTMmb29n/mzl7GCN+9njnfzvj/HyXGEMTYahxglQnM/G4uuqIrKLDzPGGmezJo/Y2ZO53F4DJ35glJ7Gv0ZLxPsvD+fz7eZOJPmIXhJ9zyfDSZy84yTsiM6NQxERFs057l1mg2IEGX2zNoM5ZRsQQ9InozAu0mz0BgmijNpjAETDoMU3O66aS01Yzs4MgLeDc7MA62NFEg6Y6bYJ+KKsUUOKq+KDoTG+NYA2CCNudaAWWsXPoOaZWNmvMBCS+eD+v3z8/OtTpR9GKXIQAaMmknzOIAs5vmknzFqxFrGy4KgyvIOoqDMuPkBv/vj8Tg1Ai42MMgGMlXqlA3Ylxk1IUCoc8bNO1FmRBkT9gubZkqNIAUZ/kO/m+PLFGpkQw8RwHEdt6lsiaZ6kdFmSSD3XDBX9HoKG09GUJmIYQ1RYXzTL+VIoZlsP0IQMlz6Bb/dLzjOaBksNTdgs9+VEc7UiC7IENH8vyi2EEvVrZ0GDgray7QCjmK/TRKUxgnW0C/6gzeNr73E5lhCRlBwsd8NRK71VEiVyjW6LYM4a57s61MX/b5ilDZBeC0BYLL2GA0TBHT3cQx1yvLcc37wDta6O2QIiqvsIChZOvRb+cEwRtlAE8NIEw0azKJ1fjYgJtHvLmSF6orFrLsZtD1r67KrIYJMqRBTVRCKqDSLOli6bzZkHDwLQxCVMe/aRNtct4xixyUaNzV2snTOmArHwsUG1ULzDDlUCGKjwmYzVFmudSbLUAS2JyMtslJuudzvYED8VR9Jd2nchpzSuSs3dpNluCBs5YucGtTTRzYsLIC/yYWmvU626+/e07rYzbRsZA9jwLH9qqq4jDrPrz6CsxVzI0gVi3ilRxe3aXHc6DJWVnRr9dTM1DF1IAMCXyVyziNtcnRN4dE+YzFi0GIKuYKSw52DeUBu9sGAahESGIwBS73tVWfNaYgWQ7GMacExSnYcjHoEUGsVfmrBux3p1oHeBBWChWRmLjtQPUT8yYjNbN6IlFYxHByLmEbYDXseL8sx0nlFtNt8RV3WdfISDal0yXg01pTRPNVc5EM3bjeWsUoaGJeNUjHYUrMlHntASpmzsD3QmhrBFCAhM41EnWljK5024tVBOja1wAhG9yjQOgHtQraw67eA+/v7+zkhcqJs1eiQ2nWWlOBkixJbybC1tnhsDTEcOVS27+N4G+Kh33HE+VsBV9E6MKHW6inPesIcw8ypNOmJDq6beZTNYJqvHx5AfdfwjL0OVk2jJtaMVLXKmqJX0BgIC7ZOGu0eYzfVysYrVaElVMcpiz8f6EqNG6uiS4PJWkVkKZZTxff8bo/SuGw0gK3P6iuS6Pqe9fsZ9cj4FrtFKzuardZFOR1mGcvhwgyEMdXu6NYTpP31Rd3pN1Ucp0a68P4CIhMtLuwj1TAvcoWAd4igxd+9ZMqV0aD2is7V6FyP+mUseaKhWYzh1WHGyqBTHidgvE5vB63XTBmv9+xawbB19FD9QMtZQPFWjFlQLcB+tZI+oTGCX6GDtWTfnmWpkohMEpakSFFgjbleDRGm1cNJ1+9ZWobK5RyyWBVqdZn3KLokYA/Hg7n3BbFQk31Q2qVw1vE1XvQaXYxTAuCoxmhxxhcKekGDQ1uBRvVZi3yCWDRsIcu26wPGFPtOV7UQQ6u7GLuN7p8HNkxRa3tIGXDGV86X1vUzzwphLHlBCwQKGfRWJ7BHqU9NtfdMRDlGDRRKujOH2+T0CnXSoMgyZ8Dx+oqCs0XGAE5sya5uQMyVxBYQ/aiyolS+G2plTY3eh6+q8KvY4ba0K8otLJOrOtVPqRpxwLHI1hl10zVRrzqtKpg1dHO1VJK4+sgYtAXhroU6Jf1jUA86bXjwWzg2s7Ko6akFgdjqoI6WLcfuIxptzhne91OmYu3BCXw0tHJ/sW9ODW3Da9fmnJ5S1WAdmcJkcz2isZDSeGB3Jm0pMZs1anXAvMJvU/MubHM2fPpJtqqgZxqIOJ29FMso0atsKa6No6H6zatNT5btUTlC/G2YdG9oQRolFcx1in20VvHe6Il6edsmjWo7rudUQEUggxFD/4ja/vJK472ifSR1MuTP09ijHVQ6vQOBFrfoo9QKwQYIlSrs1iPDCx927D4jkHoSQrrOIzudbUo1kiFtVjLSxlV5gXZFXUDKcC3+Hq/bTOmwmQ/K0PLnL1Y79f2YYFPG9B1HkAaGO2zyq5mMLxvBPUrWu7rO7hkTlKoGe18ZISdEqxCA+8Jjd2Q1QacV5+rEfIYoXA4UNiBbMqlTJaFZ5/oab9FK9pko5YzA4YigvM8JjtsY2002fYgDV71h5va/OvWwp9BLCN33NMT935xmgOy044JBI1TDW/TGgoEOD56y5dp6K/03WAIJSuDLyYu1VD+D2qRoHzUkwu0DrZPSNmPb/WWa5NDUyo49gZYU+tGutv4HtHGyk+gPhK4AAAAASUVORK5CYII=); /* Noise placeholder - see http://jsfiddle.net/osserpse/6SZQY/ *
+	background-size: 10px 10px; /* Increase size to make it grainier *
+	background-repeat: repeat;
+	background-color: rgba(26,26,26,0.2); *
+	min-height: 550px;
+}
+*/
+
+
 /* Image Grid */
 
 /* .kokako.imageGrid .image-grid {
@@ -2089,7 +2259,7 @@ footer {
     color: #ff0000;
 }
 
-.kokako.background-overlay.background-overlay-foo .image-overlay{
+.kokako.overlay.overlay-foo .overlay{
     background: #ff0000;
 }
 
@@ -2097,7 +2267,7 @@ footer {
     color: #81d742;
 }
 
-.kokako.background-overlay.background-overlay-green .image-overlay{
+.kokako.overlay.overlay-green .overlay{
     background: #81d742;
 }
 
@@ -2176,8 +2346,8 @@ section.kokako.colour-scheme.has-background-image{
     background-color: #474747;
 }
 
-/* Light Image Overlay (option always available) */
-section.kokako.background-overlay.background-overlay-light .image-overlay{
+/* Light and Dark Image overlays are always available and need to be declared explicitly (custom colour schemes added automatically once turned on under Colours) */
+.kokako.overlay.overlay-light .overlay{
 	background: #fff;
 }
 
@@ -2232,8 +2402,8 @@ section.kokako.background-overlay.background-overlay-light .image-overlay{
     background: #d2d2d2;
 }
 
-/* Dark Image Overlay (option always available) */
-section.kokako.background-overlay.background-overlay-dark .image-overlay{
+/* Light and Dark Image overlays are always available and need to be declared explicitly (custom colour schemes added automatically once turned on under Colours) */
+.kokako.overlay.overlay-dark .overlay{
 	background: #1a1a1a;
 }
 

@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 26/06/2024 4:36.42am UTC
+Updated at 27/06/2024 4:09.36am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -13607,7 +13607,8 @@ footer a.social-media-link:last-of-type {
 
 /* .kokako .internalWrap{
 	padding: [tsp-calc tm *3] [tsp-calc tm *5 /3, round] [tsp-calc tm *6];
-} */',
+} */
+',
       'menu_order' => 5,
       'instructions' => '',
       'required' => 0,
@@ -13662,53 +13663,53 @@ footer a.social-media-link:last-of-type {
 }
 */
 
-/* Padding classes */
+/* Padding classes (unlike margin classes, these can be added to .contain as well as .kokako) */
 
-.kokako:is(.padding-top-none, .padding-none){
+:is(.kokako, .kokako .contain):is(.padding-top-none, .padding-none){
 	padding-top: 0 !important;
 }
 
-.kokako:is(.padding-bottom-none, .padding-none){
+:is(.kokako, .kokako .contain):is(.padding-bottom-none, .padding-none){
 	padding-bottom: 0 !important;
 }
 
-.kokako:is(.padding-top-xs, .padding-xs){ /* Formerly "small" */
+:is(.kokako, .kokako .contain):is(.padding-top-xs, .padding-xs){ /* Formerly "small" */
 	padding-top: [tsp-calc spv /2, round] !important;
 }
 
-.kokako:is(.padding-bottom-xs, .padding-xs){
+:is(.kokako, .kokako .contain):is(.padding-bottom-xs, .padding-xs){
 	padding-bottom: [tsp-calc spv /2, round] !important;
 }
 
-.kokako:is(.padding-top-sm, .padding-sm){ /* Formerly "reduced" */
+:is(.kokako, .kokako .contain):is(.padding-top-sm, .padding-sm){ /* Formerly "reduced" */
 	padding-top: [tsp-calc spv *3 /4, round] !important;
 }
 
-.kokako:is(.padding-bottom-sm, .padding-sm){
+:is(.kokako, .kokako .contain):is(.padding-bottom-sm, .padding-sm){
 	padding-bottom: [tsp-calc spv *3 /4, round] !important;
 }
 
-.kokako:is(.padding-top-md, .padding-md){ /* Formerly "standard" */
+:is(.kokako, .kokako .contain):is(.padding-top-md, .padding-md){ /* Formerly "standard" */
 	padding-top: [section-padding-vertical] !important;
 }
 
-.kokako:is(.padding-bottom-md, .padding-md){
+:is(.kokako, .kokako .contain):is(.padding-bottom-md, .padding-md){
 	padding-bottom: [section-padding-vertical] !important;
 }
 
-.kokako:is(.padding-top-lg, .padding-lg){ /* Formerly "large" */
+:is(.kokako, .kokako .contain):is(.padding-top-lg, .padding-lg){ /* Formerly "large" */
 	padding-top: [tsp-calc spv *1.5] !important;
 }
 
-.kokako:is(.padding-bottom-lg, .padding-lg){
+:is(.kokako, .kokako .contain):is(.padding-bottom-lg, .padding-lg){
 	padding-bottom: [tsp-calc spv *1.5] !important;
 }
 
-.kokako:is(.padding-top-xl, .padding-xl){ /* Formerly "extra-large" */
+:is(.kokako, .kokako .contain):is(.padding-top-xl, .padding-xl){ /* Formerly "extra-large" */
 	padding-top: [tsp-calc spv *2] !important;
 }
 
-.kokako:is(.padding-bottom-xl, .padding-xl){
+:is(.kokako, .kokako .contain):is(.padding-bottom-xl, .padding-xl){
 	padding-bottom: [tsp-calc spv *2] !important;
 }
 
@@ -14563,7 +14564,158 @@ section.kokako.hide-section {
         4 => 
         array (
           'section_type' => 'Hero',
-          'section_css' => '/* .kokako.hero {
+          'section_css' => '.kokako.hero{
+	width: 100%; /* Explicitly set for mobile due to "display: grid" */
+	display: grid;
+	grid-template-areas: "hero";
+	min-height: 450px;
+	max-height: 70vh; /* Default */
+}
+
+.kokako.hero .hero-image{
+	grid-area: hero;
+	width: 100%;
+	height: 100%;
+	max-height: 70vh; /* Needs to match parent */
+	overflow: hidden;
+	/* display: flex;
+	justify-content: center; /* These are the defaults *
+	align-items: center; */
+}
+
+.kokako.hero .hero-image img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.kokako.hero .contain{
+	grid-area: hero;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* Height */
+
+.kokako.max-vh-100,
+.kokako.hero.max-vh-100 .hero-image{
+	max-height: 100vh;
+}
+
+.kokako.max-vh-90,
+.kokako.hero.max-vh-90 .hero-image{
+	max-height: 90vh;
+}
+
+.kokako.max-vh-80,
+.kokako.hero.max-vh-80  .hero-image{
+	max-height: 80vh;
+}
+
+.kokako.max-vh-70,
+.kokako.hero.max-vh-70  .hero-image{ /* Not explicitly required here as this is the default setting, but declared anyway in case used elsewhere */
+	max-height: 70vh;
+}
+
+.kokako.max-vh-60,
+.kokako.hero.max-vh-60  .hero-image{
+	max-height: 60vh;
+}
+
+.kokako.max-vh-50,
+.kokako.hero.max-vh-50  .hero-image{
+	max-height: 50vh;
+}
+
+.kokako.max-vh-40,
+.kokako.hero.max-vh-40  .hero-image{
+	max-height: 40vh;
+}
+
+
+/* Overlay */
+
+.kokako.overlay .overlay{
+	grid-area: hero;
+	width: 100%;
+	height: 100%;
+	opacity: 0.3; /* Default */
+	background: #f0f;
+}
+
+.kokako.overlay.overlay-opacity-10 .overlay{
+	opacity: 0.1;
+}
+
+.kokako.overlay.overlay-opacity-20 .overlay{
+	opacity: 0.2;
+}
+
+/* .kokako.overlay.overlay-opacity-30 .overlay{ /* Is default, so not explicitly required *
+	opacity: 0.3;
+} */
+
+.kokako.overlay.overlay-opacity-40 .overlay{
+	opacity: 0.4;
+}
+
+.kokako.overlay.overlay-opacity-50 .overlay{
+	opacity: 0.5;
+}
+
+.kokako.overlay.overlay-opacity-60 .overlay{
+	opacity: 0.6;
+}
+
+.kokako.overlay.overlay-opacity-70 .overlay{
+	opacity: 0.7;
+}
+
+.kokako.overlay.overlay-opacity-80 .overlay{
+	opacity: 0.8;
+}
+
+.kokako.overlay.overlay-opacity-90 .overlay{
+	opacity: 0.9;
+}
+
+.kokako.overlay.overlay-opacity-100 .overlay{
+	opacity: 1;
+}
+
+
+/*
+DID NOT WORK SO COMMENTED OUT:
+
+/* Image focal point  -- defaults to "center" so centre settings not required explicitly *
+
+.kokako.hero:is(.image-focal-point-top-left, .image-focal-point-centre-left, .image-focal-point-bottom-left) .hero-image{ /* Left *
+	justify-content: left;
+}
+
+.kokako.hero:is(.image-focal-point-top-right, .image-focal-point-centre-right, .image-focal-point-bottom-right) .hero-image{ /* Right *
+	justify-content: right;
+}
+
+.kokako.hero:is(.image-focal-point-top-left, .image-focal-point-top-centre, .image-focal-point-top-right) .hero-image{ /* Top *
+	align-items: flex-start;
+}
+
+.kokako.hero:is(.image-focal-point-bottom-left, .image-focal-point-bottom-centre, .image-focal-point-bottom-right) .hero-image{ /* Bottom *
+	align-items: flex-end;
+}
+*/
+
+
+/*
+
+OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
+
+.kokako.hero {
 	position: relative;
 	padding: 0;
 	/* margin: [section-padding-vertical] 0; *
@@ -14577,314 +14729,8 @@ section.kokako.hide-section {
 	background-color: [colour-background-dark-rgba 0.2]; *
 	min-height: 550px;
 }
-
-.kokako.hero + a + .kokako.colour-scheme {
-	margin-top: -[section-padding-vertical];
-}
-
-/* .kokako.hero .banner-overlay {
-	position: absolute;
-	left: 0;
-	width: 50%;
-	height: 70%;
-	background-size: 100% 100%;
-	background-position: left bottom;
-	z-index: 1;
-} *
-
-.kokako.hero .container-fluid {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.kokako.hero .container-fluid img {
-	width: 100%;
-	height: auto;
-}
-
-.kokako.hero .container-fluid .row img {
-	width: auto;
-}
-
-.kokako.hero .container-fluid .row {
-	background: none !important;
-	margin-left: 0;
-	margin-right: 0;
-}
-
-.kokako.hero .container-fluid .row :is(.col-xs-12, .col-sm-12) {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.kokako.hero .overlay {
-	/* position: absolute;
-	top: 27%;
-	left: 10%; *
-	width: 40%;
-	min-width: 500px;
-	max-width: 80%;
-	background: [colour-background-dark-rgba 0.7];
-	/* padding: 21px 42px; *
-	padding:[tsp-calc {text-margin} *2] [text-margin];
-}
-
-.kokako.hero .text-box {
-	width: 100%; /* Default, max widths set for all sizes below *
-	max-width: [width-xl];
-	margin-left: auto;
-	margin-right: auto;
-	/* padding: 21px 42px; *
-	padding:[tsp-calc {text-margin} *2] [text-margin];
-}
-
-.kokako.hero :is(h1, h2, h3, h4, h5, h6, p, li) {
-	color: [colour-text-alt];
-	/* text-align: center;
-	text-shadow: 0 2px 4px [colour-background-alt-rgba 0.8]; *
-	text-shadow: 0 0 30px [colour-background-alt-rgba 0.3]; /* Subtler option *
-}
-
-.kokako.hero.colour-scheme-light :is(h1, h2, h3, h4, h5, h6, p, li) {
-	text-shadow: 0 0 30px [colour-background-rgba 0.3]; /* Subtler option *
-}
-
-.kokako.hero .overlay :is(h1, h2) {
-	text-transform: uppercase;
-}
-
-.kokako.hero p {
-	font-size: 1.2rem;
-}
-
-.kokako.hero .cta-buttons {
-	text-align: left;
-}
-
-.kokako.hero :is(button, a.button, a.btn) {
-	text-shadow: none;
-}
-
-/* .kokako.hero a:is(.button, .button:link, .button:visited) { /* Force alt colours *
-	background: [colour-background];
-	color: [colour-text];
-	/* box-shadow: 0 2px 4px [colour-background-alt-rgba 0.8]; *
-	box-shadow: 0 0 30px [colour-background-alt-rgba 0.3]; /* Subtler option *
-}
-
-.kokako.hero a.button:hover {
-	background: [colour-background-hover];
-}
-
-.kokako.hero a.button:active {
-	background: [colour-background-active];
-} *
-
-
-/* Page Banner - Vertical Height *
-
-.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
-	/* overflow: hidden;
-	max-height: fit-content; /* min-height takes precedence over max-height - see https://ishadeed.com/article/min-max-css/ *
-}
-
-.kokako:is(.vh-100, .vh-95, .vh-90, .vh-85, .vh-80, .vh-70, .vh-60, .vh-50, .vh-40, .vh-30, .px-700, .px-600, .px-500, .px-400, .px-300, .px-200) :is(.container-fluid, .container) { /* Works with max-height:fit-content to ensure spacing *
-	padding-top: [section-padding-vertical];
-	padding-bottom: [section-padding-vertical];
-}
-
-.kokako.vh-100 {
-	min-height: 100vh;
-}
-
-.kokako.vh-95 {
-	min-height: 95vh;
-}
-
-.kokako.vh-90 {
-	min-height: 90vh;
-}
-
-.kokako.vh-85 {
-	min-height: 85vh;
-}
-
-.kokako.vh-80 {
-	min-height: 80vh;
-}
-
-.kokako.vh-70 {
-	min-height: 70vh;
-}
-
-.kokako.vh-60 {
-	min-height: 60vh;
-}
-
-.kokako.vh-50 {
-	min-height: 50vh;
-}
-
-.kokako.vh-40 {
-	min-height: 40vh;
-}
-
-.kokako.vh-30 {
-	min-height: 30vh;
-}
-
-/* .kokako:is(.px-700, .px-600, .px-500, .px-400, .px-300, .px-200) {
-	overflow: hidden;
-	height: calc(100vh - [header-height]); /* default height, max height set below 
-} *
-
-.kokako.px-700 {
-	min-height: 700px;
-}
-
-.kokako.px-600 {
-	min-height: 600px;
-}
-
-.kokako.px-500 {
-	min-height: 500px;
-}
-
-.kokako.px-400 {
-	min-height: 400px;
-}
-
-.kokako.px-300 {
-	min-height: 300px;
-}
-
-.kokako.px-200 {
-	min-height: 200px;
-}
-
-
-/* Default - XS *
-
-.kokako.hero {
-	max-height: none;
-}
-
-.kokako.hero.backgroundImage.max-vh-100 {
-	min-height: 600px;
-}
-
-.kokako.hero :is(.overlay, .text-box) {
-	width: [width-xs-max];
-	min-width: 0;
-	max-width: 100%;
-}
-
-/* .kokako.hero .text-box {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-} *
-
-.kokako.hero :is(h1, h2) {
-	font-size: 3rem;
-}
-
-.kokako.hero :is(p:not(:has(img)), p.small-print) { /* Don\'t hide p tags that are wrapping images *
-	display: none;
-}
-
-
-/* Default - SM *
-
-.kokako.hero .overlay {
-	position: relative;
-	top: 30px;
-	left: 0;
-	background: [colour-background-dark];
-	min-width: 0;
-	max-width: 100%;
-	padding: 40px 15px;
-}
-
-.kokako.hero .text-box {
-	max-width: [width-sm];
-}
-
-
-/* Default - MD *
-
-.kokako.hero.section1 {
-	position: relative;
-	top: -[header-height-scrolled];
-	margin-bottom: -[header-height-scrolled];
-	/* border-top: [header-height-scrolled] transparent solid; *
-	border-top: 0;
-}
-
-.kokako.hero .text-box {
-	max-width: [width-md];
-}
-
-.kokako.hero .overlay {
-	width: 100%;
-	top: [header-height];
-}
-
-/* .kokako.hero.backgroundImage.max-vh-100 {
-	min-height: 700px;
-} *
-
-.kokako.hero :is(h1, h2) {
-	font-size: 3.5rem;
-	margin-bottom: [text-margin];
-}
-
-
-/* Default - LG *
-
-.kokako.hero .overlay {
-	position: relative;
-	top: 30px;
-	left: 0;
-	background: [colour-background-dark];
-	min-width: 0;
-	max-width: 100%;
-	padding: 40px 15px;
-}
-
-.kokako.hero .text-box {
-	max-width: [width-lg];
-} */',
-          'section_responsivity' => 
-          array (
-            0 => 
-            array (
-              'screen_size' => 'sm',
-              'screen_size_css' => '/* .kokako.hero.section1 {
-	position: relative;
-	top: -[header-height];
-	margin-bottom: -[header-height];
-	border-top: 0;
-} */',
-            ),
-            1 => 
-            array (
-              'screen_size' => 'lg',
-              'screen_size_css' => '/* .kokako.hero.section1 {
-	top: 0;
-	margin-bottom: 0;
-}
-
-.kokako.hero {
-	min-height: 700px;
-}
-
-.kokako.hero .overlay {
-	width: 100%;
-	top: [header-height];
-} */',
-            ),
-          ),
+*/',
+          'section_responsivity' => false,
         ),
         5 => 
         array (
@@ -16500,8 +16346,8 @@ background-color: [colour-button-background-hover];',
             'colour_scheme_button_active_css' => 'color: [colour-button-text];
 background-color: [colour-button-background-active];',
           ),
-          'other_colour_scheme_css' => '/* Light Image Overlay (option always available) */
-section.kokako.background-overlay.background-overlay-light .image-overlay{
+          'other_colour_scheme_css' => '/* Light and Dark Image overlays are always available and need to be declared explicitly (custom colour schemes added automatically once turned on under Colours) */
+.kokako.overlay.overlay-light .overlay{
 	background: [colour-background-light];
 }',
           'colour_scheme_responsivity' => false,
@@ -16536,8 +16382,8 @@ background: [colour-button-text-hover];',
             'colour_scheme_button_active_css' => 'color: [colour-button-background];
 background: [colour-button-text-active];',
           ),
-          'other_colour_scheme_css' => '/* Dark Image Overlay (option always available) */
-section.kokako.background-overlay.background-overlay-dark .image-overlay{
+          'other_colour_scheme_css' => '/* Light and Dark Image overlays are always available and need to be declared explicitly (custom colour schemes added automatically once turned on under Colours) */
+.kokako.overlay.overlay-dark .overlay{
 	background: [colour-background-dark];
 }',
           'colour_scheme_responsivity' => false,
