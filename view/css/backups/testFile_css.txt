@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 27/06/2024 4:53.11am UTC
+Updated at 27/06/2024 7:20.17am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -4518,18 +4518,22 @@ nav#navigation li.button a{
 	transition: [button-transition];
 }
 
-:is([button-selectors], nav#navigation li.button a):focus{
+:is([button-selectors]):focus,
+nav#navigation li.button a:focus{
 	box-shadow: none;
 }
 
-:is([button-selectors], nav#navigation li.button a):focus,
-:is([button-selectors], nav#navigation li.button a):hover{
+:is([button-selectors]):focus,
+nav#navigation li.button a:focus,
+:is([button-selectors]):hover,
+nav#navigation li.button a:hover{
 	color: [colour-text-light];
 	background: [colour-button-background-hover];
 	transform: [button-swell];
 }
 
-:is([button-selectors], nav#navigation li.button a):active{
+:is([button-selectors]):active,
+nav#navigation li.button a:active{
 	background: [colour-button-background-active];
 }',
       'menu_order' => 20,
@@ -14456,7 +14460,8 @@ section.kokako.hide-section {
 	margin: [image-margin-vertical] 0;
 }
 
-.kokako.columns .col :is(*:first-child > img:first-child, *:first-child > svg:first-child, img:first-child, svg:first-child){
+.kokako.columns .col :is(*:first-child > img:first-child, *:first-child > svg:first-child, img:first-child, svg:first-child),
+.kokako.columns .contain .text-contain > *:first-child > img:first-child{
 	margin-top: 0;
 }
 

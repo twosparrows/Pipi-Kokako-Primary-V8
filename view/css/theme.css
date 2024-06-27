@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 27/06/2024 4:53.08am UTC
+Updated at 27/06/2024 7:20.15am UTC
 
 
 FILE STRUCTURE:
@@ -465,18 +465,22 @@ nav#navigation li.button a{
 	transition: 0.3s ease all;
 }
 
-:is(button, input[type="submit"], a.button, nav#navigation li.button a):focus{
+:is(button, input[type="submit"], a.button):focus,
+nav#navigation li.button a:focus{
 	box-shadow: none;
 }
 
-:is(button, input[type="submit"], a.button, nav#navigation li.button a):focus,
-:is(button, input[type="submit"], a.button, nav#navigation li.button a):hover{
+:is(button, input[type="submit"], a.button):focus,
+nav#navigation li.button a:focus,
+:is(button, input[type="submit"], a.button):hover,
+nav#navigation li.button a:hover{
 	color: #fff;
 	background: #333;
 	transform: scale(1.05);
 }
 
-:is(button, input[type="submit"], a.button, nav#navigation li.button a):active{
+:is(button, input[type="submit"], a.button):active,
+nav#navigation li.button a:active{
 	background: #474747;
 }
 
@@ -1883,7 +1887,8 @@ footer {
 	margin: 30px 0;
 }
 
-.kokako.columns .col :is(*:first-child > img:first-child, *:first-child > svg:first-child, img:first-child, svg:first-child){
+.kokako.columns .col :is(*:first-child > img:first-child, *:first-child > svg:first-child, img:first-child, svg:first-child),
+.kokako.columns .contain .text-contain > *:first-child > img:first-child{
 	margin-top: 0;
 }
 
