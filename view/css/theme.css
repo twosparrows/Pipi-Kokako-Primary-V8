@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 27/06/2024 4:09.34am UTC
+Updated at 27/06/2024 4:27.43am UTC
 
 
 FILE STRUCTURE:
@@ -2018,7 +2018,6 @@ footer {
 	width: 100%;
 	height: 100%;
 	opacity: 0.3; /* Default */
-	background: #f0f;
 }
 
 .kokako.overlay.overlay-opacity-10 .overlay{

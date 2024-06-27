@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 27/06/2024 4:09.36am UTC
+Updated at 27/06/2024 4:27.45am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -14644,7 +14644,6 @@ section.kokako.hide-section {
 	width: 100%;
 	height: 100%;
 	opacity: 0.3; /* Default */
-	background: #f0f;
 }
 
 .kokako.overlay.overlay-opacity-10 .overlay{
