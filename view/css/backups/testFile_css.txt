@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 27/06/2024 4:27.45am UTC
+Updated at 27/06/2024 4:53.11am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -14578,6 +14578,7 @@ section.kokako.hide-section {
 	height: 100%;
 	max-height: 70vh; /* Needs to match parent */
 	overflow: hidden;
+	z-index: 1;
 	/* display: flex;
 	justify-content: center; /* These are the defaults *
 	align-items: center; */
@@ -14596,6 +14597,7 @@ section.kokako.hide-section {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	z-index: 3;
 }
 
 
@@ -14644,6 +14646,7 @@ section.kokako.hide-section {
 	width: 100%;
 	height: 100%;
 	opacity: 0.3; /* Default */
+	z-index: 2;
 }
 
 .kokako.overlay.overlay-opacity-10 .overlay{
@@ -16975,10 +16978,7 @@ background-color: [colour-button-background];',
             'class' => '',
             'id' => '',
           ),
-          'default_value' => '/* Light Image Overlay (option always available) */
-section.kokako.background-overlay.background-overlay-light .image-overlay {
-	background: [colour-background-light];
-}',
+          'default_value' => '',
           'maxlength' => '',
           'rows' => 6,
           'placeholder' => '',
