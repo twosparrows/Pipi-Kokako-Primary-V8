@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 01/07/2024 12:39.18am UTC
+Updated at 01/07/2024 3:51.27am UTC
 
 
 FILE STRUCTURE:
@@ -544,6 +544,7 @@ textarea{
 	width: 100%;
 	max-width: 600px; /* Was 450px */
 	padding: 6px;
+	box-sizing: border-box;
 }
 
 textarea{
@@ -768,11 +769,11 @@ footer{
 }
 
 .kokako .contain + .contain{
-	margin-top: 45px;
+	margin-top: 60px;
 }
 
 .kokako.has-intro-text .contain + .contain{
-	margin-top: 90px;
+	margin-top: 120px;
 }
 
 .kokako,
@@ -801,6 +802,11 @@ footer{
 	max-width: calc( 1400px + ( var(--edge-padding) * 2 ) );
 }
 
+.kokako.width-contain-text .contain{
+	width: 100%;
+	max-width: calc( 950px + ( var(--edge-padding) * 2 ) );
+}
+
 .kokako.width-contain .text-full{
 	width: 100%;
 	max-width: 100%;
@@ -822,7 +828,7 @@ footer{
 
 .kokako .columns{
 	display: grid;
-	gap: 45px 45px;
+	gap: 60px 60px;
 }
 
 .kokako .columns:is(.cols-1, .cols-2, .cols-3, .cols-4, .cols-5, .cols-6){
@@ -837,7 +843,7 @@ footer{
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 45px 45px;
+	gap: 60px 60px;
 }
 
 .kokako .flex > a{ /* Force anchors to wrap their contents without space */
@@ -1684,7 +1690,7 @@ footer {
 }
 
 .kokako .contain > *:last-child,
-.kokako .contain:not(.columns) > *:last-child > *{ /* This also catches if the last item is a container with items inside, eg. .kokako-buttons */
+.kokako .contain:not(.columns) > *:last-child > *:last-child{ /* This also catches if the last item is a container with items inside, eg. .kokako-buttons */
 	margin-bottom: 0;
 }
 
@@ -1895,7 +1901,7 @@ footer {
 /* .kokako.columns .contain{ /* Default, also for .cols-1 *
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-gap: 45px 45px;
+	grid-gap: 60px 60px;
 }
 
 .kokako:is(.columns, .multipleRows) .content h2 { /* Make it appear as an h3, and override animations (as the columns are already animated ) *
@@ -2213,7 +2219,7 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
 	grid-template-areas:
 		"twi-image"
 		"twi-content"; /* Defaults to image on top */
-	gap: 45px;
+	gap: 60px;
 }
 
 .kokako.textAndImage.image-on-bottom .contain{
@@ -2253,7 +2259,7 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
 /* Colour Scheme & Padding none */
 
 .kokako.textAndImage.colour-scheme:is(.padding-none, .padding-bottom-none) .col.text{
-	padding-bottom: 45px ;
+	padding-bottom: 60px ;
 }
 
 
@@ -2515,8 +2521,13 @@ section.kokako.colour-scheme.has-background-image{
 
 /* ---- 13. Blog ---- */
 
-body:is(.blog, .archive, .single){
-	background: #fff;
+body.single .kokako .post .post-meta + img{
+	margin: 45px 0 30px;
+}
+
+.post-links{
+	display: flex;
+	justify-content: space-between;
 }
 
 /* body:is(.blog, .archive) section.kokako.pageBanner.section1 {
@@ -3138,7 +3149,7 @@ div.accordion-content + a.button{
         
     .kokako.textAndImage.width-full .content > * {
     	box-sizing: border-box;
-    	max-width: 677.5px;
+    	max-width: 670px;
     }
         
     .kokako.textAndImage.width-full.image-on-left .content > * {
@@ -3190,7 +3201,7 @@ div.accordion-content + a.button{
         
     .kokako .text-columns{
     	columns: 2;
-    	grid-gap: 45px;
+    	grid-gap: 60px;
     }
         
     .display-lg{
@@ -3380,15 +3391,15 @@ div.accordion-content + a.button{
     }
         
     .kokako.textAndImage.variation-image-50.image-on-left .content {
-    	padding-left: 45px;
+    	padding-left: 60px;
     }
         
     .kokako.textAndImage.variation-image-50.image-on-right .content {
-    	padding-right: 45px;
+    	padding-right: 60px;
     }
         
     .kokako.textAndImage.variation-image-50.width-full .content > * {
-    	max-width: 655px;
+    	max-width: 640px;
     } */
         
     /* body.blog section.kokako.latestPosts .row .blog-grid.post:nth-of-type(2) h3 {
