@@ -43,6 +43,7 @@ jQuery(document).ready(function($){
     // Confirm JS loaded
     $('#js-loaded').text("true"); // This will prevent "No JS" file from being loaded in footer.php (which is a fallback in case JS doesn't execute)
     
+    
     // Animations
     let heading1 = document.querySelector('.kokako h1');
     let heading2s = document.querySelectorAll('.kokako h2');
@@ -237,6 +238,7 @@ jQuery(document).ready(function($){
     } */
     
     
+    /*
     // Adjust fixed Header size on scroll
     if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
     	jQuery('header').addClass("scrolled");			
@@ -263,6 +265,7 @@ jQuery(document).ready(function($){
     		// jQuery('section.section1').removeClass("scrolled"); // No longer required
     	}
     });
+    */
 
 });
 
@@ -274,14 +277,14 @@ jQuery(window).on('load', function(){
 
     // Theme
     
-    // Set top margin of heading in top Section
+    /* // Set top margin of heading in top Section
     if (jQuery('section.section1.fullScreen').length) {
     	tspSetHeadingTopMargin();
     	jQuery(window).resize(function(){
     		tspSetHeadingTopMargin();
     	});
     	jQuery('section.section1.fullScreen').stellar();
-    }
+    } */
     
     // Accordion functionality
     jQuery('.accordion-toggle').click(function(){
