@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
 
-Updated at 01/07/2024 3:51.27am UTC
+Updated at 02/07/2024 5:08.15am UTC
 
 
 FILE STRUCTURE:
@@ -1690,6 +1690,7 @@ footer {
 }
 
 .kokako .contain > *:last-child,
+.kokako .contain .col > *:last-child,
 .kokako .contain:not(.columns) > *:last-child > *:last-child{ /* This also catches if the last item is a container with items inside, eg. .kokako-buttons */
 	margin-bottom: 0;
 }

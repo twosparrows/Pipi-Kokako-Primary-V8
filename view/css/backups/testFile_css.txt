@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 01/07/2024 3:51.30am UTC
+Updated at 02/07/2024 5:08.18am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -13654,6 +13654,7 @@ footer a.social-media-link:last-of-type {
 }
 
 .kokako .contain > *:last-child,
+.kokako .contain .col > *:last-child,
 .kokako .contain:not(.columns) > *:last-child > *:last-child{ /* This also catches if the last item is a container with items inside, eg. .kokako-buttons */
 	margin-bottom: 0;
 }
@@ -15773,7 +15774,9 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
         ),
       ),
       'menu_order' => 13,
-      'instructions' => 'The Section Type field is used only to identify the section. Please note that the CSS will only be included in the compiled file if the section type is turned on under <a href="admin.php?page=acf-options-developer-options" target="_blank">Developer Options</a>',
+      'instructions' => 'The Section Type field is used only to identify the section. Please note that the CSS will only be included in the compiled file if the section type is turned on under <a href="admin.php?page=acf-options-developer-options" target="_blank">Developer Options</a><br /><br />
+
+<a class="button collapse-all-kokako-sections" onclick="tsp_collapse_kokako_sections_all()" href="#">Collapse All Sections</a>',
       'required' => 0,
       'id' => '',
       'class' => '',
@@ -15883,10 +15886,10 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
             'class' => '',
             'id' => '',
           ),
-          'collapsed' => 'field_61c01ed095525',
+          'layout' => 'table',
           'min' => 0,
           'max' => 10,
-          'layout' => 'table',
+          'collapsed' => 'field_6539e9a360309',
           'button_label' => 'Add Screen Size CSS',
           'rows_per_page' => 20,
           'parent_repeater' => 'field_6539e9a30cbbe',
