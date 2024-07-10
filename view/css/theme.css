@@ -2,9 +2,9 @@
 
 THEME CSS
 
-DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the WP Dashboard (which automatically minifies and forces a CSS update).
+DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the CSS Editor (which automatically minifies and forces a CSS update).
 
-Updated at 02/07/2024 5:08.15am UTC
+Updated at 10/07/2024 3:10.53am UTC
 
 
 FILE STRUCTURE:
@@ -848,6 +848,14 @@ footer{
 
 .kokako .flex > a{ /* Force anchors to wrap their contents without space */
 	display: contents;
+}
+
+.kokako .flex-desktop{
+	display: block;
+}
+
+.kokako .flex-wrap{
+	flex-wrap: wrap;
 }
 
 
@@ -3203,6 +3211,11 @@ div.accordion-content + a.button{
     .kokako .text-columns{
     	columns: 2;
     	grid-gap: 60px;
+    }
+        
+    .kokako .flex-desktop{
+    	display: flex;
+    	column-gap: 60px;
     }
         
     .display-lg{

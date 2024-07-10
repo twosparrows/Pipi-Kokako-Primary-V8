@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 02/07/2024 5:08.18am UTC
+Updated at 10/07/2024 3:10.56am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -350,11 +350,6 @@ Shortcodes:
 [image-margin-vertical] => 30px
 [line-height-headings] => 1.25
 [line-height] => 1.7
-[min-width-lg] => 992
-[min-width-md] => 768
-[min-width-sm] => 577
-[min-width-xl] => 1200
-[min-width-xxl] => 1400
 [nav-dropdown-menu-opacity] => 0.8
 [pi] => 3.1415926536
 [section-padding-vertical] => 90px
@@ -364,6 +359,16 @@ Shortcodes:
 [tsp-calc => 
 [tsp-calculate => 
 [tsp-sum => 
+[width-lg-max] => 1199px
+[width-lg-min] => 992px
+[width-md-max] => 991px
+[width-md-min] => 768px
+[width-sm-max] => 767px
+[width-sm-min] => 577px
+[width-xl-max] => 1399px
+[width-xl-min] => 1200px
+[width-xs-max] => 576px
+[width-xxl-min] => 1400px
 colors-brand-key => 18
 colors-key => 0
 colours-brand-key => 18
@@ -6602,18 +6607,21 @@ This is the base inner horizontal padding for the website (ie. the minimum dista
       'type' => 'group',
       'value' => 
       array (
-        'min_width_sm' => '577',
-        'min_width_md' => '768',
-        'min_width_lg' => '992',
-        'min_width_xl' => '1200',
-        'min_width_xxl' => '1400',
+        'width_sm_min' => '577',
+        'width_md_min' => '768',
+        'width_lg_min' => '992',
+        'width_xl_min' => '1200',
+        'width_xxl_min' => '1400',
       ),
       'menu_order' => 8,
-      'instructions' => 'As the theme is mobile first, XS is simply the default size. LG should be considered the default point for switching from mobile to desktop layout - MD will be used mostly for mobile / tablet in landscape.<br /><br />
+      'instructions' => '<em><strong>Do NOT change these sizes on a live site</strong>. These settings are currently set to match  the <a href="https://getbootstrap.com/docs/5.0/layout/breakpoints/" target="_blank">Bootstrap screen breakpoints</a> and in general should not need to be updated on any site.</em><br /><br />
 
-<strong>Do NOT change these sizes on a live site</strong>. These settings are set to match  the <a href="https://getbootstrap.com/docs/5.0/layout/breakpoints/" target="_blank">Bootstrap screen breakpoints</a> and in general should not need to be updated on any site.<br /><br />
+Each size should be larger than the previous size. As the theme is mobile first, XS is simply the default size. LG should be considered the default point for switching from mobile to desktop layout - MD will be used mostly for mobile / tablet in landscape.<br /><br />
 
-All sizes are in px (pixels), and measure the minimum viewable width of the website at each breakpoint.',
+All sizes are in px (pixels), and measure the minimum viewable width of the website at each breakpoint. Minimum and maximum shortcode values are available for each size (except minimum XS, which will always be 0, and maximum XXL which is any screen width above 1400), eg:<br /><br />
+
+<code>[width-lg-min]</code><br />
+<code>[width-xs-max]</code>',
       'required' => 0,
       'id' => '',
       'class' => '',
@@ -6635,7 +6643,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
           'ID' => 0,
           'key' => 'field_653f2caaa69cc',
           'label' => 'SM',
-          'name' => 'min_width_sm',
+          'name' => 'width_sm_min',
           'aria-label' => '',
           'prefix' => 'acf',
           'type' => 'range',
@@ -6659,7 +6667,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
           'step' => '',
           'prepend' => '',
           'append' => '',
-          '_name' => 'min_width_sm',
+          '_name' => 'width_sm_min',
           '_valid' => 1,
         ),
         1 => 
@@ -6667,7 +6675,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
           'ID' => 0,
           'key' => 'field_653f2e2aa6732',
           'label' => 'MD',
-          'name' => 'min_width_md',
+          'name' => 'width_md_min',
           'aria-label' => '',
           'prefix' => 'acf',
           'type' => 'range',
@@ -6691,7 +6699,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
           'step' => '',
           'prepend' => '',
           'append' => '',
-          '_name' => 'min_width_md',
+          '_name' => 'width_md_min',
           '_valid' => 1,
         ),
         2 => 
@@ -6699,7 +6707,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
           'ID' => 0,
           'key' => 'field_653f2e43a6733',
           'label' => 'LG',
-          'name' => 'min_width_lg',
+          'name' => 'width_lg_min',
           'aria-label' => '',
           'prefix' => 'acf',
           'type' => 'range',
@@ -6723,7 +6731,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
           'step' => '',
           'prepend' => '',
           'append' => '',
-          '_name' => 'min_width_lg',
+          '_name' => 'width_lg_min',
           '_valid' => 1,
         ),
         3 => 
@@ -6731,7 +6739,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
           'ID' => 0,
           'key' => 'field_653f2e8ca6734',
           'label' => 'XL',
-          'name' => 'min_width_xl',
+          'name' => 'width_xl_min',
           'aria-label' => '',
           'prefix' => 'acf',
           'type' => 'range',
@@ -6755,7 +6763,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
           'step' => '',
           'prepend' => '',
           'append' => '',
-          '_name' => 'min_width_xl',
+          '_name' => 'width_xl_min',
           '_valid' => 1,
         ),
         4 => 
@@ -6763,7 +6771,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
           'ID' => 0,
           'key' => 'field_653f2ea0a6735',
           'label' => 'XXL',
-          'name' => 'min_width_xxl',
+          'name' => 'width_xxl_min',
           'aria-label' => '',
           'prefix' => 'acf',
           'type' => 'range',
@@ -6787,7 +6795,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
           'step' => '',
           'prepend' => '',
           'append' => '',
-          '_name' => 'min_width_xxl',
+          '_name' => 'width_xxl_min',
           '_valid' => 1,
         ),
       ),
@@ -7256,6 +7264,14 @@ footer{
 	display: contents;
 }
 
+.kokako .flex-desktop{
+	display: block;
+}
+
+.kokako .flex-wrap{
+	flex-wrap: wrap;
+}
+
 
 /* Working  */
 
@@ -7387,6 +7403,11 @@ footer{
 .kokako .text-columns{
 	columns: 2;
 	grid-gap: [grid-gap-horizontal];
+}
+
+.kokako .flex-desktop{
+	display: flex;
+	column-gap: [grid-gap-horizontal];
 }',
         ),
         2 => 
@@ -15776,7 +15797,7 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
       'menu_order' => 13,
       'instructions' => 'The Section Type field is used only to identify the section. Please note that the CSS will only be included in the compiled file if the section type is turned on under <a href="admin.php?page=acf-options-developer-options" target="_blank">Developer Options</a><br /><br />
 
-<a class="button collapse-all-kokako-sections" onclick="tsp_collapse_kokako_sections_all()" href="#">Collapse All Sections</a>',
+<a class="button collapse-all-kokako-sections" href="#">Collapse All Sections</a>',
       'required' => 0,
       'id' => '',
       'class' => '',
@@ -16474,7 +16495,9 @@ background-color: [colour-button-background];',
       'menu_order' => 5,
       'instructions' => 'Enter details for Colour Schemes classes below. The CSS will be applied to any sections with the Colour Scheme name (in lower case, with hyphens instead of spaces): .colour-scheme-[colour-scheme-class-name]<br /><br />
 
-Any Colour Schemes entered below will automatically populate any Colour Scheme drop downs available to the user.',
+Any Colour Schemes entered below will automatically populate any Colour Scheme drop downs available to the user.<br /><br />
+
+<a class="button collapse-all-kokako-colour-schemes" href="#">Collapse All Colour Schemes</a>',
       'required' => 0,
       'id' => '',
       'class' => '',
