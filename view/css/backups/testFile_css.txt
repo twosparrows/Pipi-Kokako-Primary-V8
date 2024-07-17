@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 10/07/2024 3:10.56am UTC
+Updated at 17/07/2024 3:33.21am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -14376,11 +14376,19 @@ section.kokako.hide-section {
       array (
         0 => 
         array (
+          'section_type' => 'Accordions',
+          'section_css' => '.kokako.accordions .columns{
+	row-gap: [tsp-calc {grid-gap-vertical} /2, round];
+}',
+          'section_responsivity' => false,
+        ),
+        1 => 
+        array (
           'section_type' => 'Call to Action',
           'section_css' => '',
           'section_responsivity' => false,
         ),
-        1 => 
+        2 => 
         array (
           'section_type' => 'Centred Images',
           'section_css' => '/* .kokako.centredImages {
@@ -14481,7 +14489,7 @@ section.kokako.hide-section {
             ),
           ),
         ),
-        2 => 
+        3 => 
         array (
           'section_type' => 'Columns',
           'section_css' => '.kokako.columns :is(img, svg).alignnone{
@@ -14565,7 +14573,7 @@ section.kokako.hide-section {
             ),
           ),
         ),
-        3 => 
+        4 => 
         array (
           'section_type' => 'Heading',
           'section_css' => '.kokako.heading{
@@ -14594,7 +14602,7 @@ section.kokako.hide-section {
             ),
           ),
         ),
-        4 => 
+        5 => 
         array (
           'section_type' => 'Hero',
           'section_css' => '.kokako.hero{
@@ -14767,7 +14775,7 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
 */',
           'section_responsivity' => false,
         ),
-        5 => 
+        6 => 
         array (
           'section_type' => 'Image Grid',
           'section_css' => '/* .kokako.imageGrid .image-grid {
@@ -14896,7 +14904,7 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
             ),
           ),
         ),
-        6 => 
+        7 => 
         array (
           'section_type' => 'Logos',
           'section_css' => '.kokako.logos {
@@ -14904,7 +14912,7 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
 }',
           'section_responsivity' => false,
         ),
-        7 => 
+        8 => 
         array (
           'section_type' => 'Posts',
           'section_css' => '/* .kokako.posts h4.breadcrumbs {
@@ -14925,7 +14933,7 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
 }',
           'section_responsivity' => false,
         ),
-        8 => 
+        9 => 
         array (
           'section_type' => 'Rows',
           'section_css' => '/* NB: Some shared CSS under Columns section *
@@ -14974,7 +14982,7 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
 } */',
           'section_responsivity' => false,
         ),
-        9 => 
+        10 => 
         array (
           'section_type' => 'Quote',
           'section_css' => '/* .kokako.quote {
@@ -15066,7 +15074,7 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
 } */',
           'section_responsivity' => false,
         ),
-        10 => 
+        11 => 
         array (
           'section_type' => 'Slider',
           'section_css' => '/* .kokako.slider {
@@ -15235,7 +15243,7 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
             ),
           ),
         ),
-        11 => 
+        12 => 
         array (
           'section_type' => 'Team',
           'section_css' => '/* .kokako.team .team-member-row img {
@@ -15431,7 +15439,7 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
             ),
           ),
         ),
-        12 => 
+        13 => 
         array (
           'section_type' => 'Testimonials',
           'section_css' => '/* .kokako.testimonials {
@@ -15619,7 +15627,7 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
             ),
           ),
         ),
-        13 => 
+        14 => 
         array (
           'section_type' => 'Text',
           'section_css' => '.kokako.text :is(h1, h2){ /* in case of floated images */
@@ -15636,7 +15644,7 @@ OLD (KEPT IN CASE WANT TO REINTEGRATE NOISE PLACEHOLDER):
             ),
           ),
         ),
-        14 => 
+        15 => 
         array (
           'section_type' => 'Text and Image',
           'section_css' => '.kokako.textAndImage .contain{
