@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the CSS Editor (which automatically minifies and forces a CSS update).
 
-Updated at 17/07/2024 3:33.18am UTC
+Updated at 17/07/2024 4:19.42am UTC
 
 
 FILE STRUCTURE:
@@ -1693,7 +1693,8 @@ footer {
 	padding: 45px 25px 90px;
 } */
 
-.kokako .contain > *:first-child{
+.kokako .contain > *:first-child,
+.kokako .contain.columns .col > *:first-child{
 	margin-top: 0;
 }
 

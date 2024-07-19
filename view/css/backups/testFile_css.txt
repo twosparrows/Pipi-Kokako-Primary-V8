@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 17/07/2024 3:33.21am UTC
+Updated at 17/07/2024 4:19.45am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -13670,7 +13670,8 @@ footer a.social-media-link:last-of-type {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '.kokako .contain > *:first-child{
+      'value' => '.kokako .contain > *:first-child,
+.kokako .contain.columns .col > *:first-child{
 	margin-top: 0;
 }
 
