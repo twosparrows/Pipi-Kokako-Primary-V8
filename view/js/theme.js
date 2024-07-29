@@ -75,9 +75,6 @@ jQuery(document).ready(function($){
     
     function animateOnScroll() {
     
-    	// let windowScroll = jQuery(window).scrollTop(); // Maybe should be .pageYOffset() these days? See chapter "Parallax scrolling with JS"
-    	// let windowHeight = jQuery(window).height();
-    	// let windowViewable = windowScroll + windowHeight;
     	let animationDelayInitial = 0.2;
     	let animationDelayIncrease = 0.2;
     	let parentSection = "";
@@ -242,27 +239,21 @@ jQuery(document).ready(function($){
     // Adjust fixed Header size on scroll
     if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
     	jQuery('header').addClass("scrolled");			
-    	// jQuery('section.section1').addClass("scrolled"); // No longer required
     } else {
     	jQuery('header').removeClass("scrolled");			
-    	// jQuery('section.section1').removeClass("scrolled"); // No longer required
     }
     $(window).scroll(function(){
     	if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
     		jQuery('header').addClass("scrolled");			
-    		// jQuery('section.section1').addClass("scrolled"); // No longer required
     	} else {
     		jQuery('header').removeClass("scrolled");			
-    		// jQuery('section.section1').removeClass("scrolled"); // No longer required
     	}
     });
     $(window).on("resize", function() {
     	if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
     		jQuery('header').addClass("scrolled");			
-    		// jQuery('section.section1').addClass("scrolled"); // No longer required
     	} else {
     		jQuery('header').removeClass("scrolled");			
-    		// jQuery('section.section1').removeClass("scrolled"); // No longer required
     	}
     });
     */
@@ -277,27 +268,10 @@ jQuery(window).on('load', function(){
 
     // Theme
     
-    /* // Set top margin of heading in top Section
-    if (jQuery('section.section1.fullScreen').length) {
-    	tspSetHeadingTopMargin();
-    	jQuery(window).resize(function(){
-    		tspSetHeadingTopMargin();
-    	});
-    	jQuery('section.section1.fullScreen').stellar();
-    } */
-    
     // Accordion functionality
     jQuery('.accordion-toggle').click(function(){
     	jQuery(this).find('i.icon-plus').toggleClass('open');	
     	jQuery(this).next('div.accordion-content').slideToggle(400);	
     });
-    
-    /*
-    // CODE REMOVED AT THIS STAGE AS NEEDS TO BE UPDATED TO INCLUDE ON SCROLL EVENT THAT CAN ALSO REMOVE THE BOTTOM-ALIGN CLASS
-    // Position footer to bottom of window on shorter pages
-    if ((jQuery(window).height() == jQuery(document).height()) || ((jQuery(window).height() > jQuery(document).height() - 50) && (jQuery('#wpadminbar').is(':visible')))) { // See https://stackoverflow.com/questions/14035819/window-height-vs-document-height - doc height is set to window height when it is less than he window height
-    	jQuery('footer').addClass('bottom-align');
-    }
-    */
 
 });

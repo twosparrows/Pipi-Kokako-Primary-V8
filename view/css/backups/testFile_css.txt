@@ -1,7 +1,7 @@
 CSS Options Fields
 
-Updated at 25/07/2024 12:33.14am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-css-editor
+Updated at 29/07/2024 12:04.40am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-developer-options
 
 
 Shortcodes:
@@ -370,14 +370,131 @@ Shortcodes:
 [width-xs-max] => 576px
 [width-xxl-min] => 1400px
 colors-brand-key => 18
-colors-key => 0
+colors-key => 1
 colours-brand-key => 18
-colours-key => 0
+colours-key => 1
 
 
 CSS:
 
 array (
+  'ID' => 0,
+  'key' => 'field_654c0e5554390',
+  'label' => 'Colour Scheme Responsivity',
+  'name' => 'colour_scheme_responsivity',
+  'aria-label' => '',
+  'prefix' => 'acf',
+  'type' => 'repeater',
+  'value' => NULL,
+  'menu_order' => 6,
+  'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
+  'required' => 0,
+  'id' => '',
+  'class' => '',
+  'conditional_logic' => 0,
+  'parent' => 'field_6539e9a30cbec',
+  'wrapper' => 
+  array (
+    'width' => '',
+    'class' => 'css full',
+    'id' => '',
+  ),
+  'layout' => 'table',
+  'min' => 0,
+  'max' => 0,
+  'collapsed' => 'field_654c0e5654391',
+  'button_label' => 'Add Screen Size CSS',
+  'rows_per_page' => 20,
+  'parent_repeater' => 'field_6539e9a30cbec',
+  '_name' => 'colour_scheme_responsivity',
+  '_valid' => 1,
+  'sub_fields' => 
+  array (
+    0 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654c0e5654391_field_6631992626553',
+      'label' => 'Screen Size',
+      'name' => 'screen_size',
+      'aria-label' => '',
+      'prefix' => 'acf[field_654c0e5654391]',
+      'type' => 'select',
+      'value' => NULL,
+      'menu_order' => 0,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_654c0e5554390',
+      'wrapper' => 
+      array (
+        'width' => '20',
+        'class' => '',
+        'id' => '',
+      ),
+      'choices' => 
+      array (
+        'sm' => 'SM & Above',
+        'md' => 'MD & Above',
+        'lg' => 'LG & Above',
+        'xl' => 'XL & Above',
+        'xxl' => 'XXL',
+        'nav-expanded' => 'Nav Expanded',
+      ),
+      'default_value' => 'lg',
+      'return_format' => 'value',
+      'multiple' => 0,
+      'allow_null' => 0,
+      'ui' => 0,
+      'ajax' => 0,
+      'placeholder' => '',
+      'parent_repeater' => 'field_654c0e5554390',
+      '_name' => 'screen_size',
+      '_valid' => 1,
+      '_clone' => 'field_654c0e5654391',
+      '__key' => 'field_6631992626553',
+      '__name' => 'screen_size',
+      '__label' => 'Screen Size',
+    ),
+    1 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_654c0e5654392_field_6631995026554',
+      'label' => 'Screen Size CSS',
+      'name' => 'screen_size_css',
+      'aria-label' => '',
+      'prefix' => 'acf[field_654c0e5654392]',
+      'type' => 'textarea',
+      'value' => NULL,
+      'menu_order' => 1,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_654c0e5554390',
+      'wrapper' => 
+      array (
+        'width' => '80',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'maxlength' => '',
+      'rows' => '',
+      'placeholder' => '',
+      'new_lines' => '',
+      'parent_repeater' => 'field_654c0e5554390',
+      '_name' => 'screen_size_css',
+      '_valid' => 1,
+      '_clone' => 'field_654c0e5654392',
+      '__key' => 'field_6631995026554',
+      '__name' => 'screen_size_css',
+      '__label' => 'Screen Size CSS',
+    ),
+  ),
+)array (
   'ID' => 0,
   'key' => 'field_6632d474da558_field_6632d32027db6',
   'label' => 'Colours',
@@ -6762,7 +6879,7 @@ All sizes are in px (pixels), and measure the minimum viewable width of the webs
       'wrapper' => 
       array (
         'width' => '',
-        'class' => 'other',
+        'class' => 'other globalSetting',
         'id' => '',
       ),
       'message' => 'Display the Bootstrap grid size while Two Sparrows are logged in (for testing, disable if not required).',

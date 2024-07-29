@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the CSS Editor (which automatically minifies and forces a CSS update).
 
-Updated at 25/07/2024 12:33.10am UTC
+Updated at 29/07/2024 12:04.36am UTC
 
 
 FILE STRUCTURE:
@@ -2298,7 +2298,7 @@ div.accordion-content + a.button{
 /* ---- 19. Responsivity ---- */
 
 /* SM and above */
-@media (min-width: 577px) {
+@media (min-width: 577px){
 
     h1,
     h2{
@@ -2316,7 +2316,7 @@ div.accordion-content + a.button{
 }
 
 /* MD and above */
-@media (min-width: 768px) {
+@media (min-width: 768px){
 
     :is(img, svg).alignnone{
     	margin: 30px 0;
@@ -2465,7 +2465,7 @@ div.accordion-content + a.button{
 }
 
 /* LG and above */
-@media (min-width: 992px) {
+@media (min-width: 992px){
 
     .kokako .contain{
     	--edge-padding: 60px;
@@ -2634,7 +2634,7 @@ div.accordion-content + a.button{
 }
 
 /* XL and above */
-@media (min-width: 1200px) {
+@media (min-width: 1200px){
 
     .kokako .columns:is(.cols-4, .cols-6){
     	grid-template-columns: repeat(4, 1fr);
@@ -2663,7 +2663,7 @@ div.accordion-content + a.button{
 }
 
 /* XXL only */
-@media (min-width: 1400px) {
+@media (min-width: 1400px){
 
     .kokako .columns.cols-6{
     	grid-template-columns: repeat(6, 1fr);
