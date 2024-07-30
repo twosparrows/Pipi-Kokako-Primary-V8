@@ -4,14 +4,14 @@
 
 THEME SETUP
 
-Updated at 29/07/2024 12:04.40am UTC
+Updated at 30/07/2024 5:45.10am UTC
 
 Included via functions/site.php
 
 */
 
 
-$GLOBALS['updatedTimeStamp'] = 1722211476;
+$GLOBALS['updatedTimeStamp'] = 1722318305;
 
 // Development Modes
 $GLOBALS['kokakoDevelopmentMode'] = false;
@@ -29,6 +29,7 @@ $GLOBALS['availableSectionTypes'] = array( // NB: Text section is always availab
      "image-grid",
      "logos",
      "posts",
+     "rows",
      "text",
      "text-and-image",
 );
@@ -82,20 +83,28 @@ $GLOBALS['widgetAreas'] = array(
 // Colour Schemes
 $GLOBALS['colourSchemes'] = array(
      "colour-scheme-light" => array(
-          "description" => "Light Colour Scheme (Light background, dark text)",
-          "background"  => "#fff",
+          "description"    => "Light Colour Scheme (Light background, dark text)",
+          "background"     => "#fff",
+          "colour"         => "Light",
+          "colourVariable" => "light",
      ),
      "colour-scheme-dark" => array(
-          "description" => "Dark Colour Scheme (dark background, light text)",
-          "background"  => "#1a1a1a",
+          "description"    => "Dark Colour Scheme (dark background, light text)",
+          "background"     => "#1a1a1a",
+          "colour"         => "Dark",
+          "colourVariable" => "dark",
      ),
      "colour-scheme-foo" => array(
-          "description" => "Foo Colour Scheme (Foo background, light text)",
-          "background"  => "#f00",
+          "description"    => "Foo Colour Scheme (Foo background, light text)",
+          "background"     => "#f00",
+          "colour"         => "Foo",
+          "colourVariable" => "foo",
      ),
      "colour-scheme-green" => array(
-          "description" => "Green Colour Scheme (Green background, dark text)",
-          "background"  => "#81d742",
+          "description"    => "Green Colour Scheme (Green background, dark text)",
+          "background"     => "#81d742",
+          "colour"         => "Green",
+          "colourVariable" => "green",
      ),
 );
 
@@ -108,11 +117,15 @@ $GLOBALS['footerLogoWidthRetina'] = 510;
 // Additional settings
 $GLOBALS['apply_text_content_width_max_site_wide'] = true;
 $GLOBALS['display_screen_size_for_testing'] = true;
+$GLOBALS['add_colour_classes'] = false;
+$GLOBALS['add_background_colour_classes'] = false;
+$GLOBALS['add_heading_colours'] = true;
+$GLOBALS['add_image_overlay_colours'] = true;
 
 // Functions
 
 function tsp_updated_timeStamp() { // Can also be called as a function if required, although higher overhead than a variable
-     return 1722211476;
+     return 1722318305;
 }
 
 ?>

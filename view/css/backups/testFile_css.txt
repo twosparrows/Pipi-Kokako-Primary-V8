@@ -1,7 +1,7 @@
 CSS Options Fields
 
-Updated at 29/07/2024 12:04.40am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-developer-options
+Updated at 30/07/2024 5:45.10am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
 Shortcodes:
@@ -13400,51 +13400,63 @@ footer a.social-media-link:last-of-type {
       'type' => 'textarea',
       'value' => '/* Padding classes (unlike margin classes, these can be added to .contain as well as .kokako) */
 
-:is(.kokako, .kokako .contain):is(.padding-top-none, .padding-none){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-top-none, .padding-none),
+.kokako.has-background-image:is(.padding-top-none, .padding-none) .contain{
 	padding-top: 0 !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-bottom-none, .padding-none){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-bottom-none, .padding-none),
+.kokako.has-background-image:is(.padding-bottom-none, .padding-none) .contain{
 	padding-bottom: 0 !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-top-xs, .padding-xs){ /* Formerly "small" */
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-top-xs, .padding-xs),
+.kokako.has-background-image:is(.padding-top-xs, .padding-xs) .contain{ /* Formerly "small" */
 	padding-top: [tsp-calc spv /2, round] !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-bottom-xs, .padding-xs){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-bottom-xs, .padding-xs),
+.kokako.has-background-image:is(.padding-bottom-xs, .padding-xs) .contain{
 	padding-bottom: [tsp-calc spv /2, round] !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-top-sm, .padding-sm){ /* Formerly "reduced" */
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-top-sm, .padding-sm),
+.kokako.has-background-image:is(.padding-top-sm, .padding-sm) .contain{ /* Formerly "reduced" */
 	padding-top: [tsp-calc spv *3 /4, round] !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-bottom-sm, .padding-sm){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-bottom-sm, .padding-sm),
+.kokako.has-background-image:is(.padding-bottom-sm, .padding-sm) .contain{
 	padding-bottom: [tsp-calc spv *3 /4, round] !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-top-md, .padding-md){ /* Formerly "standard" */
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-top-md, .padding-md),
+.kokako.has-background-image:is(.padding-top-md, .padding-md) .contain{ /* Formerly "standard" */
 	padding-top: [section-padding-vertical] !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-bottom-md, .padding-md){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-bottom-md, .padding-md),
+.kokako.has-background-image:is(.padding-bottom-md, .padding-md) .contain{
 	padding-bottom: [section-padding-vertical] !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-top-lg, .padding-lg){ /* Formerly "large" */
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-top-lg, .padding-lg),
+.kokako.has-background-image:is(.padding-top-lg, .padding-lg) .contain{ /* Formerly "large" */
 	padding-top: [tsp-calc spv *1.5] !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-bottom-lg, .padding-lg){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-bottom-lg, .padding-lg),
+.kokako.has-background-image:is(.padding-bottom-lg, .padding-lg) .contain{
 	padding-bottom: [tsp-calc spv *1.5] !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-top-xl, .padding-xl){ /* Formerly "extra-large" */
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-top-xl, .padding-xl),
+.kokako.has-background-image:is(.padding-top-xl, .padding-xl) .contain{ /* Formerly "extra-large" */
 	padding-top: [tsp-calc spv *2] !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-bottom-xl, .padding-xl){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-bottom-xl, .padding-xl),
+.kokako.has-background-image:is(.padding-bottom-xl, .padding-xl) .contain{
 	padding-bottom: [tsp-calc spv *2] !important;
 }
 
@@ -13619,7 +13631,50 @@ section.kokako .cta-buttons p.centre {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '.footnote{
+      'value' => '/* Background Images (remainder of CSS shared with Hero section, see Hero section) */
+
+.kokako.has-background-image{
+	width: 100%; /* Explicitly set for mobile due to "display: grid" */
+	display: grid;
+	grid-template-areas: "section-content";
+	padding: 0;
+}
+
+.kokako.has-background-image .background-image{
+	grid-area: section-content;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.kokako.has-background-image .background-image img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.kokako.has-background-image .contain{
+	grid-area: section-content;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 3;
+	padding-top: [section-padding-vertical]; /* Defaults, overwritten via padding classes where required */
+	padding-bottom: [section-padding-vertical];
+}
+
+.kokako.has-background-image :is(.background-image img, .overlay){
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+
+/* Other Section CSS */
+
+.footnote{
 	font-size: 80%;
 	font-style: italic;
 } 
@@ -14103,36 +14158,20 @@ section.kokako.hide-section {
         array (
           'section_type' => 'Hero',
           'section_css' => '.kokako.hero{
-	width: 100%; /* Explicitly set for mobile due to "display: grid" */
-	display: grid;
-	grid-template-areas: "hero";
 	min-height: 450px;
 	max-height: 70vh; /* Default */
 }
 
-.kokako.hero .hero-image{
-	grid-area: hero;
-	width: 100%;
-	height: 100%;
+.kokako.hero .background-image{
 	max-height: 70vh; /* Needs to match parent */
-	overflow: hidden;
-	z-index: 1;
 }
 
-.kokako.hero .hero-image img{
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.kokako.hero.has-background-image :is(.background-image img, .overlay){
+	position: static;
 }
 
 .kokako.hero .contain{
-	grid-area: hero;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	justify-content: center;
-	z-index: 3;
 }
 
 
@@ -14178,7 +14217,7 @@ section.kokako.hide-section {
 
 .kokako.overlay .overlay,
 .kokako.overlay.overlay-opacity-30 .overlay{ /* 30% opacity is default */
-	grid-area: hero;
+	grid-area: section-content;
 	width: 100%;
 	height: 100%;
 	opacity: 0.3; /* Default */
@@ -14256,7 +14295,11 @@ section.kokako.hide-section {
         8 => 
         array (
           'section_type' => 'Rows',
-          'section_css' => '',
+          'section_css' => '.kokako.rows .rows{
+	display: flex;
+	flex-direction: column;
+	row-gap: [tsp-calc {grid-gap-vertical} /2, round];
+}',
           'section_responsivity' => false,
         ),
         9 => 
@@ -15105,9 +15148,9 @@ section.kokako.background-overlay .image-overlay{ /* Note that the background co
 
 /* Remove background if section already has a background image (otherwise interferes with background blend modes) */
 
-section.kokako.colour-scheme.has-background-image{
+/* section.kokako.colour-scheme.has-background-image{
 	background: none;
-}',
+} */',
       'menu_order' => 1,
       'instructions' => '',
       'required' => 0,

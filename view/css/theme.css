@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the CSS Editor (which automatically minifies and forces a CSS update).
 
-Updated at 29/07/2024 12:04.36am UTC
+Updated at 30/07/2024 5:45.05am UTC
 
 
 FILE STRUCTURE:
@@ -1325,51 +1325,63 @@ footer ul.sub-menu li{
 
 /* Padding classes (unlike margin classes, these can be added to .contain as well as .kokako) */
 
-:is(.kokako, .kokako .contain):is(.padding-top-none, .padding-none){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-top-none, .padding-none),
+.kokako.has-background-image:is(.padding-top-none, .padding-none) .contain{
 	padding-top: 0 !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-bottom-none, .padding-none){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-bottom-none, .padding-none),
+.kokako.has-background-image:is(.padding-bottom-none, .padding-none) .contain{
 	padding-bottom: 0 !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-top-xs, .padding-xs){ /* Formerly "small" */
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-top-xs, .padding-xs),
+.kokako.has-background-image:is(.padding-top-xs, .padding-xs) .contain{ /* Formerly "small" */
 	padding-top: 45px !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-bottom-xs, .padding-xs){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-bottom-xs, .padding-xs),
+.kokako.has-background-image:is(.padding-bottom-xs, .padding-xs) .contain{
 	padding-bottom: 45px !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-top-sm, .padding-sm){ /* Formerly "reduced" */
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-top-sm, .padding-sm),
+.kokako.has-background-image:is(.padding-top-sm, .padding-sm) .contain{ /* Formerly "reduced" */
 	padding-top: 68px !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-bottom-sm, .padding-sm){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-bottom-sm, .padding-sm),
+.kokako.has-background-image:is(.padding-bottom-sm, .padding-sm) .contain{
 	padding-bottom: 68px !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-top-md, .padding-md){ /* Formerly "standard" */
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-top-md, .padding-md),
+.kokako.has-background-image:is(.padding-top-md, .padding-md) .contain{ /* Formerly "standard" */
 	padding-top: 90px !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-bottom-md, .padding-md){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-bottom-md, .padding-md),
+.kokako.has-background-image:is(.padding-bottom-md, .padding-md) .contain{
 	padding-bottom: 90px !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-top-lg, .padding-lg){ /* Formerly "large" */
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-top-lg, .padding-lg),
+.kokako.has-background-image:is(.padding-top-lg, .padding-lg) .contain{ /* Formerly "large" */
 	padding-top: 135px !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-bottom-lg, .padding-lg){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-bottom-lg, .padding-lg),
+.kokako.has-background-image:is(.padding-bottom-lg, .padding-lg) .contain{
 	padding-bottom: 135px !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-top-xl, .padding-xl){ /* Formerly "extra-large" */
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-top-xl, .padding-xl),
+.kokako.has-background-image:is(.padding-top-xl, .padding-xl) .contain{ /* Formerly "extra-large" */
 	padding-top: 180px !important;
 }
 
-:is(.kokako, .kokako .contain):is(.padding-bottom-xl, .padding-xl){
+:is(.kokako:not(.has-background-image), .kokako .contain):is(.padding-bottom-xl, .padding-xl),
+.kokako.has-background-image:is(.padding-bottom-xl, .padding-xl) .contain{
 	padding-bottom: 180px !important;
 }
 
@@ -1454,6 +1466,49 @@ footer ul.sub-menu li{
 	margin: 0 !important;
 }
 
+/* Background Images (remainder of CSS shared with Hero section, see Hero section) */
+
+.kokako.has-background-image{
+	width: 100%; /* Explicitly set for mobile due to "display: grid" */
+	display: grid;
+	grid-template-areas: "section-content";
+	padding: 0;
+}
+
+.kokako.has-background-image .background-image{
+	grid-area: section-content;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.kokako.has-background-image .background-image img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.kokako.has-background-image .contain{
+	grid-area: section-content;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 3;
+	padding-top: 90px; /* Defaults, overwritten via padding classes where required */
+	padding-bottom: 90px;
+}
+
+.kokako.has-background-image :is(.background-image img, .overlay){
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+
+/* Other Section CSS */
+
 .footnote{
 	font-size: 80%;
 	font-style: italic;
@@ -1508,36 +1563,20 @@ footer ul.sub-menu li{
 /* Hero */
 
 .kokako.hero{
-	width: 100%; /* Explicitly set for mobile due to "display: grid" */
-	display: grid;
-	grid-template-areas: "hero";
 	min-height: 450px;
 	max-height: 70vh; /* Default */
 }
 
-.kokako.hero .hero-image{
-	grid-area: hero;
-	width: 100%;
-	height: 100%;
+.kokako.hero .background-image{
 	max-height: 70vh; /* Needs to match parent */
-	overflow: hidden;
-	z-index: 1;
 }
 
-.kokako.hero .hero-image img{
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.kokako.hero.has-background-image :is(.background-image img, .overlay){
+	position: static;
 }
 
 .kokako.hero .contain{
-	grid-area: hero;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	justify-content: center;
-	z-index: 3;
 }
 
 
@@ -1583,7 +1622,7 @@ footer ul.sub-menu li{
 
 .kokako.overlay .overlay,
 .kokako.overlay.overlay-opacity-30 .overlay{ /* 30% opacity is default */
-	grid-area: hero;
+	grid-area: section-content;
 	width: 100%;
 	height: 100%;
 	opacity: 0.3; /* Default */
@@ -1652,6 +1691,15 @@ footer ul.sub-menu li{
 .kokako.posts .col.blog-grid a.read-more-link{ /* Works around for issue where hover underline pushes all following content down (only appears to affect these anchors) */ 
 	box-sizing: border-box;
 	height: 33px; /* 32px */
+}
+
+
+/* Rows */
+
+.kokako.rows .rows{
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
 }
 
 
@@ -1750,9 +1798,9 @@ section.kokako.background-overlay .image-overlay{ /* Note that the background co
 
 /* Remove background if section already has a background image (otherwise interferes with background blend modes) */
 
-section.kokako.colour-scheme.has-background-image{
+/* section.kokako.colour-scheme.has-background-image{
 	background: none;
-}
+} */
 
 /* Colour Scheme Light */
 

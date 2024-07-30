@@ -58,9 +58,6 @@ function inViewPort(el) {
 
 function animateOnScroll() {
 
-	// let windowScroll = jQuery(window).scrollTop(); // Maybe should be .pageYOffset() these days? See chapter ""Parallax scrolling with JS""
-	// let windowHeight = jQuery(window).height();
-	// let windowViewable = windowScroll + windowHeight;
 	let animationDelayInitial = 0.2;
 	let animationDelayIncrease = 0.2;
 	let parentSection = """";
@@ -225,49 +222,115 @@ if ( jQuery('.kokako.contact-footer').length ) {
 // Adjust fixed Header size on scroll
 if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
 	jQuery('header').addClass(""scrolled"");			
-	// jQuery('section.section1').addClass(""scrolled""); // No longer required
 } else {
 	jQuery('header').removeClass(""scrolled"");			
-	// jQuery('section.section1').removeClass(""scrolled""); // No longer required
 }
 $(window).scroll(function(){
 	if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
 		jQuery('header').addClass(""scrolled"");			
-		// jQuery('section.section1').addClass(""scrolled""); // No longer required
 	} else {
 		jQuery('header').removeClass(""scrolled"");			
-		// jQuery('section.section1').removeClass(""scrolled""); // No longer required
 	}
 });
 $(window).on(""resize"", function() {
 	if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
 		jQuery('header').addClass(""scrolled"");			
-		// jQuery('section.section1').addClass(""scrolled""); // No longer required
 	} else {
 		jQuery('header').removeClass(""scrolled"");			
-		// jQuery('section.section1').removeClass(""scrolled""); // No longer required
 	}
 });
 */"
-theme_js,,window_load,"/* // Set top margin of heading in top Section
-if (jQuery('section.section1.fullScreen').length) {
-	tspSetHeadingTopMargin();
-	jQuery(window).resize(function(){
-		tspSetHeadingTopMargin();
-	});
-	jQuery('section.section1.fullScreen').stellar();
-} */
-
-// Accordion functionality
+theme_js,,window_load,"// Accordion functionality
 jQuery('.accordion-toggle').click(function(){
 	jQuery(this).find('i.icon-plus').toggleClass('open');	
 	jQuery(this).next('div.accordion-content').slideToggle(400);	
+});"
+sections_js,,section_type,Team
+sections_js,,javascript,,,
+sections_js,,javascript,,variables,
+sections_js,,javascript,,functions,"function tspTeamMemberOpenModal( el ) {
+	jQuery(el).next("".team-member-modal"").addClass(""open"");
+}"
+sections_js,,javascript,,document_ready,"$(""button.close-modal"").on( ""click"", function(){
+	$(this).parent().parent("".team-member-modal.open"").removeClass(""open"");	
 });
 
-/*
-// CODE REMOVED AT THIS STAGE AS NEEDS TO BE UPDATED TO INCLUDE ON SCROLL EVENT THAT CAN ALSO REMOVE THE BOTTOM-ALIGN CLASS
-// Position footer to bottom of window on shorter pages
-if ((jQuery(window).height() == jQuery(document).height()) || ((jQuery(window).height() > jQuery(document).height() - 50) && (jQuery('#wpadminbar').is(':visible')))) { // See https://stackoverflow.com/questions/14035819/window-height-vs-document-height - doc height is set to window height when it is less than he window height
-	jQuery('footer').addClass('bottom-align');
+// Close modal on click outside of modal content
+if ( $("".team-member-modal"").length ) {
+	$("".team-member-modal"").on( ""click"", function(event) {
+		if ( ( $(event.target).attr(""class"") == ""team-member-modal open"" ) ) {
+			$("".team-member-modal.open"").removeClass(""open"");	
+		}
+	});
+}"
+sections_js,,javascript,,window_load,"// Toggle overlay photo in Team section
+if (jQuery('section.team').length) {
+	jQuery('section.team img.hover').hover(function(){
+		jQuery(this).toggleClass('hovered');
+	})
+}"
+sections_js,,section_type,Testimonials
+sections_js,,javascript,,,
+sections_js,,javascript,,variables,"var testimonialTimer;"
+sections_js,,javascript,,functions,"function setTestimonialTimer() {
+	testimonialTimer = window.setInterval(function(){ 
+		var childIndex = jQuery('section.testimonials p.testimonial-links a.current').attr(""href"").replace(/[^0-9]/g,'');
+		childIndex++;
+		if (jQuery('section.testimonials p.testimonial-links a.testimonial-link' + childIndex).length == 0) {
+		  childIndex = 0;
+		}
+		jQuery('section.testimonials p.testimonial-links a.testimonial-link' + childIndex).trigger(""click"");
+	}, 5000 ); 
 }
-*/"
+
+function setTestimonialSectionHeight() { // NB: If more than one Testimonial section is used on the page, all will be set to the minimum height
+	var maxHeight = 0;
+	jQuery('section.testimonials div.testimonial').each(function(){
+		if (jQuery(this).height() > maxHeight) {
+			maxHeight = jQuery(this).height();
+		}
+	});
+	maxHeight = Math.ceil(maxHeight) + 10;
+	jQuery('section.testimonials .internalWrap').height(maxHeight);
+}"
+sections_js,,javascript,,document_ready,
+sections_js,,javascript,,window_load,"// Testimonials animation
+if (jQuery('section.testimonials').length) {
+
+	// Set Testimonials Height
+	setTestimonialSectionHeight();
+	jQuery(window).resize(function(){
+		setTestimonialSectionHeight();
+	});
+
+	// Set Testimonials Animation
+	if ( jQuery('section.testimonials div.testimonial').length > 1 ) { // Don't start timer if only one testimonial
+
+		jQuery('section.testimonials p.testimonial-links a').click(function(){
+			if (!jQuery(this).hasClass(""current"")) {
+
+				// Remove all ""current"" classes
+				jQuery('section.testimonials div.testimonial').removeClass(""current"");
+				jQuery('section.testimonials p.testimonial-links a').removeClass(""current"");
+
+				// Add an appropriate ""current"" class
+				var childIndex = jQuery(this).attr(""href"").replace(/[^0-9]/g,'');
+				jQuery('section.testimonials div.testimonial' + childIndex).addClass(""current"");
+				jQuery('section.testimonials p.testimonial-links a.testimonial-link' + childIndex).addClass(""current"");
+		  	}
+			return false;
+		});
+
+		// Set timer (and clear on hover)
+		setTestimonialTimer();
+		jQuery(""section.testimonials div.col-xs-12"").hover(function() {
+			window.clearInterval(testimonialTimer);
+		}, function() {
+			setTestimonialTimer();
+		});
+		jQuery(""section.testimonials p.testimonial-links a"").hover(function() {
+			window.clearInterval(testimonialTimer);
+		});
+
+	}
+}"
