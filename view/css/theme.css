@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the CSS Editor (which automatically minifies and forces a CSS update).
 
-Updated at 31/07/2024 5:29.32am UTC
+Updated at 31/07/2024 5:58.04am UTC
 
 
 FILE STRUCTURE:
@@ -896,6 +896,11 @@ header.scrolled nav.navbar {
 	height: 70px;
 	transition: 0.4s ease all;
 } */
+
+header#site-header + main#site-main{
+	border-top: 0px solid #1a1a1a; /* Height is set in JS dynamically, based on header height */
+}
+
 
 /* Skip link */
 
@@ -2581,6 +2586,10 @@ div.accordion-content + a.button{
         
         
     /* Scrolled */
+        
+    header#site-header.kokako.scrolled{
+    	position: fixed;
+    }
         
     header#site-header.kokako.scrolled .contain{
     	gap: 0 15px;

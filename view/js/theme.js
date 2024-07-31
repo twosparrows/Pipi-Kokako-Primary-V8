@@ -16,13 +16,10 @@ DO NOT UPDATE THIS FILE. It is for reference only. All JS updates should be made
 
 // Theme
 
-function tspSetHeadingTopMargin() {
-	var headingTopMargin = (jQuery(window).height() * 0.75) - jQuery('section.section1.fullScreen .container').height();
-  	if (headingTopMargin > jQuery('header').height()) {
-  		jQuery('section.section1.fullScreen .container').css("margin-top", headingTopMargin + "px");
-  	} else {
-  		jQuery('section.section1.fullScreen .container').css("margin-top", jQuery('header').height() + "px");
-  	}
+// Make sure main doesn't slip under header
+function tspAddTopMarginToMain(){
+	var headingHeight = jQuery("header#site-header").outerHeight();
+	jQuery("main#site-main").css("border-top-width", headingHeight);
 }
 
 
@@ -236,7 +233,8 @@ jQuery(document).ready(function($){
     
     
     // Adjust fixed Header size on scroll
-    if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
+    tspAddTopMarginToMain();
+    if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) { /* Does not matter if "scrolled" class is added or removed before desktop menu implemented - the CSS is only active when the desktop menu is active */ 
     	jQuery('header#site-header').addClass("scrolled");			
     } else {
     	jQuery('header#site-header').removeClass("scrolled");			

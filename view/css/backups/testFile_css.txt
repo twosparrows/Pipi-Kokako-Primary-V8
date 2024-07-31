@@ -1,7 +1,7 @@
 CSS Options Fields
 
-Updated at 31/07/2024 5:29.37am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-css-editor
+Updated at 31/07/2024 5:58.09am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-js-editor
 
 
 Shortcodes:
@@ -8497,7 +8497,12 @@ header.scrolled nav.navbar {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '/* Skip link */
+      'value' => 'header#site-header + main#site-main{
+	border-top: 0px solid [colour-header-background]; /* Height is set in JS dynamically, based on header height */
+}
+
+
+/* Skip link */
 
 .skip-link{
 	position: absolute;
@@ -8637,6 +8642,10 @@ header#site-header #main-nav{
 
 
 /* Scrolled */
+
+header#site-header.kokako.scrolled{
+	position: fixed;
+}
 
 header#site-header.kokako.scrolled .contain{
 	gap: 0 [text-margin];

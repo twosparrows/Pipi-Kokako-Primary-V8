@@ -1,6 +1,6 @@
 JS Options Fields
 
-Updated at 31/07/2024 5:29.37am UTC
+Updated at 31/07/2024 5:58.09am UTC
 
 
 Shortcodes:
@@ -627,13 +627,10 @@ array (
         1 => 'scrollMagic',
       ),
       'variables' => '',
-      'functions' => 'function tspSetHeadingTopMargin() {
-	var headingTopMargin = (jQuery(window).height() * 0.75) - jQuery(\'section.section1.fullScreen .container\').height();
-  	if (headingTopMargin > jQuery(\'header\').height()) {
-  		jQuery(\'section.section1.fullScreen .container\').css("margin-top", headingTopMargin + "px");
-  	} else {
-  		jQuery(\'section.section1.fullScreen .container\').css("margin-top", jQuery(\'header\').height() + "px");
-  	}
+      'functions' => '// Make sure main doesn\'t slip under header
+function tspAddTopMarginToMain(){
+	var headingHeight = jQuery("header#site-header").outerHeight();
+	jQuery("main#site-main").css("border-top-width", headingHeight);
 }',
       'document_ready' => '/*
 // ACF JS API - see https://www.advancedcustomfields.com/resources/javascript-api/#acf.condition-choices
@@ -838,7 +835,8 @@ if ( jQuery(\'.kokako.contact-footer\').length ) {
 
 
 // Adjust fixed Header size on scroll
-if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
+tspAddTopMarginToMain();
+if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) { /* Does not matter if "scrolled" class is added or removed before desktop menu implemented - the CSS is only active when the desktop menu is active */ 
 	jQuery(\'header#site-header\').addClass("scrolled");			
 } else {
 	jQuery(\'header#site-header\').removeClass("scrolled");			
