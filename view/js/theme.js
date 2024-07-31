@@ -235,28 +235,26 @@ jQuery(document).ready(function($){
     } */
     
     
-    /*
     // Adjust fixed Header size on scroll
     if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
-    	jQuery('header').addClass("scrolled");			
+    	jQuery('header#site-header').addClass("scrolled");			
     } else {
-    	jQuery('header').removeClass("scrolled");			
+    	jQuery('header#site-header').removeClass("scrolled");			
     }
     $(window).scroll(function(){
     	if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
-    		jQuery('header').addClass("scrolled");			
+    		jQuery('header#site-header').addClass("scrolled");			
     	} else {
-    		jQuery('header').removeClass("scrolled");			
+    		jQuery('header#site-header').removeClass("scrolled");			
     	}
     });
     $(window).on("resize", function() {
     	if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
-    		jQuery('header').addClass("scrolled");			
+    		jQuery('header#site-header').addClass("scrolled");			
     	} else {
-    		jQuery('header').removeClass("scrolled");			
+    		jQuery('header#site-header').removeClass("scrolled");			
     	}
     });
-    */
 
 });
 

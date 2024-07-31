@@ -1,6 +1,6 @@
 CSS Options Fields
 
-Updated at 30/07/2024 5:45.10am UTC
+Updated at 31/07/2024 5:29.37am UTC
 Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
@@ -8292,6 +8292,7 @@ header#site-header.kokako .contain{
 	grid-template-areas: "header-logo header-menu";
 	grid-template-columns: [header-logo-width] 1fr;
 	gap: [text-margin];
+	transition: [header-transition];
 }
 
 header#site-header .header-logo{
@@ -8339,9 +8340,12 @@ header#site-header .header-widget{
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => 'header .header-logo{
+      'value' => 'header#site-header.kokako .header-logo{
 	width: [header-logo-width];
 	z-index: 100;
+}
+
+header#site-header.kokako .header-logo img{
 	transition: [header-transition];
 }',
       'menu_order' => 11,
@@ -8411,6 +8415,12 @@ header.scrolled .logo a.navbar-brand {
 header .header-widget .widgetArea *{
 	margin-top: 0;
 	margin-bottom: 0;
+}
+
+header#site-header.kokako.scrolled .header-widget{
+	height: fit-content;
+	overflow: hidden;
+	transition: [header-transition];
 }',
       'menu_order' => 12,
       'instructions' => 'This CSS will only be added to the CSS file if the Header widget is available (under <a href="/wp-admin/admin.php?page=acf-options-developer-options" target="_blank">Developer Options &gt; Widget areas tab</a>).',
@@ -8605,7 +8615,8 @@ body.header-fixed.logged-in.admin-bar header { /* Not required when header is po
         0 => 
         array (
           'screen_size' => 'nav-expanded',
-          'screen_size_css' => 'header#site-header{
+          'screen_size_css' => 'header#site-header.kokako{
+	position: fixed;
 	overflow: visible;
 }
 
@@ -8622,7 +8633,23 @@ header#site-header .header-widget{
 
 header#site-header #main-nav{
 	align-items: flex-start;
-}',
+}
+
+
+/* Scrolled */
+
+header#site-header.kokako.scrolled .contain{
+	gap: 0 [text-margin];
+}
+
+header#site-header.kokako.scrolled .header-logo img{
+	width: 50%;
+}
+
+header#site-header.kokako.scrolled .header-widget{
+	height: 0;
+}
+',
         ),
       ),
       'menu_order' => 15,

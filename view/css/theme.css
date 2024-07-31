@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the CSS Editor (which automatically minifies and forces a CSS update).
 
-Updated at 30/07/2024 5:45.05am UTC
+Updated at 31/07/2024 5:29.32am UTC
 
 
 FILE STRUCTURE:
@@ -838,6 +838,7 @@ header#site-header.kokako .contain{
 	grid-template-areas: "header-logo header-menu";
 	grid-template-columns: 185px 1fr;
 	gap: 15px;
+	transition: 0.4s ease all;
 }
 
 header#site-header .header-logo{
@@ -856,9 +857,12 @@ header#site-header .header-widget{
 	display: none;
 }
 
-header .header-logo{
+header#site-header.kokako .header-logo{
 	width: 185px;
 	z-index: 100;
+}
+
+header#site-header.kokako .header-logo img{
 	transition: 0.4s ease all;
 }
 
@@ -869,6 +873,12 @@ header .header-widget{
 header .header-widget .widgetArea *{
 	margin-top: 0;
 	margin-bottom: 0;
+}
+
+header#site-header.kokako.scrolled .header-widget{
+	height: fit-content;
+	overflow: hidden;
+	transition: 0.4s ease all;
 }
 
 /* header#site-header.kokako.scrolled {
@@ -2549,7 +2559,8 @@ div.accordion-content + a.button{
     	display: none;
     }
         
-    header#site-header{
+    header#site-header.kokako{
+    	position: fixed;
     	overflow: visible;
     }
         
@@ -2567,6 +2578,22 @@ div.accordion-content + a.button{
     header#site-header #main-nav{
     	align-items: flex-start;
     }
+        
+        
+    /* Scrolled */
+        
+    header#site-header.kokako.scrolled .contain{
+    	gap: 0 15px;
+    }
+        
+    header#site-header.kokako.scrolled .header-logo img{
+    	width: 50%;
+    }
+        
+    header#site-header.kokako.scrolled .header-widget{
+    	height: 0;
+    }
+        
         
     #header-menu .hamburger{
     	display: none;

@@ -1,6 +1,6 @@
 JS Options Fields
 
-Updated at 30/07/2024 5:45.10am UTC
+Updated at 31/07/2024 5:29.37am UTC
 
 
 Shortcodes:
@@ -837,28 +837,26 @@ if ( jQuery(\'.kokako.contact-footer\').length ) {
 } */
 
 
-/*
 // Adjust fixed Header size on scroll
 if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
-	jQuery(\'header\').addClass("scrolled");			
+	jQuery(\'header#site-header\').addClass("scrolled");			
 } else {
-	jQuery(\'header\').removeClass("scrolled");			
+	jQuery(\'header#site-header\').removeClass("scrolled");			
 }
 $(window).scroll(function(){
 	if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
-		jQuery(\'header\').addClass("scrolled");			
+		jQuery(\'header#site-header\').addClass("scrolled");			
 	} else {
-		jQuery(\'header\').removeClass("scrolled");			
+		jQuery(\'header#site-header\').removeClass("scrolled");			
 	}
 });
 $(window).on("resize", function() {
 	if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
-		jQuery(\'header\').addClass("scrolled");			
+		jQuery(\'header#site-header\').addClass("scrolled");			
 	} else {
-		jQuery(\'header\').removeClass("scrolled");			
+		jQuery(\'header#site-header\').removeClass("scrolled");			
 	}
-});
-*/',
+});',
       'window_load' => '// Accordion functionality
 jQuery(\'.accordion-toggle\').click(function(){
 	jQuery(this).find(\'i.icon-plus\').toggleClass(\'open\');	
