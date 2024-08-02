@@ -1,6 +1,6 @@
 JS Options Fields
 
-Updated at 31/07/2024 5:58.09am UTC
+Updated at 02/08/2024 4:38.39am UTC
 
 
 Shortcodes:
@@ -626,12 +626,30 @@ array (
         0 => 'gsap',
         1 => 'scrollMagic',
       ),
-      'variables' => '',
+      'variables' => 'var windowScrollResizeID;',
       'functions' => '// Make sure main doesn\'t slip under header
-function tspAddTopMarginToMain(){
-	var headingHeight = jQuery("header#site-header").outerHeight();
-	jQuery("main#site-main").css("border-top-width", headingHeight);
-}',
+function tspAddMainTopBorder(){
+	if( jQuery(window).outerWidth() > **[tsp-calc {width-nav-collapse-max}, integer]** ){
+		var headingHeight = jQuery("header#site-header").outerHeight();
+		jQuery("main#site-main").css("border-top-width", headingHeight);
+	}else{
+		jQuery("main#site-main").css("border-top-width", 0);
+	}
+}
+
+function tspToggleHeaderScrolled(){
+	if( jQuery(document).scrollTop() > 50 && jQuery(window).outerWidth() > **[tsp-calc {width-nav-collapse-max}, integer]** ){
+		jQuery(\'header#site-header\').addClass("scrolled");			
+	} else {
+		jQuery(\'header#site-header\').removeClass("scrolled");			
+	}
+}
+
+function tspToggleHeaderScrolledAndAddMainTopBorder(){
+	tspAddMainTopBorder();
+	tspToggleHeaderScrolled();
+}
+',
       'document_ready' => '/*
 // ACF JS API - see https://www.advancedcustomfields.com/resources/javascript-api/#acf.condition-choices
         
@@ -835,25 +853,17 @@ if ( jQuery(\'.kokako.contact-footer\').length ) {
 
 
 // Adjust fixed Header size on scroll
-tspAddTopMarginToMain();
-if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) { /* Does not matter if "scrolled" class is added or removed before desktop menu implemented - the CSS is only active when the desktop menu is active */ 
-	jQuery(\'header#site-header\').addClass("scrolled");			
-} else {
-	jQuery(\'header#site-header\').removeClass("scrolled");			
-}
+
+tspToggleHeaderScrolledAndAddMainTopBorder();
+
 $(window).scroll(function(){
-	if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
-		jQuery(\'header#site-header\').addClass("scrolled");			
-	} else {
-		jQuery(\'header#site-header\').removeClass("scrolled");			
-	}
+	clearTimeout( windowScrollResizeID );
+	windowScrollResizeID = setTimeout( tspToggleHeaderScrolled, 18); // Time optimised for UX and performance
 });
+
 $(window).on("resize", function() {
-	if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
-		jQuery(\'header#site-header\').addClass("scrolled");			
-	} else {
-		jQuery(\'header#site-header\').removeClass("scrolled");			
-	}
+	clearTimeout( windowScrollResizeID );
+	windowScrollResizeID = setTimeout( tspToggleHeaderScrolledAndAddMainTopBorder, 100); // Time optimised for UX and performance
 });',
       'window_load' => '// Accordion functionality
 jQuery(\'.accordion-toggle\').click(function(){

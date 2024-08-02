@@ -4,21 +4,21 @@
 
 THEME SETUP
 
-Updated at 31/07/2024 5:58.09am UTC
+Updated at 02/08/2024 4:38.39am UTC
 
 Included via functions/site.php
 
 */
 
 
-$GLOBALS['updatedTimeStamp'] = 1722405484;
+$GLOBALS['updatedTimeStamp'] = 1722573513;
 
 // Development Modes
 $GLOBALS['kokakoDevelopmentMode'] = false;
 $GLOBALS['kokakoNoJavaScriptTestMode'] = false;
 
 // Additional Body Classes
-$GLOBALS['additionalBodyClasses'] = "header-fixed";
+$GLOBALS['additionalBodyClasses'] = "";
 
 // Sections
 $GLOBALS['availableSectionTypes'] = array( // NB: Text section is always available
@@ -125,7 +125,7 @@ $GLOBALS['add_image_overlay_colours'] = true;
 // Functions
 
 function tsp_updated_timeStamp() { // Can also be called as a function if required, although higher overhead than a variable
-     return 1722405484;
+     return 1722573513;
 }
 
 ?>

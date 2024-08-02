@@ -4,7 +4,7 @@ THEME CSS
 
 DO NOT UPDATE THIS FILE. It is for reference only. All CSS updates should be made in the CSS Editor (which automatically minifies and forces a CSS update).
 
-Updated at 31/07/2024 5:58.04am UTC
+Updated at 02/08/2024 4:38.33am UTC
 
 
 FILE STRUCTURE:
@@ -881,21 +881,34 @@ header#site-header.kokako.scrolled .header-widget{
 	transition: 0.4s ease all;
 }
 
-/* header#site-header.kokako.scrolled {
-	height: 70px;
-	transition: 0.4s ease all;
+
+/* Search form */
+
+header .header-widget label.wp-block-search__label{
+	display: none;
 }
 
-header nav.navbar {
-	top: 0;
-	transition: 0.4s ease all;
+header .header-widget .wp-block-search__inside-wrapper{
+	display: flex;
+	flex-direction: row;
 }
 
-header.scrolled nav.navbar {
-	top: 0;
-	height: 70px;
-	transition: 0.4s ease all;
-} */
+header .header-widget button.wp-block-search__button.wp-element-button{
+	font-family: "fa-select";
+	content: '\1f50d';
+	font-style: normal;
+	font-weight: normal;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	text-align: center;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1em;
+	-webkit-font-smoothing: antialiased;
+	padding-left: 15px;
+	background: none !important;
+}
 
 header#site-header + main#site-main{
 	border-top: 0px solid #1a1a1a; /* Height is set in JS dynamically, based on header height */
@@ -1321,6 +1334,10 @@ footer ul.sub-menu li{
 
 /* ---- 11. Kokako Sections ---- */
 
+main#site-main{ /* For smoothly sliding below header - actioned in JS via tspAddTopMarginToMain() */
+	transition: 0.4s ease all;
+}
+
 .kokako{
 	position: relative; /* Required for image overlays, hooks etc */
 	padding: 90px 0;
@@ -1451,38 +1468,6 @@ footer ul.sub-menu li{
 	margin-bottom: 180px !important;
 }
 
-.kokako .kokako-buttons{
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 15px;
-	justify-content: left; /* Default, also for .align-left */
-	align-items: center;
-	min-height: 52px;
-}
-
-.kokako:not(.multipleRows) .kokako-buttons{
-	margin-top: 30px;
-}
-
-.kokako .kokako-buttons.buttons-align-centre,
-.kokako.text-align-centre .kokako-buttons,
-.kokako:is(.text-align-centre, .text-align-right) .kokako-buttons.buttons-align-centre{ /* Button alignment has a higher priority than section text alignment */
-	justify-content: center;
-}
-
-.kokako .kokako-buttons.buttons-align-right,
-.kokako.text-align-right .kokako-buttons,
-.kokako:is(.text-align-left, .text-align-centre) .kokako-buttons.buttons-align-right{
-	justify-content: right;
-}
-
-.kokako .kokako-buttons button, input[type="submit"], a.button{
-	margin: 0 !important;
-}
-
-/* Background Images (remainder of CSS shared with Hero section, see Hero section) */
-
 .kokako.has-background-image{
 	width: 100%; /* Explicitly set for mobile due to "display: grid" */
 	display: grid;
@@ -1521,8 +1506,35 @@ footer ul.sub-menu li{
 	top: 0;
 }
 
+.kokako .kokako-buttons{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	justify-content: left; /* Default, also for .align-left */
+	align-items: center;
+	min-height: 52px;
+}
 
-/* Other Section CSS */
+.kokako:not(.multipleRows) .kokako-buttons{
+	margin-top: 30px;
+}
+
+.kokako .kokako-buttons.buttons-align-centre,
+.kokako.text-align-centre .kokako-buttons,
+.kokako:is(.text-align-centre, .text-align-right) .kokako-buttons.buttons-align-centre{ /* Button alignment has a higher priority than section text alignment */
+	justify-content: center;
+}
+
+.kokako .kokako-buttons.buttons-align-right,
+.kokako.text-align-right .kokako-buttons,
+.kokako:is(.text-align-left, .text-align-centre) .kokako-buttons.buttons-align-right{
+	justify-content: right;
+}
+
+.kokako .kokako-buttons button, input[type="submit"], a.button{
+	margin: 0 !important;
+}
 
 .footnote{
 	font-size: 80%;
@@ -1809,13 +1821,6 @@ section.kokako.background-overlay .image-overlay{ /* Note that the background co
 	background: #1a1a1a; /* Default, will be overridden by colour scheme */
 	opacity: 0.5; /* Default, opacity can be overridden on a per section basis */
 }
-
-
-/* Remove background if section already has a background image (otherwise interferes with background blend modes) */
-
-/* section.kokako.colour-scheme.has-background-image{
-	background: none;
-} */
 
 /* Colour Scheme Light */
 
@@ -2585,7 +2590,7 @@ div.accordion-content + a.button{
     }
         
         
-    /* Scrolled */
+    /* Header scrolled */
         
     header#site-header.kokako.scrolled{
     	position: fixed;
@@ -2602,7 +2607,6 @@ div.accordion-content + a.button{
     header#site-header.kokako.scrolled .header-widget{
     	height: 0;
     }
-        
         
     #header-menu .hamburger{
     	display: none;
@@ -2648,8 +2652,8 @@ div.accordion-content + a.button{
         
     header#site-header #header-menu nav ul.sub-menu{
     	display: none;
-            position: absolute;
-            z-index: 1;
+    	position: absolute;
+    	z-index: 1;
     	text-align: left;
     }
         

@@ -10,6 +10,10 @@ DO NOT UPDATE THIS FILE. It is for reference only. All JS updates should be made
 
 // VARIABLES
 
+// Theme
+
+var windowScrollResizeID;
+
 
 
 // FUNCTIONS
@@ -17,9 +21,26 @@ DO NOT UPDATE THIS FILE. It is for reference only. All JS updates should be made
 // Theme
 
 // Make sure main doesn't slip under header
-function tspAddTopMarginToMain(){
-	var headingHeight = jQuery("header#site-header").outerHeight();
-	jQuery("main#site-main").css("border-top-width", headingHeight);
+function tspAddMainTopBorder(){
+	if( jQuery(window).outerWidth() > 991 ){
+		var headingHeight = jQuery("header#site-header").outerHeight();
+		jQuery("main#site-main").css("border-top-width", headingHeight);
+	}else{
+		jQuery("main#site-main").css("border-top-width", 0);
+	}
+}
+
+function tspToggleHeaderScrolled(){
+	if( jQuery(document).scrollTop() > 50 && jQuery(window).outerWidth() > 991 ){
+		jQuery('header#site-header').addClass("scrolled");			
+	} else {
+		jQuery('header#site-header').removeClass("scrolled");			
+	}
+}
+
+function tspToggleHeaderScrolledAndAddMainTopBorder(){
+	tspAddMainTopBorder();
+	tspToggleHeaderScrolled();
 }
 
 
@@ -233,25 +254,17 @@ jQuery(document).ready(function($){
     
     
     // Adjust fixed Header size on scroll
-    tspAddTopMarginToMain();
-    if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) { /* Does not matter if "scrolled" class is added or removed before desktop menu implemented - the CSS is only active when the desktop menu is active */ 
-    	jQuery('header#site-header').addClass("scrolled");			
-    } else {
-    	jQuery('header#site-header').removeClass("scrolled");			
-    }
+    
+    tspToggleHeaderScrolledAndAddMainTopBorder();
+    
     $(window).scroll(function(){
-    	if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
-    		jQuery('header#site-header').addClass("scrolled");			
-    	} else {
-    		jQuery('header#site-header').removeClass("scrolled");			
-    	}
+    	clearTimeout( windowScrollResizeID );
+    	windowScrollResizeID = setTimeout( tspToggleHeaderScrolled, 18); // Time optimised for UX and performance
     });
+    
     $(window).on("resize", function() {
-    	if (($(document).scrollTop() > 50) && ($(window).outerWidth() > 575)) {
-    		jQuery('header#site-header').addClass("scrolled");			
-    	} else {
-    		jQuery('header#site-header').removeClass("scrolled");			
-    	}
+    	clearTimeout( windowScrollResizeID );
+    	windowScrollResizeID = setTimeout( tspToggleHeaderScrolledAndAddMainTopBorder, 100); // Time optimised for UX and performance
     });
 
 });

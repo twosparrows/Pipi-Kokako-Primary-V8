@@ -1,7 +1,7 @@
 CSS Options Fields
 
-Updated at 31/07/2024 5:58.09am UTC
-Referrer: /wp-admin/admin.php?page=acf-options-js-editor
+Updated at 02/08/2024 4:38.39am UTC
+Referrer: /wp-admin/admin.php?page=acf-options-css-editor
 
 
 Shortcodes:
@@ -363,6 +363,8 @@ Shortcodes:
 [width-lg-min] => 992px
 [width-md-max] => 991px
 [width-md-min] => 768px
+[width-nav-collapse-max] => 991px
+[width-nav-expand-min] => 992px
 [width-sm-max] => 767px
 [width-sm-min] => 577px
 [width-xl-max] => 1399px
@@ -7988,7 +7990,7 @@ footer{
       'type' => 'select',
       'value' => 'fixed',
       'menu_order' => 1,
-      'instructions' => 'Shortcode: <code>[header-position-desktop]</code><br />
+      'instructions' => 'Shortcode: <code>[header-position-desktop]</code> DEPRECATED<br />
 The default header position is always relative.',
       'required' => 0,
       'id' => '',
@@ -8027,7 +8029,7 @@ The default header position is always relative.',
       'type' => 'text',
       'value' => '140px',
       'menu_order' => 2,
-      'instructions' => 'Shortcode: <code>[header-height]</code><br />
+      'instructions' => 'Shortcode: <code>[header-height]</code> DEPRECATED<br />
 In pixels (including px below). This is the default header height.',
       'required' => 0,
       'id' => '',
@@ -8059,7 +8061,7 @@ In pixels (including px below). This is the default header height.',
       'type' => 'text',
       'value' => '70px',
       'menu_order' => 3,
-      'instructions' => 'Shortcode: <code>[header-height-scrolled]</code><br />
+      'instructions' => 'Shortcode: <code>[header-height-scrolled]</code> DEPRECATED<br />
 In pixels (including px below). This is the header height when the page is scrolled vertically (please note that the scrolled header height does not apply at the default XS size).',
       'required' => 0,
       'id' => '',
@@ -8123,7 +8125,7 @@ Please note: After updating this value, you may need to <a href="tools.php?page=
       'type' => 'text',
       'value' => '110px',
       'menu_order' => 5,
-      'instructions' => 'Shortcode: <code>[header-logo-width-scrolled]</code>',
+      'instructions' => 'Shortcode: <code>[header-logo-width-scrolled] DEPRECATED</code>',
       'required' => 0,
       'id' => '',
       'class' => '',
@@ -8154,7 +8156,7 @@ Please note: After updating this value, you may need to <a href="tools.php?page=
       'type' => 'text',
       'value' => '0.8',
       'menu_order' => 6,
-      'instructions' => 'Shortcode: <code>[header-mobile-opacity]</code><br />
+      'instructions' => 'Shortcode: <code>[header-mobile-opacity]</code> DEPRECATED<br />
 Set this to between 0 and 1.',
       'required' => 0,
       'id' => '',
@@ -8421,6 +8423,35 @@ header#site-header.kokako.scrolled .header-widget{
 	height: fit-content;
 	overflow: hidden;
 	transition: [header-transition];
+}
+
+
+/* Search form */
+
+header .header-widget label.wp-block-search__label{
+	display: none;
+}
+
+header .header-widget .wp-block-search__inside-wrapper{
+	display: flex;
+	flex-direction: row;
+}
+
+header .header-widget button.wp-block-search__button.wp-element-button{
+	font-family: "fa-select";
+	content: \'\\1f50d\';
+	font-style: normal;
+	font-weight: normal;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	text-align: center;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1em;
+	-webkit-font-smoothing: antialiased;
+	padding-left: [text-margin];
+	background: none !important;
 }',
       'menu_order' => 12,
       'instructions' => 'This CSS will only be added to the CSS file if the Header widget is available (under <a href="/wp-admin/admin.php?page=acf-options-developer-options" target="_blank">Developer Options &gt; Widget areas tab</a>).',
@@ -8452,21 +8483,7 @@ header#site-header.kokako.scrolled .header-widget{
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '/* header#site-header.kokako.scrolled {
-	height: [header-height-scrolled];
-	transition: [header-transition];
-}
-
-header nav.navbar {
-	top: 0;
-	transition: [header-transition];
-}
-
-header.scrolled nav.navbar {
-	top: 0;
-	height: [header-height-scrolled];
-	transition: [header-transition];
-} */',
+      'value' => '',
       'menu_order' => 13,
       'instructions' => '',
       'required' => 0,
@@ -8641,7 +8658,7 @@ header#site-header #main-nav{
 }
 
 
-/* Scrolled */
+/* Header scrolled */
 
 header#site-header.kokako.scrolled{
 	position: fixed;
@@ -8657,8 +8674,7 @@ header#site-header.kokako.scrolled .header-logo img{
 
 header#site-header.kokako.scrolled .header-widget{
 	height: 0;
-}
-',
+}',
         ),
       ),
       'menu_order' => 15,
@@ -8869,7 +8885,7 @@ header#site-header.kokako.scrolled .header-widget{
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'select',
-      'value' => '-lg',
+      'value' => 'lg',
       'menu_order' => 1,
       'instructions' => 'The navigation menu by default is collapsed to a hamburger button). It is expanded at this screen size and above.<br /><br />
 
@@ -8887,14 +8903,14 @@ CSS for the collapsed nav should be entered below, and CSS for the expanded nav 
       ),
       'choices' => 
       array (
-        '-sm' => 'SM',
-        '-md' => 'MD',
-        '-lg' => 'LG',
-        '-xl' => 'XL',
-        '-xxl' => 'XXL',
+        'sm' => 'SM',
+        'md' => 'MD',
+        'lg' => 'LG',
+        'xl' => 'XL',
+        'xxl' => 'XXL',
         'never' => 'Never expanded (always collapsed to a menu icon)',
       ),
-      'default_value' => '-lg',
+      'default_value' => 'lg',
       'return_format' => 'value',
       'multiple' => 0,
       'allow_null' => 0,
@@ -8968,8 +8984,8 @@ Set this to between 0 and 1.',
     4 => 
     array (
       'ID' => 0,
-      'key' => 'field_6539e9a30c99d',
-      'label' => 'Hamburger CSS',
+      'key' => 'field_6539e9a30cabd',
+      'label' => 'Nav CSS',
       'name' => '',
       'aria-label' => '',
       'prefix' => 'acf',
@@ -8997,106 +9013,9 @@ Set this to between 0 and 1.',
     5 => 
     array (
       'ID' => 0,
-      'key' => 'field_6539e9a30c9a6',
-      'label' => '',
-      'name' => '',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'message',
-      'value' => false,
-      'menu_order' => 5,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 0,
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'message' => 'The Hamburger is the navigation button when the menu is collapsed. Hamburger animations by Jonathan Suh (<a href="https://jonsuh.com/hamburgers/" target="_blank">view demos</a>).',
-      'new_lines' => 'wpautop',
-      'esc_html' => 0,
-      '_name' => '',
-      '_valid' => 1,
-    ),
-    6 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30c9ae',
-      'label' => 'Hamburger Animation',
-      'name' => 'hamburger_animation',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'select',
-      'value' => '3dx',
-      'menu_order' => 6,
-      'instructions' => '',
-      'required' => 1,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 0,
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css setting',
-        'id' => '',
-      ),
-      'choices' => 
-      array (
-        'none' => 'None',
-        '3dx' => '3DX',
-        '3dx-r' => '3DX Reverse',
-        '3dy' => '3DY',
-        '3dy-r' => '3DY Reverse',
-        '3dxy' => '3DXY',
-        '3dxy-r' => '3DXY Reverse',
-        'arrow' => 'Arrow Left',
-        'arrow-r' => 'Arrow Right',
-        'arrowalt' => 'Arrow Left Alt',
-        'arrowalt-r' => 'Arrow Right Alt',
-        'arrowturn' => 'Arrow Left Turn',
-        'arrowturn-r' => 'Arrow Right Turn',
-        'boring' => 'Boring',
-        'collapse' => 'Collapse',
-        'collapse-r' => 'Collapse Reverse',
-        'elastic' => 'Elastic',
-        'elastic-r' => 'Elastic Reverse',
-        'emphatic' => 'Emphatic',
-        'emphatic-r' => 'Emphatic Reverse',
-        'minus' => 'Minus',
-        'slider' => 'Slider',
-        'slider-r' => 'Slider Reverse',
-        'spin' => 'Spin',
-        'spin-r' => 'Spin Reverse',
-        'spring' => 'Spring',
-        'spring-r' => 'Spring Reverse',
-        'squeeze' => 'Squeeze',
-        'stand' => 'Stand',
-        'stand-r' => 'Stand Reverse',
-        'vortex' => 'Vortex',
-        'vortex-r' => 'Vortex Reverse',
-      ),
-      'default_value' => 'hamburger--slider',
-      'return_format' => 'value',
-      'multiple' => 0,
-      'allow_null' => 0,
-      'ui' => 0,
-      'ajax' => 0,
-      'placeholder' => '',
-      '_name' => 'hamburger_animation',
-      '_valid' => 1,
-    ),
-    7 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30c9b6',
-      'label' => 'Hamburger Base CSS',
-      'name' => 'hamburger_base_css',
+      'key' => 'field_66ac45d85ac84',
+      'label' => 'Hamburger CSS',
+      'name' => 'hamburger_css',
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
@@ -9168,24 +9087,26 @@ Set this to between 0 and 1.',
 
 .hamburger-inner::after{
 	bottom: -10px;
+}
+
+.hamburger--3dx:not(.collapsed) .hamburger-inner{
+	background-color: transparent !important;
+	transform: rotateY(180deg);
+}
+
+.hamburger--3dx:not(.collapsed) .hamburger-inner::before{
+	transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--3dx:not(.collapsed) .hamburger-inner::after{
+	transform: translate3d(0, -10px, 0) rotate(-45deg);
 }',
-      'menu_order' => 7,
-      'instructions' => '',
+      'menu_order' => 5,
+      'instructions' => 'The Hamburger is the navigation button when the menu is collapsed (modified from <a href="https://jonsuh.com/hamburgers/" target="_blank">Hamburger animations by Jonathan Suh</a>).',
       'required' => 0,
       'id' => '',
       'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '!=',
-            'value' => 'none',
-          ),
-        ),
-      ),
+      'conditional_logic' => 0,
       'parent' => 'field_6631bf76b1da3',
       'wrapper' => 
       array (
@@ -9193,8 +9114,8 @@ Set this to between 0 and 1.',
         'class' => 'css full',
         'id' => '090010',
       ),
-      'default_value' => '.hamburger {
-	padding: 15px; /* Was 15px 15px 5px 15px; */
+      'default_value' => '.hamburger{
+	padding: 15px;
 	display: flex;
 	align-items: center;
  	cursor: pointer;
@@ -9210,36 +9131,28 @@ Set this to between 0 and 1.',
 	overflow: visible;
 }
 
-button.hamburger:focus {
-	outline: none;
-}
-
-button.hamburger:active {
-	background: transparent;
-}
-
-.hamburger:hover {
+.hamburger:hover{
 	opacity: 0.7;
 }
 
-.hamburger:not(.collapsed):hover {
+.hamburger:not(.collapsed):hover{
 	opacity: 0.7;
 }
 
 .hamburger:not(.collapsed) .hamburger-inner,
 .hamburger:not(.collapsed) .hamburger-inner::before,
-.hamburger:not(.collapsed) .hamburger-inner::after {
+.hamburger:not(.collapsed) .hamburger-inner::after{
 	background-color: [colour-nav-hamburger];
 }
 
-.hamburger-box {
+.hamburger-box{
 	width: 40px;
 	height: 24px;
 	display: inline-block;
 	position: relative;
 }
 
-.hamburger-inner {
+.hamburger-inner{
 	display: block;
 	top: 50%;
 	margin-top: -2px;
@@ -9247,11 +9160,10 @@ button.hamburger:active {
 
 .hamburger-inner,
 .hamburger-inner::before,
-.hamburger-inner::after {
+.hamburger-inner::after{
 	width: 40px;
 	height: 4px;
 	background-color: [colour-nav-hamburger];
-	/* border-radius: 4px; */
 	position: absolute;
 	transition-property: transform;
 	transition-duration: 0.15s;
@@ -9259,35 +9171,20 @@ button.hamburger:active {
 }
 
 .hamburger-inner::before,
-.hamburger-inner::after {
+.hamburger-inner::after{
 	content: "";
 	display: block;
 }
 
-.hamburger-inner::before {
+.hamburger-inner::before{
 	top: -10px;
 }
 
-.hamburger-inner::after {
+.hamburger-inner::after{
 	bottom: -10px;
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'hamburger_base_css',
-      '_valid' => 1,
-    ),
-    8 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30c9be',
-      'label' => '3DX CSS',
-      'name' => '3dx_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--3dx:not(.collapsed) .hamburger-inner{
+}
+
+.hamburger--3dx:not(.collapsed) .hamburger-inner{
 	background-color: transparent !important;
 	transform: rotateY(180deg);
 }
@@ -9299,2835 +9196,14 @@ button.hamburger:active {
 .hamburger--3dx:not(.collapsed) .hamburger-inner::after{
 	transform: translate3d(0, -10px, 0) rotate(-45deg);
 }',
-      'menu_order' => 8,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => '3dx',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090020',
-      ),
-      'default_value' => '.hamburger--3dx .hamburger-box {
-	perspective: 80px;
-}
-
-.hamburger--3dx .hamburger-inner {
-	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dx .hamburger-inner::before, .hamburger--3dx .hamburger-inner::after {
-	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dx:not(.collapsed) .hamburger-inner {
-	background-color: transparent !important;
-	transform: rotateY(180deg);
-}
-
-.hamburger--3dx:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--3dx:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-}',
       'maxlength' => '',
       'rows' => 16,
       'placeholder' => '',
       'new_lines' => '',
-      '_name' => '3dx_css',
+      '_name' => 'hamburger_css',
       '_valid' => 1,
     ),
-    9 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30c9c5',
-      'label' => '3DX Reverse CSS',
-      'name' => '3dx-r_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--3dx-r .hamburger-box {
-	perspective: 80px;
-}
-
-.hamburger--3dx-r .hamburger-inner {
-	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dx-r .hamburger-inner::before, .hamburger--3dx-r .hamburger-inner::after {
-    transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dx-r:not(.collapsed) .hamburger-inner {
-	background-color: transparent !important;
-	transform: rotateY(-180deg);
-}
-
-.hamburger--3dx-r:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--3dx-r:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-}',
-      'menu_order' => 9,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => '3dx-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090030',
-      ),
-      'default_value' => '.hamburger--3dx-r .hamburger-box {
-	perspective: 80px;
-}
-
-.hamburger--3dx-r .hamburger-inner {
-	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dx-r .hamburger-inner::before, .hamburger--3dx-r .hamburger-inner::after {
-    transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dx-r:not(.collapsed) .hamburger-inner {
-	background-color: transparent !important;
-	transform: rotateY(-180deg);
-}
-
-.hamburger--3dx-r:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--3dx-r:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => '3dx-r_css',
-      '_valid' => 1,
-    ),
-    10 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30c9ce',
-      'label' => '3DY CSS',
-      'name' => '3dy_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--3dy .hamburger-box {
-	perspective: 80px;
-}
-
-.hamburger--3dy .hamburger-inner {
-	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dy .hamburger-inner::before, .hamburger--3dy .hamburger-inner::after {
-	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dy:not(.collapsed) .hamburger-inner {
-	background-color: transparent !important;
-	transform: rotateX(-180deg);
-}
-
-.hamburger--3dy:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--3dy:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-}',
-      'menu_order' => 10,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => '3dy',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090040',
-      ),
-      'default_value' => '.hamburger--3dy .hamburger-box {
-	perspective: 80px;
-}
-
-.hamburger--3dy .hamburger-inner {
-	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dy .hamburger-inner::before, .hamburger--3dy .hamburger-inner::after {
-	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dy:not(.collapsed) .hamburger-inner {
-	background-color: transparent !important;
-	transform: rotateX(-180deg);
-}
-
-.hamburger--3dy:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--3dy:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => '3dy_css',
-      '_valid' => 1,
-    ),
-    11 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30c9d6',
-      'label' => '3DY Reverse CSS',
-      'name' => '3dy-r_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--3dy-r .hamburger-box {
-	perspective: 80px;
-}
-
-.hamburger--3dy-r .hamburger-inner {
-	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dy-r .hamburger-inner::before, .hamburger--3dy-r .hamburger-inner::after {
-	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dy-r:not(.collapsed) .hamburger-inner {
-	background-color: transparent !important;
-	transform: rotateX(180deg);
-}
-
-.hamburger--3dy-r:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--3dy-r:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-}',
-      'menu_order' => 11,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => '3dy-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090050',
-      ),
-      'default_value' => '.hamburger--3dy-r .hamburger-box {
-	perspective: 80px;
-}
-
-.hamburger--3dy-r .hamburger-inner {
-	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dy-r .hamburger-inner::before, .hamburger--3dy-r .hamburger-inner::after {
-	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dy-r:not(.collapsed) .hamburger-inner {
-	background-color: transparent !important;
-	transform: rotateX(180deg);
-}
-
-.hamburger--3dy-r:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--3dy-r:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => '3dy-r_css',
-      '_valid' => 1,
-    ),
-    12 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30c9dd',
-      'label' => '3DXY CSS',
-      'name' => '3dxy_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--3dxy .hamburger-box {
-	perspective: 80px;
-}
-
-.hamburger--3dxy .hamburger-inner {
-	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dxy .hamburger-inner::before, .hamburger--3dxy .hamburger-inner::after {
-	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dxy:not(.collapsed) .hamburger-inner {
-	background-color: transparent !important;
-	transform: rotateX(180deg) rotateY(180deg);
-}
-
-.hamburger--3dxy:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--3dxy:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-}',
-      'menu_order' => 12,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => '3dxy',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090060',
-      ),
-      'default_value' => '.hamburger--3dxy .hamburger-box {
-	perspective: 80px;
-}
-
-.hamburger--3dxy .hamburger-inner {
-	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dxy .hamburger-inner::before, .hamburger--3dxy .hamburger-inner::after {
-	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dxy:not(.collapsed) .hamburger-inner {
-	background-color: transparent !important;
-	transform: rotateX(180deg) rotateY(180deg);
-}
-
-.hamburger--3dxy:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--3dxy:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => '3dxy_css',
-      '_valid' => 1,
-    ),
-    13 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30c9e5',
-      'label' => '3DXY Reverse CSS',
-      'name' => '3dxy-r_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--3dxy-r .hamburger-box {
-	perspective: 80px;
-}
-
-.hamburger--3dxy-r .hamburger-inner {
-	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dxy-r .hamburger-inner::before, .hamburger--3dxy-r .hamburger-inner::after {
-	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dxy-r:not(.collapsed) .hamburger-inner {
-	background-color: transparent !important;
-	transform: rotateX(180deg) rotateY(180deg) rotateZ(-180deg);
-}
-
-.hamburger--3dxy-r:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--3dxy-r:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-}',
-      'menu_order' => 13,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => '3dxy-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090070',
-      ),
-      'default_value' => '.hamburger--3dxy-r .hamburger-box {
-	perspective: 80px;
-}
-
-.hamburger--3dxy-r .hamburger-inner {
-	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dxy-r .hamburger-inner::before, .hamburger--3dxy-r .hamburger-inner::after {
-	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dxy-r:not(.collapsed) .hamburger-inner {
-	background-color: transparent !important;
-	transform: rotateX(180deg) rotateY(180deg) rotateZ(-180deg);
-}
-
-.hamburger--3dxy-r:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--3dxy-r:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => '3dxy-r_css',
-      '_valid' => 1,
-    ),
-    14 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30c9ee',
-      'label' => 'Arrow Left CSS',
-      'name' => 'arrow_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--arrow:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1);
-}
-
-.hamburger--arrow:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1);
-}',
-      'menu_order' => 14,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'arrow',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090080',
-      ),
-      'default_value' => '.hamburger--arrow:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1);
-}
-
-.hamburger--arrow:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'arrow_css',
-      '_valid' => 1,
-    ),
-    15 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30c9f6',
-      'label' => 'Arrow Right CSS',
-      'name' => 'arrow-r_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--arrow-r:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1);
-}
-
-.hamburger--arrow-r:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
-}',
-      'menu_order' => 15,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'arrow-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090090',
-      ),
-      'default_value' => '.hamburger--arrow-r:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1);
-}
-
-.hamburger--arrow-r:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'arrow-r_css',
-      '_valid' => 1,
-    ),
-    16 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30c9fe',
-      'label' => 'Arrow Left Alt CSS',
-      'name' => 'arrowalt_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--arrowalt .hamburger-inner::before {
-	transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.hamburger--arrowalt .hamburger-inner::after {
-	transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.hamburger--arrowalt:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: translate3d(-8px, -10px, 0) rotate(-45deg) scale(0.7, 1);
-	transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}
-
-.hamburger--arrowalt:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: translate3d(-8px, 10px, 0) rotate(45deg) scale(0.7, 1);
-	transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}',
-      'menu_order' => 16,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'arrowalt',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090100',
-      ),
-      'default_value' => '.hamburger--arrowalt .hamburger-inner::before {
-	transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.hamburger--arrowalt .hamburger-inner::after {
-	transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.hamburger--arrowalt:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: translate3d(-8px, -10px, 0) rotate(-45deg) scale(0.7, 1);
-	transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}
-
-.hamburger--arrowalt:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: translate3d(-8px, 10px, 0) rotate(45deg) scale(0.7, 1);
-	transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'arrowalt_css',
-      '_valid' => 1,
-    ),
-    17 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca05',
-      'label' => 'Arrow Right Alt CSS',
-      'name' => 'arrowalt-r_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--arrowalt-r .hamburger-inner::before {
-	transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.hamburger--arrowalt-r .hamburger-inner::after {
-	transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.hamburger--arrowalt-r:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: translate3d(8px, -10px, 0) rotate(45deg) scale(0.7, 1);
-	transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}
-
-.hamburger--arrowalt-r:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: translate3d(8px, 10px, 0) rotate(-45deg) scale(0.7, 1);
-	transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}',
-      'menu_order' => 17,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'arrowalt-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090110',
-      ),
-      'default_value' => '.hamburger--arrowalt-r .hamburger-inner::before {
-	transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.hamburger--arrowalt-r .hamburger-inner::after {
-	transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.hamburger--arrowalt-r:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: translate3d(8px, -10px, 0) rotate(45deg) scale(0.7, 1);
-	transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}
-
-.hamburger--arrowalt-r:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: translate3d(8px, 10px, 0) rotate(-45deg) scale(0.7, 1);
-	transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'arrowalt-r_css',
-      '_valid' => 1,
-    ),
-    18 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca0d',
-      'label' => 'Arrow Left Turn CSS',
-      'name' => 'arrowturn_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--arrowturn:not(.collapsed) .hamburger-inner {
-	transform: rotate(-180deg);
-}
-
-.hamburger--arrowturn:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1);
-}
-
-.hamburger--arrowturn:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
-}',
-      'menu_order' => 18,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'arrowturn',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090120',
-      ),
-      'default_value' => '.hamburger--arrowturn:not(.collapsed) .hamburger-inner {
-	transform: rotate(-180deg);
-}
-
-.hamburger--arrowturn:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1);
-}
-
-.hamburger--arrowturn:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'arrowturn_css',
-      '_valid' => 1,
-    ),
-    19 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6632ff311628d',
-      'label' => 'Arrow Right Turn CSS',
-      'name' => 'arrowturn-r_css_copy',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--arrowturn-r:not(.collapsed) .hamburger-inner {
-	transform: rotate(-180deg);
-}
-
-.hamburger--arrowturn-r:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1);
-}
-
-.hamburger--arrowturn-r:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1);
-}',
-      'menu_order' => 19,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'arrowturn-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090130',
-      ),
-      'default_value' => '.hamburger--arrowturn-r:not(.collapsed) .hamburger-inner {
-	transform: rotate(-180deg);
-}
-
-.hamburger--arrowturn-r:not(.collapsed) .hamburger-inner::before {
-	transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1);
-}
-
-.hamburger--arrowturn-r:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'arrowturn-r_css_copy',
-      '_valid' => 1,
-    ),
-    20 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca1d',
-      'label' => 'Boring CSS',
-      'name' => 'boring_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--boring .hamburger-inner, .hamburger--boring .hamburger-inner::before, .hamburger--boring .hamburger-inner::after {
-	transition-property: none;
-}
-
-.hamburger--boring:not(.collapsed) .hamburger-inner {
-	transform: rotate(45deg);
-}
-
-.hamburger--boring:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	opacity: 0;
-}
-
-.hamburger--boring:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(-90deg);
-}',
-      'menu_order' => 20,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'boring',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090140',
-      ),
-      'default_value' => '.hamburger--boring .hamburger-inner, .hamburger--boring .hamburger-inner::before, .hamburger--boring .hamburger-inner::after {
-	transition-property: none;
-}
-
-.hamburger--boring:not(.collapsed) .hamburger-inner {
-	transform: rotate(45deg);
-}
-
-.hamburger--boring:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	opacity: 0;
-}
-
-.hamburger--boring:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(-90deg);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'boring_css',
-      '_valid' => 1,
-    ),
-    21 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca24',
-      'label' => 'Collapse CSS',
-      'name' => 'collapse_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--collapse .hamburger-inner {
-	top: auto;
-	bottom: 0;
-	transition-duration: 0.13s;
-	transition-delay: 0.13s;
-	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--collapse .hamburger-inner::after {
-	top: -20px;
-	transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
-}
-
-.hamburger--collapse .hamburger-inner::before {
-	transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--collapse:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-	transition-delay: 0.22s;
-	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--collapse:not(.collapsed) .hamburger-inner::after {
-	top: 0;
-	opacity: 0;
-	transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
-}
-
-.hamburger--collapse:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: rotate(-90deg);
-	transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'menu_order' => 21,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'collapse',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090150',
-      ),
-      'default_value' => '.hamburger--collapse .hamburger-inner {
-	top: auto;
-	bottom: 0;
-	transition-duration: 0.13s;
-	transition-delay: 0.13s;
-	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--collapse .hamburger-inner::after {
-	top: -20px;
-	transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
-}
-
-.hamburger--collapse .hamburger-inner::before {
-	transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--collapse:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-	transition-delay: 0.22s;
-	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--collapse:not(.collapsed) .hamburger-inner::after {
-	top: 0;
-	opacity: 0;
-	transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
-}
-
-.hamburger--collapse:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: rotate(-90deg);
-	transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'collapse_css',
-      '_valid' => 1,
-    ),
-    22 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca2a',
-      'label' => 'Collapse Reverse CSS',
-      'name' => 'collapse-r_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--collapse-r .hamburger-inner {
-	top: auto;
-	bottom: 0;
-	transition-duration: 0.13s;
-	transition-delay: 0.13s;
-	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--collapse-r .hamburger-inner::after {
-	top: -20px;
-	transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
-}
-
-.hamburger--collapse-r .hamburger-inner::before {
-	transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--collapse-r:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, -10px, 0) rotate(45deg);
-	transition-delay: 0.22s;
-	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--collapse-r:not(.collapsed) .hamburger-inner::after {
-	top: 0;
-	opacity: 0;
-	transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
-}
-
-.hamburger--collapse-r:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: rotate(90deg);
-	transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'menu_order' => 22,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'collapse-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090160',
-      ),
-      'default_value' => '.hamburger--collapse-r .hamburger-inner {
-	top: auto;
-	bottom: 0;
-	transition-duration: 0.13s;
-	transition-delay: 0.13s;
-	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--collapse-r .hamburger-inner::after {
-	top: -20px;
-	transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
-}
-
-.hamburger--collapse-r .hamburger-inner::before {
-	transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--collapse-r:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, -10px, 0) rotate(45deg);
-	transition-delay: 0.22s;
-	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--collapse-r:not(.collapsed) .hamburger-inner::after {
-	top: 0;
-	opacity: 0;
-	transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
-}
-
-.hamburger--collapse-r:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: rotate(90deg);
-	transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'collapse-r_css',
-      '_valid' => 1,
-    ),
-    23 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca31',
-      'label' => 'Elastic CSS',
-      'name' => 'elastic_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--elastic .hamburger-inner {
-	top: 2px;
-	transition-duration: 0.275s;
-	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.hamburger--elastic .hamburger-inner::before {
-	top: 10px;
-	transition: opacity 0.125s 0.275s ease;
-}
-
-.hamburger--elastic .hamburger-inner::after {
-	top: 20px;
-	transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.hamburger--elastic:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, 10px, 0) rotate(135deg);
-	transition-delay: 0.075s;
-}
-
-.hamburger--elastic:not(.collapsed) .hamburger-inner::before {
-	transition-delay: 0s;
-	opacity: 0;
-}
-
-.hamburger--elastic:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -20px, 0) rotate(-270deg);
-	transition-delay: 0.075s;
-}',
-      'menu_order' => 23,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'elastic',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090170',
-      ),
-      'default_value' => '.hamburger--elastic .hamburger-inner {
-	top: 2px;
-	transition-duration: 0.275s;
-	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.hamburger--elastic .hamburger-inner::before {
-	top: 10px;
-	transition: opacity 0.125s 0.275s ease;
-}
-
-.hamburger--elastic .hamburger-inner::after {
-	top: 20px;
-	transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.hamburger--elastic:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, 10px, 0) rotate(135deg);
-	transition-delay: 0.075s;
-}
-
-.hamburger--elastic:not(.collapsed) .hamburger-inner::before {
-	transition-delay: 0s;
-	opacity: 0;
-}
-
-.hamburger--elastic:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -20px, 0) rotate(-270deg);
-	transition-delay: 0.075s;
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'elastic_css',
-      '_valid' => 1,
-    ),
-    24 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca38',
-      'label' => 'Elastic Reverse CSS',
-      'name' => 'elastic-r_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--elastic-r .hamburger-inner {
-	top: 2px;
-	transition-duration: 0.275s;
-	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.hamburger--elastic-r .hamburger-inner::before {
-	top: 10px;
-	transition: opacity 0.125s 0.275s ease;
-}
-
-.hamburger--elastic-r .hamburger-inner::after {
-	top: 20px;
-	transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.hamburger--elastic-r:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, 10px, 0) rotate(-135deg);
-	transition-delay: 0.075s;
-}
-
-.hamburger--elastic-r:not(.collapsed) .hamburger-inner::before {
-	transition-delay: 0s;
-	opacity: 0;
-}
-
-.hamburger--elastic-r:not(.collapsed) .hamburger-inner::after {
-	 transform: translate3d(0, -20px, 0) rotate(270deg);
-	transition-delay: 0.075s;
-}',
-      'menu_order' => 24,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'elastic-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090180',
-      ),
-      'default_value' => '.hamburger--elastic-r .hamburger-inner {
-	top: 2px;
-	transition-duration: 0.275s;
-	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.hamburger--elastic-r .hamburger-inner::before {
-	top: 10px;
-	transition: opacity 0.125s 0.275s ease;
-}
-
-.hamburger--elastic-r .hamburger-inner::after {
-	top: 20px;
-	transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.hamburger--elastic-r:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, 10px, 0) rotate(-135deg);
-	transition-delay: 0.075s;
-}
-
-.hamburger--elastic-r:not(.collapsed) .hamburger-inner::before {
-	transition-delay: 0s;
-	opacity: 0;
-}
-
-.hamburger--elastic-r:not(.collapsed) .hamburger-inner::after {
-	 transform: translate3d(0, -20px, 0) rotate(270deg);
-	transition-delay: 0.075s;
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'elastic-r_css',
-      '_valid' => 1,
-    ),
-    25 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca40',
-      'label' => 'Emphatic CSS',
-      'name' => 'emphatic_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--emphatic {
-	overflow: hidden;
-}
-
-.hamburger--emphatic .hamburger-inner {
-	transition: background-color 0.125s 0.175s ease-in;
-}
-
-.hamburger--emphatic .hamburger-inner::before {
-	left: 0;
-	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
-}
-
-.hamburger--emphatic .hamburger-inner::after {
-	top: 10px;
-	right: 0;
-	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
-}
-
-.hamburger--emphatic:not(.collapsed) .hamburger-inner {
-	transition-delay: 0s;
-	transition-timing-function: ease-out;
-	background-color: transparent !important;
-}
-
-.hamburger--emphatic:not(.collapsed) .hamburger-inner::before {
-	left: -80px;
-	top: -80px;
-	transform: translate3d(80px, 80px, 0) rotate(45deg);
-	transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.hamburger--emphatic:not(.collapsed) .hamburger-inner::after {
-	right: -80px;
-	top: -80px;
-	transform: translate3d(-80px, 80px, 0) rotate(-45deg);
-	transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
-}',
-      'menu_order' => 25,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'emphatic',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090190',
-      ),
-      'default_value' => '.hamburger--emphatic {
-	overflow: hidden;
-}
-
-.hamburger--emphatic .hamburger-inner {
-	transition: background-color 0.125s 0.175s ease-in;
-}
-
-.hamburger--emphatic .hamburger-inner::before {
-	left: 0;
-	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
-}
-
-.hamburger--emphatic .hamburger-inner::after {
-	top: 10px;
-	right: 0;
-	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
-}
-
-.hamburger--emphatic:not(.collapsed) .hamburger-inner {
-	transition-delay: 0s;
-	transition-timing-function: ease-out;
-	background-color: transparent !important;
-}
-
-.hamburger--emphatic:not(.collapsed) .hamburger-inner::before {
-	left: -80px;
-	top: -80px;
-	transform: translate3d(80px, 80px, 0) rotate(45deg);
-	transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.hamburger--emphatic:not(.collapsed) .hamburger-inner::after {
-	right: -80px;
-	top: -80px;
-	transform: translate3d(-80px, 80px, 0) rotate(-45deg);
-	transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'emphatic_css',
-      '_valid' => 1,
-    ),
-    26 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca49',
-      'label' => 'Emphatic Reverse CSS',
-      'name' => 'emphatic-r_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--emphatic-r {
-	overflow: hidden;
-}
-
-.hamburger--emphatic-r .hamburger-inner {
-	transition: background-color 0.125s 0.175s ease-in;
-}
-
-.hamburger--emphatic-r .hamburger-inner::before {
-	left: 0;
-	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
-}
-
-.hamburger--emphatic-r .hamburger-inner::after {
-	top: 10px;
-	right: 0;
-	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
-}
-
-.hamburger--emphatic-r:not(.collapsed) .hamburger-inner {
-	transition-delay: 0s;
-	transition-timing-function: ease-out;
-	background-color: transparent !important;
-}
-
-.hamburger--emphatic-r:not(.collapsed) .hamburger-inner::before {
-	left: -80px;
-	top: 80px;
-	transform: translate3d(80px, -80px, 0) rotate(-45deg);
-	transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.hamburger--emphatic-r:not(.collapsed) .hamburger-inner::after {
-	right: -80px;
-	top: 80px;
-	transform: translate3d(-80px, -80px, 0) rotate(45deg);
-	transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
-}',
-      'menu_order' => 26,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'emphatic-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090200',
-      ),
-      'default_value' => '.hamburger--emphatic-r {
-	overflow: hidden;
-}
-
-.hamburger--emphatic-r .hamburger-inner {
-	transition: background-color 0.125s 0.175s ease-in;
-}
-
-.hamburger--emphatic-r .hamburger-inner::before {
-	left: 0;
-	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in;
-}
-
-.hamburger--emphatic-r .hamburger-inner::after {
-	top: 10px;
-	right: 0;
-	transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in;
-}
-
-.hamburger--emphatic-r:not(.collapsed) .hamburger-inner {
-	transition-delay: 0s;
-	transition-timing-function: ease-out;
-	background-color: transparent !important;
-}
-
-.hamburger--emphatic-r:not(.collapsed) .hamburger-inner::before {
-	left: -80px;
-	top: 80px;
-	transform: translate3d(80px, -80px, 0) rotate(-45deg);
-	transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.hamburger--emphatic-r:not(.collapsed) .hamburger-inner::after {
-	right: -80px;
-	top: 80px;
-	transform: translate3d(-80px, -80px, 0) rotate(45deg);
-	transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'emphatic-r_css',
-      '_valid' => 1,
-    ),
-    27 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca51',
-      'label' => 'Minus CSS',
-      'name' => 'minus_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--minus .hamburger-inner::before, .hamburger--minus .hamburger-inner::after {
-	transition: bottom 0.08s 0s ease-out, top 0.08s 0s ease-out, opacity 0s linear;
-}
-
-.hamburger--minus:not(.collapsed) .hamburger-inner::before, .hamburger--minus:not(.collapsed) .hamburger-inner::after {
-	opacity: 0;
-	transition: bottom 0.08s ease-out, top 0.08s ease-out, opacity 0s 0.08s linear;
-}
-
-.hamburger--minus:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-}
-
-.hamburger--minus:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-}',
-      'menu_order' => 27,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'minus',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090210',
-      ),
-      'default_value' => '.hamburger--minus .hamburger-inner::before, .hamburger--minus .hamburger-inner::after {
-	transition: bottom 0.08s 0s ease-out, top 0.08s 0s ease-out, opacity 0s linear;
-}
-
-.hamburger--minus:not(.collapsed) .hamburger-inner::before, .hamburger--minus:not(.collapsed) .hamburger-inner::after {
-	opacity: 0;
-	transition: bottom 0.08s ease-out, top 0.08s ease-out, opacity 0s 0.08s linear;
-}
-
-.hamburger--minus:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-}
-
-.hamburger--minus:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'minus_css',
-      '_valid' => 1,
-    ),
-    28 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca60',
-      'label' => 'Slider CSS',
-      'name' => 'slider_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--slider .hamburger-inner {
-	top: 2px;
-}
-
-.hamburger--slider .hamburger-inner::before {
-	top: 10px;
-	transition-property: transform, opacity;
-	transition-timing-function: ease;
-	transition-duration: 0.15s;
-}
-
-.hamburger--slider .hamburger-inner::after {
-	top: 20px;
-}
-
-.hamburger--slider:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--slider:not(.collapsed) .hamburger-inner::before {
-	transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
-	opacity: 0;
-}
-
-.hamburger--slider:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -20px, 0) rotate(-90deg);
-}',
-      'menu_order' => 28,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'slider',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090220',
-      ),
-      'default_value' => '.hamburger--slider .hamburger-inner {
-	top: 2px;
-}
-
-.hamburger--slider .hamburger-inner::before {
-	top: 10px;
-	transition-property: transform, opacity;
-	transition-timing-function: ease;
-	transition-duration: 0.15s;
-}
-
-.hamburger--slider .hamburger-inner::after {
-	top: 20px;
-}
-
-.hamburger--slider:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--slider:not(.collapsed) .hamburger-inner::before {
-	transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
-	opacity: 0;
-}
-
-.hamburger--slider:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -20px, 0) rotate(-90deg);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'slider_css',
-      '_valid' => 1,
-    ),
-    29 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca68',
-      'label' => 'Slider Reverse CSS',
-      'name' => 'slider-r_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--slider-r .hamburger-inner {
-	top: 2px;
-}
-
-.hamburger--slider-r .hamburger-inner::before {
-	top: 10px;
-	transition-property: transform, opacity;
-	transition-timing-function: ease;
-	transition-duration: 0.15s;
-}
-
-.hamburger--slider-r .hamburger-inner::after {
-	top: 20px;
-}
-
-.hamburger--slider-r:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, 10px, 0) rotate(-45deg);
-}
-
-.hamburger--slider-r:not(.collapsed) .hamburger-inner::before {
-	transform: rotate(45deg) translate3d(5.71429px, -6px, 0);
-	opacity: 0;
-}
-
-.hamburger--slider-r:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -20px, 0) rotate(90deg);
-}',
-      'menu_order' => 29,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'slider-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090230',
-      ),
-      'default_value' => '.hamburger--slider-r .hamburger-inner {
-	top: 2px;
-}
-
-.hamburger--slider-r .hamburger-inner::before {
-	top: 10px;
-	transition-property: transform, opacity;
-	transition-timing-function: ease;
-	transition-duration: 0.15s;
-}
-
-.hamburger--slider-r .hamburger-inner::after {
-	top: 20px;
-}
-
-.hamburger--slider-r:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, 10px, 0) rotate(-45deg);
-}
-
-.hamburger--slider-r:not(.collapsed) .hamburger-inner::before {
-	transform: rotate(45deg) translate3d(5.71429px, -6px, 0);
-	opacity: 0;
-}
-
-.hamburger--slider-r:not(.collapsed) .hamburger-inner::after {
-	transform: translate3d(0, -20px, 0) rotate(90deg);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'slider-r_css',
-      '_valid' => 1,
-    ),
-    30 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca6f',
-      'label' => 'Spin CSS',
-      'name' => 'spin_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--spin .hamburger-inner {
-	transition-duration: 0.22s;
-	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spin .hamburger-inner::before {
-	transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
-}
-
-.hamburger--spin .hamburger-inner::after {
-	transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spin:not(.collapsed) .hamburger-inner {
-	transform: rotate(225deg);
-	transition-delay: 0.12s;
-	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--spin:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	opacity: 0;
-	transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
-}
-
-.hamburger--spin:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(-90deg);
-	transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'menu_order' => 30,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'spin',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090240',
-      ),
-      'default_value' => '.hamburger--spin .hamburger-inner {
-	transition-duration: 0.22s;
-	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spin .hamburger-inner::before {
-	transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
-}
-
-.hamburger--spin .hamburger-inner::after {
-	transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spin:not(.collapsed) .hamburger-inner {
-	transform: rotate(225deg);
-	transition-delay: 0.12s;
-	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--spin:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	opacity: 0;
-	transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
-}
-
-.hamburger--spin:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(-90deg);
-	transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'spin_css',
-      '_valid' => 1,
-    ),
-    31 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca76',
-      'label' => 'Spin Reverse CSS',
-      'name' => 'spin-r_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--spin-r .hamburger-inner {
-	transition-duration: 0.22s;
-	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spin-r .hamburger-inner::before {
-	transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
-}
-
-.hamburger--spin-r .hamburger-inner::after {
-	transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spin-r:not(.collapsed) .hamburger-inner {
-	transform: rotate(-225deg);
-	transition-delay: 0.12s;
-	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--spin-r:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	opacity: 0;
-	transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
-}
-
-.hamburger--spin-r:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(90deg);
-	transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'menu_order' => 31,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'spin-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090250',
-      ),
-      'default_value' => '.hamburger--spin-r .hamburger-inner {
-	transition-duration: 0.22s;
-	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spin-r .hamburger-inner::before {
-	transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
-}
-
-.hamburger--spin-r .hamburger-inner::after {
-	transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spin-r:not(.collapsed) .hamburger-inner {
-	transform: rotate(-225deg);
-	transition-delay: 0.12s;
-	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--spin-r:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	opacity: 0;
-	transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
-}
-
-.hamburger--spin-r:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(90deg);
-	transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'spin-r_css',
-      '_valid' => 1,
-    ),
-    32 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca7e',
-      'label' => 'Spring CSS',
-      'name' => 'spring_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--spring .hamburger-inner {
-	top: 2px;
-	transition: background-color 0s 0.13s linear;
-}
-
-.hamburger--spring .hamburger-inner::before {
-	top: 10px;
-	transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spring .hamburger-inner::after {
-	top: 20px;
-	transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spring:not(.collapsed) .hamburger-inner {
-	transition-delay: 0.22s;
-	background-color: transparent !important;
-}
-
-.hamburger--spring:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--spring:not(.collapsed) .hamburger-inner::after {
-	top: 0;
-	transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-	transform: translate3d(0, 10px, 0) rotate(-45deg);
-}',
-      'menu_order' => 32,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'spring',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090260',
-      ),
-      'default_value' => '.hamburger--spring .hamburger-inner {
-	top: 2px;
-	transition: background-color 0s 0.13s linear;
-}
-
-.hamburger--spring .hamburger-inner::before {
-	top: 10px;
-	transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spring .hamburger-inner::after {
-	top: 20px;
-	transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spring:not(.collapsed) .hamburger-inner {
-	transition-delay: 0.22s;
-	background-color: transparent !important;
-}
-
-.hamburger--spring:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-	transform: translate3d(0, 10px, 0) rotate(45deg);
-}
-
-.hamburger--spring:not(.collapsed) .hamburger-inner::after {
-	top: 0;
-	transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-	transform: translate3d(0, 10px, 0) rotate(-45deg);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'spring_css',
-      '_valid' => 1,
-    ),
-    33 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca86',
-      'label' => 'Spring Reverse CSS',
-      'name' => 'spring-r_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--spring-r .hamburger-inner {
-	top: auto;
-	bottom: 0;
-	transition-duration: 0.13s;
-	transition-delay: 0s;
-	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spring-r .hamburger-inner::after {
-	top: -20px;
-	transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0s linear;
-}
-
-.hamburger--spring-r .hamburger-inner::before {
-	transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spring-r:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-	transition-delay: 0.22s;
-	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--spring-r:not(.collapsed) .hamburger-inner::after {
-	top: 0;
-	opacity: 0;
-	transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0s 0.22s linear;
-}
-
-.hamburger--spring-r:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: rotate(90deg);
-	transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'menu_order' => 33,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'spring-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090270',
-      ),
-      'default_value' => '.hamburger--spring-r .hamburger-inner {
-	top: auto;
-	bottom: 0;
-	transition-duration: 0.13s;
-	transition-delay: 0s;
-	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spring-r .hamburger-inner::after {
-	top: -20px;
-	transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0s linear;
-}
-
-.hamburger--spring-r .hamburger-inner::before {
-	transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--spring-r:not(.collapsed) .hamburger-inner {
-	transform: translate3d(0, -10px, 0) rotate(-45deg);
-	transition-delay: 0.22s;
-	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--spring-r:not(.collapsed) .hamburger-inner::after {
-	top: 0;
-	opacity: 0;
-	transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0s 0.22s linear;
-}
-
-.hamburger--spring-r:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: rotate(90deg);
-	transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'spring-r_css',
-      '_valid' => 1,
-    ),
-    34 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca9c',
-      'label' => 'Squeeze CSS',
-      'name' => 'squeeze_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--squeeze .hamburger-inner {
-	transition-duration: 0.075s;
-	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--squeeze .hamburger-inner::before {
-	transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-}
-
-.hamburger--squeeze .hamburger-inner::after {
-	transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--squeeze:not(.collapsed) .hamburger-inner {
-	transform: rotate(45deg);
-	transition-delay: 0.12s;
-	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--squeeze:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	opacity: 0;
-	transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-}
-
-.hamburger--squeeze:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(-90deg);
-	transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'menu_order' => 34,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'squeeze',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090280',
-      ),
-      'default_value' => '.hamburger--squeeze .hamburger-inner {
-	transition-duration: 0.075s;
-	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--squeeze .hamburger-inner::before {
-	transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-}
-
-.hamburger--squeeze .hamburger-inner::after {
-	transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--squeeze:not(.collapsed) .hamburger-inner {
-	transform: rotate(45deg);
-	transition-delay: 0.12s;
-	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--squeeze:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	opacity: 0;
-	transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-}
-
-.hamburger--squeeze:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(-90deg);
-	transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'squeeze_css',
-      '_valid' => 1,
-    ),
-    35 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca8e',
-      'label' => 'Stand CSS',
-      'name' => 'stand_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--stand .hamburger-inner {
-	transition: transform 0.075s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19), background-color 0s 0.075s linear;
-}
-
-.hamburger--stand .hamburger-inner::before {
-	transition: top 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--stand .hamburger-inner::after {
-	transition: bottom 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--stand:not(.collapsed) .hamburger-inner {
-	transform: rotate(90deg);
-	background-color: transparent !important;
-	transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0s 0.15s linear;
-}
-
-.hamburger--stand:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: rotate(-45deg);
-	transition: top 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--stand:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(45deg);
-	transition: bottom 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'menu_order' => 35,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'stand',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090290',
-      ),
-      'default_value' => '.hamburger--stand .hamburger-inner {
-	transition: transform 0.075s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19), background-color 0s 0.075s linear;
-}
-
-.hamburger--stand .hamburger-inner::before {
-	transition: top 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--stand .hamburger-inner::after {
-	transition: bottom 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--stand:not(.collapsed) .hamburger-inner {
-	transform: rotate(90deg);
-	background-color: transparent !important;
-	transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0s 0.15s linear;
-}
-
-.hamburger--stand:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: rotate(-45deg);
-	transition: top 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--stand:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(45deg);
-	transition: bottom 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'stand_css',
-      '_valid' => 1,
-    ),
-    36 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30ca95',
-      'label' => 'Stand Reverse CSS',
-      'name' => 'stand-r_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--stand-r .hamburger-inner {
-	transition: transform 0.075s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19), background-color 0s 0.075s linear;
-}
-
-.hamburger--stand-r .hamburger-inner::before {
-	transition: top 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--stand-r .hamburger-inner::after {
-	transition: bottom 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--stand-r:not(.collapsed) .hamburger-inner {
-	transform: rotate(-90deg);
-	background-color: transparent !important;
-	transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0s 0.15s linear;
-}
-
-.hamburger--stand-r:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: rotate(-45deg);
-	transition: top 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--stand-r:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(45deg);
-	transition: bottom 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'menu_order' => 36,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'stand-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090300',
-      ),
-      'default_value' => '.hamburger--stand-r .hamburger-inner {
-	transition: transform 0.075s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19), background-color 0s 0.075s linear;
-}
-
-.hamburger--stand-r .hamburger-inner::before {
-	transition: top 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--stand-r .hamburger-inner::after {
-	transition: bottom 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger--stand-r:not(.collapsed) .hamburger-inner {
-	transform: rotate(-90deg);
-	background-color: transparent !important;
-	transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0s 0.15s linear;
-}
-
-.hamburger--stand-r:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	transform: rotate(-45deg);
-	transition: top 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger--stand-r:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(45deg);
-	transition: bottom 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'stand-r_css',
-      '_valid' => 1,
-    ),
-    37 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30caa2',
-      'label' => 'Vortex CSS',
-      'name' => 'vortex_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--vortex .hamburger-inner {
-	transition-duration: 0.2s;
-	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.hamburger--vortex .hamburger-inner::before, .hamburger--vortex .hamburger-inner::after {
-	transition-duration: 0s;
-	transition-delay: 0.1s;
-	transition-timing-function: linear;
-}
-
-.hamburger--vortex .hamburger-inner::before {
-	transition-property: top, opacity;
-}
-
-.hamburger--vortex .hamburger-inner::after {
-	transition-property: bottom, transform;
-}
-
-.hamburger--vortex:not(.collapsed) .hamburger-inner {
-	transform: rotate(765deg);
-	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.hamburger--vortex:not(.collapsed) .hamburger-inner::before, .hamburger--vortex:not(.collapsed) .hamburger-inner::after {
-	transition-delay: 0s;
-}
-
-.hamburger--vortex:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	opacity: 0;
-}
-
-.hamburger--vortex:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(90deg);
-}',
-      'menu_order' => 37,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'vortex',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090310',
-      ),
-      'default_value' => '.hamburger--vortex .hamburger-inner {
-	transition-duration: 0.2s;
-	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.hamburger--vortex .hamburger-inner::before, .hamburger--vortex .hamburger-inner::after {
-	transition-duration: 0s;
-	transition-delay: 0.1s;
-	transition-timing-function: linear;
-}
-
-.hamburger--vortex .hamburger-inner::before {
-	transition-property: top, opacity;
-}
-
-.hamburger--vortex .hamburger-inner::after {
-	transition-property: bottom, transform;
-}
-
-.hamburger--vortex:not(.collapsed) .hamburger-inner {
-	transform: rotate(765deg);
-	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.hamburger--vortex:not(.collapsed) .hamburger-inner::before, .hamburger--vortex:not(.collapsed) .hamburger-inner::after {
-	transition-delay: 0s;
-}
-
-.hamburger--vortex:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	opacity: 0;
-}
-
-.hamburger--vortex:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(90deg);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'vortex_css',
-      '_valid' => 1,
-    ),
-    38 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30caa9',
-      'label' => 'Vortex Reverse CSS',
-      'name' => 'vortex-r_css',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'textarea',
-      'value' => '.hamburger--vortex-r .hamburger-inner {
-	transition-duration: 0.2s;
-	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.hamburger--vortex-r .hamburger-inner::before, .hamburger--vortex-r .hamburger-inner::after {
-	transition-duration: 0s;
-	transition-delay: 0.1s;
-	transition-timing-function: linear;
-}
-
-.hamburger--vortex-r .hamburger-inner::before {
-	transition-property: top, opacity;
-}
-
-.hamburger--vortex-r .hamburger-inner::after {
-	transition-property: bottom, transform;
-}
-
-.hamburger--vortex-r:not(.collapsed) .hamburger-inner {
-	transform: rotate(-765deg);
-	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.hamburger--vortex-r:not(.collapsed) .hamburger-inner::before, .hamburger--vortex-r:not(.collapsed) .hamburger-inner::after {
-	transition-delay: 0s;
-}
-
-.hamburger--vortex-r:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	opacity: 0;
-}
-
-.hamburger--vortex-r:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(-90deg);
-}',
-      'menu_order' => 38,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'field' => 'field_6539e9a30c9ae',
-            'operator' => '==',
-            'value' => 'vortex-r',
-          ),
-        ),
-      ),
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => 'css full hamburger',
-        'id' => '090320',
-      ),
-      'default_value' => '.hamburger--vortex-r .hamburger-inner {
-	transition-duration: 0.2s;
-	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.hamburger--vortex-r .hamburger-inner::before, .hamburger--vortex-r .hamburger-inner::after {
-	transition-duration: 0s;
-	transition-delay: 0.1s;
-	transition-timing-function: linear;
-}
-
-.hamburger--vortex-r .hamburger-inner::before {
-	transition-property: top, opacity;
-}
-
-.hamburger--vortex-r .hamburger-inner::after {
-	transition-property: bottom, transform;
-}
-
-.hamburger--vortex-r:not(.collapsed) .hamburger-inner {
-	transform: rotate(-765deg);
-	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.hamburger--vortex-r:not(.collapsed) .hamburger-inner::before, .hamburger--vortex-r:not(.collapsed) .hamburger-inner::after {
-	transition-delay: 0s;
-}
-
-.hamburger--vortex-r:not(.collapsed) .hamburger-inner::before {
-	top: 0;
-	opacity: 0;
-}
-
-.hamburger--vortex-r:not(.collapsed) .hamburger-inner::after {
-	bottom: 0;
-	transform: rotate(-90deg);
-}',
-      'maxlength' => '',
-      'rows' => 16,
-      'placeholder' => '',
-      'new_lines' => '',
-      '_name' => 'vortex-r_css',
-      '_valid' => 1,
-    ),
-    39 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30cabd',
-      'label' => 'Nav CSS',
-      'name' => '',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'accordion',
-      'value' => false,
-      'menu_order' => 39,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 0,
-      'parent' => 'field_6631bf76b1da3',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'open' => 0,
-      'multi_expand' => 1,
-      'endpoint' => 0,
-      '_name' => '',
-      '_valid' => 1,
-    ),
-    40 => 
+    6 => 
     array (
       'ID' => 0,
       'key' => 'field_6539e9a30cac4',
@@ -12198,7 +9274,7 @@ header#site-header #header-menu nav#navigation:target{ /* This is how the collap
 	padding: 0;
 	white-space: nowrap; /* Prevent line breaks between words */
 }',
-      'menu_order' => 40,
+      'menu_order' => 6,
       'instructions' => 'This is the main CSS for the expanded Nav bar. CSS for the collapsed nav should be entered in the Nav Responsivity area, under the Responsivity tab.',
       'required' => 0,
       'id' => '',
@@ -12209,7 +9285,7 @@ header#site-header #header-menu nav#navigation:target{ /* This is how the collap
       array (
         'width' => '',
         'class' => 'css full',
-        'id' => '090330',
+        'id' => '090020',
       ),
       'default_value' => 'header nav.navbar {
 	padding-top: 0;
@@ -12249,7 +9325,7 @@ nav ul li {
       '_name' => 'main_nav_css',
       '_valid' => 1,
     ),
-    41 => 
+    7 => 
     array (
       'ID' => 0,
       'key' => 'field_6539e9a30cacc',
@@ -12290,7 +9366,7 @@ nav ul li {
 #header-menu nav li:is(.current-menu-item, .current-menu-ancestor, current-menu-parent) > a{
 	font-weight: bold;
 }',
-      'menu_order' => 41,
+      'menu_order' => 7,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -12301,7 +9377,7 @@ nav ul li {
       array (
         'width' => '',
         'class' => 'css full',
-        'id' => '090340',
+        'id' => '090030',
       ),
       'default_value' => '.navbar-expand-lg .navbar-nav a.nav-link {
 	padding: [tsp-calc tm *2 /3] [tsp-calc tm *4 /3];
@@ -12341,7 +9417,7 @@ nav a.nav-link:before {
       '_name' => 'nav_anchor_css',
       '_valid' => 1,
     ),
-    42 => 
+    8 => 
     array (
       'ID' => 0,
       'key' => 'field_6539e9a30cad4',
@@ -12370,7 +9446,7 @@ nav a.nav-link:before {
 	font-style: italic;
 	padding: [tsp-calc tm *2 /3, round] [text-margin];
 }',
-      'menu_order' => 42,
+      'menu_order' => 8,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -12381,7 +9457,7 @@ nav a.nav-link:before {
       array (
         'width' => '',
         'class' => 'css full',
-        'id' => '090350',
+        'id' => '090040',
       ),
       'default_value' => '.navbar-nav .dropdown-menu {
 	background: [colour-nav-dropdown-background]; /* Fall back */
@@ -12429,7 +9505,7 @@ nav a.dropdown-item:before {
       '_name' => 'nav_dropdown_css',
       '_valid' => 1,
     ),
-    43 => 
+    9 => 
     array (
       'ID' => 0,
       'key' => 'field_654aff7bed563',
@@ -12487,8 +9563,8 @@ header#site-header #header-menu nav li.menu-item-has-children > a::before{
 
 header#site-header #header-menu nav ul.sub-menu{
 	display: none;
-        position: absolute;
-        z-index: 1;
+	position: absolute;
+	z-index: 1;
 	text-align: left;
 }
 
@@ -12507,7 +9583,7 @@ header#site-header #header-menu nav#navigation .skip-link{ /* Not required for k
 ',
         ),
       ),
-      'menu_order' => 43,
+      'menu_order' => 9,
       'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
       'required' => 0,
       'id' => '',
@@ -12518,7 +9594,7 @@ header#site-header #header-menu nav#navigation .skip-link{ /* Not required for k
       array (
         'width' => '',
         'class' => 'css responsivity',
-        'id' => '090360',
+        'id' => '090050',
       ),
       'layout' => 'table',
       'pagination' => 0,
@@ -12616,7 +9692,7 @@ header#site-header #header-menu nav#navigation .skip-link{ /* Not required for k
         ),
       ),
     ),
-    44 => 
+    10 => 
     array (
       'ID' => 0,
       'key' => 'field_6539e9a30cada',
@@ -12626,7 +9702,7 @@ header#site-header #header-menu nav#navigation .skip-link{ /* Not required for k
       'prefix' => 'acf',
       'type' => 'accordion',
       'value' => false,
-      'menu_order' => 44,
+      'menu_order' => 10,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -13388,7 +10464,11 @@ footer a.social-media-link:last-of-type {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '.kokako{
+      'value' => 'main#site-main{ /* For smoothly sliding below header - actioned in JS via tspAddTopMarginToMain() */
+	transition: [header-transition];
+}
+
+.kokako{
 	position: relative; /* Required for image overlays, hooks etc */
 	padding: [section-padding-vertical] 0;
 	overflow-x: hidden; /* Prevents animation beginning position from creating a scroll bar at bottom of window. Override as required (but check responsivity) */
@@ -13570,6 +10650,109 @@ footer a.social-media-link:last-of-type {
     7 => 
     array (
       'ID' => 0,
+      'key' => 'field_66aae276f1d46',
+      'label' => 'Background Images CSS',
+      'name' => 'background_images_css',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'textarea',
+      'value' => '.kokako.has-background-image{
+	width: 100%; /* Explicitly set for mobile due to "display: grid" */
+	display: grid;
+	grid-template-areas: "section-content";
+	padding: 0;
+}
+
+.kokako.has-background-image .background-image{
+	grid-area: section-content;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.kokako.has-background-image .background-image img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.kokako.has-background-image .contain{
+	grid-area: section-content;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 3;
+	padding-top: [section-padding-vertical]; /* Defaults, overwritten via padding classes where required */
+	padding-bottom: [section-padding-vertical];
+}
+
+.kokako.has-background-image :is(.background-image img, .overlay){
+	position: absolute;
+	left: 0;
+	top: 0;
+}',
+      'menu_order' => 7,
+      'instructions' => 'Background images are actually implemented using the <code>&lt;img /&gt;</code> element for improved SEO and responsivity over the CSS "background-image" property.',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631a9f0754c6',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => 'css full',
+        'id' => '110030',
+      ),
+      'default_value' => '.kokako.has-background-image{
+	width: 100%; /* Explicitly set for mobile due to "display: grid" */
+	display: grid;
+	grid-template-areas: "section-content";
+	padding: 0;
+}
+
+.kokako.has-background-image .background-image{
+	grid-area: section-content;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.kokako.has-background-image .background-image img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.kokako.has-background-image .contain{
+	grid-area: section-content;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 3;
+	padding-top: [section-padding-vertical]; /* Defaults, overwritten via padding classes where required */
+	padding-bottom: [section-padding-vertical];
+}
+
+.kokako.has-background-image :is(.background-image img, .overlay){
+	position: absolute;
+	left: 0;
+	top: 0;
+}',
+      'maxlength' => '',
+      'rows' => 16,
+      'placeholder' => '',
+      'new_lines' => '',
+      '_name' => 'background_images_css',
+      '_valid' => 1,
+    ),
+    8 => 
+    array (
+      'ID' => 0,
       'key' => 'field_6539e9a30cba4',
       'label' => 'Kōkako Buttons CSS',
       'name' => 'kokako_buttons_css',
@@ -13605,7 +10788,7 @@ footer a.social-media-link:last-of-type {
 .kokako .kokako-buttons [button-selectors]{
 	margin: 0 !important;
 }',
-      'menu_order' => 7,
+      'menu_order' => 8,
       'instructions' => 'Use full CSS.',
       'required' => 0,
       'id' => '',
@@ -13616,7 +10799,7 @@ footer a.social-media-link:last-of-type {
       array (
         'width' => '',
         'class' => 'css full',
-        'id' => '110030',
+        'id' => '110040',
       ),
       'default_value' => 'section.kokako .cta-buttons {
 	display: flex;
@@ -13658,7 +10841,7 @@ section.kokako .cta-buttons p.centre {
       '_name' => 'kokako_buttons_css',
       '_valid' => 1,
     ),
-    8 => 
+    9 => 
     array (
       'ID' => 0,
       'key' => 'field_6539e9a30cbaa',
@@ -13667,50 +10850,7 @@ section.kokako .cta-buttons p.centre {
       'aria-label' => '',
       'prefix' => 'acf',
       'type' => 'textarea',
-      'value' => '/* Background Images (remainder of CSS shared with Hero section, see Hero section) */
-
-.kokako.has-background-image{
-	width: 100%; /* Explicitly set for mobile due to "display: grid" */
-	display: grid;
-	grid-template-areas: "section-content";
-	padding: 0;
-}
-
-.kokako.has-background-image .background-image{
-	grid-area: section-content;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	z-index: 1;
-}
-
-.kokako.has-background-image .background-image img{
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-.kokako.has-background-image .contain{
-	grid-area: section-content;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	z-index: 3;
-	padding-top: [section-padding-vertical]; /* Defaults, overwritten via padding classes where required */
-	padding-bottom: [section-padding-vertical];
-}
-
-.kokako.has-background-image :is(.background-image img, .overlay){
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-
-/* Other Section CSS */
-
-.footnote{
+      'value' => '.footnote{
 	font-size: 80%;
 	font-style: italic;
 } 
@@ -13721,7 +10861,7 @@ section.kokako .cta-buttons p.centre {
 .kokako.hide-section{
 	display: none !important;
 }',
-      'menu_order' => 8,
+      'menu_order' => 9,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -13732,7 +10872,7 @@ section.kokako .cta-buttons p.centre {
       array (
         'width' => '',
         'class' => 'css full',
-        'id' => '110040',
+        'id' => '110050',
       ),
       'default_value' => '/* Spacing */
 
@@ -13917,7 +11057,7 @@ section.kokako.hide-section {
       '_name' => 'other_section_css',
       '_valid' => 1,
     ),
-    9 => 
+    10 => 
     array (
       'ID' => 0,
       'key' => 'field_654b08912ad4d',
@@ -13927,7 +11067,7 @@ section.kokako.hide-section {
       'prefix' => 'acf',
       'type' => 'repeater',
       'value' => false,
-      'menu_order' => 9,
+      'menu_order' => 10,
       'instructions' => 'All responsivity CSS will be collated and added to the end of the CSS file.',
       'required' => 0,
       'id' => '',
@@ -13938,7 +11078,7 @@ section.kokako.hide-section {
       array (
         'width' => '',
         'class' => 'css responsivity',
-        'id' => '110050',
+        'id' => '110060',
       ),
       'layout' => 'table',
       'pagination' => 0,
@@ -14036,40 +11176,11 @@ section.kokako.hide-section {
         ),
       ),
     ),
-    10 => 
+    11 => 
     array (
       'ID' => 0,
       'key' => 'field_6539e9a30cbb1',
       'label' => 'Kōkako Sections - All End',
-      'name' => '',
-      'aria-label' => '',
-      'prefix' => 'acf',
-      'type' => 'accordion',
-      'value' => false,
-      'menu_order' => 10,
-      'instructions' => '',
-      'required' => 0,
-      'id' => '',
-      'class' => '',
-      'conditional_logic' => 0,
-      'parent' => 'field_6631a9f0754c6',
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'open' => 0,
-      'multi_expand' => 0,
-      'endpoint' => 1,
-      '_name' => '',
-      '_valid' => 1,
-    ),
-    11 => 
-    array (
-      'ID' => 0,
-      'key' => 'field_6539e9a30cbb8',
-      'label' => 'Kōkako Sections - Individual',
       'name' => '',
       'aria-label' => '',
       'prefix' => 'acf',
@@ -14088,13 +11199,42 @@ section.kokako.hide-section {
         'class' => '',
         'id' => '',
       ),
+      'open' => 0,
+      'multi_expand' => 0,
+      'endpoint' => 1,
+      '_name' => '',
+      '_valid' => 1,
+    ),
+    12 => 
+    array (
+      'ID' => 0,
+      'key' => 'field_6539e9a30cbb8',
+      'label' => 'Kōkako Sections - Individual',
+      'name' => '',
+      'aria-label' => '',
+      'prefix' => 'acf',
+      'type' => 'accordion',
+      'value' => false,
+      'menu_order' => 12,
+      'instructions' => '',
+      'required' => 0,
+      'id' => '',
+      'class' => '',
+      'conditional_logic' => 0,
+      'parent' => 'field_6631a9f0754c6',
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
       'open' => 1,
       'multi_expand' => 1,
       'endpoint' => 0,
       '_name' => '',
       '_valid' => 1,
     ),
-    12 => 
+    13 => 
     array (
       'ID' => 0,
       'key' => 'field_6539e9a30cb50',
@@ -14104,7 +11244,7 @@ section.kokako.hide-section {
       'prefix' => 'acf',
       'type' => 'message',
       'value' => false,
-      'menu_order' => 12,
+      'menu_order' => 13,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -14123,7 +11263,7 @@ section.kokako.hide-section {
       '_name' => '',
       '_valid' => 1,
     ),
-    13 => 
+    14 => 
     array (
       'ID' => 0,
       'key' => 'field_6539e9a30cbbe',
@@ -14859,7 +11999,7 @@ section.kokako.hide-section {
           ),
         ),
       ),
-      'menu_order' => 13,
+      'menu_order' => 14,
       'instructions' => 'The Section Type field is used only to identify the section. Please note that the CSS will only be included in the compiled file if the section type is turned on under <a href="admin.php?page=acf-options-developer-options" target="_blank">Developer Options</a><br /><br />
 
 <a class="button collapse-all-kokako-sections" href="#">Collapse All Sections</a>',
@@ -14872,7 +12012,7 @@ section.kokako.hide-section {
       array (
         'width' => '',
         'class' => 'css',
-        'id' => '110060',
+        'id' => '110070',
       ),
       'layout' => 'block',
       'pagination' => 0,
@@ -15070,7 +12210,7 @@ section.kokako.hide-section {
         ),
       ),
     ),
-    14 => 
+    15 => 
     array (
       'ID' => 0,
       'key' => 'field_6539e9a30cbc5',
@@ -15080,7 +12220,7 @@ section.kokako.hide-section {
       'prefix' => 'acf',
       'type' => 'accordion',
       'value' => false,
-      'menu_order' => 14,
+      'menu_order' => 15,
       'instructions' => '',
       'required' => 0,
       'id' => '',
@@ -15179,14 +12319,7 @@ section.kokako.background-overlay .image-overlay{ /* Note that the background co
 	height: 100%;
 	background: [colour-background-dark]; /* Default, will be overridden by colour scheme */
 	opacity: 0.5; /* Default, opacity can be overridden on a per section basis */
-}
-
-
-/* Remove background if section already has a background image (otherwise interferes with background blend modes) */
-
-/* section.kokako.colour-scheme.has-background-image{
-	background: none;
-} */',
+}',
       'menu_order' => 1,
       'instructions' => '',
       'required' => 0,
