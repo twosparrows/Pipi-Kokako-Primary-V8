@@ -1,6 +1,6 @@
 JS Options Fields
 
-Updated at 02/08/2024 4:38.39am UTC
+Updated at 02/08/2024 4:49.58am UTC
 
 
 Shortcodes:
@@ -629,7 +629,7 @@ array (
       'variables' => 'var windowScrollResizeID;',
       'functions' => '// Make sure main doesn\'t slip under header
 function tspAddMainTopBorder(){
-	if( jQuery(window).outerWidth() > **[tsp-calc {width-nav-collapse-max}, integer]** ){
+	if( jQuery(window).outerWidth() > **[tsp-calc {width-nav-collapse-max}, value]** ){
 		var headingHeight = jQuery("header#site-header").outerHeight();
 		jQuery("main#site-main").css("border-top-width", headingHeight);
 	}else{
@@ -638,7 +638,7 @@ function tspAddMainTopBorder(){
 }
 
 function tspToggleHeaderScrolled(){
-	if( jQuery(document).scrollTop() > 50 && jQuery(window).outerWidth() > **[tsp-calc {width-nav-collapse-max}, integer]** ){
+	if( jQuery(document).scrollTop() > 50 && jQuery(window).outerWidth() > **[tsp-calc {width-nav-collapse-max}, value]** ){
 		jQuery(\'header#site-header\').addClass("scrolled");			
 	} else {
 		jQuery(\'header#site-header\').removeClass("scrolled");			
